@@ -1,0 +1,16 @@
+
+
+
+
+
+@use '../abstracts' as *;
+
+
+.workspace-leaf-content[data-type="file-explorer"] {
+.nav-buttons-container {
+    padding: 0 40px;
+}
+.nav-action-button[aria-label="New folder"] {
+    margin-right: auto;
+}
+}

@@ -1,0 +1,118 @@
+
+@use '../abstracts' as *; 
+
+
+
+
+
+
+
+
+
+.modal-container.quickAddModal.captureChoiceBuilder,
+.modal-container.quickAddModal.templateChoiceBuilder {
+    @include toggle-s;
+    .modal {padding-bottom: unset;}
+    input {
+        margin: unset;
+        margin-bottom: 2px;
+    }
+
+
+    // 通用样式 --------------------------------------------------------------------------
+
+    .setting-item.setting-item-heading {
+        margin-top: 32px;
+        padding: unset;
+        .setting-item-name {font-size: 17px;}
+    }
+
+    .qa-builder-footer {
+        margin: unset;
+        padding: calc($form-row-padding + $form-group-padding);
+        align-items: center;
+
+        position: absolute;
+        inset: auto 0 0;
+        @include liquid-glass-bg-subtle($with-shadow: false);
+    }
+
+    .modal-content {
+        padding-bottom: 100px;
+    }
+
+
+    .qa-field {
+        // background-color: antiquewhite;
+        padding: $form-group-padding 0;
+        &>* {
+            // padding: $form-row-padding 0 !important;
+            padding: 0;
+        }
+
+        .qa-field-body {
+            min-height: $form-row-height;
+            // align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .qa-field-hint {
+            font-size: $font-ui-smaller;
+            line-height: $line-height-ui-smaller;
+            margin: unset;
+        }
+
+        .qa-token-hint {
+            margin: unset;
+            line-height: $line-height-ui-smaller;
+        }
+    }
+}
+
+
+
+
+
+// 从上到下开始设计细节 =================================================================================
+
+.modal-container.quickAddModal.templateChoiceBuilder {
+
+    // title = Template  ---------------------------------------------------------------------------
+
+    span.qa-preview-label {
+        padding-right: 8px;
+    }
+
+
+    .folderSelectionContainer {
+        padding: calc( $form-group-padding) 0;
+
+
+        .qa-folder-list.svelte-ee11ws {
+            margin: unset;
+        }
+
+        .quickAddCommandListItem {
+            font-size: $font-ui-small;
+            min-height: $control-height-s;
+            padding-inline-start: 8px;
+            align-items: center;
+            gap: 12px;
+
+            .quickAddCommandControls {color: $text-muted;}
+        }
+
+
+        .folderInputContainer {
+            margin: unset;
+            @include form-row;
+        }
+    }
+
+
+
+
+
+}

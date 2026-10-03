@@ -1,0 +1,7 @@
+@use '../../abstracts' as *;
+
+
+
+.workspace-leaf-content[data-type="bases"] .bases-view[data-view-type="cards"] {
+    background-color: $background-secondary;
+}

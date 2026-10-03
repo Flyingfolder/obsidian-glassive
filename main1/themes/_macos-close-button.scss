@@ -1,0 +1,207 @@
+
+
+
+
+
+
+
+// .macos-close-button 
+
+body:not(.is-mobile) {
+
+
+    // 1. 设置关闭按钮的样式 =====================================================================
+    .modal-container .modal-close-button {
+        position: absolute;
+        z-index: 5;
+        border: 1px solid rgb(250, 24, 39) ;
+        background-color: rgb(255, 92, 96) ;
+        color: transparent;
+
+        height: 14px;
+        width: 14px;
+        padding: unset;
+
+        border-radius: 20px;
+        --icon-stroke: 4px;
+        &:hover {color: rgb(60, 60, 60);}
+        &:active {color: rgb(60, 60, 60);
+            background-color: rgb(212, 76, 79);}
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            box-sizing: border-box;
+
+            height: 14px;
+            width: 14px;
+            border-radius: var(--radius-xl);
+
+            background-color: rgb(220, 220, 220);
+            border: 1px solid rgb(210, 210, 210);
+        }
+
+        &::before {inset: 0 auto auto 23px;}
+        &::after {inset: 0 auto auto 46px;}
+    }
+
+
+
+
+
+
+
+
+
+
+
+    // 2. modal 中的关闭按钮 style =====================================================================
+
+    .modal-close-button::before,
+    .modal-close-button::after {
+        display: none;
+    }
+
+    .modal-close-button {
+        inset: 10px auto auto 10px;
+    }
+
+
+
+
+    // @container modal (max-width: 699px) {
+
+    //     .modal-close-button::before,
+    //     .modal-close-button::after {
+    //         display: none;
+    //     }
+
+    //     .modal-close-button {
+    //         inset: 10px auto auto 10px;
+    //     }
+
+    //     .modal-header {
+    //         display: flex;
+    //         flex-direction: column;
+
+    //         padding-inline-start: 0;
+    //         margin-bottom: 12px;
+
+
+    //         .modal-title {
+    //             margin: unset;
+    //             line-height: 34px;
+    //             font-size: var(--font-ui-small);
+    //             font-weight: 500;
+    //             color: var(--text-muted);
+    //         }
+    //     }
+    // }
+
+
+
+
+
+    // @container modal (min-width: 700px) {
+
+    //     .modal-close-button::before,
+    //     .modal-close-button::after {
+    //         display: none;
+    //     }
+
+    //     .modal-close-button {
+    //         // inset: 20px auto auto 20px;
+    //         inset: 10px auto auto 10px;
+    //     }
+
+    //     .modal-header {
+    //         margin-bottom: unset;
+    //         // margin-bottom: 20px;
+
+    //         .modal-title {
+    //             text-align: center;
+    //             line-height: 50px;
+    //             font-size: 14px;
+    //             font-weight: 700;
+    //             color: var(--text-muted);
+    //             padding: unset;
+    //         }
+    //     }
+    // }
+
+
+    .cmdr-setting-modal>.modal,
+    .modal.mod-community-modal,
+    .modal.mod-lg,
+    .modal.mod-sidebar-layout {
+        .modal-close-button {
+            inset: 20px auto auto 20px;
+        }
+
+        .modal-close-button::before,
+        .modal-close-button::after {
+            display: block;
+        }
+    }
+
+
+    // bug bookmark modal: 关闭按钮位置不对，且被标题遮挡
+    .modal.mod-bookmark.mod-lg {
+        .modal-close-button {
+            inset: 10px auto auto 10px;
+        }
+
+        .modal-close-button::before,
+        .modal-close-button::after {
+            display: none;
+        }
+    }
+
+
+
+
+
+
+    // 3. bug： 给这类按钮覆盖的区域增加遮罩
+
+    // .vertical-tab-header::before {
+
+    
+    //     content: '';
+    //     display: block;
+
+    //     position: sticky;
+    //     z-index: 1;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+
+    //     mask-image: linear-gradient(to bottom,
+    //             rgba(0, 0, 0, 1) 0,
+    //             rgba(0, 0, 0, 1) 10px,
+    //             rgba(0, 0, 0, 0.2) 100%);
+
+    //     // background-color: var(--background-frosted-edge-fade);
+    //     backdrop-filter: var(--backdrop-filter-frosted-edge);
+
+
+    //     pointer-events: none;
+
+    //     height: 43px;
+    //     width: unset;
+    //     top: -43px;
+    //     margin: -43px -10px 0;
+
+    //     border-radius: 20px 20px 0 0;
+    // }
+
+    // 4. bug
+
+    .mod-sidebar-layout .modal-header {
+        display: none;
+    }
+}
+

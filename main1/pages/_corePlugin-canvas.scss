@@ -1,0 +1,61 @@
+
+
+@use '../abstracts' as *; 
+
+
+.canvas-node-container {
+    animation:
+        fade-in var(--anim-duration-moderate) ease-i forwards,
+        scale-up-small-items var(--anim-duration-moderate) ease forwards;
+}
+
+
+.canvas-controls {
+    inset: unset;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--background-primary);
+    border-bottom: 1px solid $background-modifier-seperator;
+    gap: unset;
+    padding: 0 12px;
+
+    height: var(--header-height);
+    
+
+
+    .canvas-control-group {
+        border-radius: unset;
+        background-color: unset;
+        border: unset;
+        box-shadow: unset;
+        display: flex;
+        flex-direction: row;
+        
+    }
+
+
+    .canvas-control-item {        
+        border: unset;
+        color: var(--text-muted);
+        padding: var(--size-2-2) var(--size-2-3);
+        border-radius: $radius-s;
+
+    }
+
+
+    // 排序
+    .canvas-control-group:has([aria-label="Canvas settings"]) {
+        order: 1;
+    }
+
+    .canvas-control-group:has([aria-label="Undo"]) {
+        order: -1;
+    }
+
+    .canvas-control-group:has([aria-label="Zoom in"]) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

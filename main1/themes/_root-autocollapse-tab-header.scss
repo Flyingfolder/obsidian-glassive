@@ -1,0 +1,77 @@
+
+
+
+
+@use '../abstracts' as *;
+
+
+.workspace-split.mod-root .workspace-tabs:not(.mod-top) {
+    .view-header-title-container {transition: opacity var(--anim-duration-fast);}
+    .workspace-tab-header-container {
+        transition: padding var(--anim-duration-moderate) ease;
+    }
+
+    .workspace-tab-container {
+        transition: margin var(--anim-duration-moderate) ease;
+    }
+
+}
+.workspace-split.mod-root .workspace-tabs:not(.mod-top):has(.workspace-tab-header:first-child:last-child) {
+    .workspace-tab-header-container {
+        padding-left: 80px;
+        padding-right: 100px;
+    }
+
+    .workspace-tab-container {
+        margin-top: -38px; //为了保持对齐
+        
+        z-index: 16;
+
+    }
+
+
+    // 逐渐变化
+    .view-header-title-container {
+        opacity: 0;
+    }
+
+    // 立刻变化
+    .view-header {
+        pointer-events: none;
+        &>* {pointer-events: auto;}
+    }
+    .workspace-leaf {
+        background-color: unset;
+    }
+
+    
+}
+
+
+
+
+// 自动出现/消失的divider ------------------------------------------------------------
+
+// 方案1
+// .workspace-split.mod-horizontal>.workspace-tabs:has(+.workspace-tabs .workspace-tab-header:first-child:last-child) .workspace-leaf-resize-handle {
+//     --divider-width: 1px;
+// }
+
+// .workspace-split.mod-horizontal>.workspace-tabs>.workspace-leaf-resize-handle:hover,
+// .workspace-split.mod-horizontal>.workspace-tabs:has(+.workspace-tabs .view-header-title-container:hover) .workspace-leaf-resize-handle {
+//     --divider-width: 40px !important;
+//     z-index: 9;
+// }
+
+
+// .workspace-split.mod-horizontal>.workspace-tabs:not(.mod-top):has(.workspace-tab-header:first-child:last-child) {
+//     z-index: 6;
+// }
+
+
+// 方案2
+.mod-root.workspace-split.mod-horizontal>*:has(+.workspace-tabs .workspace-tab-header:first-child:last-child) .workspace-leaf-resize-handle {
+    width: unset;
+    left: 90px;
+    right: 180px;
+}

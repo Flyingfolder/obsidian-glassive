@@ -1,0 +1,130 @@
+
+
+
+@use '../abstracts' as *; 
+
+
+.mod-sidedock .wrapper.modal-form {
+    --modal-form-wrapper-padding-bottom: 40px
+}
+
+
+
+
+.wrapper.modal-form {
+    padding: 10px 0 0;
+    .tab.svelte-1uurynp::after {display: none;}
+    
+    .body {padding-bottom: var(--modal-form-wrapper-padding-bottom) ;}
+
+    .tabs {
+        @include segmented-controls;
+        margin: 0 20px;
+    }
+
+    .tab-outer {
+        @include segmented-control-label($is-selected-status-name: "active");
+
+        &.active {
+            background-color: $interactive-accent !important;
+            color: $text-on-accent;
+        }
+    }
+
+    
+    button.tab {
+        font-size: inherit;
+        color: currentColor;
+        cursor: default;
+        padding: inherit;
+        border-radius: inherit;
+        flex: inherit;
+        text-align: center;
+        height: auto;
+        
+    }
+
+    .tab-outer {
+        flex: 1;
+    }
+}
+
+
+
+
+.body fieldset.header {
+    gap: 0;
+    box-shadow: none;
+    label {
+        margin-top: 8px;
+    }
+
+    .hint {
+        font-size: $font-ui-small;
+    }
+    .errors-container {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        h3 {display: none;}
+        * {font-size: $font-ui-small;}
+
+    }
+}
+
+
+.wrapper.modal-form .body fieldset {
+    margin: unset;
+    padding: 10px 32px;
+
+    &.fields {
+        div>div {
+            animation: 
+                scale-up .3s ease,
+                move-up .3s ease,
+                fade-in .4s ease;
+        }
+    }
+}
+
+
+
+// buttons =============================================================================
+.wrapper.modal-form .body>form {
+    fieldset>hr:last-child {
+        display: none;
+    }
+}
+.wrapper.modal-form .body>form>.sticky-buttons{
+    position: relative;
+
+    background-color: unset;
+    padding: 40px 12px 8px;
+
+
+    flex-wrap: wrap;
+
+    row-gap: 60px;
+    column-gap: 12px;
+
+    &::before {
+        content: "";
+        position: absolute;
+
+        inset: 88px  12px auto;
+        height: 1px;
+        background-color: var(--background-modifier-border);
+    }
+
+    button:first-child {
+        order: -2;
+        margin-left: 20px;
+        margin-right: 100%;
+    }
+
+
+    button.mod-warning {
+        order: -1;
+        margin-right: auto;
+    }
+}
+

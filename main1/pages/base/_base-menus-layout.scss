@@ -1,0 +1,97 @@
+
+
+@use '../../abstracts' as *; 
+
+
+
+
+.bases-toolbar-menu.bases-toolbar-properties-menu,
+.bases-toolbar-menu.bases-toolbar-views-menu,
+.bases-toolbar-menu.bases-toolbar-sort-menu,
+.bases-toolbar-menu.bases-toolbar-filter-menu {
+
+    .menu-scroll {
+        padding: unset;
+    }
+}
+
+
+// row ==================================================================================================================================
+
+
+.bases-query-container>.filter-group {
+
+    .filter-group-header,
+    .filter-statement,
+    .filter-group-actions {
+        @include form-row;
+    }
+
+    .filter-statement {
+        justify-content: center; //我也不知道为什么默认设置 flex-direction: column；总之不能改。
+    }
+
+
+    // separator 
+    
+    &>.filter-group-statements>.filter-row {
+        // background-color: red;
+        border-top: 1px solid $background-modifier-seperator;
+        &:last-child {
+            border-bottom: 1px solid $background-modifier-seperator;
+        }
+
+    }
+
+
+    // groups-padding
+
+    &>.filter-group-statements>.filter-row {
+        padding: $form-group-padding 0;
+    }
+
+    &>.filter-group-statements {
+        margin: $form-group-padding 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+
+
+
+@use 'variables-swiftive' as *; 
+
+
+
+
+
+@mixin button-accent {
+
+    // background-color: hsla(var(--interactive-accent-hsl), 0.8);
+    background-color: var(--color-accent);
+    color: var(--text-on-accent);
+    --icon-color: var(--text-on-accent);
+    --icon-color-hover: var(--text-on-accent);
+
+    --text-muted: var(--text-muted-on-accent);
+    //bug 
+    .menu-item-icon {
+        color: var(--text-on-accent);
+    }
+}
+
+
+
+@mixin input-s($field-sizing, $min-width: 8ch) {
+    height: $control-height-s;
+    field-sizing: $field-sizing;
+    min-width: $min-width;
+
+    border-radius: $radius-s;
+    border: unset;
+    box-shadow: unset;
+    background-color: $background-modifier-hover;
+}
+
+
+@mixin input-search-s {
+    --input-height: #{$control-height-m};
+    input {
+        box-shadow: 0 0 0 1px var(--background-modifier-border);
+        border-radius: 40px;
+        corner-shape: squircle;
+    }
+
+    // &::before {color: $text-faint;}
+}

@@ -1,0 +1,67 @@
+
+
+
+
+
+
+
+@use '../abstracts' as *; 
+
+
+// rule book ===============================================================================
+
+
+.iconic-scroller {
+    border-bottom: unset;
+    .setting-item.iconic-condition,
+    .setting-item.iconic-rule {
+        padding: $form-row-padding 0 !important;
+    }
+}
+
+
+// // 制作 悬浮的 toolbar -----------------------------------
+// .modal.iconic-rule-picker {
+//     .modal-content>.setting-item:nth-child(1) {
+//         position: absolute;
+//         top: 11px;
+//         right: 52px;
+        
+//         .setting-item-info {
+//             display: none;
+//         }
+
+//         .setting-item-control {
+//             min-height: unset !important;
+//         }
+//     }
+// }
+
+
+
+
+
+// editor ================================================================================
+.modal-container > .modal.iconic-rule-editor {
+
+    // 中间部分的 conditions
+
+    .iconic-scroller {
+        .dropdown {
+            flex-grow: unset;
+        }
+    }
+
+    .modal-content>.setting-item>.setting-item-control {
+        .checkbox-container {display: none;}
+    }
+
+
+}
+
+
+
+
+
+
+

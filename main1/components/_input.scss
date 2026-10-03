@@ -1,0 +1,94 @@
+
+
+
+
+
+input {
+  corner-shape: squircle;
+  --input-height: 28px;
+  --input-radius: 100px;
+}
+
+.search-input-container {
+  --input-height: 28px;
+}
+
+
+textarea,
+.multi-select-container,
+input.metadata-input-text,
+input[type='date'],
+input[type='datetime-local'],
+input[type='text'],
+input[type='search'],
+input[type='email'],
+input[type='password'],
+input[type='number'] {
+  border: unset;
+  box-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border);
+}
+
+.bases-table-container input[type='text'],
+.bases-table-container input[type='date'],
+.bases-table-container input[type='datetime-local'],
+.bases-table-container input[type='number'],
+.bases-table-container .multi-select-container {
+  box-shadow: unset;
+}
+
+
+// 在选中的时候，添加额外的阴影和动画 --------------------------------------------------------------------------------
+
+@keyframes input-box-shadow-appear {
+  from {
+    box-shadow: 0px 0px calc( var(--input-border-width-focus) * 2) calc( var(--input-border-width-focus) * 5) hsla(var(--interactive-accent-hsl), 0.1);
+  }
+  to {
+    box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
+  }
+}
+
+
+textarea:active,
+.multi-select-container:active,
+input.metadata-input-text:active,
+input[type=date]:active,
+input[type=datetime-local]:active,
+input[type=text]:active,
+input[type=search]:active,
+input[type=email]:active,
+input[type=password]:active,
+input[type=number]:active,
+textarea:focus,
+.multi-select-container:focus,
+input.metadata-input-text:focus,
+input[type=date]:focus,
+input[type=datetime-local]:focus,
+input[type=text]:focus,
+input[type=search]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
+textarea:focus-visible,
+.multi-select-container:focus-visible,
+input.metadata-input-text:focus-visible,
+input[type=date]:focus-visible,
+input[type=datetime-local]:focus-visible,
+input[type=text]:focus-visible,
+input[type=search]:focus-visible,
+input[type=email]:focus-visible,
+input[type=password]:focus-visible,
+input[type=number]:focus-visible {
+    animation: input-box-shadow-appear var(--anim-duration-moderate) ease none;
+    box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
+}
+
+input[disabled] {
+  animation: unset !important;
+  box-shadow: unset !important;
+}
+
+
+
+
+

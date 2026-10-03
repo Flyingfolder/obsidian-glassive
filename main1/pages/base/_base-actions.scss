@@ -1,0 +1,63 @@
+
+
+@use '../../abstracts' as *; 
+
+
+
+
+
+
+// 特殊情况：正在输入的时候 ======================================================================
+
+
+
+.menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:placeholder-shown)),
+.menu.bases-toolbar-menu.bases-toolbar-properties-menu:not(:has(input:placeholder-shown)) {
+//     .suggestion-group[data-group="properties"]::before {
+//         content: "Properties";
+//         display: flex;
+//         align-items: center;
+//         height: $control-height-s;
+//         padding: 0 8px;
+//         font-size: $font-ui-smaller;
+//         font-weight: 500;
+//         color: $text-faint;
+//     }
+
+//     .suggestion-group[data-group="actions"]::before {
+//         content: "Actions";
+//         display: flex;
+//         align-items: center;
+//         height: $control-height-s;
+//         padding: 0 8px;
+//         font-size: $font-ui-smaller;
+//         font-weight: 500;
+//         color: $text-faint;
+//     }
+
+
+    .suggestion-group[data-group="actions"] {
+
+        .suggestion-item:nth-child(2),
+        .suggestion-item:nth-child(3) {
+            display: none;
+        }
+    }
+
+    .suggestion-item.bases-toolbar-menu-item.is-selected {
+        box-shadow: 0 0 0 var(--input-border-width-focus) var(--color-base-40)
+    }
+
+
+//     .suggestion-group[data-group="views"]::before {
+//         content: "Views";
+//         display: flex;
+//         align-items: center;
+//         height: $control-height-s;
+//         padding: 0 8px;
+//         font-size: $font-ui-smaller;
+//         font-weight: 500;
+//         color: $text-faint;
+//     }
+
+}

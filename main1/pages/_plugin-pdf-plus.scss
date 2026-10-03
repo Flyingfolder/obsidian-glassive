@@ -1,0 +1,55 @@
+
+
+
+
+
+// .vertical-tab-header {
+//     display: none;
+// }
+
+
+.vertical-tab-content.pdf-plus-settings {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: unset;
+
+    .header-container {
+        display: flex;
+        flex-direction: column;
+        order: 1;
+        height: unset;
+        overflow: auto;
+
+        // flex-basis: 200px;
+        gap: 8px;
+        &::-webkit-scrollbar {display: none;}
+
+    }
+
+    .content {
+        overflow: auto;
+        width: auto;
+    }   
+}
+
+
+
+.setting-item.setting-item-heading.pdf-plus-setting-heading {
+    display: flex;
+    flex-direction: column;
+
+    &>div:first-child:has(svg) {
+        --icon-size: 48px;
+        margin: unset;
+    }
+
+
+    .setting-item-name {
+        text-align: center;
+        padding-bottom: 6px;
+    }
+}

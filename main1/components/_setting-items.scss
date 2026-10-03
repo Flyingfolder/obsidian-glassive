@@ -1,0 +1,73 @@
+
+@use '../abstracts' as *; 
+
+
+
+
+
+.modal:not(.mod-settings) {
+
+    .setting-item:not(.setting-item-heading) {
+        border-color: $background-modifier-border-subtle;
+
+        // .setting-item-description {
+        //     line-height: $line-height-ui-smaller;
+        // }
+    }
+}
+
+
+.setting-item.setting-item-heading {
+    margin-top: 32px;
+    padding: unset;
+    .setting-item-name {font-size: 17px;}
+}
+
+
+
+
+.setting-item-control {
+    min-height: 28px;
+
+}
+
+.setting-item-info {
+    // background-color: antiquewhite;
+    .setting-item-name {
+        line-height: 28px !important;
+        font-size: 14px;
+        // -webkit-font-smoothing: antialiased;
+    }
+
+    .setting-item-description {
+        padding-top: unset;
+        padding-bottom: 6px;
+    }
+}
+.setting-group {
+
+    .setting-item:not(.setting-item-heading) {
+        --setting-items-padding-x: 16px;
+        --setting-items-padding-y: 8px;
+    }
+
+    .setting-items {
+        padding: 4px 0;
+        --setting-items-radius: 40px;
+        corner-shape: squircle;
+    }
+
+    .setting-item-control {
+        padding: 4px 2px 0 0;
+    }
+}
+
+.modal:not(.mod-settings) .setting-item:not(.setting-item-heading):where(:not(.setting-group *)) {
+    padding: 6px 0;
+    align-items: center;
+
+    .setting-item-control {
+        min-height: 42px;
+    }
+}
+

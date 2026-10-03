@@ -1,0 +1,32 @@
+{
+	"name": "glassive",
+	"version": "1.0.0",
+	"private": true,
+	"description": "Glassive — a theme for Obsidian.",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Flyingfolder/obsidian-glassive.git"
+	},
+	"license": "MIT",
+	"scripts": {
+		"build": "sass --no-source-map --style=expanded main1.scss theme.css && postcss theme.css --use autoprefixer --replace --no-map",
+		"watch": "sass --watch --no-source-map main1.scss theme.css",
+		"sync": "node scripts/sync-to-vault.mjs",
+		"lint": "stylelint \"theme.css\"",
+		"lint:fix": "stylelint \"theme.css\" --fix",
+		"check": "npm run build && npm run lint",
+		"version": "node version-bump.mjs && git add manifest.json versions.json"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.21",
+		"postcss": "^8.5.6",
+		"postcss-cli": "^11.0.1",
+		"sass": "^1.93.2",
+		"stylelint": "^17.0.0",
+		"stylelint-config-obsidianmd": "^0.1.0"
+	},
+	"browserslist": [
+		"Chrome >= 100",
+		"iOS >= 15"
+	]
+}

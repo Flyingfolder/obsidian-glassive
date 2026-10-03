@@ -1,0 +1,67 @@
+
+
+// root tab 显示动画 ============================
+
+@keyframes tab-appear-flex-grow-up {
+    from {
+        flex-grow: 0.6;
+    }
+    to {
+        flex-grow: 1;
+    }
+}
+
+// @keyframes blur-fade-in {
+//     from {
+//         opacity: 0;
+//         filter: blur(4px);
+//     }
+//     to {
+//         opacity: 1;
+//         filter: blur(0);
+//     }
+// }
+
+.app-container:not(.workspace-fake-target-container) .mod-root .workspace-tabs {
+    transform-origin: top center;
+}
+
+
+
+
+.app-container:not(.workspace-fake-target-container) .mod-root .workspace-tabs {
+        animation: 
+            fade-in-partial var(--anim-duration-moderate) linear none,
+            unblur var(--anim-duration-moderate) ease none,
+            tab-appear-flex-grow-up var(--anim-duration-moderate) ease;
+
+    // animation: 
+    //     tab-appear-flex-grow-up var(--anim-duration-moderate) ease,
+    //     blur-fade-in var(--anim-duration-moderate) ease none;
+}
+
+// @keyframes item-darken {
+//     from    {opacity: 1;}
+//     to      {opacity: 0.6}
+// }
+
+// .workspace-fake-target-container .mod-root .workspace-tabs {
+//     animation: item-darken var(--anim-duration-moderate) ease forwards;
+// }
+
+// // 排除情况：当页面中只有唯一一个tab的时候，删掉动画
+// .app-container:not(.workspace-fake-target-container) .mod-root>.workspace-tabs:nth-child(2):last-child,
+// // 排除情况：避免horizontal 的上面那个tab乱跳
+// .app-container:not(.workspace-fake-target-container) .mod-root .mod-horizontal>.workspace-tabs:nth-child(2) {
+//     animation: none;
+// }
+
+
+
+// 没有动画的情况：workspace-tabs 是唯一一个元素，它没有兄弟元素的时候（删掉动画）
+
+
+
+.app-container:not(.workspace-fake-target-container) .mod-root>hr + .workspace-tabs:last-child {
+    // animation: unset;
+}

@@ -1,0 +1,62 @@
+
+@use '../abstracts' as *;
+
+
+
+
+
+.mod-root {
+    .workspace-tabs:not(.mod-top) {
+        overflow: visible;
+
+        
+    }
+}
+
+
+.mod-root .workspace-tabs:not(.mod-top) {
+
+    border-top: var(--tab-outline-width) solid var(--tab-outline-color);
+
+    .workspace-tab-header-container {
+        background-color: $background-primary;
+    }
+}
+
+
+// 让divider 下沉 =========================================================================
+.mod-root {
+    .workspace-tabs {
+        overflow: visible;
+    }
+
+    .workspace-tab-header-container>* {
+        z-index: 6;
+        &.workspace-tab-header-spacer {pointer-events: none;}
+    }
+}
+
+
+// 让水平divider变透明
+
+.mod-root .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle, 
+.mod-root.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
+    --divider-width: 40px;
+
+    // height: --divider-width;
+    height: auto;
+    bottom: calc( var(--divider-width) * -1);
+    --divider-color-hover: transparent;
+    --divider-color: transparent;
+}
+
+
+// 修剪 divider 高度，避免影响 tab header
+// .workspace-split.mod-vertical>*>.workspace-leaf-resize-handle,
+.workspace-split.mod-primary-split>.workspace-leaf-resize-handle,
+.workspace-split.mod-secondary-split>.workspace-leaf-resize-handle {
+    //  height: calc(var(--divider-vertical-height) - var(--header-height));
+    //  border-color: red;
+
+     --divider-color: transparent;
+}

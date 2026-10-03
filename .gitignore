@@ -1,0 +1,16 @@
+# Editors
+.vscode
+.idea
+*.iml
+
+# Node
+node_modules
+
+# Generated sourcemaps
+*.map
+
+# Local sync target (absolute path to the vault snippet folder, machine-specific)
+.sync-target
+
+# macOS
+.DS_Store

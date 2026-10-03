@@ -1,0 +1,33 @@
+
+
+
+
+@use '../abstracts' as *; 
+
+
+.wrapper.modal-form>.body>.template {
+    font-size: $font-ui-small;
+    .options-container {
+        label.field-group {
+            gap: 4px;
+        }
+        input[type="checkbox"] {
+        order: -1;
+        margin: unset;
+    }
+    }
+
+
+
+    h6, h4, .fields-list {
+        font-size: 17px;
+        font-weight: 600;
+    }
+
+    ul {
+        font-size: $font-ui-small;
+        font-weight: 400;
+    }
+
+
+}

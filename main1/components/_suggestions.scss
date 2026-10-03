@@ -1,0 +1,139 @@
+
+
+
+
+@use '../abstracts' as *; 
+
+
+// body
+
+
+// animation
+.suggestion-container {
+    transform-origin: 50% -20%;
+    animation: 
+        fade-in var(--anim-duration-moderate) ease-out none, 
+        pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) forwards;
+
+    @include liquid-glass-bg-normal($with-shadow: true);
+
+    corner-shape: squircle;
+    border-radius: 32px;
+
+    .suggestion {
+        padding: 8px;
+    }
+    .suggestion-item {
+        corner-shape: squircle;
+        border-radius: 32px;
+    }
+    .prompt-instructions {
+        padding: unset;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 24px;
+        border-top: 1px solid $background-modifier-seperator;
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+
+
+
+.suggestion-container:has(.search-input-container) {
+
+
+    background-color: unset;
+    backdrop-filter: unset;
+    border: unset;
+    box-shadow: unset;
+    
+    overflow: visible;
+    
+
+    .search-input-container {
+        // background-color: var(--suggestion-background);
+        @include liquid-glass-bg-normal($with-shadow: false);
+
+        box-shadow: var(--shadow-s), var(--glass-shadow-inset-s);
+        
+        input {
+            box-shadow: none !important;
+        }
+    }
+
+    .suggestion {
+        // background-color: var(--suggestion-background);
+
+        border-radius: 16px;
+        padding: 8px;
+
+        box-shadow: var(--shadow-l), var(--glass-shadow-inset-l), var(--glass-shadow-inset-edge);
+
+
+        @include liquid-glass-bg-normal($with-shadow: false);
+
+    }
+
+
+}
+
+
+
+
+.suggestion-container:has(.search-input-container) {
+    animation: unset;
+    gap: 8px;
+    isolation: isolate;
+
+    /* 3. 背景层 (伪元素)：负责 模糊 + 遮罩 + 淡入动画 */
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0 0 auto 0;
+        height: 80px;
+        background-color: transparent;
+        backdrop-filter: blur(4px);
+
+        mask-image:
+            linear-gradient(to bottom, transparent 0%, #000 8px, #000 calc(100% - 36px), transparent 100%),
+            linear-gradient(to right, transparent 0%, #000 12px, #000 calc(100% - 12px), transparent 100%);
+        mask-composite: intersect;
+
+    }
+
+
+
+    // 其他元素 ------------------------------------------------------------------------------------
+    .search-input-container {
+        transform-origin: 0 -40px;
+        animation:
+            fade-in var(--anim-duration-fast) ease-out  both,
+            pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99)  both;
+    }
+
+    .suggestion {
+        transform-origin: 0 -160px;
+        animation:
+            fade-in var(--anim-duration-moderate) ease-out 60ms both,
+            pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) 30ms both;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

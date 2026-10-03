@@ -1,0 +1,46 @@
+
+
+
+@use '../abstracts' as *; 
+
+@media (hover: hover) {
+    .markdown-source-view.mod-cm6 .cm-embed-block:not(.cm-table-widget, .cm-lang-base):hover {
+        // box-shadow: var(--embed-block-shadow-hover);
+        border-radius: 40px;
+        corner-shape: squircle;
+    }
+}
+
+.markdown-source-view.mod-cm6 .cm-embed-block {
+    .embed-actions {
+        top: 8px;
+        right: 8px;
+    }
+
+    .embed-action {
+        padding: 6px;
+        border-radius: 100px;
+        corner-shape: unset;
+    }
+}
+
+
+.cm-embed-block.cm-callout {
+    &:has(+.cm-line.cm-active) {
+        z-index: 1;
+        animation: 
+            fade-in var(--anim-duration-slow) ease-out none,
+            move-up-far var(--anim-duration-moderate) ease-out none;
+    }
+}
+
+
+.callout {
+    --callout-radius: 40px;
+    corner-shape: squircle;
+
+
+    box-shadow:  var(--glass-shadow-inset-l);
+
+}
+

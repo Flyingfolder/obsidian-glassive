@@ -1,0 +1,46 @@
+
+
+
+@use '../abstracts' as *; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    --background-modifier-hover:  #{$background-modifier-hover};
+    --radius-s: 6px;
+
+    --input-radius: #{$input-radius};
+
+    
+    --text-muted: #{$text-muted};
+    --text-faint: #{$text-faint};
+    --text-muted-on-accent: #{$text-muted-on-accent};
+}
+
+
+
+.theme-light {
+    --background-primary: var(--color-base-00);
+    --background-primary-alt: rgba(var(--mono-rgb-100), 0.03);
+    --background-secondary: var(--color-base-20);
+}
+
+.theme-dark {
+    --background-primary: var(--color-base-20);
+    --background-primary-alt: rgba(var(--mono-rgb-100), 0.03);
+    --background-secondary: var(--color-base-00);
+}

@@ -1,0 +1,64 @@
+
+
+@use '../abstracts' as *; 
+
+
+body {
+  --nav-item-size: var(--font-ui-small);
+  --nav-item-radius: var(--radius-m);
+  --nav-item-color: #{$text-normal};
+  --nav-item-color-hover: var(--text-normal);
+  --nav-item-color-active: var(--text-normal);
+  --nav-item-color-selected: var(--text-normal);
+  --nav-item-color-highlighted: var(--text-accent);
+  --nav-item-background-hover: var(--background-modifier-hover);
+  --nav-item-background-active: var(--background-modifier-hover);
+  --nav-item-background-selected: color-mix(in oklch, var(--color-accent) 15%, transparent);
+  --nav-item-padding: var(--size-4-1) var(--size-4-2) var(--size-4-1) var(--size-4-6);
+  --nav-item-parent-padding: var(--nav-item-padding);
+  --nav-item-margin-bottom: var(--size-2-1);
+  --nav-item-children-padding-start: var(--size-2-2);
+  --nav-item-children-margin-start: var(--size-4-3);
+  --nav-item-weight: inherit;
+  --nav-item-weight-hover: inherit;
+  --nav-item-weight-active: inherit;
+  --nav-item-white-space: pre;
+
+
+  --nav-indentation-guide-width: var(--indentation-guide-width);
+  --nav-indentation-guide-color: var(--indentation-guide-color);
+  --nav-collapse-icon-color: var(--collapse-icon-color);
+  --nav-collapse-icon-color-collapsed: var(--text-faint);
+  --nav-heading-color: var(--text-normal);
+  --nav-heading-color-hover: var(--text-normal);
+  --nav-heading-color-collapsed: var(--text-faint);
+  --nav-heading-color-collapsed-hover: var(--text-muted);
+  --nav-heading-weight: var(--font-medium);
+  --nav-heading-weight-hover: var(--font-medium);
+  --nav-tag-background: transparent;
+  --nav-tag-radius: var(--radius-s);
+  --nav-tag-color: var(--text-faint);
+  --nav-tag-color-hover: var(--text-muted);
+  --nav-tag-color-active: var(--text-muted);
+  --nav-tag-weight: var(--font-semibold);
+
+
+}
+
+
+
+.tree-item-self {
+    align-items: baseline;
+    display: flex;
+    border-radius: 20px;
+    corner-shape: squircle;
+    // corner-shape: var(--corner-shape);
+    // color: var(--nav-item-color);
+    // font-size: var(--nav-item-size);
+    line-height: $line-height-ui-small;
+    // font-weight: var(--nav-item-weight);
+    // margin-bottom: var(--nav-item-margin-bottom);
+    padding: var(--nav-item-padding);
+
+    --nav-tag-color: #{$text-muted};
+}

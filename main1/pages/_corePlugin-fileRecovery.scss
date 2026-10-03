@@ -1,0 +1,109 @@
+
+
+@use '../abstracts' as *; 
+
+
+
+
+.modal.mod-sync-history.mod-sidebar-layout {
+
+    @include modal-with-sidebar($sidebar-wrapper: 'modal-sidebar.mod-history', $sidebar-scroller: 'modal-sidebar-list');
+    background-color: var(--background-primary);
+
+    // 左侧 ------------------------------------------
+    
+    // sidebar
+
+    .modal-sidebar-inner {
+        border: unset;
+        background-color: unset;
+
+    }
+
+    // .modal-sidebar-inner {
+    //     overflow-y: scroll;
+    //     position: relative;
+
+    //     .search-input-container {
+    //         position: sticky;
+    //         top: 8px;
+    //         z-index: 1;
+    //     }
+
+    //     .modal-sidebar-list {
+    //         overflow: visible;
+    //     }
+
+    // }
+
+
+
+
+
+
+
+
+    // sidebar item
+    .file-recovery-list-item-header {
+        @include liquid-sidebar-item($is-selected-status-name: ".is-active");   
+        min-height: 36px;
+        padding-inline-start: 10px;
+    }
+
+    .file-recovery-list-item-details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+
+
+
+    // // 右侧 ------------------------------------------
+    // // toolbar
+    // .sync-history-content {position: relative;}
+    // .modal-setting-titlebar {
+    //     @include liquid-toolbar;
+    // }
+
+
+    // // toolebar-title 
+    // .modal-setting-title {
+    //     font-size: $font-ui-small;
+    //     font-weight: 500;
+    //     font-size: 15px;
+    //     padding-left: 8px;
+    // }
+
+    // // toolbar items
+    // .modal-setting-titlebar-actions {gap: 16px;}
+    
+    // button {
+    //     @include liquid-toolbar-item-text;
+    // }
+    // // 把特殊的按钮变成 text-button
+    // .modal-setting-titlebar-toggle {
+    //     @include toggle-as-button;
+    //     @include liquid-toolbar-item-text;
+    // }    
+
+
+    // // toolbar 下方的正文部分
+    // .file-recovery-text,
+    // .file-recovery-diff {
+    //     padding-top: 60px;
+    // }
+}
+
+
+// .modal.mod-sync-history.mod-sidebar-layout textarea:hover {
+//     background-color: var(--background-primary);
+// }
+
+
+
+
+
+
+

@@ -1,0 +1,146 @@
+
+
+
+
+
+
+@use 'variables-swiftive' as *; 
+
+
+@use 'mixins-liquid-SidebarandToolbar' as *;
+
+
+
+@mixin tab-views {
+
+    @include liquid-toolbar-item($toolbar-item-width: fit-content);
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+
+    gap: 3px;
+    padding: 3px;
+
+    
+}
+
+
+
+@mixin tab-view-label($element-name, $is-selected-status-name) {
+
+    #{$element-name} {
+        border-radius: unset;
+        border: unset;
+        box-shadow: unset;
+        background-color: unset;
+        min-height: unset;
+        max-width: unset;
+        margin: unset;
+        transform: unset;
+        transition: unset;
+
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: $control-height-m;
+        
+        padding: 0 10px; 
+        gap: 4px;
+
+        
+
+        font-size: var(--font-ui-small); 
+        font-weight: 400;
+
+        border-radius: 18px;
+
+        cursor: default;
+        
+
+        &:hover {background-color: $background-modifier-hover-subtle;}
+        &:active {background-color: $background-modifier-hover-strong;}
+    }
+
+
+
+    #{$element-name}#{$is-selected-status-name} {
+        background-color: $background-modifier-hover;
+        color: var(--text-normal);
+        padding: 0 10px;
+        &:active {background-color: $background-modifier-hover-strong;}
+        
+    }
+
+
+    #{$element-name} {
+        position: relative;
+
+        &:not(:last-child)::before {
+            content: "";
+            inset: 3px -2px 3px auto;
+            position: absolute;
+            z-index: 1;
+            width: 1px;
+            background-color: var(--background-modifier-border);
+        }
+    }
+
+    #{$element-name}:has(+#{$element-name}:hover)::before,
+    #{$element-name}:hover::before,
+    #{$is-selected-status-name}::before,
+    #{$element-name}:has(+ #{$is-selected-status-name})::before {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// 例子：日历的 left-sidebar 的 view-container
+@mixin segmented-controls {
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-self: center;
+
+    width: auto;
+    height: 28px;
+
+    gap: 1px;
+    padding: unset;
+    margin: unset;
+    
+    background-color: $background-modifier-hover-subtle;
+    box-shadow: none;
+
+    border: unset;
+    border-radius: 14px;
+
+    overflow: hidden;
+}
+
+@mixin segmented-control-label($is-selected-status-name) {
+    display: flex;
+    border-radius: 14px;
+
+    &:hover {background-color: $background-modifier-hover-subtle;}
+    &:active {background-color: $background-modifier-hover-strong;}
+
+    &#{$is-selected-status-name} {
+        background-color: $interactive-accent;
+        color: var(--text-on-accent);
+    }
+
+    padding: unset;
+}
+
+

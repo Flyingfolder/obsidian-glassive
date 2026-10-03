@@ -1,0 +1,128 @@
+
+@use '../abstracts' as *;
+
+// 右侧栏 · 多个标签组 ========================================================
+// 需求：右侧栏内存在 2 个及以上 .workspace-tabs（即多个标签组）时命中。
+
+
+// 制作两行 tab header contianer 的 layout
+
+.mod-sidedock.mod-right-split:has(.workspace-tabs ~ .workspace-tabs) {
+
+    --divider-color: transparent;
+
+    .workspace-tabs,
+    .workspace-tabs.mod-top {
+        --sidebar-tab-container-background: transparent;
+    }
+
+
+    .workspace-tabs.mod-top .workspace-tab-header-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+        
+        height: unset;
+        padding-right: unset !important;
+        
+
+        .workspace-tab-header-spacer {
+            height: var(--header-height);
+            width: 100%;
+            order: -1;
+
+            background-color: var(--tab-container-background);
+            border-bottom: var(--tab-outline-width) solid var(--tab-outline-color);
+        }
+        .workspace-tab-header-container-inner {
+            width: 100%;
+            height: var(--header-height);
+            background-color: unset;
+            margin: unset;
+            padding-top: 7px;
+        }
+    }
+}
+
+
+
+// 当出现多个 tabs 的时候的情况
+.workspace-split.mod-right-split {
+    transition: background-color var(--anim-duration-slow) ease;
+
+    &:has(.workspace-tabs ~ .workspace-tabs) {
+        --tab-container-background: #{$background-primary};
+
+        .workspace-tab-container {
+            border-radius: 40px;
+            corner-shape: squircle;
+            margin-right: 20px;
+            margin-bottom: 12px;
+
+
+            box-shadow: var(--glass-shadow-inset-edge) , var(--glass-shadow-inset-l);
+        }
+
+
+        .workspace-tab-header-container {
+            border-bottom: unset;
+            padding-left: unset;
+        }
+        .workspace-tab-header-container-inner {
+            padding-left: 16px;
+        }
+    }
+}
+
+
+
+.titlebar .workspace-tab-header-tab-list,
+.mod-root .workspace-tab-header-tab-list {
+    display: none;
+}
+
+
+
+
+
+// 给nav-header 的 search container 增加复杂的显示动画
+.nav-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    .nav-buttons-container {
+        flex-wrap: nowrap;
+        .nav-action-button {
+            border-radius: 99px;
+            corner-shape: unset;}
+    }
+    .search-input-container {
+
+        width: unset;
+        margin: unset;
+        margin-left: 12px;
+        
+        flex: auto;
+        flex-basis: 0;
+
+
+        transition: 
+            flex-grow   var(--anim-duration-slow) ease,
+            opacity     var(--anim-duration-moderate) ease,
+            margin      var(--anim-duration-moderate) ease;
+
+        input {transition: padding var(--anim-duration-moderate) ease;}
+        &[style="display: none;"] {
+            display: block !important;
+            padding: 0;
+            opacity: 0;
+            flex-grow: 0;
+            margin-left: 0px;
+
+            input {padding: 0;}
+
+        }
+    }   
+}

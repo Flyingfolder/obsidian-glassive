@@ -1,0 +1,76 @@
+
+
+
+
+@use '../abstracts' as *;
+
+.workspace-split.mod-root .workspace-tab-header-tab-list,
+.workspace .mod-root .workspace-tab-header-inner::after,
+.workspace-tab-header-container .workspace-tab-header::before,
+.workspace-tab-header-container .workspace-tab-header::after {
+    display: none;
+}
+
+
+
+.theme-light .mod-root {
+    --tab-inner-background-active: #{$background-primary};
+}
+
+.theme-dark .mod-root {
+    --tab-inner-background-active: #{var(--color-base-35)};
+}
+
+.workspace-split.mod-root {
+    --tab-background-active: transparent; //掌管tabheader（不是inner）的bg
+
+    // 重制 ------------------------------------------------------------------------
+    .workspace-tab-header {
+        corner-shape: unset;
+        // padding: unset;
+        box-shadow: unset;
+        padding: 0px 4px 5px; //重新对齐icon
+        &:hover {box-shadow: unset;}
+    }
+
+    .sidebar-toggle-button,
+    .workspace-tab-header-container {
+        --tab-container-background: #{$background-primary};
+        // z-index: 1;
+        border: unset;
+    }
+
+
+
+
+    // 设计 style ------------------------------------------------------------
+    .workspace-tab-header-inner {
+        border-radius: 20px;
+        corner-shape: squircle;
+    }
+
+
+
+    // bg
+    .workspace-tab-header-inner {
+        background-color: $background-modifier-hover-exsubtle;
+        transition: box-shadow var(--anim-duration-moderate) ease;
+    }
+
+    .workspace-tab-header.is-active .workspace-tab-header-inner {
+        box-shadow: 
+            var(--glass-shadow-inset-for-control),
+            var(--shadow-card-mini);
+    }
+
+    // 其他的 style
+    .workspace-tab-header-inner-title {
+        text-overflow: clip;
+    }
+
+    // 保证阴影能溢出
+    .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
+        overflow: clip;
+        overflow-clip-margin: 35px;
+    }
+}

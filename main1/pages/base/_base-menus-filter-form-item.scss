@@ -1,0 +1,166 @@
+
+
+@use '../../abstracts' as *; 
+
+
+
+.bases-query-container {
+    --metadata-input-background-active: transparent;
+    --row-height: 42px;
+    --container-edge-addto-row: 6px;
+}
+
+
+
+
+// 0 删除 ========================================================================
+.bases-query-container .filter-row {
+    &>.conjunction {display: none;}
+    .combobox-button-chevron {display: none;}
+
+}
+
+.bases-query-container .filter-group {
+    gap: unset;
+    position: relative;
+
+    .filter-group {
+        background-color: unset;
+        border-radius: unset;
+        padding: unset;
+        border: unset;
+    }
+
+    .filter-group-statements {
+        gap: unset;
+    }
+
+
+    // 补丁: 删掉group中的添加group按钮
+    .filter-group .filter-group-actions .text-icon-button:nth-child(2) {
+        display: none;
+    }
+
+}
+
+
+
+.bases-toolbar-menu .bases-toolbar-section:not(:last-child) .bases-toolbar-section-content {
+    padding-bottom: 12px;
+}
+
+.bases-query-container {
+    // padding-top: 0;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 16px;
+}
+
+
+.bases-query-container .filter-expression {
+
+
+    background-color: unset;
+    box-shadow: none;
+    border-radius: unset;
+    overflow: visible;
+    gap: 4px;
+
+
+
+    .combobox-button.has-focus {
+        --input-border-width-focus: 2px;
+        box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
+
+
+    }
+
+    .filter-rhs-container {
+        @include input-search-s;
+        
+        // When - 选中时
+        overflow: visible;
+        --input-border-width-focus: 2px;
+        .metadata-input-longtext {
+            box-shadow: 0 0 0 1px var(--background-modifier-border);
+            border-radius: 40px;
+            corner-shape: squircle;
+            min-height: 28px;
+        }
+
+        .metadata-input-longtext:focus,
+        input:focus {
+            box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus) !important;
+        }
+    }
+
+    .combobox-button {
+        border-radius: 40px;
+        corner-shape: squircle;
+        background-color: transparent;
+        &:hover {background-color: $background-modifier-hover-subtle;}
+
+    }
+
+} 
+
+
+
+
+
+.bases-query-container>.filter-group {
+
+    .filter-group-actions {
+        padding: unset;
+        min-height: var(--row-height);
+        align-items: center;
+        gap: 10px;
+    }
+
+    .filter-group .filter-group-actions {
+        position: absolute;
+        right: 28px;
+        .text-icon-button {
+            background-color: unset;
+            color: $text-muted;
+            &:hover {background-color: $background-modifier-hover;}
+        }
+    }
+
+    .filter-group-header .conjunction.dropdown,
+    .text-icon-button {
+        height: $control-height-m;
+        background-color: $background-modifier-hover;
+        color: $text-normal;
+        border-radius: 40px;
+        corner-shape: squircle;
+    }
+
+
+
+    .filter-operator,
+    .filter-property-select {
+        align-self: auto;
+        border: unset;
+        height: $control-height-m;
+        border-radius: 40px;
+        corner-shape: squircle;
+    }
+}
+
+
+
+
+
+
+.bases-query-container>.filter-group {
+    .filter-group-header {
+        padding-right: 2px;
+    }
+    .filter-group .conjunction.dropdown {
+        background-color: unset !important;
+
+        
+    }
+}
+

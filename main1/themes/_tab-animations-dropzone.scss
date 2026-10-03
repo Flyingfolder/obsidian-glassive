@@ -1,0 +1,63 @@
+
+
+// workspace-fake-target-overlay =========================================================
+
+.workspace-tabs[style="opacity: 0;"] {
+    transition: opacity var(--anim-duration-moderate) ease;
+}
+
+
+
+.workspace-fake-target-overlay {
+    animation: fade-in-partial var(--anim-duration-slow) ease-out none;
+}
+
+// 拖拽时候出现的一坨颜色，用来预览放置新tab的位置.workspace-drop-overlay ========================================================
+.workspace-drop-overlay {
+    transition: unset;
+}
+.workspace-drop-overlay::before {
+    border: 2px solid var(--interactive-accent);
+    margin: unset;
+
+    background-color: unset;
+    border-radius: 20px;
+    opacity: 1;
+
+}
+
+// 处于 tab-header 中
+.workspace-drop-overlay[style *= "width: 10px"]::before {
+    width: 0;
+    height: auto;
+    inset: 0;
+   
+    translate: 4px 0;
+}
+
+// 不处于 tab-header 中
+@keyframes drop-overlay-scale {
+    from {
+        scale: 0.6 0.8;
+    }
+    to {
+        scale: 1;
+    }
+}
+.workspace-drop-overlay:not([style *= "width: 10px"])::before {
+    width: auto;
+    height: auto;
+    inset: 12px;
+
+    box-shadow: inset 0 0 0 2px var(--interactive-accent),
+        inset 0 0 20px hsla(var(--interactive-accent-hsl), 0.4),
+        inset 0 0 60px hsla(var(--interactive-accent-hsl), 0.6),
+        inset 0 0 220px var(--color-base-25);
+
+    transform-origin: 100% center;
+    animation: 
+        drop-overlay-scale 200ms ease,
+        fade-in var(--anim-duration-moderate) ease-in none;
+}
+
+

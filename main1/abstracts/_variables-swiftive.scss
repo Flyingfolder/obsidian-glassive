@@ -1,0 +1,102 @@
+
+
+
+
+
+$control-height-xs: 20px;
+$control-height-s: 24px;
+$control-height-m: 28px;
+$control-height-l: 32px;
+$control-height-xl: 36px;
+
+
+$radius-s: 6px;
+$radius-m: 8px;
+$radius-l: 12px;
+$radius-xl: 16px;
+// $modal-radius: 20px;
+
+
+
+/* Backgrounds */
+$background-primary: var(--background-primary);
+$background-primary-alt: var(--background-primary-alt);
+$background-secondary: var(--background-secondary);
+
+$background-modifier-hover-exsubtle:rgba(var(--mono-rgb-100), 0.035); 
+$background-modifier-hover-subtle: rgba(var(--mono-rgb-100), 0.050); 
+$background-modifier-hover:        rgba(var(--mono-rgb-100), 0.075); 
+$background-modifier-hover-strong: rgba(var(--mono-rgb-100), 0.120); 
+
+$background-modifier-active-hover: hsla(var(--interactive-accent-hsl), 0.1);
+
+
+$background-modifier-seperator: rgba(var(--mono-rgb-100), 0.12);
+$background-modifier-border: var(--color-base-30);
+$background-modifier-border-hover: var(--color-base-35);
+$background-modifier-border-focus: var(--color-base-40);
+$background-modifier-border-subtle: rgba(var(--mono-rgb-100), .08);
+
+$background-modifier-error-rgb: var(--color-red-rgb);
+$background-modifier-error: var(--color-red);
+$background-modifier-error-hover: var(--color-red);
+$background-modifier-success-rgb: var(--color-green-rgb);
+$background-modifier-success: var(--color-green);
+$background-modifier-message: rgba(0, 0, 0, 0.9);
+
+/* Inputs */
+$background-modifier-form-field: var(--color-base-00);
+$background-modifier-form-field-hover: var(--background-modifier-form-field);
+
+
+/* Text */
+
+$text-on-accent: white;
+$text-on-accent-inverted: black;
+$text-error: var(--color-red);
+$text-warning: var(--color-orange);
+$text-success: var(--color-green);
+$text-selection: hsla(var(--color-accent-hsl), 0.2);
+$text-highlight-bg-rgb: 255, 208, 0;
+$text-highlight-bg: rgba(var(--text-highlight-bg-rgb), 0.4);
+$text-accent: var(--color-accent);
+$text-accent-hover: var(--color-accent-2);
+$interactive-normal: var(--color-base-00);
+$interactive-hover: var(--color-base-10);
+$interactive-accent-hsl: var(--color-accent-hsl);
+$interactive-accent: var(--color-accent-1);
+$interactive-accent-hover: var(--color-accent-2);
+
+
+$text-normal: var(--color-base-100);
+$text-muted: rgba(var(--mono-rgb-100), 0.55);
+$text-faint: var(--color-base-50);
+$text-muted-on-accent: rgba(255, 255, 255, 0.75);
+
+
+$line-height-ui-smaller: 14px;
+$line-height-ui-small: 16px;
+$line-height-control: $line-height-ui-small;
+
+/* UI font sizes */
+$font-ui-smaller: 12px;
+$font-ui-small: 13px;
+$font-ui-medium: 15px;
+$font-ui-large: 20px;
+
+
+
+
+
+$input-radius: 10px;
+$input-radius-s: 6px;
+
+
+
+$menu-group-gap: 6px;
+
+
+
+
+
+

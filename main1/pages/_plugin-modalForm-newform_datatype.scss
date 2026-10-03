@@ -1,0 +1,156 @@
+
+
+
+@use '../abstracts' as *; 
+
+
+
+
+
+@mixin form-item-flex($label-height: 35px) {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 35px;
+    
+    label {line-height: $label-height;}
+}
+
+@mixin label {
+    order: 1;
+    color: $text-muted;
+    text-align: center;
+    font-size: $font-ui-smaller;
+    font-weight: 600;
+    font-size: 11px;
+}
+
+
+
+.wrapper.modal-form>.body>form>fieldset.fields {
+    .modal-form-hint {
+        font-size: $font-ui-smaller;
+        margin-bottom: 4px;
+        pre {
+            margin: 8px 0;
+            text-align: center;
+        }
+    }
+    input+.modal-form-hint {
+        margin-top: 4px;
+    }
+
+
+    .setting-item {
+        background-color: unset;
+        margin: unset;
+    }
+    button {
+        margin: unset;
+    }
+
+    // 1
+    &>div:has( [for *= "input_folder"]) {
+        // background-color: yellowgreen;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .modal-form,
+        .field-group {
+            @include form-item-flex;
+            label {opacity: 0;}
+        }
+
+        .field-group:first-child,
+        .modal-form-folder-row:nth-child(2) {
+            // flex-direction: column;
+            // align-items: center;
+            label {opacity: 1;}
+        }
+
+        .modal-form-folder-row {
+            align-items: center;
+            gap: 6px;
+        }
+
+    }
+
+    &>div:has([for *="input_folder"]):has(button.modal-form-folder-action) {
+        position: relative;
+
+        padding-bottom: 40px;
+
+        .modal-form-folder-row:nth-child(2) button.modal-form-folder-action {
+            position: absolute;
+            bottom: 0;
+            margin: unset;
+            inset: auto 0 6.5px auto;
+        }
+    }
+
+
+
+
+
+
+    // 2 slider ------------------------------------------------------------------
+
+    &>div:has([id *= 'min']) {
+        justify-content: flex-end;
+        gap: 8px;
+        input {
+            width: 60px;
+            min-width: unset;
+        }
+        label {
+            @include label;
+        }
+    }
+
+
+
+    // select,
+    // multiselect - static
+
+    &>div:has([for *= 'builder_select']) {
+        flex-direction: column;
+
+        &>.field-group:first-child {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            select {margin-left: auto;}
+            .modal-form-hint {
+                padding-left: 24px;
+                color: $text-faint;
+            }
+            label span {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        &>.field-group:nth-child(2) {
+            &>div:first-child {
+                display: none;
+            }
+            &>button:nth-child(2) {
+                order: 1;
+                width: fit-content;
+                align-self: flex-end;
+                margin: 5.5px 0;
+            }
+
+            .modal-form {
+                label {display: none;}
+                min-height: 35px;
+                justify-content: flex-end;
+                align-items: center;
+
+                input {margin: 0 6px;}
+            }
+        }
+    }
+}

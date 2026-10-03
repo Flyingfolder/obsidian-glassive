@@ -1,0 +1,135 @@
+
+@use 'variables-swiftive' as *; 
+
+
+
+
+
+@mixin button-s {
+    height: $control-height-s;
+    padding: 0 8px;
+    background-color: var(--color-base-25);
+    border-radius: $radius-s;
+
+    box-shadow: unset;
+
+    &:hover {background-color: var(--color-base-35);}
+    &:active {background-color: var(--color-base-40);}
+}
+
+
+
+@mixin toggle-s {
+    --toggle-s-border-width: 1.5px;
+    --toggle-s-width: 36px;
+    --toggle-s-thumb-height: 13px;
+    --toggle-s-thumb-width: 21px;
+
+    --toggle-border-width: var(--toggle-s-border-width);
+    --toggle-width: var(--toggle-s-width);
+    --toggle-thumb-height: var(--toggle-s-thumb-height);
+    --toggle-thumb-width: var(--toggle-s-thumb-width);
+}
+
+
+
+
+// 用来处理复杂背景的按钮交互 （传统的 background-color 叠加无法满足需求了）
+@mixin button-interaction {
+    position: relative;
+    
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        background-color: transparent;
+        inset: 0;
+        border-radius: inherit;
+        opacity: 1;
+        pointer-events: none;
+    }
+    &:hover::after {
+        background-color: $background-modifier-hover-subtle;
+    }
+    &:active::after {
+        background-color: $background-modifier-hover-strong;
+    }
+}
+
+
+
+
+
+
+// 把toggle变成按钮
+@mixin toggle-as-button {
+    position: relative;
+
+    .checkbox-container {
+        opacity: 0;
+        position: absolute;
+        inset: 0;
+        width: unset;
+        height: unset;
+    }
+
+    &:has(.is-enabled) {
+        background: var(--interactive-accent) ;
+        color: var(--text-on-accent);
+    }
+
+    @include button-interaction;
+}
+
+
+
+
+// 专门为添加按钮设计的样式，适用于各种场景下的添加操作（如添加标签、添加属性等）。
+@mixin add-button {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding: 4px;
+
+    font-size: $font-ui-small;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--text-muted);
+
+    border-radius: $radius-s;
+    background-color: unset;
+
+    transition: none;
+    cursor: default;
+
+    &:hover {
+        color: $text-muted;
+        background-color: $background-modifier-hover;
+    }
+
+}
+
+
+
+
+$form-group-padding: 6px;
+$form-row-padding: 7px;
+$form-row-height: 42px;
+
+
+@mixin form-row {
+
+
+    padding: $form-row-padding 0;
+    min-height: $form-row-height;
+    display: flex;
+    align-items: center;
+}
+
+@mixin form-group {
+
+
+    padding: $form-group-padding;
+}

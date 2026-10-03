@@ -1,0 +1,22 @@
+
+
+
+@use '../abstracts' as *; 
+
+
+
+
+.mod-secondary-split .workspace-tab-header-container {
+    .workspace-tab-header-container-inner {
+        padding-right: 32px;
+    }
+
+    .workspace-tab-header:has(.mod-pinned) {
+        order: 1;
+        margin-left: auto;
+    }
+
+    .workspace-tab-header-status-icon.mod-pinned {
+        pointer-events: none;
+    }
+}

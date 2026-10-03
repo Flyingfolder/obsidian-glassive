@@ -1,0 +1,254 @@
+
+
+@use '../abstracts' as *; 
+
+
+@use 'detailed-pages/commander-macros';
+
+
+
+
+
+
+
+.cmdr-setting-modal>.modal {
+    max-width: 900px;
+    padding: 0;
+
+}
+.cmdr-setting-title {
+    display: none;
+}
+
+
+
+.modal-container.cmdr-setting-modal {
+
+    .cmdr-setting-header {
+        margin: unset;
+
+        .cmdr-fill {
+            display: none;
+        }
+
+        .cmdr-setting-tab-group {
+            display: flex;
+            flex-direction: column;
+            border: unset;
+            align-items: stretch;
+            height: 100%;
+        }
+
+        .cmdr-tab.cmdr-tab-active {
+            transform: unset;
+            border: unset;
+        }
+
+        // .cmdr-tab:first-child {
+        //     margin: unset;
+        //     order: 1;
+        //     margin-top: auto !important;
+        // }
+
+
+        
+    }
+}
+
+.modal-container.cmdr-setting-modal {
+        
+        display: flex;
+        flex-direction: row;
+
+    .modal {
+        @include modal-with-sidebar($sidebar-wrapper: cmdr-setting-header, $sidebar-scroller: cmdr-setting-tab-group);
+    }
+    .modal-content .cmdr-setting-header {
+
+        
+        width: 200px;
+
+        .cmdr-tab {@include liquid-sidebar-item($is-selected-status-name: ".cmdr-tab-active");}
+
+
+
+
+        // .cmdr-tab:first-child {
+        //     position: absolute;
+        //     inset: $toolbar-padding $toolbar-padding auto auto;
+        //     font-size: 0px;
+        //     gap: unset;
+            
+
+        //     @include liquid-toolbar-item-icon;
+
+        //     position: absolute;
+        //     top: 7px;
+        //     left: 7px;
+
+        //     font-size: 0px;
+
+        //     &.cmdr-tab-active {
+        //         background-image: linear-gradient($interactive-accent, $interactive-accent);
+        //         color: $text-on-accent;
+        //     }
+
+        //     // 删掉divider 并更换成 icon
+        //     &::before {
+        //         display: none;
+        //     }
+
+
+        //     &::before {
+        //         content: "";
+        //         display: inline-block !important;
+        //         inset: auto;
+        //         position: relative;
+
+        //         width: 20px;
+        //         height: 20px;
+
+        //         background-color: currentColor;
+        //         mask-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMzNjM2MzYiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXNldHRpbmdzLWljb24gbHVjaWRlLXNldHRpbmdzIj48cGF0aCBkPSJNOS42NzEgNC4xMzZhMi4zNCAyLjM0IDAgMCAxIDQuNjU5IDAgMi4zNCAyLjM0IDAgMCAwIDMuMzE5IDEuOTE1IDIuMzQgMi4zNCAwIDAgMSAyLjMzIDQuMDMzIDIuMzQgMi4zNCAwIDAgMCAwIDMuODMxIDIuMzQgMi4zNCAwIDAgMS0yLjMzIDQuMDMzIDIuMzQgMi4zNCAwIDAgMC0zLjMxOSAxLjkxNSAyLjM0IDIuMzQgMCAwIDEtNC42NTkgMCAyLjM0IDIuMzQgMCAwIDAtMy4zMi0xLjkxNSAyLjM0IDIuMzQgMCAwIDEtMi4zMy00LjAzMyAyLjM0IDIuMzQgMCAwIDAgMC0zLjgzMUEyLjM0IDIuMzQgMCAwIDEgNi4zNSA2LjA1MWEyLjM0IDIuMzQgMCAwIDAgMy4zMTktMS45MTUiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIzIi8+PC9zdmc+');
+        //         mask-size: contain;
+        //         mask-repeat: no-repeat;
+        //         mask-position: center;
+        //     }
+
+        // }
+    }
+}
+
+.modal-content {
+    height: 100%;
+    .cmdr-setting-content {
+        flex: 1;
+        
+        padding: 50px 32px;
+
+        height: auto;
+        overflow: auto;
+    }
+}
+
+
+
+// ==============================================================================================================================================================
+// 右边 =================================================================================================================================================================
+// ============================================================================================================================================================
+
+
+
+// 组件 - Add new button
+
+.cmdr-add-new-wrapper {
+    justify-content: flex-start;
+    button {margin: unset;}
+    
+}
+
+
+
+
+// 组件 - 分割线 及其之后的 callout
+
+hr:has(+.cmdr-sep-con.callout) {
+    display: none;
+}
+
+.cmdr-setting-content .cmdr-sep-con.callout {
+    display: flex;
+    flex-direction: column;
+
+    p {
+        font-size: $font-ui-small;
+        color: $text-muted;
+        margin: 4px 0 0;
+    }
+
+    button {
+        cursor: pointer;
+        background-color: unset;
+        box-shadow: unset;
+        color: $text-accent;
+        padding: 4px 0;
+        height: $control-height-s;
+        align-self: flex-end;
+    }
+}
+
+
+
+
+
+
+
+
+// 页面 - empty info 
+
+.cmdr-commands-empty {
+    align-items: flex-start;
+    margin: unset;
+    // icon
+    .cmdr-icon-wrapper {
+        --icon-size: 92px;
+  
+        svg {
+            width: var(--icon-size);
+            height: var(--icon-size);
+            opacity: 0.7;
+        }
+    }
+
+
+    // font 
+    * {font-size: 17px;}
+    h3 {
+        padding: initial;
+        margin: initial;
+        font-weight: 600;
+    }
+    span {
+        font-weight: 400;
+        color: var(--text-muted);
+    }
+
+    // button
+    & + .cmdr-add-new-wrapper .mod-cta{
+        margin: unset;
+    }
+
+}
+
+
+// 页面 - Settings
+
+.cmdr-setting-content:has(.cmdr-about) {
+    
+    &::before {
+        content: "Settings";
+        display: block;
+        font-size: $font-ui-large;
+        margin: 0 0 12px;
+        font-weight: 700;
+    }
+
+    &>.setting-item:first-child {
+        padding-top: 16px !important;
+        border-top: 1px solid $background-modifier-border !important;
+    }
+
+    hr {
+        opacity: 0;
+        margin-bottom: 12px;
+    }
+
+
+    padding-bottom: unset;
+    .cmdr-about {padding-bottom: unset;}
+
+    button {
+        font-weight: 400;
+        gap: 8px;
+    }
+}

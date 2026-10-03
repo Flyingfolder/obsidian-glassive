@@ -1,0 +1,68 @@
+
+
+
+@use '../abstracts' as *; 
+
+
+.modal.mod-settings.mod-sidebar-layout {
+    @include modal-with-sidebar($sidebar-wrapper: 'vertical-tab-header', $sidebar-scroller: 'vertical-tab-header-group-container');
+
+    .vertical-tab-header-group {
+        padding-top: 8px;
+        padding-bottom: 24px;
+    }
+
+
+    // 左侧 ------------------------------------------
+    
+    // sidebar item
+    .vertical-tab-nav-item {
+        @include liquid-sidebar-item($is-selected-status-name: ".is-active");
+    }
+
+    .file-recovery-list-item-details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    // // 右侧 ------------------------------------------
+    // // toolbar
+    // .sync-history-content {position: relative;}
+    // .modal-setting-titlebar {
+    //     @include liquid-toolbar;
+    // }
+
+
+    // // toolebar-title 
+    // .modal-setting-title {
+    //     font-size: $font-ui-small;
+    //     font-weight: 500;
+    //     font-size: 15px;
+    //     padding-left: 8px;
+    // }
+
+    // // toolbar items
+    // .modal-setting-titlebar-actions {gap: 16px;}
+    
+    // button {
+    //     @include liquid-toolbar-item-text;
+    // }
+    // // 把特殊的按钮变成 text-button
+    // .modal-setting-titlebar-toggle {
+    //     @include toggle-as-button;
+    //     @include liquid-toolbar-item-text;
+    // }    
+
+
+    // // toolbar 下方的正文部分
+    // .file-recovery-text,
+    // .file-recovery-diff {
+    //     padding-top: 60px;
+    // }
+
+}
+
+

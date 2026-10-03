@@ -1,0 +1,23 @@
+
+
+
+
+
+
+
+
+#better-export-pdf {
+    .setting-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .setting-item-heading {
+        margin: auto 0 0;
+        align-self: center;
+
+        padding: unset;
+        max-width: 200px;
+        width: 100%;
+    }
+}

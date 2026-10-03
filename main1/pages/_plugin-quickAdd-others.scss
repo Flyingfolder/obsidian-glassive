@@ -1,0 +1,13 @@
+
+
+
+
+.yesNoPromptButtonContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+
+    button {
+        min-width: 48px;
+    }
+}

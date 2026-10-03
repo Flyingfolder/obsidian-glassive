@@ -1,0 +1,53 @@
+
+
+
+
+@use '../abstracts' as *;
+
+
+
+.popover.hover-popover {
+    @include pop-in-anim;
+    border-radius: 20px;
+
+    /* Popovers - file previews */
+    --popover-width: 450px;
+    --popover-height: 550px;
+    // --popover-max-height: 95vh;
+    --popover-pdf-width: 450px;
+    --popover-pdf-height: 600px;
+    --popover-font-size: 14px; //var(--font-text-size);
+
+    // --file-margins: 20px;
+
+
+    box-shadow: var(--shadow-l);
+    .markdown-rendered blockquote {padding-inline-start: 20px;}
+    .markdown-preview-view .markdown-preview-view {--file-margins: 20px;}
+
+
+    .markdown-embed-link {border-radius: 20px; cursor: default;}
+
+
+    // 增加一个背景板，用来区分 reading 和 editing 状态
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        background-color: $background-secondary;
+
+        transition: height var(--anim-duration-slow) ease;
+    }
+    &.is-editing::before {
+        inset: auto 0 0 0;
+        height: 0;
+    }
+
+    // 增加切换状态时的动画
+    .markdown-embed-content.node-insert-event {
+        animation: 
+            fade-in-partial var(--anim-duration-moderate) ease-in;
+    }
+
+}

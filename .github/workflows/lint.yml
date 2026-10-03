@@ -1,0 +1,35 @@
+name: Lint CSS
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.x, 24.x, 26.x]
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      # Advisory only. theme.css is generated from SCSS, so a number of the
+      # official config's formatting rules cannot be satisfied by the sources
+      # (and some, like kebab-case class names, target third-party plugin
+      # classes we must not rename). The community directory review does not
+      # use stylelint, so this reports instead of failing the build.
+      - run: npm run lint
+        continue-on-error: true

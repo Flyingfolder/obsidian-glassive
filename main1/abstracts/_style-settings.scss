@@ -1,0 +1,146 @@
+/* @settings
+
+name: Glassive（开发中...）
+id: Swiftive Theme Setting
+settings:
+    - 
+        id: color
+        title: color
+        type: heading
+        level: 1
+        collapsed: true
+
+
+
+    - 
+        id: accent
+        title: Accent Color
+        description: Variations on a theme
+        type: class-select
+        allowEmpty: false
+        default: theme-accent-default
+        options:
+            - 
+                label: default accent color
+                value: theme-accent-default
+            - 
+                label: red
+                value: theme-accent-red
+            - 
+                label: orange
+                value: theme-accent-orange
+            - 
+                label: yellow - todo
+                value: theme-accent-yellow
+            - 
+                label: green
+                value: theme-accent-green
+            - 
+                label: blue
+                value: theme-accent-blue
+            - 
+                label: indigo
+                value: theme-accent-indigo
+            -
+                label: purple - todo
+                value: theme-accent-purple
+            -
+                label: black
+                value: theme-accent-black
+
+
+
+    - 
+        id: other-small-layout
+        title: 一些其它的小设置
+        type: heading
+        level: 1
+        collapsed: true
+
+    - 
+        id: swiftive-indicator-tab-header-changing-indicator
+        title: tab header changing indicator
+        description: 
+        type: class-toggle
+        default: false
+    - 
+        id: swiftive-macos-close-button
+        title: macos close button
+        description: 
+        type: class-toggle
+        default: true
+    - 
+
+        id: cmd-pannel
+        title: cmd-pannel
+        description: no discription. 没有描述
+        type: class-select
+        allowEmpty: false
+        default: cmd-pannel-title-below
+        options:
+            -
+                label: obsidian default
+                value: swiftive-1324123412
+            - 
+                label: title above
+                value: cmd-pannel-title-above
+            - 
+                label: title below
+                value: cmd-pannel-title-below
+            -
+                label: title to the right（还没做）
+                value: cmd-pannel-title-right
+    - 
+        id: left-sidebar-tab-header-container
+        title: Left sidebar tab header container
+        description: no discription. 没有描述
+        type: class-select
+        allowEmpty: false
+        default: leftsidebar-tab-header-transition-4
+        options:
+            -
+                label: scale and fade
+                value: leftsidebar-tab-header-transition-1
+            - 
+                label: move and expand
+                value: leftsidebar-tab-header-transition-2        
+            - 
+                label: another move and expand
+                value: leftsidebar-tab-header-transition-3 
+            -
+                label: another move and expand
+                value: leftsidebar-tab-header-transition-4
+    - 
+        id: other-small-layout
+        title: 被废弃了的设计思路
+        description: 虽然不存在bug，但是和现有的风格格格不入，所以不建议开启
+        type: heading
+        level: 1
+        collapsed: true
+
+
+    -
+        id: traditional-community-modal
+        title: community setting layout
+        description: no discription. 没有描述
+        type: class-select
+        allowEmpty: false
+        default: liquid community modal
+        options:
+            -
+                label: liquid community modal
+                value: liquid-community-modal
+            - 
+                label: traditional community modal
+                value: traditional-community-modal
+            -
+                label: obsidian default
+                value: fsahldfuhl
+
+    -   
+        id: nav-item-size-smaller
+        title: small nav item size
+        description: 更小的 导航（比如文件浏览器、大纲）中的按钮的大小
+        type: class-toggle
+        default: false
+ */     

@@ -1,0 +1,85 @@
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
+
+// 1. Abstracts — 变量 / mixin / 动画
+@use 'main1/abstracts';
+@use 'main1/abstracts/style-settings';
+
+// 2. Base — reset 与全局基础样式
+@use 'main1/base/reset';
+@use 'main1/base/color'; // 目前为空
+@use 'main1/base/font';
+
+// 3. Components — 可复用组件
+@use 'main1/components/input';
+@use 'main1/components/buttons';
+@use 'main1/components/menus';
+@use 'main1/components/modals';
+@use 'main1/components/popovers';
+@use 'main1/components/prompt';
+@use 'main1/components/setting-items';
+@use 'main1/components/suggestion-items';
+@use 'main1/components/suggestions';
+@use 'main1/components/nav-items';
+@use 'main1/components/tab-header';
+
+// 4. Editor — 编辑区（阅读/源码模式）样式
+@use 'main1/editor/callouts';
+@use 'main1/editor/find-and-replace';
+
+// // 5. Pages — 页面级样式
+@use 'main1/pages/base/base-actions';
+@use 'main1/pages/base/base-css-variables';
+@use 'main1/pages/base/base-embed';
+@use 'main1/pages/base/base-view-card';
+@use 'main1/pages/base/base-menus';
+@use 'main1/pages/base/base-menus-layout';
+@use 'main1/pages/base/base-menus-filter-form-item';
+
+@use 'main1/pages/corePlugin-canvas';
+@use 'main1/pages/corePlugin-fileRecovery';
+@use 'main1/pages/plugin-iconic';
+
+@use 'main1/pages/plugin-commander';
+@use 'main1/pages/detailed-pages/commander-macros';
+
+// @use 'main1/pages/plugin-modalForm-newform_datatype';    //有问题，容易导致css动画卡顿
+// @use 'main1/pages/plugin-modalForm-newform_header';      //有问题，容易导致css动画卡顿
+// @use 'main1/pages/plugin-modalForm-newform_static';      //有问题，容易导致css动画卡顿
+// @use 'main1/pages/plugin-modalForm-newform_template';    //有问题，容易导致css动画卡顿
+// @use 'main1/pages/plugin-pdf-plus';
+
+@use 'main1/pages/plugin-quickAdd-others';
+@use 'main1/pages/plugin-quickAdd-setting-page';
+// @use 'main1/pages/plugin-quickAdd-templatesbuilder';
+
+@use 'main1/pages/settings';
+@use 'main1/pages/community-plugins';
+
+
+// 6. Plugins — 插件专属样式
+@use 'main1/plugins/another-callout-suggestions';
+@use 'main1/plugins/better-export-pdf';
+
+// 7. Themes — 主题级覆盖
+@use 'main1/themes/liquid-variables';
+
+@use 'main1/themes/tab-header-container-in-root';
+@use 'main1/themes/tab-header-container-in-sidebar';
+
+// @use 'main1/themes/hide-properties-in-sidebar';
+// @use 'main1/themes/macos-close-button';
+// @use 'main1/themes/right-side-bar-multi-tabs';
+@use 'main1/themes/divider-horizontal-in-root';
+@use 'main1/themes/divider-in-sidedock';
+@use 'main1/themes/root-autocollapse-tab-header';
+
+@use 'main1/themes/tab-animations-dropzone';
+@use 'main1/themes/tab-animations-root';
+@use 'main1/themes/file-explorer';
+
+// 已弃用、未引入（待删除）：
+//   main1/abstracts/_variables-swiftive-old找机会删掉.scss
+//   main1/abstracts/_mixins-old找机会删掉.scss

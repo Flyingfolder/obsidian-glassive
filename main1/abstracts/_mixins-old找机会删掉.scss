@@ -1,0 +1,140 @@
+
+
+
+// hover trigger overlay
+@mixin hover-overlay($background-color: transparent) {
+    content: '';
+    position: absolute;
+    inset: 0 0 0 0;
+    background-color: $background-color;
+    z-index: 1;
+
+}
+
+
+// nav item
+// @mixin nav-item-hover {
+//     background-color: unset;
+//     font-weight: 500;
+//     color: rgb(var(--mono-rgb-100));
+// }
+
+// liquid-glass
+@mixin liquid-glass-bg {
+    background-color: var(--background-glass);
+    backdrop-filter: var(--backdrop-filter-glass);
+    font-weight: 500;
+}
+
+// 会模糊的边沿
+@mixin frosted-fade-out($direction) {
+    content: '';
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-secondary);
+    z-index: -1;
+
+    backdrop-filter: var(--backdrop-filter-edge);
+    mask-image: linear-gradient($direction, 
+        rgba(0, 0, 0, 0.9) 0,
+        rgba(0, 0, 0, 0.8) 40%,
+        rgba(0, 0, 0, 0) 100%
+    ); 
+}
+
+// 会模糊的带文字的边沿
+@mixin frosted-fade-out-text($direction) {
+    content: '';
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-glass);
+    z-index: -1;
+
+    backdrop-filter: var(--backdrop-filter-edge);
+    mask-image: linear-gradient($direction, 
+        rgba(0, 0, 0, 0.9) 0,
+        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0) 100%
+    ); 
+}
+
+
+
+
+// color style
+@mixin text-accent-bg {
+    // color: var(--text-on-accent);
+    color: white;
+    background-color: var(--color-accent);
+}
+
+
+
+
+// sidebar-liquid
+
+@mixin sidebar-liquid($sidebar-width: 220px) {
+    width: $sidebar-width;
+
+    padding: 10px;
+    margin: 8px 0 8px 8px;
+    border: var(--liquid-sidebar-border-width) solid var(--liquid-sidebar-border-color) !important;
+    border-radius: var(--sidebar-radius);
+
+
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: var(--sidebar-liquid-shadow);
+    background-image: var(--sidebar-liquid-bg);
+    background-color: var(--background-secondary);
+
+
+}
+
+
+
+
+// animation: pop-up
+@keyframes fade-in-opacity-anim {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes pop-up-transform-anim {
+    0% {
+        translate: 0 -140px 0;
+        scale: 0.4;
+    }
+
+    75% {
+        translate: 0 0 0;
+        scale: 1.01;
+    }
+
+    100% {
+        translate: 0 0 0;
+        scale: 1;
+
+    }
+}
+
+@mixin pop-up-anim {
+    animation: 
+        pop-up-transform-anim 400ms cubic-bezier(0.32, 0.10, 0.20, 0.99) forwards,
+        fade-in-opacity-anim var(--anim-duration-moderate) linear forwards;
+}
+
