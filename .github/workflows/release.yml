@@ -5,6 +5,13 @@ on:
     tags:
       - "*"
 
+# The default GITHUB_TOKEN is read-only in repositories whose Actions default
+# is "Read repository contents", which makes `gh release create` fail with
+# "HTTP 403: Resource not accessible by integration". Request write access to
+# the repository contents explicitly so the release can be created.
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
