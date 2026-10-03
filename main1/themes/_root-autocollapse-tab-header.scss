@@ -24,27 +24,13 @@
 
     .workspace-tab-container {
         margin-top: -38px; //为了保持对齐
-        
-        z-index: 16;
-
     }
-
 
     // 逐渐变化
     .view-header-title-container {
         opacity: 0;
     }
 
-    // 立刻变化
-    .view-header {
-        pointer-events: none;
-        &>* {pointer-events: auto;}
-    }
-    .workspace-leaf {
-        background-color: unset;
-    }
-
-    
 }
 
 
@@ -70,8 +56,8 @@
 
 
 // 方案2
-.mod-root.workspace-split.mod-horizontal>*:has(+.workspace-tabs .workspace-tab-header:first-child:last-child) .workspace-leaf-resize-handle {
+.mod-root .workspace-split.mod-horizontal>*:has(+.workspace-tabs .workspace-tab-header:first-child:last-child) .workspace-leaf-resize-handle {
     width: unset;
     left: 90px;
-    right: 180px;
+    right: 160px;
 }
