@@ -9,10 +9,11 @@
 	},
 	"license": "MIT",
 	"scripts": {
-		"build": "sass --no-source-map --style=expanded main1.scss theme.css && postcss theme.css --use autoprefixer --replace --no-map",
+		"build": "sass --no-source-map --style=expanded main1.scss theme.css && postcss theme.css --use autoprefixer --replace --no-map && node scripts/format-css.mjs theme.css",
 		"dev": "node scripts/dev.mjs",
 		"lint": "stylelint \"theme.css\"",
 		"lint:fix": "stylelint \"theme.css\" --fix",
+		"lint:map": "node scripts/lint-map.mjs",
 		"check": "npm run build && npm run lint",
 		"version": "node version-bump.mjs && git add manifest.json versions.json"
 	},
@@ -20,6 +21,7 @@
 		"autoprefixer": "^10.4.21",
 		"postcss": "^8.5.6",
 		"postcss-cli": "^11.0.1",
+		"postcss-scss": "^4.0.9",
 		"sass": "^1.93.2",
 		"stylelint": "^17.0.0",
 		"stylelint-config-obsidianmd": "^0.1.0"

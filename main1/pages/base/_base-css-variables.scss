@@ -38,8 +38,8 @@
   --bases-table-cell-background-selected: var(--table-selection);
 
 
-    --background-modifier-table-row-even:  rgba(var(--mono-rgb-100), .05);
-    --background-modifier-table-row-odd:   rgba(var(--mono-rgb-100), .02);
+    --background-modifier-table-row-even:  rgb(var(--mono-rgb-100), 5%);
+    --background-modifier-table-row-odd:   rgb(var(--mono-rgb-100), 2%);
 
 }
 

@@ -35,12 +35,12 @@ body {
 
 .theme-light {
     --background-primary: var(--color-base-00);
-    --background-primary-alt: rgba(var(--mono-rgb-100), 0.03);
+    --background-primary-alt: rgb(var(--mono-rgb-100), 3%);
     --background-secondary: var(--color-base-20);
 }
 
 .theme-dark {
     --background-primary: var(--color-base-20);
-    --background-primary-alt: rgba(var(--mono-rgb-100), 0.03);
+    --background-primary-alt: rgb(var(--mono-rgb-100), 3%);
     --background-secondary: var(--color-base-00);
 }

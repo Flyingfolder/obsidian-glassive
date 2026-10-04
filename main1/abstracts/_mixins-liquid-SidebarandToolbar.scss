@@ -13,10 +13,10 @@
     
 
     @if $with-border {
-        border: 1px solid rgba(100, 100, 100, 0.3);
+        border: 1px solid rgb(100, 100, 100, 30%);
     }
     @if $with-shadow {
-        border: 1px solid rgba(0, 0, 0, 0.15);
+        border: 1px solid rgb(0, 0, 0, 15%);
         box-shadow: var(--glass-shadow-inset-l), var(--shadow-card), var(--glass-shadow-inset-edge);
     }
 }
@@ -26,11 +26,11 @@
     backdrop-filter: var(--backdrop-filter-glass-subtle);
 
     @if $with-border {
-        border: 1px solid rgba(100, 100, 100, 0.3);
+        border: 1px solid rgb(100, 100, 100, 30%);
     }
 
     @if $with-shadow {
-        border: 1px solid rgba(0, 0, 0, 0.15);
+        border: 1px solid rgb(0, 0, 0, 15%);
         box-shadow: var(--glass-shadow-inset-l), var(--shadow-card), var(--glass-shadow-inset-edge);
     }
 }
@@ -40,7 +40,7 @@
     &.#{$modifier} {
         background-color: $interactive-accent;
         --text-normal: white;
-        --text-muted: rgba(255 255 255 / 0.55);
+        --text-muted: rgb(255 255 255 / 55%);
         --code-normal: white;
     }
 }

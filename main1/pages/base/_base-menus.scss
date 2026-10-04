@@ -47,7 +47,7 @@
             --icon-color: $interactive-accent;
             font-weight: 600;
             color: $interactive-accent;
-            background-color: hsla(var(--interactive-accent-hsl), 0.1);
+            background-color: hsl(var(--interactive-accent-hsl), 10%);
             &:active {opacity: 0.7;}
 
             .bases-toolbar-menu-item-info {gap: 4px;}
