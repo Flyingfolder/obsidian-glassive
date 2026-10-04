@@ -6,7 +6,8 @@
  *
  * Compiles main1.scss the same way `npm run build` does (Sass + autoprefixer),
  * but in memory and with a source map, so theme.css is not touched. Problems
- * from the blank-line rules are only counted: `npm run build` fixes them.
+ * from the rules in build-fixed-rules.mjs are only counted: `npm run build`
+ * fixes them.
  */
 
 import { readFileSync } from "node:fs";
@@ -17,8 +18,8 @@ import postcss from "postcss";
 import * as sass from "sass";
 import { SourceMapConsumer } from "source-map-js";
 import stylelint from "stylelint";
+import { isBuildFixedRule } from "./build-fixed-rules.mjs";
 
-const FORMAT_RULE = /-empty-line-before$/;
 const ENTRY = "main1.scss";
 const OUTPUT = resolve("theme.css");
 
@@ -113,7 +114,7 @@ function sourcePath(source) {
 const formatCounts = {};
 const bySource = new Map();
 for (const w of result.warnings) {
-	if (FORMAT_RULE.test(w.rule)) {
+	if (isBuildFixedRule(w.rule)) {
 		formatCounts[w.rule] = (formatCounts[w.rule] ?? 0) + 1;
 		continue;
 	}
@@ -141,7 +142,7 @@ for (const [file, entries] of [...bySource].sort(([a], [b]) => a.localeCompare(b
 
 const formatTotal = Object.values(formatCounts).reduce((a, b) => a + b, 0);
 console.log(`\n${errors} errors, ${warnings} warnings in SCSS sources.`);
-if (formatTotal) console.log(`${formatTotal} blank-line problems are fixed by \`npm run build\` (${Object.entries(formatCounts).map(([r, n]) => `${r}: ${n}`).join(", ")}).`);
+if (formatTotal) console.log(`${formatTotal} problems are fixed by \`npm run build\` (${Object.entries(formatCounts).map(([r, n]) => `${r}: ${n}`).join(", ")}).`);
 if ([...bySource.values()].some((entries) => [...entries.values()].some((w) => w.approx))) console.log("~ marks problems located only to the start of the enclosing declaration or rule: the flagged text is inside it, or in a parent selector.");
 
 process.exitCode = errors ? 1 : 0;

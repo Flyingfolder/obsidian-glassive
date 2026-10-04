@@ -6,7 +6,6 @@
 
 
 .workspace-split.mod-sidedock .workspace-tabs  {
-
     .workspace-tab-header-container {
         border: unset;
         z-index: 1;
@@ -27,6 +26,7 @@
 
     .workspace-tab-header {
         box-shadow: unset;
+
         .workspace-tab-header-inner {
             border-radius: 99px;
             corner-shape: unset;
@@ -39,10 +39,13 @@
         background-color: $background-modifier-hover;
         border-radius: 99px;
         corner-shape: unset;
+
         --icon-color-focused: #{$interactive-accent};
         --tab-text-color-focused-active: #{$interactive-accent};
+
         .workspace-tab-header-inner-icon .svg-icon {
             color: #{$interactive-accent};
+
             --icon-stroke: 2.5px;
         }
     }
@@ -51,8 +54,7 @@
 
 
 // 当 sidebar tab header 行只有一个 header 的时候 ------------------------------------------
-.workspace-split.mod-sidedock .workspace-tabs:has(.workspace-tab-header:only-child)   {
-
+.workspace-split.mod-sidedock .workspace-tabs:has(>.workspace-tab-header-container>.workspace-tab-header-container-inner>.workspace-tab-header:only-child) {
     .workspace-tab-header-container {
         border-bottom: unset;
         position: absolute;
@@ -65,9 +67,9 @@
         width: 100%;
     }
 
-
     .workspace-tab-header-inner {
         --sidebar-tab-text-display: block;
+
         gap: 6px;
         color: $text-normal;
     }
@@ -78,7 +80,6 @@
 
     .workspace-leaf-content[data-type="markdown"] .cm-scroller,
     .workspace-leaf-content[data-type="markdown"] .markdown-preview-view {
-        
         padding-top: calc( var(--header-height) + 8px);
 
         .inline-title:not([data-level]) {display: none;}

@@ -22,13 +22,16 @@ body {
 .setting-item-control select {
     width: auto;
 }
+
 .dropdown {
     // width: auto;
     --dropdown-padding: 0 30px 0 var(--dropdown-padding-start);
+
     field-sizing: content;
     text-align: end;
 
     --input-height: 28px;
+
     border-radius: 100px;
     corner-shape: squircle;
 
@@ -58,7 +61,9 @@ button:active {
 
 button {
     padding: var(--size-4-1) var(--size-4-3);
+
     --input-height: 28px;
+
     border-radius: 100px;
     corner-shape: squircle;
 }
@@ -68,7 +73,6 @@ button {
 .text-icon-button {
     color: var(--text-normal);
     // font-size: var(--font-ui-small);
-    border-radius: var(--button-radius);
     padding: 4px 6px;
     border-radius: 40px;
     corner-shape: squircle;

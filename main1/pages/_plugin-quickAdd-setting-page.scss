@@ -1,5 +1,5 @@
 
-
+/* stylelint-disable selector-class-pattern */
 
 @use '../abstracts' as *; 
 
@@ -8,50 +8,54 @@
 
 
 .vertical-tab-content {
-
-    .setting-group:first-child:has(.choiceFilterBar.svelte-kahj55) {
+    .setting-group:first-child:has(.choiceFilterBar) {
         margin-bottom: 80px;
 
         .setting-items {
             position: relative;
         }
         
-        &>.setting-items>.setting-item:last-child {
-            position: absolute;
-            inset: 3px 20px auto auto;
-            border: unset;
-            .setting-item-info {display: none;}
+        // &>.setting-items>.setting-item:last-child {
+        //     position: absolute;
+        //     inset: 3px 20px auto auto;
+        //     border: unset;
+        //     .setting-item-info {display: none;}
+        // }
+
+        // .choiceFilterBar {
+        //     padding-right: 290px;
+        // }
+    }
+
+
+
+}
+
+
+.setting-item-control {
+    .choiceList {
+
+        // 统一icon
+        .multiChoiceListItem,
+        .choiceListItem {
+            .qaChoiceRowIcon {
+                --icon-size: 16px;
+            }
+
+            font-size: $font-ui-small;
+            margin: unset;
         }
 
-        .choiceFilterBar {
-            padding-right: 290px;
+        //删掉文件夹内新建文件夹
+        .qaNewFolderBtn {
+            display: none;
         }
     }
 
 
-    .setting-item-control {
-        // -----------------------------------------------------------------------------
-        .choiceList {
-
-            // 统一icon
-            .multiChoiceListItem,
-            .choiceListItem {
-                .qaChoiceRowIcon {--icon-size: 16px;}
-                font-size: $font-ui-small;  
-                margin: unset;
-            }
-
-            //删掉文件夹内新建文件夹
-            .qaNewFolderBtn {display: none;} 
-        }
-
-
-        // ------------------------------------------------------------------------------
-        .choiceViewBottomBar {
-            justify-content: flex-start;
-            .qaNewChoiceBtn {order: -1;}
-        }
-
-
+    // ------------------------------------------------------------------------------
+    .choiceViewBottomBar {
+        justify-content: flex-start;
+        .qaNewChoiceBtn {order: -1;}
     }
 }

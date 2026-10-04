@@ -15,6 +15,7 @@
         min-height: $control-height-m;
         corner-shape: squircle;
         border-radius: 99px;
+
         --bases-property-menu-item-radius: 99px;
 
         
@@ -39,12 +40,12 @@
             padding: 0 8px 0 4px;
             margin: 4px;
             width: fit-content;
-
             border-radius: 20px;
             corner-shape: squircle;
 
             
             --icon-color: $interactive-accent;
+
             font-weight: 600;
             color: $interactive-accent;
             background-color: hsl(var(--interactive-accent-hsl), 10%);
@@ -56,10 +57,8 @@
 
     // search input --------------------------------------------------------
     .search-input-container {
-        margin: unset;
         padding: unset;
         border: unset;
-
         background-color: var(--background-modifier-form-field);
         border-radius: 100px;
         box-shadow: 0 0 0 1px var(--background-modifier-border);
@@ -110,7 +109,7 @@
 
     // form body ---------------------------------------------------------------
     .bases-toolbar-menu-form {
-        padding: unset;
+        // padding: unset;
         padding: 4px 16px 8px;
         gap: 0;
 
@@ -126,6 +125,7 @@
             .input-row-label {
                 padding: unset;
             }
+
             .input-row-content:not(:first-child) {
                 padding-left: 12px;
                 .dropdown {text-align: unset;}

@@ -2,7 +2,6 @@
 
 
 @use 'variables-swiftive' as *; 
-
 @use 'mixins-forms' as *;
 
 // @use '../components/buttons' as *;
@@ -13,24 +12,25 @@
     
 
     @if $with-border {
-        border: 1px solid rgb(100, 100, 100, 30%);
+        border: 1px solid rgb(100 100 100 / 30%);
     }
+
     @if $with-shadow {
-        border: 1px solid rgb(0, 0, 0, 15%);
+        border: 1px solid rgb(0 0 0 / 15%);
         box-shadow: var(--glass-shadow-inset-l), var(--shadow-card), var(--glass-shadow-inset-edge);
     }
 }
 
-@mixin liquid-glass-bg-subtle($with-border: false, $with-shadow: flase) {
+@mixin liquid-glass-bg-subtle($with-border: false, $with-shadow: false) {
     background-color: var(--background-glass-subtle);
     backdrop-filter: var(--backdrop-filter-glass-subtle);
 
     @if $with-border {
-        border: 1px solid rgb(100, 100, 100, 30%);
+        border: 1px solid rgb(100 100 100 / 30%);
     }
 
     @if $with-shadow {
-        border: 1px solid rgb(0, 0, 0, 15%);
+        border: 1px solid rgb(0 0 0 / 15%);
         box-shadow: var(--glass-shadow-inset-l), var(--shadow-card), var(--glass-shadow-inset-edge);
     }
 }
@@ -39,9 +39,10 @@
 @mixin is-selected($modifier) {
     &.#{$modifier} {
         background-color: $interactive-accent;
-        --text-normal: white;
+
+        --text-normal: var(--text-on-accent);
         --text-muted: rgb(255 255 255 / 55%);
-        --code-normal: white;
+        --code-normal: var(--text-on-accent);
     }
 }
 
@@ -52,12 +53,12 @@
 
 
 @mixin modal-with-sidebar($sidebar-wrapper, $sidebar-scroller) {
-
     border-radius: 40px;
     corner-shape: squircle;
-
     background-color: $background-primary;
+
     --modal-sidebar-background: transparent;
+
     background-image: none;
     
 
@@ -72,12 +73,10 @@
         margin: 7px 0; //toolbar padding
         border: 1px solid var(--liquid-sidebar-border-color);
         box-shadow: var(--liquid-sidebar-shadow);
-        
         corner-shape: squircle;
         overflow: hidden;
         border-radius: 30px;
         z-index: 10;
-
         background-color: var(--background-secondary);
         background-image: var(--liquid-sidebar-background-image);
 
@@ -96,13 +95,10 @@
 
 @mixin liquid-sidebar {
     z-index: 1;
-
-    
     margin: 7px 0; //toolbar padding
     border: 1px solid var(--liquid-sidebar-border-color);
     box-shadow: var(--liquid-sidebar-shadow);
     border-radius: $sidebar-radius;
-
     padding: 9px;
     background-color: var(--background-secondary);
     background-image: var(--liquid-sidebar-background-image);
@@ -114,11 +110,9 @@
     border-radius: $radius-m;
     display: flex;
     align-items: center;
-
     padding: 0 8px;
     border: unset;
     margin: unset;
-
     font-weight: 400;
     font-size: 14px; // #待定
     line-height: $line-height-control;
@@ -127,7 +121,7 @@
     
 
     &:hover {
-        text-shadow: 0 0 .3px currentColor;
+        text-shadow: 0 0 .3px currentcolor;
         background-color: unset;
         color: $text-normal;
     }
@@ -140,7 +134,7 @@
         border-radius: $radius-m;
     }
 
-    * {color: currentColor;}
+    * {color: currentcolor;}
 
     
 }
@@ -158,17 +152,13 @@ $sidebar-radius: 18px;
     position: absolute;
     z-index: 1;
     inset: 0 0 auto 0;
-
     display: flex;
     flex-direction: row;
     align-items: center;
-
     width: 100%;
     height: 52px; // 固定
     padding: 7px; // 固定
-
     border: unset;
-
     overflow: visible;
 }
 
@@ -180,11 +170,8 @@ $sidebar-radius: 18px;
     border-radius: 18px;
     background: var(--toolbar-items-background);
     background-color: var(--background-secondary);
-
     border: 1px solid transparent;
-
     box-shadow: var(--toolbar-items-shadow);
-
     overflow: hidden;
 }
 
@@ -192,10 +179,10 @@ $sidebar-radius: 18px;
 @mixin liquid-toolbar-item-icon {
     @include liquid-toolbar-item($toolbar-item-width: 36px);
     @include button-interaction;
+
     padding: unset;
     align-items: center;
     justify-content: center;
-
     gap: unset;
 }
 

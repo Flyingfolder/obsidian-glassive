@@ -37,11 +37,9 @@
 @use 'main1/pages/base/base-menus';
 @use 'main1/pages/base/base-menus-layout';
 @use 'main1/pages/base/base-menus-filter-form-item';
-
 @use 'main1/pages/corePlugin-canvas';
 @use 'main1/pages/corePlugin-fileRecovery';
 @use 'main1/pages/plugin-iconic';
-
 @use 'main1/pages/plugin-commander';
 @use 'main1/pages/detailed-pages/commander-macros';
 
@@ -51,7 +49,7 @@
 // @use 'main1/pages/plugin-modalForm-newform_template';    //有问题，容易导致css动画卡顿
 // @use 'main1/pages/plugin-pdf-plus';
 
-@use 'main1/pages/plugin-quickAdd-others';
+// @use 'main1/pages/plugin-quickAdd-others';
 @use 'main1/pages/plugin-quickAdd-setting-page';
 // @use 'main1/pages/plugin-quickAdd-templatesbuilder';
 
@@ -65,7 +63,6 @@
 
 // 7. Themes — 主题级覆盖
 @use 'main1/themes/liquid-variables';
-
 @use 'main1/themes/tab-header-container-in-root';
 @use 'main1/themes/tab-header-container-in-sidebar';
 
@@ -75,7 +72,6 @@
 @use 'main1/themes/divider-horizontal-in-root';
 @use 'main1/themes/divider-in-sidedock';
 @use 'main1/themes/root-autocollapse-tab-header';
-
 @use 'main1/themes/tab-animations-dropzone';
 @use 'main1/themes/tab-animations-root';
 @use 'main1/themes/file-explorer';

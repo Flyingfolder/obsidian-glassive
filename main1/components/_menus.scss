@@ -13,11 +13,11 @@
 
     --menu-shadow:
         /* 2. 左右内阴影 (利用 -10px 扩展半径消除上下发散，并将 X 轴偏移量补偿到 20px) */
-        inset 20px 0 10px -10px rgb(0, 0, 0, 1.5%),  /* 左侧阴影 */
-        inset -20px 0 10px -10px rgb(0, 0, 0, 1.5%), /* 右侧阴影 */
-        0px 1px 2px rgb(0, 0, 0, 2.8%),
-        0px 3.4px 6.7px rgb(0, 0, 0, 8.2%),
-        0px 15px 30px rgb(0, 0, 0, 11%);
+        inset 20px 0 10px -10px rgb(0 0 0 / 1.5%),  /* 左侧阴影 */
+        inset -20px 0 10px -10px rgb(0 0 0 / 1.5%), /* 右侧阴影 */
+        0px 1px 2px rgb(0 0 0 / 2.8%),
+        0px 3.4px 6.7px rgb(0 0 0 / 8.2%),
+        0px 15px 30px rgb(0 0 0 / 11%);
 
     // --background-glass: rgba(255, 255, 255, 0.5);
 
@@ -80,7 +80,7 @@
 
 // color
 
-.menu-item:not(.is-label):not(.is-disabled).selected {
+.menu-item:not(.is-label, .is-disabled).selected {
 
     // 只有一个menu的时候
     .menu & {

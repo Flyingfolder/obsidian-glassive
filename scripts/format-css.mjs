@@ -1,17 +1,15 @@
 #!/usr/bin/env node
 /**
- * Fixes the blank-line rules of the stylelint config in compiled CSS.
+ * Fixes the stylelint problems that Sass puts into compiled CSS.
  *
  *   node scripts/format-css.mjs theme.css
  *
- * Sass decides the blank lines of its output, so these rules cannot be
- * satisfied from the SCSS sources. Only the *-empty-line-before rules are
- * applied here; every other rule is left for a human to review.
+ * Only the rules listed in build-fixed-rules.mjs are applied here; every
+ * other rule is left for a human to review.
  */
 
 import stylelint from "stylelint";
-
-const FORMAT_RULE = /-empty-line-before$/;
+import { isBuildFixedRule } from "./build-fixed-rules.mjs";
 
 const files = process.argv.slice(2);
 if (!files.length) {
@@ -21,6 +19,6 @@ if (!files.length) {
 
 for (const file of files) {
 	const { rules } = await stylelint.resolveConfig(file);
-	const formatRules = Object.fromEntries(Object.entries(rules).filter(([name]) => FORMAT_RULE.test(name)));
-	await stylelint.lint({ files: file, fix: true, config: { rules: formatRules } });
+	const buildRules = Object.fromEntries(Object.entries(rules).filter(([name]) => isBuildFixedRule(name)));
+	await stylelint.lint({ files: file, fix: true, config: { rules: buildRules } });
 }

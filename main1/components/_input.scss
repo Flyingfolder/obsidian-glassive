@@ -41,7 +41,7 @@ input[type='number'] {
 
 @keyframes input-box-shadow-appear {
   from {
-    box-shadow: 0px 0px calc( var(--input-border-width-focus) * 2) calc( var(--input-border-width-focus) * 5) hsl(var(--interactive-accent-hsl), 10%);
+    box-shadow: 0 0 calc( var(--input-border-width-focus) * 2) calc( var(--input-border-width-focus) * 5) hsl(var(--interactive-accent-hsl), 10%);
   }
   to {
     box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);

@@ -13,12 +13,12 @@
     rgb(var(--mono-rgb-0), 40%));
     
   --liquid-sidebar-shadow:
-    0px 0px 8px rgb(0, 0, 0, 4%),    /* 第一层：靠近元素的、稍微清晰的轮廓 */
-    0px 0px 40px rgb(0, 0, 0, 12%);  /* 第二层：范围更大、更模糊、更透明的光晕 */
+    0px 0px 8px rgb(0 0 0 / 4%),    /* 第一层：靠近元素的、稍微清晰的轮廓 */
+    0px 0px 40px rgb(0 0 0 / 12%);  /* 第二层：范围更大、更模糊、更透明的光晕 */
 
   --toolbar-items-shadow: 
-    0px 0px 8px rgb(0, 0, 0, 5%),    /* 第一层：靠近元素的、稍微清晰的轮廓 */
-    0px 0px 40px rgb(0, 0, 0, 9%);  /* 第二层：范围更大、更模糊、更透明的光晕 */
+    0px 0px 8px rgb(0 0 0 / 5%),    /* 第一层：靠近元素的、稍微清晰的轮廓 */
+    0px 0px 40px rgb(0 0 0 / 9%);  /* 第二层：范围更大、更模糊、更透明的光晕 */
 
 }
 
@@ -47,11 +47,11 @@
 
 
 .is-focused.theme-dark {
-  --liquid-sidebar-border-color: rgb( 255, 255, 255, 12%); //这个边框更能融入背景的深色中去
+  --liquid-sidebar-border-color: rgb( 255 255 255 / 12%); //这个边框更能融入背景的深色中去
 
   --toolbar-items-background:
     linear-gradient(hsl(var(--color-accent-hsl), 3%), hsl(var(--color-accent-hsl), 5%)) padding-box,
-    linear-gradient(rgb(33, 33, 33), rgb(33, 33, 33)) padding-box,
+    linear-gradient(rgb(33 33 33), rgb(33 33 33)) padding-box,
     linear-gradient(to right bottom, rgb(70 70 70 / 70%),  rgb(50 50 50 / 70%), rgb(70 70 74 / 70%)) border-box;
 
   --liquid-modal-background-image: 
@@ -63,14 +63,14 @@
 
 body {
     --shadow-card: 
-      0px 8px 20px  rgb(0, 0, 0, 10%), 
-      0px 20px 42px rgb(0, 0, 0, 6%), 
-      0px 25px 85px rgb(0, 0, 0, 3.4%);
+      0px 8px 20px  rgb(0 0 0 / 10%), 
+      0px 20px 42px rgb(0 0 0 / 6%), 
+      0px 25px 85px rgb(0 0 0 / 3.4%);
 
       // 适用于极小的部件，比如 contol
     --shadow-card-mini: 
-      0px 2px 22px rgb(0, 0, 0, 8.5%), 
-      0px 6px 45px rgb(0, 0, 0, 3.4%);
+      0px 2px 22px rgb(0 0 0 / 8.5%), 
+      0px 6px 45px rgb(0 0 0 / 3.4%);
 }
 
 
@@ -79,41 +79,41 @@ body {
 .theme-light {
   --liquid-sidebar-border-width: 1px;
   --liquid-sidebar-border-color: transparent;
-  --toolbar-background: rgb(252, 252, 252, 40%);
+  --toolbar-background: rgb(252 252 252 / 40%);
 
-  --background-modifier-border: rgb( 200, 200, 200, 50%);
+  --background-modifier-border: rgb( 200 200 200 / 50%);
   
-  --background-glass: rgb(246, 246, 246, 50%);
+  --background-glass: rgb(246 246 246 / 50%);
   --backdrop-filter-glass: blur(10px) saturate(140%) brightness(1.1);
 
-  --background-glass-subtle: rgb(255, 255, 255, 60%);
+  --background-glass-subtle: rgb(255 255 255 / 60%);
   --backdrop-filter-glass-subtle: blur(4px) saturate(190%) brightness(1.03);
 
-  --background-frosted-edge-fade: rgb(235, 235, 235, 75%);
+  --background-frosted-edge-fade: rgb(235 235 235 / 75%);
 
   --glass-shadow-inset-for-control:
-    inset 0 1px 1px rgb(200, 200, 200, 25%),   /* 顶，没有底部 */
-    inset 1px 0 1px rgb(200, 200, 200, 15%),   /* 左 */
-    inset -1px 0 1px rgb(200, 200, 200, 15%);  /* 右 */
+    inset 0 1px 1px rgb(200 200 200 / 25%),   /* 顶，没有底部 */
+    inset 1px 0 1px rgb(200 200 200 / 15%),   /* 左 */
+    inset -1px 0 1px rgb(200 200 200 / 15%);  /* 右 */
 
   --glass-shadow-inset-s:
-    inset 0 0.0px 0.0px rgb(235, 235, 235, 25%),   /* 顶 */
-    inset 0 -3px 3px rgb(235, 235, 235, 50%),  /* 底 */
-    inset 3px 0 3px rgb(235, 235, 235, 15%),   /* 左 */
-    inset -3px 0 3px rgb(235, 235, 235, 15%);  /* 右 */
+    inset 0 0.0px 0.0px rgb(235 235 235 / 25%),   /* 顶 */
+    inset 0 -3px 3px rgb(235 235 235 / 50%),  /* 底 */
+    inset 3px 0 3px rgb(235 235 235 / 15%),   /* 左 */
+    inset -3px 0 3px rgb(235 235 235 / 15%);  /* 右 */
 
   --glass-shadow-inset-l:
-    inset 0 3px 3px rgb(240, 240, 240, 85%),    /* 顶 5px */
-    inset 0 -3px 3px rgb(240, 240, 240, 50%),   /* 底 5px */
-    inset 8px 0 8px rgb(240, 240, 240, 15%),  /* 左 10px */
-    inset -8px 0 8px rgb(240, 240, 240, 15%); /* 右 10px */
+    inset 0 3px 3px rgb(240 240 240 / 85%),    /* 顶 5px */
+    inset 0 -3px 3px rgb(240 240 240 / 50%),   /* 底 5px */
+    inset 8px 0 8px rgb(240 240 240 / 15%),  /* 左 10px */
+    inset -8px 0 8px rgb(240 240 240 / 15%); /* 右 10px */
 
   // 大号玻璃块的灰蒙蒙的阴影和边缘反射高光
   --glass-shadow-inset-edge: 
-    inset 0 8px 8px rgb(255, 255, 255, 85%),   /* 顶 */
-    inset 0 -4px 4px rgb(255, 255, 255, 40%),  /* 底 */
-    inset 10px 0 10px rgb(0, 0, 0, 4%),   /* 左 */
-    inset -10px 0 10px rgb(0, 0, 0, 6%);  /* 右 */
+    inset 0 8px 8px rgb(255 255 255 / 85%),   /* 顶 */
+    inset 0 -4px 4px rgb(255 255 255 / 40%),  /* 底 */
+    inset 10px 0 10px rgb(0 0 0 / 4%),   /* 左 */
+    inset -10px 0 10px rgb(0 0 0 / 6%);  /* 右 */
 }
 
 
@@ -126,46 +126,46 @@ body {
   --liquid-sidebar-border-width: 1px;
   --liquid-sidebar-border-color: transparent;
 
-  --toolbar-background: rgb(30, 30, 30, 40%);
+  --toolbar-background: rgb(30 30 30 / 40%);
 
-  --background-modifier-border: rgb( 220, 220, 240, 15%);
+  --background-modifier-border: rgb( 220 220 240 / 15%);
 
 
-  --background-glass-subtle: rgb(40, 40, 40, 50%);
+  --background-glass-subtle: rgb(40 40 40 / 50%);
   --backdrop-filter-glass-subtle: blur(6px) saturate(190%) brightness(1.4);
 
-  --background-glass: rgb(40, 40, 40, 60%);
+  --background-glass: rgb(40 40 40 / 60%);
   --backdrop-filter-glass: blur(10px) saturate(180%) brightness(1.8);
 
 
   --glass-shadow-inset-for-control:
-    inset 0 1px 1px rgb(120, 120, 120, 25%),   /* 顶 */
-    inset 0 -1px 1px rgb(120, 120, 120, 50%),  /* 底 */
-    inset 1px 0 1px rgb(120, 120, 120, 15%),   /* 左 */
-    inset -1px 0 1px rgb(120, 120, 120, 15%);  /* 右 */
+    inset 0 1px 1px rgb(120 120 120 / 25%),   /* 顶 */
+    inset 0 -1px 1px rgb(120 120 120 / 50%),  /* 底 */
+    inset 1px 0 1px rgb(120 120 120 / 15%),   /* 左 */
+    inset -1px 0 1px rgb(120 120 120 / 15%);  /* 右 */
 
 
   --glass-shadow-inset-s:
-    inset 0 1px 1px rgb(120, 120, 120, 25%),   /* 顶 */
-    inset 0 -1px 1px rgb(120, 120, 120, 50%),  /* 底 */
-    inset 1px 0 1px rgb(120, 120, 120, 15%),   /* 左 */
-    inset -1px 0 1px rgb(120, 120, 120, 15%);  /* 右 */
+    inset 0 1px 1px rgb(120 120 120 / 25%),   /* 顶 */
+    inset 0 -1px 1px rgb(120 120 120 / 50%),  /* 底 */
+    inset 1px 0 1px rgb(120 120 120 / 15%),   /* 左 */
+    inset -1px 0 1px rgb(120 120 120 / 15%);  /* 右 */
 
 
   --glass-shadow-inset-l:
-    inset 0 0.0px 0.0px rgb(120, 120, 120, 25%),   /* 顶 */
-    inset 0 -1px 1px rgb(120, 120, 120, 50%),  /* 底 */
-    inset 1px 0 1px rgb(120, 120, 120, 15%),   /* 左 */
-    inset -1px 0 1px rgb(120, 120, 120, 15%);  /* 右 */
+    inset 0 0.0px 0.0px rgb(120 120 120 / 25%),   /* 顶 */
+    inset 0 -1px 1px rgb(120 120 120 / 50%),  /* 底 */
+    inset 1px 0 1px rgb(120 120 120 / 15%),   /* 左 */
+    inset -1px 0 1px rgb(120 120 120 / 15%);  /* 右 */
 
 
   --glass-shadow-inset-edge: 
-    inset 0 1px 1px rgb(255, 255, 255, 25%),   /* 顶 */
-    inset 0 -1px 1px rgb(255, 255, 255, 10%),  /* 底 */
-    inset 1px 0 1px rgb(255, 255, 255, 0%),   /* 左 */
-    inset -1px 0 1px rgb(255, 255, 255, 0%);  /* 右 */
+    inset 0 1px 1px rgb(255 255 255 / 25%),   /* 顶 */
+    inset 0 -1px 1px rgb(255 255 255 / 10%),  /* 底 */
+    inset 1px 0 1px rgb(255 255 255 / 0%),   /* 左 */
+    inset -1px 0 1px rgb(255 255 255 / 0%);  /* 右 */
 
-  --background-frosted-edge-fade: rgb(20, 20, 20, 80%);
+  --background-frosted-edge-fade: rgb(20 20 20 / 80%);
 }
 
 
@@ -179,7 +179,7 @@ body {
   --background-modifier-border-focus: hsl(var(--interactive-accent-hsl), 60%);
   
   --backdrop-filter-frosted-edge: blur(2px);
-  --background-glass-content: rgb(0, 0, 0, 15%);
+  --background-glass-content: rgb(0 0 0 / 15%);
 
 }
 

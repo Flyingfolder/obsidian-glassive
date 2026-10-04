@@ -7,17 +7,15 @@
 .modal {
     //出现时的动画
     --modal-padding: 16px;
+
     animation: 
         fade-in var(--anim-duration-moderate) ease-out none,
         pop-in-subtle var(--anim-duration-moderate) ease-out none;
 }
 
 .modal {
-
     background-color: var(--background-secondary);
     background-image: var(--liquid-modal-background-image);
-    
-    
     padding: 0 var(--modal-padding) var(--modal-padding);
 
 
@@ -29,7 +27,6 @@
         background-color: $background-primary;
         box-shadow: var(--shadow-s);
         border: 0.5px solid $background-modifier-seperator;
-
         border-radius: 100px;
         corner-shape: unset;
         
@@ -51,6 +48,7 @@
         gap: 12px;
 
         .mod-cta {order: 1;}
+
         &:last-child {
             border-top: 1px solid $background-modifier-seperator;
             margin: 24px -16px -16px;
@@ -68,7 +66,6 @@
 .modal-header {
     display: flex;
     flex-direction: column;
-
     margin: 0 calc( var(--modal-padding)  * -1) 20px;
     
 
@@ -79,12 +76,11 @@
     &:has(.modal-title:only-child:empty)+.modal-content>h2:first-child,
     .modal-title {
         justify-content: flex-start;
-
         padding: 12px var(--modal-padding) 0;
         margin: unset;
         min-height: 50px;
 
-        font-size: var(--font-ui-small);
+        // font-size: var(--font-ui-small);
         font-weight: 600;
         font-size: $font-ui-large;
 
