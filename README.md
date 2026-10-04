@@ -12,6 +12,9 @@ A theme for [Obsidian](https://obsidian.md) that blends macOS Liquid Glass with 
 - **Progressive blur**: applied when the window gets small, so cramped layouts stay calm.
 - **Custom palettes**: separate color sets tuned for light and dark mode.
 
+![Settings](screenshots/theme-example1.png)
+![Command palette](screenshots/theme-example2.png)
+
 ## Compatibility
 
 - Tested on macOS only. I don't have Windows or Linux devices, so the theme hasn't been tested there.
