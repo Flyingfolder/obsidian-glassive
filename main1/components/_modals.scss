@@ -99,8 +99,3 @@
 
 
 
-// 避免重复隐藏 =============================
-
-.mod-dim ~ .mod-dim .modal-bg {
-    opacity: 0 !important;
-}

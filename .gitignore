@@ -9,8 +9,8 @@ node_modules
 # Generated sourcemaps
 *.map
 
-# Local sync target (absolute path to the vault snippet folder, machine-specific)
-.sync-target
+# Vault used by `npm run dev` (machine-specific)
+.vault-path
 
 # macOS
 .DS_Store

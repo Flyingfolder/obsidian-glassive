@@ -14,7 +14,9 @@
         padding: 4px 4px 4px 8px;
         min-height: $control-height-m;
         corner-shape: squircle;
-        border-radius: 99px !important;
+        border-radius: 99px;
+        --bases-property-menu-item-radius: 99px;
+
         
         [type="checkbox"] {display: none;}
 
@@ -138,3 +140,7 @@
         }
     }
 }
+
+
+
+

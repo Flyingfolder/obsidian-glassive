@@ -23,10 +23,15 @@ $background-primary: var(--background-primary);
 $background-primary-alt: var(--background-primary-alt);
 $background-secondary: var(--background-secondary);
 
-$background-modifier-hover-exsubtle:rgba(var(--mono-rgb-100), 0.035); 
-$background-modifier-hover-subtle: rgba(var(--mono-rgb-100), 0.050); 
-$background-modifier-hover:        rgba(var(--mono-rgb-100), 0.075); 
-$background-modifier-hover-strong: rgba(var(--mono-rgb-100), 0.120); 
+// $background-modifier-hover-exsubtle:rgba(var(--mono-rgb-100), 0.035); 
+// $background-modifier-hover-subtle: rgba(var(--mono-rgb-100), 0.050); 
+// $background-modifier-hover:        rgba(var(--mono-rgb-100), 0.075); 
+// $background-modifier-hover-strong: rgba(var(--mono-rgb-100), 0.120); 
+
+$background-modifier-hover-exsubtle: color-mix(in oklch, var(--mono-100) 3.5%, transparent); 
+$background-modifier-hover-subtle:   color-mix(in oklch, var(--mono-100) 5%,   transparent); 
+$background-modifier-hover:          color-mix(in oklch, var(--mono-100) 7.5%, transparent); 
+$background-modifier-hover-strong:   color-mix(in oklch, var(--mono-100) 12%,  transparent);
 
 $background-modifier-active-hover: hsla(var(--interactive-accent-hsl), 0.1);
 

@@ -36,7 +36,6 @@
     }
 
     .workspace-tab-header.is-active {
-        // background-color: unset;
         background-color: $background-modifier-hover;
         border-radius: 99px;
         corner-shape: unset;
@@ -44,12 +43,9 @@
         --tab-text-color-focused-active: #{$interactive-accent};
         .workspace-tab-header-inner-icon .svg-icon {
             color: #{$interactive-accent};
-            --icon-stroke: 2.5px !important;
+            --icon-stroke: 2.5px;
         }
     }
-
-
-
 }
 
 

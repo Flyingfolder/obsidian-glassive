@@ -10,8 +10,7 @@
 	"license": "MIT",
 	"scripts": {
 		"build": "sass --no-source-map --style=expanded main1.scss theme.css && postcss theme.css --use autoprefixer --replace --no-map",
-		"watch": "sass --watch --no-source-map main1.scss theme.css",
-		"sync": "node scripts/sync-to-vault.mjs",
+		"dev": "node scripts/dev.mjs",
 		"lint": "stylelint \"theme.css\"",
 		"lint:fix": "stylelint \"theme.css\" --fix",
 		"check": "npm run build && npm run lint",

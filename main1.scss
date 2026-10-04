@@ -5,7 +5,7 @@
 
 // 1. Abstracts — 变量 / mixin / 动画
 @use 'main1/abstracts';
-@use 'main1/abstracts/style-settings';
+// @use 'main1/abstracts/style-settings';
 
 // 2. Base — reset 与全局基础样式
 @use 'main1/base/reset';
@@ -79,7 +79,3 @@
 @use 'main1/themes/tab-animations-dropzone';
 @use 'main1/themes/tab-animations-root';
 @use 'main1/themes/file-explorer';
-
-// 已弃用、未引入（待删除）：
-//   main1/abstracts/_variables-swiftive-old找机会删掉.scss
-//   main1/abstracts/_mixins-old找机会删掉.scss
