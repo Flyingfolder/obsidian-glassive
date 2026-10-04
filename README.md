@@ -20,6 +20,8 @@ A theme for [Obsidian](https://obsidian.md) that blends macOS Liquid Glass with 
 - Tested on macOS only. I don't have Windows or Linux devices, so the theme hasn't been tested there.
 - Not designed for mobile devices yet.
 
+Found a bug or something that looks off on your platform? Please [open an issue](https://github.com/Flyingfolder/obsidian-glassive/issues), screenshots help a lot.
+
 ## Plugin support
 
 Styled for the core Bases, Canvas, and File Recovery plugins, plus QuickAdd, Commander, Iconic, Modal Form, PDF++, Better Export PDF, and Another Callout Suggestions.
