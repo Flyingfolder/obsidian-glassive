@@ -9,6 +9,9 @@ node_modules
 # Generated sourcemaps
 *.map
 
+# Stray Sass output (the theme builds to theme.css)
+main1.css
+
 # Vault used by `npm run dev` (machine-specific)
 .vault-path
 
