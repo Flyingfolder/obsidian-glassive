@@ -1,3 +1,6 @@
+> [!TIP]
+> For the theme to display correctly, please download and install the latest Obsidian installer from [obsidian.md](https://obsidian.md).
+
 # Glassive
 
 A theme for [Obsidian](https://obsidian.md) that blends macOS Liquid Glass with classic macOS design: restrained texture, subtle highlights, and nothing more than it needs.
