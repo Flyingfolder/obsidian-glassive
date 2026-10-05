@@ -1,130 +1,107 @@
 @charset "UTF-8";
-
 /* ================================================================
    Glassive Theme — main.scss
    7-1 architecture 入口文件
    ================================================================ */
-
 /* Backgrounds */
-
 /* Inputs */
-
 /* Text */
-
 /* UI font sizes */
 @keyframes fade-in {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
-
 @keyframes fade-in-partial {
   from {
     opacity: 0.4;
   }
-
   to {
     opacity: 1;
   }
 }
-
 @keyframes unblur {
   from {
     filter: blur(8px);
   }
-
   to {
     filter: blur(0);
   }
 }
-
 @keyframes move-up {
   from {
     translate: 0 4px;
   }
-
   to {
     translate: 0 0;
   }
 }
-
 @keyframes move-up-far {
   from {
     translate: 0 18px;
   }
-
   to {
     translate: 0 0;
   }
 }
-
 @keyframes scale-up {
   from {
     scale: 0.96;
   }
-
   to {
     scale: 1;
   }
 }
-
 @keyframes scale-up-small-items {
   from {
     scale: 0.8;
   }
-
   to {
     scale: 1;
   }
 }
-
 @keyframes pop-in-subtle {
   0% {
     scale: 0.97;
   }
-
   50% {
     scale: 1.01;
   }
-
   99% {
     scale: 1;
   }
-
   100% {
     scale: unset;
   }
 }
-
 @keyframes pop-in {
   0% {
     scale: 0.8;
   }
-
   65% {
     scale: 1.01;
   }
-
   99% {
     scale: 1;
   }
-
   100% {
     scale: unset;
   }
 }
-
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 body {
   --background-modifier-hover: color-mix(in oklch, var(--mono-100) 7.5%, transparent);
   --radius-s: 6px;
   --input-radius: 10px;
   --text-muted: rgb(var(--mono-rgb-100), 55%);
   --text-faint: var(--color-base-50);
-  --text-muted-on-accent: rgb(255 255 255 / 75%);
+  --text-muted-on-accent: rgba(255, 255, 255, 0.75);
 }
 
 .theme-light {
@@ -152,7 +129,6 @@ body {
 
 input {
   corner-shape: squircle;
-
   --input-height: 28px;
   --input-radius: 100px;
 }
@@ -164,21 +140,21 @@ input {
 textarea,
 .multi-select-container,
 input.metadata-input-text,
-input[type="date"],
-input[type="datetime-local"],
-input[type="text"],
-input[type="search"],
-input[type="email"],
-input[type="password"],
-input[type="number"] {
+input[type=date],
+input[type=datetime-local],
+input[type=text],
+input[type=search],
+input[type=email],
+input[type=password],
+input[type=number] {
   border: unset;
   box-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border);
 }
 
-.bases-table-container input[type="text"],
-.bases-table-container input[type="date"],
-.bases-table-container input[type="datetime-local"],
-.bases-table-container input[type="number"],
+.bases-table-container input[type=text],
+.bases-table-container input[type=date],
+.bases-table-container input[type=datetime-local],
+.bases-table-container input[type=number],
 .bases-table-container .multi-select-container {
   box-shadow: unset;
 }
@@ -187,42 +163,40 @@ input[type="number"] {
   from {
     box-shadow: 0 0 calc(var(--input-border-width-focus) * 2) calc(var(--input-border-width-focus) * 5) hsl(var(--interactive-accent-hsl), 10%);
   }
-
   to {
     box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
   }
 }
-
 textarea:active,
 .multi-select-container:active,
 input.metadata-input-text:active,
-input[type="date"]:active,
-input[type="datetime-local"]:active,
-input[type="text"]:active,
-input[type="search"]:active,
-input[type="email"]:active,
-input[type="password"]:active,
-input[type="number"]:active,
+input[type=date]:active,
+input[type=datetime-local]:active,
+input[type=text]:active,
+input[type=search]:active,
+input[type=email]:active,
+input[type=password]:active,
+input[type=number]:active,
 textarea:focus,
 .multi-select-container:focus,
 input.metadata-input-text:focus,
-input[type="date"]:focus,
-input[type="datetime-local"]:focus,
-input[type="text"]:focus,
-input[type="search"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus,
+input[type=date]:focus,
+input[type=datetime-local]:focus,
+input[type=text]:focus,
+input[type=search]:focus,
+input[type=email]:focus,
+input[type=password]:focus,
+input[type=number]:focus,
 textarea:focus-visible,
 .multi-select-container:focus-visible,
 input.metadata-input-text:focus-visible,
-input[type="date"]:focus-visible,
-input[type="datetime-local"]:focus-visible,
-input[type="text"]:focus-visible,
-input[type="search"]:focus-visible,
-input[type="email"]:focus-visible,
-input[type="password"]:focus-visible,
-input[type="number"]:focus-visible {
+input[type=date]:focus-visible,
+input[type=datetime-local]:focus-visible,
+input[type=text]:focus-visible,
+input[type=search]:focus-visible,
+input[type=email]:focus-visible,
+input[type=password]:focus-visible,
+input[type=number]:focus-visible {
   animation: input-box-shadow-appear var(--anim-duration-moderate) ease none;
   box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
 }
@@ -232,6 +206,10 @@ input[disabled] {
   box-shadow: unset !important;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 body {
   --input-corner-shape: squircle;
 }
@@ -242,12 +220,9 @@ body {
 
 .dropdown {
   --dropdown-padding: 0 30px 0 var(--dropdown-padding-start);
-
   field-sizing: content;
   text-align: end;
-
   --input-height: 28px;
-
   border-radius: 100px;
   corner-shape: squircle;
 }
@@ -258,9 +233,7 @@ button:active {
 
 button {
   padding: var(--size-4-1) var(--size-4-3);
-
   --input-height: 28px;
-
   border-radius: 100px;
   corner-shape: squircle;
 }
@@ -272,14 +245,16 @@ button {
   corner-shape: squircle;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .menu {
   background-color: var(--background-glass);
-  -webkit-backdrop-filter: var(--backdrop-filter-glass);
-          backdrop-filter: var(--backdrop-filter-glass);
-  border: 1px solid rgb(100 100 100 / 30%);
+  backdrop-filter: var(--backdrop-filter-glass);
+  border: 1px solid rgba(100, 100, 100, 0.3);
   box-shadow: var(--shadow-s), var(--glass-shadow-inset-l);
   line-height: 16px;
-
   --menu-shadow:
       /* 2. 左右内阴影 (利用 -10px 扩展半径消除上下发散，并将 X 轴偏移量补偿到 20px) */
       inset 20px 0 10px -10px rgb(0 0 0 / 1.5%), /* 左侧阴影 */
@@ -287,12 +262,10 @@ button {
       0px 1px 2px rgb(0 0 0 / 2.8%),
       0px 3.4px 6.7px rgb(0 0 0 / 8.2%),
       0px 15px 30px rgb(0 0 0 / 11%);
-
   border-radius: 20px;
   corner-shape: squircle;
   border: var(--menu-border-width) solid var(--menu-border-color);
 }
-
 .menu .menu-scroll {
   padding: 4px;
 }
@@ -312,24 +285,19 @@ button {
   padding: 4px 8px;
   line-height: 16px;
 }
-
 .menu-item .menu-item-title {
   padding-right: 40px;
 }
-
 .menu-item .menu-item-icon {
   padding-inline-start: 4px;
 }
-
 .menu-item .menu-item-icon svg.svg-icon {
   --icon-size: var(--icon-xs);
   --icon-stroke: 2.4px;
 }
-
 .menu-item.is-warning {
   color: var(--text-error);
 }
-
 .menu-item.is-warning .menu-item-icon {
   color: var(--text-error);
 }
@@ -337,54 +305,47 @@ button {
 .menu .menu-item:not(.is-label, .is-disabled).selected {
   background-color: var(--color-accent);
   color: var(--text-on-accent);
-
   --icon-color: var(--text-on-accent);
   --icon-color-hover: var(--text-on-accent);
   --text-muted: var(--text-muted-on-accent);
 }
-
 .menu .menu-item:not(.is-label, .is-disabled).selected .menu-item-icon {
   color: var(--text-on-accent);
 }
-
 .menu:has(~ .menu:hover) .menu-item:not(.is-label, .is-disabled).selected, .menu:has(~ .menu):not(:hover) .menu-item:not(.is-label, .is-disabled).selected {
   background-color: var(--background-modifier-hover-plus);
   color: initial;
 }
-
 .menu:has(~ .menu:hover) .menu-item:not(.is-label, .is-disabled).selected .menu-item-icon, .menu:has(~ .menu):not(:hover) .menu-item:not(.is-label, .is-disabled).selected .menu-item-icon {
   color: var(--text-normal);
 }
-
 .menu:has(~ .menu) .menu-item:not(.is-label, .is-disabled).selected:hover {
   background-color: var(--color-accent);
   color: var(--text-on-accent);
-
   --icon-color: var(--text-on-accent);
   --icon-color-hover: var(--text-on-accent);
   --text-muted: var(--text-muted-on-accent);
 }
-
 .menu:has(~ .menu) .menu-item:not(.is-label, .is-disabled).selected:hover .menu-item-icon {
   color: var(--text-on-accent);
 }
-
 .menu ~ .menu .menu-item:not(.is-label, .is-disabled).selected:hover {
   background-color: var(--color-accent);
   color: var(--text-on-accent);
-
   --icon-color: var(--text-on-accent);
   --icon-color-hover: var(--text-on-accent);
   --text-muted: var(--text-muted-on-accent);
 }
-
 .menu ~ .menu .menu-item:not(.is-label, .is-disabled).selected:hover .menu-item-icon {
   color: var(--text-on-accent);
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .modal {
   --modal-padding: 16px;
-
   animation: fade-in var(--anim-duration-moderate) ease-out none, pop-in-subtle var(--anim-duration-moderate) ease-out none;
 }
 
@@ -393,7 +354,6 @@ button {
   background-image: var(--liquid-modal-background-image);
   padding: 0 var(--modal-padding) var(--modal-padding);
 }
-
 .modal .modal-header-button {
   inset: 8px 8px auto auto;
   padding: 8px;
@@ -403,20 +363,16 @@ button {
   border-radius: 100px;
   corner-shape: unset;
 }
-
 .modal .modal-header-button:hover {
   background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
 }
-
 .modal .modal-button-container {
   padding: 16px;
   gap: 12px;
 }
-
 .modal .modal-button-container .mod-cta {
   order: 1;
 }
-
 .modal .modal-button-container:last-child {
   border-top: 1px solid rgb(var(--mono-rgb-100), 12%);
   margin: 24px -16px -16px;
@@ -427,11 +383,9 @@ button {
   flex-direction: column;
   margin: 0 calc(var(--modal-padding) * -1) 20px;
 }
-
 .modal-header:has(.modal-title:only-child:empty) {
   display: none;
 }
-
 .modal-header:has(.modal-title:only-child:empty) + .modal-content > h2:first-child,
 .modal-header .modal-title {
   justify-content: flex-start;
@@ -442,34 +396,32 @@ button {
   font-size: 20px;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .popover.hover-popover {
   transform-origin: 50% -20%;
   animation: fade-in var(--anim-duration-moderate) ease-out backwards, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) backwards;
   border-radius: 20px;
-
   /* Popovers - file previews */
   --popover-width: 450px;
   --popover-height: 550px;
   --popover-pdf-width: 450px;
   --popover-pdf-height: 600px;
   --popover-font-size: 14px;
-
   box-shadow: var(--shadow-l);
 }
-
 .popover.hover-popover .markdown-rendered blockquote {
   padding-inline-start: 20px;
 }
-
 .popover.hover-popover .markdown-preview-view .markdown-preview-view {
   --file-margins: 20px;
 }
-
 .popover.hover-popover .markdown-embed-link {
   border-radius: 20px;
   cursor: default;
 }
-
 .popover.hover-popover::before {
   content: "";
   position: absolute;
@@ -478,16 +430,18 @@ button {
   background-color: var(--background-secondary);
   transition: height var(--anim-duration-slow) ease;
 }
-
 .popover.hover-popover.is-editing::before {
   inset: auto 0 0 0;
   height: 0;
 }
-
 .popover.hover-popover .markdown-embed-content.node-insert-event {
   animation: fade-in-partial var(--anim-duration-moderate) ease-in;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .modal-bg:has(+ .prompt) {
   opacity: 0 !important;
 }
@@ -502,17 +456,14 @@ input.prompt-input:focus-visible {
 
 .prompt {
   line-height: 1.333334;
-
   --prompt-max-height: min(70vh, 500px);
   --prompt-input-height: 48px;
 }
-
 .prompt input.prompt-input {
   font-size: 20px;
   border: none;
   animation: none;
 }
-
 .prompt .prompt-instructions {
   padding: unset;
   min-height: 24px;
@@ -526,39 +477,31 @@ input.prompt-input:focus-visible {
   corner-shape: squircle;
   border-radius: 40px;
 }
-
 .prompt .suggestion-item.is-selected {
   background-color: var(--color-accent-1);
-
   --text-normal: var(--text-on-accent);
   --text-muted: rgb(255 255 255 / 55%);
   --code-normal: var(--text-on-accent);
 }
-
 .prompt .suggestion-item {
   color: var(--text-normal);
 }
-
 .prompt .suggestion-item .suggestion-title:has(.suggestion-prefix) {
   display: flex;
   flex-direction: column;
 }
-
 .prompt .suggestion-item .suggestion-title:has(.suggestion-prefix) .suggestion-prefix {
   order: 1;
   color: var(--text-muted);
   font-size: 13px;
   line-height: 16px;
 }
-
 .prompt .suggestion-item .suggestion-title:has(.suggestion-prefix) .suggestion-prefix .suggestion-highlight {
   font-weight: 400;
 }
-
 .prompt .suggestion-item .suggestion-title:has(.suggestion-prefix) .suggestion-prefix::after {
   display: none;
 }
-
 .prompt .suggestion-empty {
   min-height: 120px;
   align-content: center;
@@ -569,16 +512,13 @@ input.prompt-input:focus-visible {
   0% {
     scale: 0.85 0.9;
   }
-
   55% {
     scale: 1.04 0.9;
   }
-
   100% {
     scale: 1;
   }
 }
-
 .prompt {
   background-color: unset;
   border: unset;
@@ -587,24 +527,20 @@ input.prompt-input:focus-visible {
   overflow: visible;
   top: 20vh;
 }
-
 .prompt .prompt-input-container {
   background-color: var(--background-glass-subtle);
-  -webkit-backdrop-filter: var(--backdrop-filter-glass-subtle);
-          backdrop-filter: var(--backdrop-filter-glass-subtle);
-  border: 1px solid rgb(100 100 100 / 30%);
+  backdrop-filter: var(--backdrop-filter-glass-subtle);
+  border: 1px solid rgba(100, 100, 100, 0.3);
   border-radius: 40px;
   corner-shape: unset;
   box-shadow: var(--glass-shadow-inset-s), var(--shadow-s);
   animation: show-prompt-input var(--anim-duration-moderate) ease none, fade-in var(--anim-duration-moderate) ease none;
 }
-
 .prompt .prompt-results {
   background-color: var(--background-glass);
-  -webkit-backdrop-filter: var(--backdrop-filter-glass);
-          backdrop-filter: var(--backdrop-filter-glass);
-  border: 1px solid rgb(100 100 100 / 30%);
-  border: 1px solid rgb(0 0 0 / 15%);
+  backdrop-filter: var(--backdrop-filter-glass);
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: var(--glass-shadow-inset-l), var(--shadow-card), var(--glass-shadow-inset-edge);
   transform-origin: 50% -20%;
   animation: fade-in var(--anim-duration-moderate) ease-out backwards, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) backwards;
@@ -614,7 +550,6 @@ input.prompt-input:focus-visible {
   border-radius: 40px;
   corner-shape: squircle;
 }
-
 .prompt:has(.prompt-instructions)::before {
   content: "";
   position: absolute;
@@ -622,8 +557,7 @@ input.prompt-input:focus-visible {
   inset: calc(var(--prompt-input-height) - 12px) 20px auto 20px;
   height: 40px;
   background-color: var(--background-glass-subtle);
-  -webkit-backdrop-filter: var(--backdrop-filter-glass-subtle);
-          backdrop-filter: var(--backdrop-filter-glass-subtle);
+  backdrop-filter: var(--backdrop-filter-glass-subtle);
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 80px, #000 calc(100% - 80px), transparent 100%), linear-gradient(to bottom, transparent 0, #000 4px, #000 calc(100% - 4px), transparent 100%);
           mask-image: linear-gradient(to right, transparent 0, #000 80px, #000 calc(100% - 80px), transparent 100%), linear-gradient(to bottom, transparent 0, #000 4px, #000 calc(100% - 4px), transparent 100%);
   -webkit-mask-composite: source-in, xor;
@@ -632,6 +566,10 @@ input.prompt-input:focus-visible {
           mask-repeat: no-repeat;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .modal:not(.mod-settings) .setting-item:not(.setting-item-heading) {
   border-color: rgb(var(--mono-rgb-100), 8%);
 }
@@ -640,7 +578,6 @@ input.prompt-input:focus-visible {
   margin-top: 32px;
   padding: unset;
 }
-
 .setting-item.setting-item-heading .setting-item-name {
   font-size: 17px;
 }
@@ -653,7 +590,6 @@ input.prompt-input:focus-visible {
   line-height: 28px;
   font-size: 14px;
 }
-
 .setting-item-info .setting-item-description {
   padding-top: unset;
   padding-bottom: 6px;
@@ -663,15 +599,11 @@ input.prompt-input:focus-visible {
   --setting-items-padding-x: 16px;
   --setting-items-padding-y: 8px;
 }
-
 .setting-group .setting-items {
   padding: 4px 0;
-
   --setting-items-radius: 40px;
-
   corner-shape: squircle;
 }
-
 .setting-group .setting-item-control {
   padding: 4px 2px 0 0;
 }
@@ -680,33 +612,32 @@ input.prompt-input:focus-visible {
   padding: 6px 0;
   align-items: center;
 }
-
 .modal:not(.mod-settings) .setting-item:not(.setting-item-heading):where(:not(.setting-group *)) .setting-item-control {
   min-height: 42px;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .suggestion-container {
   transform-origin: 50% -20%;
   animation: fade-in var(--anim-duration-moderate) ease-out none, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) forwards;
   background-color: var(--background-glass);
-  -webkit-backdrop-filter: var(--backdrop-filter-glass);
-          backdrop-filter: var(--backdrop-filter-glass);
-  border: 1px solid rgb(100 100 100 / 30%);
-  border: 1px solid rgb(0 0 0 / 15%);
+  backdrop-filter: var(--backdrop-filter-glass);
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   box-shadow: var(--glass-shadow-inset-l), var(--shadow-card), var(--glass-shadow-inset-edge);
   corner-shape: squircle;
   border-radius: 32px;
 }
-
 .suggestion-container .suggestion {
   padding: 8px;
 }
-
 .suggestion-container .suggestion-item {
   corner-shape: squircle;
   border-radius: 32px;
 }
-
 .suggestion-container .prompt-instructions {
   padding: unset;
   padding-left: 20px;
@@ -719,43 +650,35 @@ input.prompt-input:focus-visible {
 
 .suggestion-container:has(.search-input-container) {
   background-color: unset;
-  -webkit-backdrop-filter: unset;
-          backdrop-filter: unset;
+  backdrop-filter: unset;
   border: unset;
   box-shadow: unset;
   overflow: visible;
 }
-
 .suggestion-container:has(.search-input-container) .search-input-container {
   background-color: var(--background-glass);
-  -webkit-backdrop-filter: var(--backdrop-filter-glass);
-          backdrop-filter: var(--backdrop-filter-glass);
-  border: 1px solid rgb(100 100 100 / 30%);
+  backdrop-filter: var(--backdrop-filter-glass);
+  border: 1px solid rgba(100, 100, 100, 0.3);
   box-shadow: var(--shadow-s), var(--glass-shadow-inset-s);
 }
-
 .suggestion-container:has(.search-input-container) .search-input-container input {
   box-shadow: none !important;
 }
-
 .suggestion-container:has(.search-input-container) .suggestion {
   border-radius: 16px;
   padding: 8px;
   box-shadow: var(--shadow-l), var(--glass-shadow-inset-l), var(--glass-shadow-inset-edge);
   background-color: var(--background-glass);
-  -webkit-backdrop-filter: var(--backdrop-filter-glass);
-          backdrop-filter: var(--backdrop-filter-glass);
-  border: 1px solid rgb(100 100 100 / 30%);
+  backdrop-filter: var(--backdrop-filter-glass);
+  border: 1px solid rgba(100, 100, 100, 0.3);
 }
 
 .suggestion-container:has(.search-input-container) {
   animation: unset;
   gap: 8px;
   isolation: isolate;
-
   /* 3. 背景层 (伪元素)：负责 模糊 + 遮罩 + 淡入动画 */
 }
-
 .suggestion-container:has(.search-input-container)::before {
   content: "";
   position: absolute;
@@ -763,24 +686,25 @@ input.prompt-input:focus-visible {
   inset: 0 0 auto 0;
   height: 80px;
   background-color: transparent;
-  -webkit-backdrop-filter: blur(4px);
-          backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 8px, #000 calc(100% - 36px), transparent 100%), linear-gradient(to right, transparent 0%, #000 12px, #000 calc(100% - 12px), transparent 100%);
           mask-image: linear-gradient(to bottom, transparent 0%, #000 8px, #000 calc(100% - 36px), transparent 100%), linear-gradient(to right, transparent 0%, #000 12px, #000 calc(100% - 12px), transparent 100%);
   -webkit-mask-composite: source-in, xor;
           mask-composite: intersect;
 }
-
 .suggestion-container:has(.search-input-container) .search-input-container {
   transform-origin: 0 -40px;
   animation: fade-in var(--anim-duration-fast) ease-out both, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) both;
 }
-
 .suggestion-container:has(.search-input-container) .suggestion {
   transform-origin: 0 -160px;
   animation: fade-in var(--anim-duration-moderate) ease-out 60ms both, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) 30ms both;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 body {
   --nav-item-size: var(--font-ui-small);
   --nav-item-radius: var(--radius-m);
@@ -826,35 +750,38 @@ body {
   corner-shape: squircle;
   line-height: 16px;
   padding: var(--nav-item-padding);
-
   --nav-tag-color: rgb(var(--mono-rgb-100), 55%);
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .mod-secondary-split .workspace-tab-header-container .workspace-tab-header-container-inner {
   padding-right: 32px;
 }
-
 .mod-secondary-split .workspace-tab-header-container .workspace-tab-header:has(.mod-pinned) {
   order: 1;
   margin-left: auto;
 }
-
 .mod-secondary-split .workspace-tab-header-container .workspace-tab-header-status-icon.mod-pinned {
   pointer-events: none;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 @media (hover: hover) {
   .markdown-source-view.mod-cm6 .cm-embed-block:not(.cm-table-widget, .cm-lang-base):hover {
     border-radius: 40px;
     corner-shape: squircle;
   }
 }
-
 .markdown-source-view.mod-cm6 .cm-embed-block .embed-actions {
   top: 8px;
   right: 8px;
 }
-
 .markdown-source-view.mod-cm6 .cm-embed-block .embed-action {
   padding: 6px;
   border-radius: 100px;
@@ -863,36 +790,51 @@ body {
 
 .callout {
   --callout-radius: 40px;
-
   corner-shape: squircle;
   box-shadow: var(--glass-shadow-inset-l);
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .document-search-container {
   max-width: 850px;
   width: 100%;
   align-self: center;
   border-bottom: 1px solid var(--background-modifier-border);
 }
-
 .document-search-container > * {
   transform-origin: 50% -20%;
   animation: fade-in var(--anim-duration-moderate) ease-out backwards, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) backwards;
 }
 
-.menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:placeholder-shown)) .suggestion-group[data-group="actions"] .suggestion-item:nth-child(2),
-.menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:placeholder-shown)) .suggestion-group[data-group="actions"] .suggestion-item:nth-child(3),
-.menu.bases-toolbar-menu.bases-toolbar-properties-menu:not(:has(input:placeholder-shown)) .suggestion-group[data-group="actions"] .suggestion-item:nth-child(2),
-.menu.bases-toolbar-menu.bases-toolbar-properties-menu:not(:has(input:placeholder-shown)) .suggestion-group[data-group="actions"] .suggestion-item:nth-child(3) {
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
+.menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:-moz-placeholder)) .suggestion-group[data-group=actions] .suggestion-item:nth-child(2), .menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:-moz-placeholder)) .suggestion-group[data-group=actions] .suggestion-item:nth-child(3), .menu.bases-toolbar-menu.bases-toolbar-properties-menu:not(:has(input:-moz-placeholder)) .suggestion-group[data-group=actions] .suggestion-item:nth-child(2), .menu.bases-toolbar-menu.bases-toolbar-properties-menu:not(:has(input:-moz-placeholder)) .suggestion-group[data-group=actions] .suggestion-item:nth-child(3) {
   display: none;
 }
-
+.menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:placeholder-shown)) .suggestion-group[data-group=actions] .suggestion-item:nth-child(2),
+.menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:placeholder-shown)) .suggestion-group[data-group=actions] .suggestion-item:nth-child(3),
+.menu.bases-toolbar-menu.bases-toolbar-properties-menu:not(:has(input:placeholder-shown)) .suggestion-group[data-group=actions] .suggestion-item:nth-child(2),
+.menu.bases-toolbar-menu.bases-toolbar-properties-menu:not(:has(input:placeholder-shown)) .suggestion-group[data-group=actions] .suggestion-item:nth-child(3) {
+  display: none;
+}
+.menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:-moz-placeholder)) .suggestion-item.bases-toolbar-menu-item.is-selected, .menu.bases-toolbar-menu.bases-toolbar-properties-menu:not(:has(input:-moz-placeholder)) .suggestion-item.bases-toolbar-menu-item.is-selected {
+  box-shadow: 0 0 0 var(--input-border-width-focus) var(--color-base-40);
+}
 .menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:placeholder-shown)) .suggestion-item.bases-toolbar-menu-item.is-selected,
 .menu.bases-toolbar-menu.bases-toolbar-properties-menu:not(:has(input:placeholder-shown)) .suggestion-item.bases-toolbar-menu-item.is-selected {
   box-shadow: 0 0 0 var(--input-border-width-focus) var(--color-base-40);
 }
 
-.bases-view[data-view-type="table"] {
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
+.bases-view[data-view-type=table] {
   --bases-table-group-background: transparent;
   --bases-table-header-weight: var(--font-weight);
   --bases-table-header-color: var(--text-muted);
@@ -921,91 +863,82 @@ body {
   --background-modifier-table-row-odd: rgb(var(--mono-rgb-100), 2%);
 }
 
-.bases-header:has(~ [data-view-type="table"]) {
+.bases-header:has(~ [data-view-type=table]) {
   border: unset;
 }
 
-.bases-view[data-view-type="table"] .bases-thead {
+.bases-view[data-view-type=table] .bases-thead {
   --bases-table-row-border-width: 1.5px;
   --bases-table-column-border-width: 1px;
 }
-
-.bases-view[data-view-type="table"] .bases-thead .bases-td {
+.bases-view[data-view-type=table] .bases-thead .bases-td {
   box-shadow: unset;
 }
-
-.bases-view[data-view-type="table"] .bases-thead .bases-td .bases-table-header-label {
+.bases-view[data-view-type=table] .bases-thead .bases-td .bases-table-header-label {
   padding-inline-start: 4px;
 }
-
-.bases-view[data-view-type="table"] .bases-thead .bases-td:not(:last-child)::after {
+.bases-view[data-view-type=table] .bases-thead .bases-td:not(:last-child)::after {
   content: "";
   position: absolute;
   inset: 7px 0 7px auto;
   width: 1px;
   background-color: rgb(var(--mono-rgb-100), 12%);
 }
-
-.bases-view[data-view-type="table"] .bases-tbody {
+.bases-view[data-view-type=table] .bases-tbody {
   background-color: unset;
 }
-
-.bases-view[data-view-type="table"] .bases-table .bases-tr:nth-child(even) {
+.bases-view[data-view-type=table] .bases-table .bases-tr:nth-child(even) {
   background-color: color-mix(in oklch, var(--color-base-60) 10%, transparent);
 }
-
-.bases-view[data-view-type="table"] .bases-table .bases-tr:nth-child(odd) {
+.bases-view[data-view-type=table] .bases-table .bases-tr:nth-child(odd) {
   background-color: color-mix(in oklch, var(--color-base-40) 12%, transparent);
 }
 
-.bases-view[data-view-type="table"] .bases-thead .bases-td:first-child .bases-table-header-label {
+.bases-view[data-view-type=table] .bases-thead .bases-td:first-child .bases-table-header-label {
   padding-inline-start: 8px;
 }
-
-.bases-view[data-view-type="table"] .bases-tbody .bases-td:first-child .bases-table-cell {
+.bases-view[data-view-type=table] .bases-tbody .bases-td:first-child .bases-table-cell {
   padding-inline-start: 26px;
 }
 
-.workspace-leaf-content[data-type="markdown"] .block-language-base .bases-view,
-.workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view {
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
+.workspace-leaf-content[data-type=markdown] .block-language-base .bases-view,
+.workspace-leaf-content[data-type=markdown] .bases-embed .bases-view {
   border-radius: 28px;
   corner-shape: squircle;
-
   --bases-table-row-height: 24px;
   --border-width: 0px;
 }
-
-.workspace-leaf-content[data-type="markdown"] .block-language-base .bases-view .bases-thead,
-.workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view .bases-thead {
+.workspace-leaf-content[data-type=markdown] .block-language-base .bases-view .bases-thead,
+.workspace-leaf-content[data-type=markdown] .bases-embed .bases-view .bases-thead {
   --bases-table-font-size: 12px;
   --bases-table-row-height: 28px;
 }
-
-.workspace-leaf-content[data-type="markdown"] .block-language-base .bases-view,
-.workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view {
+.workspace-leaf-content[data-type=markdown] .block-language-base .bases-view,
+.workspace-leaf-content[data-type=markdown] .bases-embed .bases-view {
   --bases-table-header-background: color-mix(in oklch, var(--color-base-70) 10%, transparent);
 }
 
-.workspace-leaf-content[data-type="markdown"] .block-language-base .embed-action,
-.workspace-leaf-content[data-type="markdown"] .block-language-base .bases-toolbar .bases-toolbar-item,
-.workspace-leaf-content[data-type="markdown"] .bases-embed .embed-action,
-.workspace-leaf-content[data-type="markdown"] .bases-embed .bases-toolbar .bases-toolbar-item {
+.workspace-leaf-content[data-type=markdown] .block-language-base .embed-action,
+.workspace-leaf-content[data-type=markdown] .block-language-base .bases-toolbar .bases-toolbar-item,
+.workspace-leaf-content[data-type=markdown] .bases-embed .embed-action,
+.workspace-leaf-content[data-type=markdown] .bases-embed .bases-toolbar .bases-toolbar-item {
   opacity: 0;
   transition: opacity 170ms;
 }
-
-.workspace-leaf-content[data-type="markdown"] .block-language-base .bases-toolbar .bases-toolbar-item:first-child,
-.workspace-leaf-content[data-type="markdown"] .bases-embed .bases-toolbar .bases-toolbar-item:first-child {
+.workspace-leaf-content[data-type=markdown] .block-language-base .bases-toolbar .bases-toolbar-item:first-child,
+.workspace-leaf-content[data-type=markdown] .bases-embed .bases-toolbar .bases-toolbar-item:first-child {
   opacity: 1;
 }
-
-.workspace-leaf-content[data-type="markdown"] .block-language-base:hover .bases-toolbar-item,
-.workspace-leaf-content[data-type="markdown"] .bases-embed:hover .bases-toolbar-item {
+.workspace-leaf-content[data-type=markdown] .block-language-base:hover .bases-toolbar-item,
+.workspace-leaf-content[data-type=markdown] .bases-embed:hover .bases-toolbar-item {
   opacity: 1;
 }
-
-.workspace-leaf-content[data-type="markdown"] .block-language-base:hover .embed-action,
-.workspace-leaf-content[data-type="markdown"] .bases-embed:hover .embed-action {
+.workspace-leaf-content[data-type=markdown] .block-language-base:hover .embed-action,
+.workspace-leaf-content[data-type=markdown] .bases-embed:hover .embed-action {
   opacity: 1;
 }
 
@@ -1013,71 +946,67 @@ body {
   display: none;
 }
 
-.workspace-leaf-content[data-type="bases"] .bases-view[data-view-type="cards"] {
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
+.workspace-leaf-content[data-type=bases] .bases-view[data-view-type=cards] {
   background-color: var(--background-secondary);
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .menu.bases-toolbar-menu {
   transform-origin: 50% -20%;
   animation: fade-in var(--anim-duration-moderate) ease-out backwards, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) backwards;
   background-color: var(--background-glass-subtle);
-  -webkit-backdrop-filter: var(--backdrop-filter-glass-subtle);
-          backdrop-filter: var(--backdrop-filter-glass-subtle);
-  border: 1px solid rgb(100 100 100 / 30%);
+  backdrop-filter: var(--backdrop-filter-glass-subtle);
+  border: 1px solid rgba(100, 100, 100, 0.3);
   box-shadow: var(--shadow-card), var(--glass-shadow-inset-l), var(--glass-shadow-inset-edge);
   border-radius: 40px;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-item {
   padding: 4px 4px 4px 8px;
   min-height: 28px;
   corner-shape: squircle;
   border-radius: 99px;
-
   --bases-property-menu-item-radius: 99px;
 }
-
-.menu.bases-toolbar-menu .bases-toolbar-menu-item [type="checkbox"] {
+.menu.bases-toolbar-menu .bases-toolbar-menu-item [type=checkbox] {
   display: none;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-item .bases-toolbar-menu-item-icon {
   display: none;
   cursor: pointer;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-item:hover .bases-toolbar-menu-item-icon {
   display: flex;
 }
-
-.menu.bases-toolbar-menu .suggestion-group[data-group="actions"] {
+.menu.bases-toolbar-menu .suggestion-group[data-group=actions] {
   padding: 4px;
 }
-
-.menu.bases-toolbar-menu .suggestion-group[data-group="actions"] .suggestion-item.bases-toolbar-menu-item {
+.menu.bases-toolbar-menu .suggestion-group[data-group=actions] .suggestion-item.bases-toolbar-menu-item {
   min-height: unset;
   height: 20px;
   padding: 0 8px 0 4px;
   margin: 4px;
+  width: -moz-fit-content;
   width: fit-content;
   border-radius: 20px;
   corner-shape: squircle;
-
   --icon-color: $interactive-accent;
-
   font-weight: 600;
   color: var(--color-accent-1);
   background-color: hsl(var(--interactive-accent-hsl), 10%);
 }
-
-.menu.bases-toolbar-menu .suggestion-group[data-group="actions"] .suggestion-item.bases-toolbar-menu-item:active {
+.menu.bases-toolbar-menu .suggestion-group[data-group=actions] .suggestion-item.bases-toolbar-menu-item:active {
   opacity: 0.7;
 }
-
-.menu.bases-toolbar-menu .suggestion-group[data-group="actions"] .suggestion-item.bases-toolbar-menu-item .bases-toolbar-menu-item-info {
+.menu.bases-toolbar-menu .suggestion-group[data-group=actions] .suggestion-item.bases-toolbar-menu-item .bases-toolbar-menu-item-info {
   gap: 4px;
 }
-
 .menu.bases-toolbar-menu .search-input-container {
   padding: unset;
   border: unset;
@@ -1090,30 +1019,24 @@ body {
 .menu.bases-toolbar-menu .bases-toolbar-menu-container:has(.bases-toolbar-menu-form) {
   animation: fade-in var(--anim-duration-moderate) ease-out none, pop-in-subtle var(--anim-duration-moderate) ease-out none;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-container-header {
   padding: 8px 8px 0;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-container-header .close-icon {
   display: none;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-container-header .back-button {
   pointer-events: none;
   padding: unset;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-container-header .back-button:hover {
   background-color: unset;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-container-header .back-button .back-label {
   margin-left: auto;
   margin-right: auto;
   color: rgb(var(--mono-rgb-100), 55%);
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-container-header .clickable-icon,
 .menu.bases-toolbar-menu .bases-toolbar-menu-container-header .back-icon {
   padding: 4px;
@@ -1122,49 +1045,45 @@ body {
   height: 24px;
   border-radius: 6px;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-container-header .clickable-icon:hover,
 .menu.bases-toolbar-menu .bases-toolbar-menu-container-header .back-icon:hover {
   background-color: color-mix(in oklch, var(--mono-100) 7.5%, transparent);
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-form {
   padding: 4px 16px 8px;
   gap: 0;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-form .input-row {
   padding: 12px 0;
   display: flex;
   flex-direction: column;
   row-gap: 12px;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-form .input-row:not(:first-child) {
   border-top: 1px solid rgb(var(--mono-rgb-100), 12%);
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-form .input-row .input-row-label {
   padding: unset;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-form .input-row .input-row-content:not(:first-child) {
   padding-left: 12px;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-form .input-row .input-row-content:not(:first-child) .dropdown {
   text-align: unset;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-form .input-row:has(.checkbox-container) {
   flex-direction: row;
   justify-content: space-between;
 }
-
 .menu.bases-toolbar-menu .bases-toolbar-menu-form .input-row:has(.checkbox-container) .input-row-content {
+  width: -moz-fit-content;
   width: fit-content;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .bases-toolbar-menu.bases-toolbar-properties-menu .menu-scroll,
 .bases-toolbar-menu.bases-toolbar-views-menu .menu-scroll,
 .bases-toolbar-menu.bases-toolbar-sort-menu .menu-scroll,
@@ -1180,27 +1099,26 @@ body {
   display: flex;
   align-items: center;
 }
-
 .bases-query-container > .filter-group .filter-statement {
   justify-content: center;
 }
-
 .bases-query-container > .filter-group > .filter-group-statements > .filter-row {
   border-top: 1px solid rgb(var(--mono-rgb-100), 12%);
 }
-
 .bases-query-container > .filter-group > .filter-group-statements > .filter-row:last-child {
   border-bottom: 1px solid rgb(var(--mono-rgb-100), 12%);
 }
-
 .bases-query-container > .filter-group > .filter-group-statements > .filter-row {
   padding: 6px 0;
 }
-
 .bases-query-container > .filter-group > .filter-group-statements {
   margin: 6px 0;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .bases-query-container {
   --metadata-input-background-active: transparent;
   --row-height: 42px;
@@ -1210,7 +1128,6 @@ body {
 .bases-query-container .filter-row > .conjunction {
   display: none;
 }
-
 .bases-query-container .filter-row .combobox-button-chevron {
   display: none;
 }
@@ -1219,18 +1136,15 @@ body {
   gap: unset;
   position: relative;
 }
-
 .bases-query-container .filter-group .filter-group {
   background-color: unset;
   border-radius: unset;
   padding: unset;
   border: unset;
 }
-
 .bases-query-container .filter-group .filter-group-statements {
   gap: unset;
 }
-
 .bases-query-container .filter-group .filter-group .filter-group-actions .text-icon-button:nth-child(2) {
   display: none;
 }
@@ -1252,47 +1166,37 @@ body {
   overflow: visible;
   gap: 4px;
 }
-
 .bases-query-container .filter-expression .combobox-button.has-focus {
   --input-border-width-focus: 2px;
-
   box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
 }
-
 .bases-query-container .filter-expression .filter-rhs-container {
   --input-height: 28px;
 }
-
 .bases-query-container .filter-expression .filter-rhs-container input {
   box-shadow: 0 0 0 1px var(--background-modifier-border);
   border-radius: 40px;
   corner-shape: squircle;
 }
-
 .bases-query-container .filter-expression .filter-rhs-container {
   overflow: visible;
-
   --input-border-width-focus: 2px;
 }
-
 .bases-query-container .filter-expression .filter-rhs-container .metadata-input-longtext {
   box-shadow: 0 0 0 1px var(--background-modifier-border);
   border-radius: 40px;
   corner-shape: squircle;
   min-height: 28px;
 }
-
 .bases-query-container .filter-expression .filter-rhs-container .metadata-input-longtext:focus,
 .bases-query-container .filter-expression .filter-rhs-container input:focus {
   box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus) !important;
 }
-
 .bases-query-container .filter-expression .combobox-button {
   border-radius: 40px;
   corner-shape: squircle;
   background-color: transparent;
 }
-
 .bases-query-container .filter-expression .combobox-button:hover {
   background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
 }
@@ -1303,21 +1207,17 @@ body {
   align-items: center;
   gap: 10px;
 }
-
 .bases-query-container > .filter-group .filter-group .filter-group-actions {
   position: absolute;
   right: 28px;
 }
-
 .bases-query-container > .filter-group .filter-group .filter-group-actions .text-icon-button {
   background-color: unset;
   color: rgb(var(--mono-rgb-100), 55%);
 }
-
 .bases-query-container > .filter-group .filter-group .filter-group-actions .text-icon-button:hover {
   background-color: color-mix(in oklch, var(--mono-100) 7.5%, transparent);
 }
-
 .bases-query-container > .filter-group .filter-group-header .conjunction.dropdown,
 .bases-query-container > .filter-group .text-icon-button {
   height: 28px;
@@ -1326,7 +1226,6 @@ body {
   border-radius: 40px;
   corner-shape: squircle;
 }
-
 .bases-query-container > .filter-group .filter-operator,
 .bases-query-container > .filter-group .filter-property-select {
   align-self: auto;
@@ -1339,11 +1238,14 @@ body {
 .bases-query-container > .filter-group .filter-group-header {
   padding-right: 2px;
 }
-
 .bases-query-container > .filter-group .filter-group .conjunction.dropdown {
   background-color: unset;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .canvas-node-container {
   animation: fade-in var(--anim-duration-moderate) ease-i forwards, scale-up-small-items var(--anim-duration-moderate) ease forwards;
 }
@@ -1360,7 +1262,6 @@ body {
   padding: 0 12px;
   height: var(--header-height);
 }
-
 .canvas-controls .canvas-control-group {
   border-radius: unset;
   background-color: unset;
@@ -1369,43 +1270,39 @@ body {
   display: flex;
   flex-direction: row;
 }
-
 .canvas-controls .canvas-control-item {
   border: unset;
   color: var(--text-muted);
   padding: var(--size-2-2) var(--size-2-3);
   border-radius: 6px;
 }
-
 .canvas-controls .canvas-control-group:has([aria-label="Canvas settings"]) {
   order: 1;
 }
-
-.canvas-controls .canvas-control-group:has([aria-label="Undo"]) {
+.canvas-controls .canvas-control-group:has([aria-label=Undo]) {
   order: -1;
 }
-
 .canvas-controls .canvas-control-group:has([aria-label="Zoom in"]) {
   margin-left: auto;
   margin-right: auto;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .modal.mod-sync-history.mod-sidebar-layout {
   border-radius: 40px;
   corner-shape: squircle;
   background-color: var(--background-primary);
-
   --modal-sidebar-background: transparent;
-
   background-image: none;
 }
-
 .modal.mod-sync-history.mod-sidebar-layout .modal-content {
   display: flex;
   flex-direction: row;
   padding-left: 7px;
 }
-
 .modal.mod-sync-history.mod-sidebar-layout .modal-sidebar.mod-history {
   margin: 7px 0;
   border: 1px solid var(--liquid-sidebar-border-color);
@@ -1417,20 +1314,16 @@ body {
   background-color: var(--background-secondary);
   background-image: var(--liquid-sidebar-background-image);
 }
-
 .modal.mod-sync-history.mod-sidebar-layout .modal-sidebar-list {
   padding: 9px;
 }
-
 .modal.mod-sync-history.mod-sidebar-layout {
   background-color: var(--background-primary);
 }
-
 .modal.mod-sync-history.mod-sidebar-layout .modal-sidebar-inner {
   border: unset;
   background-color: unset;
 }
-
 .modal.mod-sync-history.mod-sidebar-layout .file-recovery-list-item-header {
   height: 32px;
   border-radius: 8px;
@@ -1445,32 +1338,26 @@ body {
   transition: unset;
   cursor: default;
 }
-
 .modal.mod-sync-history.mod-sidebar-layout .file-recovery-list-item-header:hover {
   text-shadow: 0 0 0.3px currentcolor;
   background-color: unset;
   color: var(--color-base-100);
 }
-
 .modal.mod-sync-history.mod-sidebar-layout .file-recovery-list-item-header:active {
   background-color: unset;
 }
-
 .modal.mod-sync-history.mod-sidebar-layout .file-recovery-list-item-header.is-active {
   background-color: var(--background-modifier-hover);
   color: var(--text-accent);
   border-radius: 8px;
 }
-
 .modal.mod-sync-history.mod-sidebar-layout .file-recovery-list-item-header * {
   color: currentcolor;
 }
-
 .modal.mod-sync-history.mod-sidebar-layout .file-recovery-list-item-header {
   min-height: 36px;
   padding-inline-start: 10px;
 }
-
 .modal.mod-sync-history.mod-sidebar-layout .file-recovery-list-item-details {
   display: flex;
   flex-direction: row;
@@ -1478,10 +1365,13 @@ body {
   align-items: baseline;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .iconic-scroller {
   border-bottom: unset;
 }
-
 .iconic-scroller .setting-item.iconic-condition,
 .iconic-scroller .setting-item.iconic-rule {
   padding: 7px 0 !important;
@@ -1490,11 +1380,18 @@ body {
 .modal-container > .modal.iconic-rule-editor .iconic-scroller .dropdown {
   flex-grow: unset;
 }
-
 .modal-container > .modal.iconic-rule-editor .modal-content > .setting-item > .setting-item-control .checkbox-container {
   display: none;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .modal-content .setting-item.cmdr-mm-item {
   padding: 7px 0;
   min-height: 42px;
@@ -1502,17 +1399,14 @@ body {
   align-items: center;
   border: unset !important;
 }
-
 .modal-content .setting-item.cmdr-mm-item:first-child span {
   display: none;
 }
-
 .modal-content .setting-item.cmdr-mm-item:first-child {
   border-bottom: 1px solid rgb(var(--mono-rgb-100), 12%) !important;
   margin-bottom: 6px;
   padding-bottom: 13px !important;
 }
-
 .modal-content .setting-item.cmdr-mm-actions {
   padding: 6px;
   margin-top: 6px;
@@ -1522,11 +1416,9 @@ body {
   align-items: flex-start !important;
   gap: 0;
 }
-
 .modal-content .setting-item.cmdr-mm-actions > div {
   min-height: 28px;
 }
-
 .modal-content .setting-item.cmdr-mm-actions div:has(#checkbox) {
   order: 1;
   padding-left: 6px;
@@ -1547,12 +1439,10 @@ body {
   transition: none;
   cursor: default;
 }
-
 .cmdr-mm-actions button:hover {
   color: rgb(var(--mono-rgb-100), 55%);
   background-color: color-mix(in oklch, var(--mono-100) 7.5%, transparent);
 }
-
 .cmdr-mm-actions button::before {
   display: flex;
   align-items: center;
@@ -1565,7 +1455,6 @@ body {
   top: -2px;
   margin-right: 2px;
 }
-
 .cmdr-mm-actions button:active {
   transform: unset;
 }
@@ -1574,7 +1463,6 @@ body {
   justify-content: flex-end;
   gap: 12px;
 }
-
 .cmdr-mm-control .mod-cta {
   order: 1;
 }
@@ -1591,11 +1479,9 @@ body {
 .modal-container.cmdr-setting-modal .cmdr-setting-header {
   margin: unset;
 }
-
 .modal-container.cmdr-setting-modal .cmdr-setting-header .cmdr-fill {
   display: none;
 }
-
 .modal-container.cmdr-setting-modal .cmdr-setting-header .cmdr-setting-tab-group {
   display: flex;
   flex-direction: column;
@@ -1603,7 +1489,6 @@ body {
   align-items: stretch;
   height: 100%;
 }
-
 .modal-container.cmdr-setting-modal .cmdr-setting-header .cmdr-tab.cmdr-tab-active {
   transform: unset;
   border: unset;
@@ -1613,23 +1498,18 @@ body {
   display: flex;
   flex-direction: row;
 }
-
 .modal-container.cmdr-setting-modal .modal {
   border-radius: 40px;
   corner-shape: squircle;
   background-color: var(--background-primary);
-
   --modal-sidebar-background: transparent;
-
   background-image: none;
 }
-
 .modal-container.cmdr-setting-modal .modal .modal-content {
   display: flex;
   flex-direction: row;
   padding-left: 7px;
 }
-
 .modal-container.cmdr-setting-modal .modal .cmdr-setting-header {
   margin: 7px 0;
   border: 1px solid var(--liquid-sidebar-border-color);
@@ -1641,15 +1521,12 @@ body {
   background-color: var(--background-secondary);
   background-image: var(--liquid-sidebar-background-image);
 }
-
 .modal-container.cmdr-setting-modal .modal .cmdr-setting-tab-group {
   padding: 9px;
 }
-
 .modal-container.cmdr-setting-modal .modal-content .cmdr-setting-header {
   width: 200px;
 }
-
 .modal-container.cmdr-setting-modal .modal-content .cmdr-setting-header .cmdr-tab {
   height: 32px;
   border-radius: 8px;
@@ -1664,23 +1541,19 @@ body {
   transition: unset;
   cursor: default;
 }
-
 .modal-container.cmdr-setting-modal .modal-content .cmdr-setting-header .cmdr-tab:hover {
   text-shadow: 0 0 0.3px currentcolor;
   background-color: unset;
   color: var(--color-base-100);
 }
-
 .modal-container.cmdr-setting-modal .modal-content .cmdr-setting-header .cmdr-tab:active {
   background-color: unset;
 }
-
 .modal-container.cmdr-setting-modal .modal-content .cmdr-setting-header .cmdr-tab.cmdr-tab-active {
   background-color: var(--background-modifier-hover);
   color: var(--text-accent);
   border-radius: 8px;
 }
-
 .modal-container.cmdr-setting-modal .modal-content .cmdr-setting-header .cmdr-tab * {
   color: currentcolor;
 }
@@ -1688,7 +1561,6 @@ body {
 .modal-content {
   height: 100%;
 }
-
 .modal-content .cmdr-setting-content {
   flex: 1;
   padding: 50px 32px;
@@ -1699,7 +1571,6 @@ body {
 .cmdr-add-new-wrapper {
   justify-content: flex-start;
 }
-
 .cmdr-add-new-wrapper button {
   margin: unset;
 }
@@ -1712,13 +1583,11 @@ hr:has(+ .cmdr-sep-con.callout) {
   display: flex;
   flex-direction: column;
 }
-
 .cmdr-setting-content .cmdr-sep-con.callout p {
   font-size: 13px;
   color: rgb(var(--mono-rgb-100), 55%);
   margin: 4px 0 0;
 }
-
 .cmdr-setting-content .cmdr-sep-con.callout button {
   cursor: pointer;
   background-color: unset;
@@ -1733,32 +1602,26 @@ hr:has(+ .cmdr-sep-con.callout) {
   align-items: flex-start;
   margin: unset;
 }
-
 .cmdr-commands-empty .cmdr-icon-wrapper {
   --icon-size: 92px;
 }
-
 .cmdr-commands-empty .cmdr-icon-wrapper svg {
   width: var(--icon-size);
   height: var(--icon-size);
   opacity: 0.7;
 }
-
 .cmdr-commands-empty * {
   font-size: 17px;
 }
-
 .cmdr-commands-empty h3 {
   padding: initial;
   margin: initial;
   font-weight: 600;
 }
-
 .cmdr-commands-empty span {
   font-weight: 400;
   color: var(--text-muted);
 }
-
 .cmdr-commands-empty + .cmdr-add-new-wrapper .mod-cta {
   margin: unset;
 }
@@ -1770,35 +1633,33 @@ hr:has(+ .cmdr-sep-con.callout) {
   margin: 0 0 12px;
   font-weight: 700;
 }
-
 .cmdr-setting-content:has(.cmdr-about) > .setting-item:first-child {
   padding-top: 16px !important;
   border-top: 1px solid var(--color-base-30) !important;
 }
-
 .cmdr-setting-content:has(.cmdr-about) hr {
   opacity: 0;
   margin-bottom: 12px;
 }
-
 .cmdr-setting-content:has(.cmdr-about) {
   padding-bottom: unset;
 }
-
 .cmdr-setting-content:has(.cmdr-about) .cmdr-about {
   padding-bottom: unset;
 }
-
 .cmdr-setting-content:has(.cmdr-about) button {
   font-weight: 400;
   gap: 8px;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 /* stylelint-disable selector-class-pattern */
 .vertical-tab-content .setting-group:first-child:has(.choiceFilterBar) {
   margin-bottom: 80px;
 }
-
 .vertical-tab-content .setting-group:first-child:has(.choiceFilterBar) .setting-items {
   position: relative;
 }
@@ -1807,41 +1668,37 @@ hr:has(+ .cmdr-sep-con.callout) {
 .setting-item-control .choiceList .choiceListItem .qaChoiceRowIcon {
   --icon-size: 16px;
 }
-
 .setting-item-control .choiceList .multiChoiceListItem,
 .setting-item-control .choiceList .choiceListItem {
   font-size: 13px;
   margin: unset;
 }
-
 .setting-item-control .choiceList .qaNewFolderBtn {
   display: none;
 }
-
 .setting-item-control .choiceViewBottomBar {
   justify-content: flex-start;
 }
-
 .setting-item-control .choiceViewBottomBar .qaNewChoiceBtn {
   order: -1;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .modal.mod-settings.mod-sidebar-layout {
   border-radius: 40px;
   corner-shape: squircle;
   background-color: var(--background-primary);
-
   --modal-sidebar-background: transparent;
-
   background-image: none;
 }
-
 .modal.mod-settings.mod-sidebar-layout .modal-content {
   display: flex;
   flex-direction: row;
   padding-left: 7px;
 }
-
 .modal.mod-settings.mod-sidebar-layout .vertical-tab-header {
   margin: 7px 0;
   border: 1px solid var(--liquid-sidebar-border-color);
@@ -1853,16 +1710,13 @@ hr:has(+ .cmdr-sep-con.callout) {
   background-color: var(--background-secondary);
   background-image: var(--liquid-sidebar-background-image);
 }
-
 .modal.mod-settings.mod-sidebar-layout .vertical-tab-header-group-container {
   padding: 9px;
 }
-
 .modal.mod-settings.mod-sidebar-layout .vertical-tab-header-group {
   padding-top: 8px;
   padding-bottom: 24px;
 }
-
 .modal.mod-settings.mod-sidebar-layout .vertical-tab-nav-item {
   height: 32px;
   border-radius: 8px;
@@ -1877,27 +1731,22 @@ hr:has(+ .cmdr-sep-con.callout) {
   transition: unset;
   cursor: default;
 }
-
 .modal.mod-settings.mod-sidebar-layout .vertical-tab-nav-item:hover {
   text-shadow: 0 0 0.3px currentcolor;
   background-color: unset;
   color: var(--color-base-100);
 }
-
 .modal.mod-settings.mod-sidebar-layout .vertical-tab-nav-item:active {
   background-color: unset;
 }
-
 .modal.mod-settings.mod-sidebar-layout .vertical-tab-nav-item.is-active {
   background-color: var(--background-modifier-hover);
   color: var(--text-accent);
   border-radius: 8px;
 }
-
 .modal.mod-settings.mod-sidebar-layout .vertical-tab-nav-item * {
   color: currentcolor;
 }
-
 .modal.mod-settings.mod-sidebar-layout .file-recovery-list-item-details {
   display: flex;
   flex-direction: row;
@@ -1905,48 +1754,43 @@ hr:has(+ .cmdr-sep-con.callout) {
   align-items: center;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .modal.mod-community-modal.mod-sidebar-layout .modal-sidebar {
   padding: unset;
 }
-
 .modal.mod-community-modal.mod-sidebar-layout .community-modal-search-summary.u-muted {
   display: none;
 }
-
 .modal.mod-community-modal.mod-sidebar-layout .community-modal-controls {
   display: flex;
   flex-direction: column;
   gap: unset;
   padding: 12px 12px 4px;
 }
-
 .modal.mod-community-modal.mod-sidebar-layout .community-modal-controls > * {
   margin: unset;
   padding: unset;
 }
-
 .modal.mod-community-modal.mod-sidebar-layout .community-modal-controls * {
   font-size: 13px;
 }
-
 .modal.mod-community-modal.mod-sidebar-layout .community-modal-controls input {
   background: unset;
 }
-
 .modal.mod-community-modal.mod-sidebar-layout .modal-sidebar {
   position: relative;
 }
-
 .modal.mod-community-modal.mod-sidebar-layout .modal-sidebar .community-modal-controls {
   position: absolute;
   z-index: 1;
   inset: 0 0 auto;
   background-color: var(--background-glass-subtle);
-  -webkit-backdrop-filter: var(--backdrop-filter-glass-subtle);
-          backdrop-filter: var(--backdrop-filter-glass-subtle);
+  backdrop-filter: var(--backdrop-filter-glass-subtle);
   border-bottom: 1px solid rgb(var(--mono-rgb-100), 12%);
 }
-
 .modal.mod-community-modal.mod-sidebar-layout .modal-sidebar .community-modal-search-results-wrapper {
   padding-top: 100px;
   border: unset;
@@ -1968,13 +1812,11 @@ hr:has(+ .cmdr-sep-con.callout) {
   padding: unset;
   padding-bottom: 12px;
 }
-
 .mod-community-theme .community-item .community-item-screenshot {
   order: -1;
   border-radius: unset;
   margin: 0 0 8px;
 }
-
 .mod-community-theme .community-item > *:not(.community-item-screenshot) {
   padding-inline-start: 12px;
 }
@@ -1983,18 +1825,14 @@ hr:has(+ .cmdr-sep-con.callout) {
   border-radius: 40px;
   corner-shape: squircle;
   background-color: var(--background-primary);
-
   --modal-sidebar-background: transparent;
-
   background-image: none;
 }
-
 .modal:has(.community-modal-details) .modal-content {
   display: flex;
   flex-direction: row;
   padding-left: 7px;
 }
-
 .modal:has(.community-modal-details) .modal-sidebar {
   margin: 7px 0;
   border: 1px solid var(--liquid-sidebar-border-color);
@@ -2006,26 +1844,27 @@ hr:has(+ .cmdr-sep-con.callout) {
   background-color: var(--background-secondary);
   background-image: var(--liquid-sidebar-background-image);
 }
-
 .modal:has(.community-modal-details) .community-modal-search-results {
   padding: 9px;
 }
-
 .modal:has(.community-modal-details) .community-modal-controls {
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
   corner-shape: inherit;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .callout-suggestions-container .suggestion-item.callout-suggestions-item .callout {
   padding-left: 16px;
   border-radius: 30px;
   corner-shape: squircle;
   border: 1px solid transparent;
   background-color: color-mix(in oklch, var(--callout-color) 10%, rgb(var(--mono-rgb-0), 60%));
-  box-shadow: 0 1px 2px rgb(0 0 0 / 12.1%), 0 2.4px 6.7px rgb(0 0 0 / 9%), 0 7px 15px rgb(0 0 0 / 4%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.121), 0 2.4px 6.7px rgba(0, 0, 0, 0.09), 0 7px 15px rgba(0, 0, 0, 0.04);
 }
-
 .callout-suggestions-container .suggestion-item.callout-suggestions-item.is-selected .callout {
   border: 1px solid var(--background-modifier-border-focus);
   box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
@@ -2039,7 +1878,6 @@ hr:has(+ .cmdr-sep-con.callout) {
   display: flex;
   flex-direction: column;
 }
-
 #better-export-pdf .setting-item-heading {
   margin: auto 0 0;
   align-self: center;
@@ -2048,6 +1886,10 @@ hr:has(+ .cmdr-sep-con.callout) {
   width: 100%;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .is-focused {
   --liquid-sidebar-background-image:
     radial-gradient(ellipse 400% 160% at -500px -20px,
@@ -2056,7 +1898,6 @@ hr:has(+ .cmdr-sep-con.callout) {
   --liquid-sidebar-shadow:
     0px 0px 8px rgb(0 0 0 / 4%), /* 第一层：靠近元素的、稍微清晰的轮廓 */
     0px 0px 40px rgb(0 0 0 / 12%); /* 第二层：范围更大、更模糊、更透明的光晕 */
-
   --toolbar-items-shadow:
     0px 0px 8px rgb(0 0 0 / 5%), /* 第一层：靠近元素的、稍微清晰的轮廓 */
     0px 0px 40px rgb(0 0 0 / 9%); /* 第二层：范围更大、更模糊、更透明的光晕 */
@@ -2104,19 +1945,16 @@ body {
     inset 0 1px 1px rgb(200 200 200 / 25%), /* 顶，没有底部 */
     inset 1px 0 1px rgb(200 200 200 / 15%), /* 左 */
     inset -1px 0 1px rgb(200 200 200 / 15%); /* 右 */
-
   --glass-shadow-inset-s:
     inset 0 0.0px 0.0px rgb(235 235 235 / 25%), /* 顶 */
     inset 0 -3px 3px rgb(235 235 235 / 50%), /* 底 */
     inset 3px 0 3px rgb(235 235 235 / 15%), /* 左 */
     inset -3px 0 3px rgb(235 235 235 / 15%); /* 右 */
-
   --glass-shadow-inset-l:
     inset 0 3px 3px rgb(240 240 240 / 85%), /* 顶 5px */
     inset 0 -3px 3px rgb(240 240 240 / 50%), /* 底 5px */
     inset 8px 0 8px rgb(240 240 240 / 15%), /* 左 10px */
     inset -8px 0 8px rgb(240 240 240 / 15%); /* 右 10px */
-
   --glass-shadow-inset-edge:
     inset 0 8px 8px rgb(255 255 255 / 85%), /* 顶 */
     inset 0 -4px 4px rgb(255 255 255 / 40%), /* 底 */
@@ -2138,25 +1976,21 @@ body {
     inset 0 -1px 1px rgb(120 120 120 / 50%), /* 底 */
     inset 1px 0 1px rgb(120 120 120 / 15%), /* 左 */
     inset -1px 0 1px rgb(120 120 120 / 15%); /* 右 */
-
   --glass-shadow-inset-s:
     inset 0 1px 1px rgb(120 120 120 / 25%), /* 顶 */
     inset 0 -1px 1px rgb(120 120 120 / 50%), /* 底 */
     inset 1px 0 1px rgb(120 120 120 / 15%), /* 左 */
     inset -1px 0 1px rgb(120 120 120 / 15%); /* 右 */
-
   --glass-shadow-inset-l:
     inset 0 0.0px 0.0px rgb(120 120 120 / 25%), /* 顶 */
     inset 0 -1px 1px rgb(120 120 120 / 50%), /* 底 */
     inset 1px 0 1px rgb(120 120 120 / 15%), /* 左 */
     inset -1px 0 1px rgb(120 120 120 / 15%); /* 右 */
-
   --glass-shadow-inset-edge:
     inset 0 1px 1px rgb(255 255 255 / 25%), /* 顶 */
     inset 0 -1px 1px rgb(255 255 255 / 10%), /* 底 */
     inset 1px 0 1px rgb(255 255 255 / 0%), /* 左 */
     inset -1px 0 1px rgb(255 255 255 / 0%); /* 右 */
-
   --background-frosted-edge-fade: rgb(20 20 20 / 80%);
 }
 
@@ -2166,6 +2000,10 @@ body {
   --background-glass-content: rgb(0 0 0 / 15%);
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .workspace-split.mod-root .workspace-tab-header-tab-list,
 .workspace .mod-root .workspace-tab-header-inner::after,
 .workspace-tab-header-container .workspace-tab-header::before,
@@ -2184,52 +2022,46 @@ body {
 .workspace-split.mod-root {
   --tab-background-active: transparent;
 }
-
 .workspace-split.mod-root .workspace-tab-header {
   corner-shape: unset;
   box-shadow: unset;
   padding: 0 4px 5px;
 }
-
 .workspace-split.mod-root .workspace-tab-header:hover {
   box-shadow: unset;
 }
-
 .workspace-split.mod-root .sidebar-toggle-button,
 .workspace-split.mod-root .workspace-tab-header-container {
   --tab-container-background: var(--background-primary);
-
   border: unset;
 }
-
 .workspace-split.mod-root .workspace-tab-header-inner {
   border-radius: 20px;
   corner-shape: squircle;
 }
-
 .workspace-split.mod-root .workspace-tab-header-inner {
   background-color: color-mix(in oklch, var(--mono-100) 3.5%, transparent);
   transition: box-shadow var(--anim-duration-moderate) ease;
 }
-
 .workspace-split.mod-root .workspace-tab-header.is-active .workspace-tab-header-inner {
   box-shadow: var(--glass-shadow-inset-for-control), var(--shadow-card-mini);
 }
-
 .workspace-split.mod-root .workspace-tab-header-inner-title {
   text-overflow: clip;
 }
-
 .workspace-split.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
   overflow: clip;
   overflow-clip-margin: 35px;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header-container {
   border: unset;
   z-index: 1;
 }
-
 .workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header-container-inner {
   background-color: var(--background-secondary);
   padding: 4px;
@@ -2237,32 +2069,25 @@ body {
   box-shadow: var(--shadow-s), var(--glass-shadow-inset-edge);
   gap: 4px;
 }
-
 .workspace-split.mod-sidedock .workspace-tabs.mod-top .workspace-tab-header-container-inner {
   margin-left: 12px;
 }
-
 .workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header {
   box-shadow: unset;
 }
-
 .workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header .workspace-tab-header-inner {
   border-radius: 99px;
   corner-shape: unset;
 }
-
 .workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header.is-active {
   background-color: color-mix(in oklch, var(--mono-100) 7.5%, transparent);
   border-radius: 99px;
   corner-shape: unset;
-
   --icon-color-focused: var(--color-accent-1);
   --tab-text-color-focused-active: var(--color-accent-1);
 }
-
 .workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header.is-active .workspace-tab-header-inner-icon .svg-icon {
   color: var(--color-accent-1);
-
   --icon-stroke: 2.5px;
 }
 
@@ -2274,28 +2099,27 @@ body {
   z-index: 1;
   width: 100%;
 }
-
 .workspace-split.mod-sidedock .workspace-tabs:has(> .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:only-child) .workspace-tab-header-inner {
   --sidebar-tab-text-display: block;
-
   gap: 6px;
   color: var(--color-base-100);
 }
-
 .workspace-split.mod-sidedock .workspace-tabs:has(> .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:only-child) .nav-buttons-container {
   justify-content: flex-end;
 }
-
-.workspace-split.mod-sidedock .workspace-tabs:has(> .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:only-child) .workspace-leaf-content[data-type="markdown"] .cm-scroller,
-.workspace-split.mod-sidedock .workspace-tabs:has(> .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:only-child) .workspace-leaf-content[data-type="markdown"] .markdown-preview-view {
+.workspace-split.mod-sidedock .workspace-tabs:has(> .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:only-child) .workspace-leaf-content[data-type=markdown] .cm-scroller,
+.workspace-split.mod-sidedock .workspace-tabs:has(> .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:only-child) .workspace-leaf-content[data-type=markdown] .markdown-preview-view {
   padding-top: calc(var(--header-height) + 8px);
 }
-
-.workspace-split.mod-sidedock .workspace-tabs:has(> .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:only-child) .workspace-leaf-content[data-type="markdown"] .cm-scroller .inline-title:not([data-level]),
-.workspace-split.mod-sidedock .workspace-tabs:has(> .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:only-child) .workspace-leaf-content[data-type="markdown"] .markdown-preview-view .inline-title:not([data-level]) {
+.workspace-split.mod-sidedock .workspace-tabs:has(> .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:only-child) .workspace-leaf-content[data-type=markdown] .cm-scroller .inline-title:not([data-level]),
+.workspace-split.mod-sidedock .workspace-tabs:has(> .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:only-child) .workspace-leaf-content[data-type=markdown] .markdown-preview-view .inline-title:not([data-level]) {
   display: none;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .mod-root .workspace-tabs:not(.mod-top) {
   overflow: visible;
 }
@@ -2303,7 +2127,6 @@ body {
 .mod-root .workspace-tabs:not(.mod-top) {
   border-top: var(--tab-outline-width) solid var(--tab-outline-color);
 }
-
 .mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
   background-color: var(--background-primary);
 }
@@ -2311,11 +2134,9 @@ body {
 .mod-root .workspace-tabs {
   overflow: visible;
 }
-
 .mod-root .workspace-tab-header-container > * {
   z-index: 6;
 }
-
 .mod-root .workspace-tab-header-container > *.workspace-tab-header-spacer {
   pointer-events: none;
 }
@@ -2323,10 +2144,8 @@ body {
 .mod-root .workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle,
 .mod-root.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
   --divider-width: 40px;
-
   height: auto;
   bottom: calc(var(--divider-width) * -1);
-
   --divider-color-hover: transparent;
   --divider-color: transparent;
 }
@@ -2336,6 +2155,10 @@ body {
   --divider-color: transparent;
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .workspace-split.mod-sidedock > * .workspace-leaf-resize-handle {
   margin-left: 10px;
   margin-right: 10px;
@@ -2359,7 +2182,6 @@ body {
   margin-top: calc(var(--header-height) * 2);
   border: unset;
 }
-
 .workspace-ribbon.mod-primary::before {
   height: calc(var(--header-height) * 2 + 1px);
 }
@@ -2376,14 +2198,16 @@ body {
   height: var(--divider-vertical-height);
 }
 
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
 .workspace-split.mod-root .workspace-tabs:not(.mod-top) .view-header-title-container {
   transition: opacity var(--anim-duration-fast);
 }
-
 .workspace-split.mod-root .workspace-tabs:not(.mod-top) .workspace-tab-header-container {
   transition: padding var(--anim-duration-moderate) ease;
 }
-
 .workspace-split.mod-root .workspace-tabs:not(.mod-top) .workspace-tab-container {
   transition: margin var(--anim-duration-moderate) ease;
 }
@@ -2392,11 +2216,9 @@ body {
   padding-left: 80px;
   padding-right: 100px;
 }
-
 .workspace-split.mod-root .workspace-tabs:not(.mod-top):has(> .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:only-child) .workspace-tab-container {
   margin-top: -38px;
 }
-
 .workspace-split.mod-root .workspace-tabs:not(.mod-top):has(> .workspace-tab-header-container > .workspace-tab-header-container-inner > .workspace-tab-header:only-child) .view-header-title-container {
   opacity: 0;
 }
@@ -2438,12 +2260,10 @@ body {
   from {
     scale: 0.6 0.8;
   }
-
   to {
     scale: 1;
   }
 }
-
 .workspace-drop-overlay:not([style*="width: 10px"])::before {
   width: auto;
   height: auto;
@@ -2457,12 +2277,10 @@ body {
   from {
     flex-grow: 0.6;
   }
-
   to {
     flex-grow: 1;
   }
 }
-
 .app-container:not(.workspace-fake-target-container) .mod-root .workspace-tabs {
   transform-origin: top center;
 }
@@ -2471,10 +2289,13 @@ body {
   animation: fade-in-partial var(--anim-duration-moderate) linear none, unblur var(--anim-duration-moderate) ease none, tab-appear-flex-grow-up var(--anim-duration-moderate) ease;
 }
 
-.workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container {
+/* ================================================================
+   Glassive Theme — main.scss
+   7-1 architecture 入口文件
+   ================================================================ */
+.workspace-leaf-content[data-type=file-explorer] .nav-buttons-container {
   padding: 0 40px;
 }
-
-.workspace-leaf-content[data-type="file-explorer"] .nav-action-button[aria-label="New folder"] {
+.workspace-leaf-content[data-type=file-explorer] .nav-action-button[aria-label="New folder"] {
   margin-right: auto;
-}
+}/*# sourceMappingURL=main1.css.map */

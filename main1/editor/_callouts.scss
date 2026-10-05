@@ -25,21 +25,21 @@
 }
 
 
-.cm-embed-block.cm-callout {
-    &:has(+.cm-line.cm-active) {
-        z-index: 1;
-        animation: 
-            fade-in var(--anim-duration-slow) ease-out none,
-            move-up-far var(--anim-duration-moderate) ease-out none;
-    }
-}
+// 容易带来性能开销
+// .cm-embed-block.cm-callout {
+//     &:has(+.cm-line.cm-active) {
+//         z-index: 1;
+//         animation: 
+//             fade-in var(--anim-duration-slow) ease-out none,
+//             move-up-far var(--anim-duration-moderate) ease-out none;
+//     }
+// }
 
 
 .callout {
     --callout-radius: 40px;
+
     corner-shape: squircle;
-
-
     box-shadow:  var(--glass-shadow-inset-l);
 
 }
