@@ -1,5 +1,5 @@
 > [!TIP]
-> For the theme to display correctly, please download and install the latest Obsidian installer from [obsidian.md](https://obsidian.md).
+> For the theme to display correctly, please download and install the [latest Obsidian installer](https://obsidian.md).
 
 # Glassive
 
