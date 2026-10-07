@@ -1,0 +1,59 @@
+
+
+
+
+
+@use '../abstracts' as *;
+
+@mixin search-empty {
+    font-size: $font-ui-large;
+    color: $text-muted;
+    font-weight: 600;
+    height: max(200px, 100%);
+    text-align: center;
+    align-content: center;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 12px;
+        background-color: $text-muted;
+        opacity: 0.6;
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27m21 21-4.34-4.34%27/%3E%3Ccircle cx=%2711%27 cy=%2711%27 r=%278%27/%3E%3C/svg%3E");
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+    }
+}
+
+
+
+
+// =================================================================
+// SCSS ======================================================
+// ======================================================
+
+
+.suggestion-empty,
+.search-result-container.mod-global-search .search-empty-state {
+    @include search-empty();
+
+}
+
+
+.style-settings-empty {
+    @include search-empty();
+
+
+    .style-settings-empty-desc {
+        font-size: $font-ui-small;
+        color: $text-muted;
+        text-align: start;
+        font-weight: 400;
+        line-height: 16px;
+    }
+}
+
+

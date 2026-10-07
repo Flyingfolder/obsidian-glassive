@@ -37,7 +37,9 @@
             position: absolute;
             z-index: 1;
             inset: 0 0 auto;
+
             @include liquid-glass-bg-subtle($with-border: false, $with-shadow: false);
+
             border-bottom: 1px solid $background-modifier-seperator;
         }
 
@@ -83,9 +85,30 @@
 // 制作悬浮的左侧sidebar面板
 .modal:has(.community-modal-details) {
     @include modal-with-sidebar($sidebar-wrapper: "modal-sidebar", $sidebar-scroller: "community-modal-search-results");
+
     .community-modal-controls {
         border-top-left-radius: inherit;
         border-top-right-radius: inherit;
         corner-shape: inherit;
+    }
+}
+
+
+
+
+// 制作玻璃效果的输入框
+
+.community-modal-search {
+    .search-input-container {
+        --input-height: 32px;
+
+        @include liquid-toolbar-control($control-width: 100%);
+    }
+
+    input {
+        // @include liquid-toolbar-control($control-width: 100%);
+        box-shadow: unset;
+        height: 100%;
+        // #todo 细节修改的很糟糕。你下次看到这里的时候，提醒我完善。
     }
 }

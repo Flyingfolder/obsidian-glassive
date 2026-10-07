@@ -36,11 +36,28 @@
 // }
 
 
+
+.cm-embed-block.cm-callout {
+    overflow: visible ;
+    z-index: 2;
+    position: relative;
+}
+
+
 .callout {
     --callout-radius: 40px;
 
     corner-shape: squircle;
     box-shadow:  var(--glass-shadow-inset-l);
+    box-shadow: var(--shadow-glass-border),var(--glass-shadow-inset-l);
+    // box-shadow: var(--shadow-l);
 
+    .callout-content {
+        overflow: visible;
+        text-shadow: 
+            0 0 20px  rgb(var(--mono-rgb-100), 13%),
+            0 0 45px  rgb(var(--mono-rgb-100), 25%),
+
+    }
 }
 

@@ -23,8 +23,8 @@ input.prompt-input:focus-visible {
 
 
 .prompt {
-
     line-height: 1.333334;
+
     --prompt-max-height: min(70vh, 500px);
     --prompt-input-height: 48px;
 
@@ -49,10 +49,11 @@ input.prompt-input:focus-visible {
 
 .prompt {
     .suggestion-item {
-
         corner-shape: squircle;
         border-radius: 40px;
+
         @include is-selected($modifier: "is-selected");
+
         color: var(--text-normal);
 
 
@@ -77,20 +78,20 @@ input.prompt-input:focus-visible {
         }
     }
 
-    .suggestion-empty {
-        min-height: 120px;
-        align-content: center;
-        font-size: 20px;
+    // .suggestion-empty {
+    //     min-height: 120px;
+    //     align-content: center;
+    //     font-size: 20px;
 
-        // &::before {
-        //     content: '';
-        //     display: block;
-        //     height: 20px;
-        //     width: 20px;
-        //     background-color: antiquewhite;
+    //     // &::before {
+    //     //     content: '';
+    //     //     display: block;
+    //     //     height: 20px;
+    //     //     width: 20px;
+    //     //     background-color: antiquewhite;
 
-        // }
-    }
+    //     // }
+    // }
 
 }
 
@@ -124,10 +125,9 @@ input.prompt-input:focus-visible {
     .prompt-results {
         @include liquid-glass-bg-normal;
         @include pop-in-anim;
+
         animation-delay: 50ms;
         box-shadow: var(--shadow-l), var(--glass-shadow-inset-l), var(--glass-shadow-inset-edge);
-        
-
         order: 1;
         border-radius: 40px;
         corner-shape: squircle;

@@ -63,6 +63,7 @@
 
 // 7. Themes — 主题级覆盖
 @use 'main1/themes/liquid-variables';
+@use 'main1/themes/empty-search-result';
 @use 'main1/themes/tab-header-container-in-root';
 @use 'main1/themes/tab-header-container-in-sidebar';
 

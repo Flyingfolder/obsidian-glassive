@@ -129,9 +129,9 @@
 
 
 
-@mixin liquid-toolbar-control {
+@mixin liquid-toolbar-control($control-width: 32px) {
     height: 32px;
-    width: 32px;
+    width: $control-width;
     color: var(--mono-100);
     box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
     border-radius: 100px;

@@ -571,12 +571,6 @@ input.prompt-input:focus-visible {
   display: none;
 }
 
-.prompt .suggestion-empty {
-  min-height: 120px;
-  align-content: center;
-  font-size: 20px;
-}
-
 @keyframes show-prompt-input {
   0% {
     scale: 0.85 0.9;
@@ -873,11 +867,23 @@ body {
   corner-shape: unset;
 }
 
+.cm-embed-block.cm-callout {
+  overflow: visible;
+  z-index: 2;
+  position: relative;
+}
+
 .callout {
   --callout-radius: 40px;
 
   corner-shape: squircle;
   box-shadow: var(--glass-shadow-inset-l);
+  box-shadow: var(--shadow-glass-border), var(--glass-shadow-inset-l);
+}
+
+.callout .callout-content {
+  overflow: visible;
+  text-shadow: 0 0 20px rgb(var(--mono-rgb-100), 13%), 0 0 45px rgb(var(--mono-rgb-100), 25%);
 }
 
 .document-search-container {
@@ -2058,6 +2064,38 @@ hr:has(+ .cmdr-sep-con.callout) {
   corner-shape: inherit;
 }
 
+.community-modal-search .search-input-container {
+  --input-height: 32px;
+
+  height: 32px;
+  width: 100%;
+  color: var(--mono-100);
+  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  border-radius: 100px;
+  corner-shape: unset;
+  background: var(--toolbar-contols-background);
+}
+
+.theme-light .community-modal-search .search-input-container:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+}
+
+.theme-dark .community-modal-search .search-input-container:hover {
+  background-color: var(--color-base-40);
+}
+
+.community-modal-search .search-input-container .svg-icon {
+  /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
+  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
+
+  --icon-stroke: 2.5px;
+}
+
+.community-modal-search input {
+  box-shadow: unset;
+  height: 100%;
+}
+
 .callout-suggestions-container .suggestion-item.callout-suggestions-item .callout {
   padding-left: 16px;
   border-radius: 30px;
@@ -2226,6 +2264,70 @@ body {
   --background-glass-content: rgb(0 0 0 / 15%);
 }
 
+.suggestion-empty,
+.search-result-container.mod-global-search .search-empty-state {
+  font-size: 20px;
+  color: rgb(var(--mono-rgb-100), 55%);
+  font-weight: 600;
+  height: max(200px, 100%);
+  text-align: center;
+  align-content: center;
+}
+
+.suggestion-empty::before,
+.search-result-container.mod-global-search .search-empty-state::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 12px;
+  background-color: rgb(var(--mono-rgb-100), 55%);
+  opacity: 0.6;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27m21 21-4.34-4.34%27/%3E%3Ccircle cx=%2711%27 cy=%2711%27 r=%278%27/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27m21 21-4.34-4.34%27/%3E%3Ccircle cx=%2711%27 cy=%2711%27 r=%278%27/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.style-settings-empty {
+  font-size: 20px;
+  color: rgb(var(--mono-rgb-100), 55%);
+  font-weight: 600;
+  height: max(200px, 100%);
+  text-align: center;
+  align-content: center;
+}
+
+.style-settings-empty::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 12px;
+  background-color: rgb(var(--mono-rgb-100), 55%);
+  opacity: 0.6;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27m21 21-4.34-4.34%27/%3E%3Ccircle cx=%2711%27 cy=%2711%27 r=%278%27/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27m21 21-4.34-4.34%27/%3E%3Ccircle cx=%2711%27 cy=%2711%27 r=%278%27/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.style-settings-empty .style-settings-empty-desc {
+  font-size: 13px;
+  color: rgb(var(--mono-rgb-100), 55%);
+  text-align: start;
+  font-weight: 400;
+  line-height: 16px;
+}
+
 .workspace-split.mod-root .workspace-tab-header-tab-list,
 .workspace .mod-root .workspace-tab-header-inner::after,
 .workspace-tab-header-container .workspace-tab-header::before,
@@ -2291,7 +2393,7 @@ body {
 }
 
 .workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header-container-inner {
-  background-color: var(--background-secondary);
+  background-color: var(--background-primary);
   padding: 4px;
   border-radius: 20px;
   box-shadow: var(--shadow-s), var(--glass-shadow-inset-edge);
