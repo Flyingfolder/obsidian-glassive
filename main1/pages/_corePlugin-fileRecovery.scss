@@ -6,8 +6,8 @@
 
 
 .modal.mod-sync-history.mod-sidebar-layout {
-
     @include modal-with-sidebar($sidebar-wrapper: 'modal-sidebar.mod-history', $sidebar-scroller: 'modal-sidebar-list');
+
     background-color: var(--background-primary);
 
     // 左侧 ------------------------------------------
@@ -20,32 +20,12 @@
 
     }
 
-    // .modal-sidebar-inner {
-    //     overflow-y: scroll;
-    //     position: relative;
-
-    //     .search-input-container {
-    //         position: sticky;
-    //         top: 8px;
-    //         z-index: 1;
-    //     }
-
-    //     .modal-sidebar-list {
-    //         overflow: visible;
-    //     }
-
-    // }
-
-
-
-
-
-
 
 
     // sidebar item
     .file-recovery-list-item-header {
         @include liquid-sidebar-item($is-selected-status-name: ".is-active");   
+
         min-height: 36px;
         padding-inline-start: 10px;
     }
@@ -94,12 +74,11 @@
     // .file-recovery-diff {
     //     padding-top: 60px;
     // }
+
+
+
+    
 }
-
-
-// .modal.mod-sync-history.mod-sidebar-layout textarea:hover {
-//     background-color: var(--background-primary);
-// }
 
 
 

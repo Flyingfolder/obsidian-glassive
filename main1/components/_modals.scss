@@ -21,25 +21,11 @@
 
 
     .modal-header-button {
-        // 圆形 ------------------------------------
         inset: 8px 8px auto auto;
-        height: 32px;
-        width: 32px;
-        color: var(--mono-100);
-        box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-        border-radius: 100px;
-        corner-shape: unset;
-        background: var(--toolbar-contols-background);
+        
+        // 圆形 ------------------------------------
 
-        &:hover {background-color: $background-modifier-hover-subtle;}
-
-        .svg-icon {
-            /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
-            filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100) / 100%));
-
-            --icon-stroke: 2.5px;
-        }
-
+        @include liquid-toolbar-control;
 
         
 

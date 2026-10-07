@@ -27,42 +27,6 @@
         align-items: center;
     }
 
-
-    // // 右侧 ------------------------------------------
-    // // toolbar
-    // .sync-history-content {position: relative;}
-    // .modal-setting-titlebar {
-    //     @include liquid-toolbar;
-    // }
-
-
-    // // toolebar-title 
-    // .modal-setting-title {
-    //     font-size: $font-ui-small;
-    //     font-weight: 500;
-    //     font-size: 15px;
-    //     padding-left: 8px;
-    // }
-
-    // // toolbar items
-    // .modal-setting-titlebar-actions {gap: 16px;}
-    
-    // button {
-    //     @include liquid-toolbar-item-text;
-    // }
-    // // 把特殊的按钮变成 text-button
-    // .modal-setting-titlebar-toggle {
-    //     @include toggle-as-button;
-    //     @include liquid-toolbar-item-text;
-    // }    
-
-
-    // // toolbar 下方的正文部分
-    // .file-recovery-text,
-    // .file-recovery-diff {
-    //     padding-top: 60px;
-    // }
-
 }
 
 
@@ -70,20 +34,7 @@
     gap: 8px;
 
     .setting-page-back-button {
-        // 圆形 ------------------------------------
-        inset: 8px 8px auto auto;
-        // padding: 8px;
-        width: 32px;
-        height: 32px;
-        box-shadow: var(--shadow-card-mini);
-        border: 0.5px solid $background-modifier-seperator;
-        border-radius: 99px;
-        corner-shape: unset;
-
-        &:hover {background-color: $background-modifier-hover-subtle;}
-
-        background: var(--toolbar-contols-background);
-        background-color: transparent;
+        @include liquid-toolbar-control;
     }
 }
 

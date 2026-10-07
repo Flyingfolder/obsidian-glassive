@@ -126,3 +126,27 @@
 
     
 }
+
+
+
+@mixin liquid-toolbar-control {
+    height: 32px;
+    width: 32px;
+    color: var(--mono-100);
+    box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+    border-radius: 100px;
+    corner-shape: unset;
+    background: var(--toolbar-contols-background);
+
+    &:hover {
+        .theme-light & {background-color: $background-modifier-hover-subtle;}
+        .theme-dark  & {background-color: var(--color-base-40);}
+    }
+
+    .svg-icon {
+        /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
+        filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100) / 100%));
+
+        --icon-stroke: 2.5px;
+    }
+}
