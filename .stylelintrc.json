@@ -1,6 +1,7 @@
 {
 	"extends": "stylelint-config-obsidianmd",
 	"rules": {
+		"declaration-block-no-duplicate-properties": null,
 		"no-descending-specificity": null,
 		"number-max-precision": null,
 		"property-no-vendor-prefix": [true, { "ignoreProperties": ["-webkit-backdrop-filter", "/^-webkit-mask-/"] }]

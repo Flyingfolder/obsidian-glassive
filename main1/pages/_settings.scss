@@ -66,3 +66,30 @@
 }
 
 
+.setting-page-titlebar {
+    gap: 8px;
+
+    .setting-page-back-button {
+        // 圆形 ------------------------------------
+        inset: 8px 8px auto auto;
+        // padding: 8px;
+        width: 32px;
+        height: 32px;
+        box-shadow: var(--shadow-card-mini);
+        border: 0.5px solid $background-modifier-seperator;
+        border-radius: 99px;
+        corner-shape: unset;
+
+        &:hover {background-color: $background-modifier-hover-subtle;}
+
+        background: var(--toolbar-contols-background);
+        background-color: transparent;
+    }
+}
+
+
+
+
+
+
+

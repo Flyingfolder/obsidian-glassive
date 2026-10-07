@@ -1,7 +1,7 @@
 
 
 
-@use 'variables-swiftive' as *; 
+@use 'variables-glassive' as *; 
 @use 'mixins-forms' as *;
 
 // @use '../components/buttons' as *;
@@ -93,18 +93,6 @@
 
 
 
-@mixin liquid-sidebar {
-    z-index: 1;
-    margin: 7px 0; //toolbar padding
-    border: 1px solid var(--liquid-sidebar-border-color);
-    box-shadow: var(--liquid-sidebar-shadow);
-    border-radius: $sidebar-radius;
-    padding: 9px;
-    background-color: var(--background-secondary);
-    background-image: var(--liquid-sidebar-background-image);
-
-}
-
 @mixin liquid-sidebar-item($is-selected-status-name) {
     height: $control-height-l;
     border-radius: $radius-m;
@@ -137,63 +125,4 @@
     * {color: currentcolor;}
 
     
-}
-
-
-
-
-// toolbar ---------------------------------------------------------------
-
-$toolbar-padding: 7px;
-$toolbar-item-radius: 18px;
-$sidebar-radius: 18px;
-
-@mixin liquid-toolbar {
-    position: absolute;
-    z-index: 1;
-    inset: 0 0 auto 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    height: 52px; // 固定
-    padding: 7px; // 固定
-    border: unset;
-    overflow: visible;
-}
-
-
-// toolbar items
-@mixin liquid-toolbar-item($toolbar-item-width) {
-    height: 36px;
-    width: $toolbar-item-width;
-    border-radius: 18px;
-    background: var(--toolbar-items-background);
-    background-color: var(--background-secondary);
-    border: 1px solid transparent;
-    box-shadow: var(--toolbar-items-shadow);
-    overflow: hidden;
-}
-
-
-@mixin liquid-toolbar-item-icon {
-    @include liquid-toolbar-item($toolbar-item-width: 36px);
-    @include button-interaction;
-
-    padding: unset;
-    align-items: center;
-    justify-content: center;
-    gap: unset;
-}
-
-
-@mixin liquid-toolbar-item-text {
-    // ------------ 取消 button 默认的样式
-    margin: unset;
-    // ------------
-
-    @include liquid-toolbar-item($toolbar-item-width: unset);
-    @include button-interaction;
-
-    padding: 0 16px;
 }

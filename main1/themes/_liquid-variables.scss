@@ -11,7 +11,6 @@
     radial-gradient(ellipse 400% 160% at -500px -20px,
     hsl(var(--color-accent-hsl), 10%),
     rgb(var(--mono-rgb-0), 40%));
-    
   --liquid-sidebar-shadow:
     0px 0px 8px rgb(0 0 0 / 4%),    /* 第一层：靠近元素的、稍微清晰的轮廓 */
     0px 0px 40px rgb(0 0 0 / 12%);  /* 第二层：范围更大、更模糊、更透明的光晕 */
@@ -38,9 +37,8 @@
   //   linear-gradient(45deg, rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255)) border-box,
   //   rgb(249, 249, 249);
 
-  --toolbar-items-background: linear-gradient(var(--background-primary), var(--background-primary));
-
-
+  // --toolbar-items-background: linear-gradient(var(--background-primary), var(--background-primary));
+  --toolbar-contols-background: #fff;
   --liquid-modal-background-image: none;
 }
 
@@ -48,12 +46,17 @@
 
 .is-focused.theme-dark {
   --liquid-sidebar-border-color: rgb( 255 255 255 / 12%); //这个边框更能融入背景的深色中去
+  // -------
 
-  --toolbar-items-background:
-    linear-gradient(hsl(var(--color-accent-hsl), 3%), hsl(var(--color-accent-hsl), 5%)) padding-box,
-    linear-gradient(rgb(33 33 33), rgb(33 33 33)) padding-box,
-    linear-gradient(to right bottom, rgb(70 70 70 / 70%),  rgb(50 50 50 / 70%), rgb(70 70 74 / 70%)) border-box;
-
+    --toolbar-contols-background: 
+        linear-gradient(
+            hsl(var(--interactive-accent-hsl), 5%), 
+            hsl(var(--interactive-accent-hsl), 5%)), 
+        var(--color-base-35);
+  // --toolbar-items-background:
+  //   linear-gradient(hsl(var(--color-accent-hsl), 3%), hsl(var(--color-accent-hsl), 5%)) padding-box,
+  //   linear-gradient(rgb(33 33 33), rgb(33 33 33)) padding-box,
+  //   linear-gradient(to right bottom, rgb(70 70 70 / 70%),  rgb(50 50 50 / 70%), rgb(70 70 74 / 70%)) border-box;
   --liquid-modal-background-image: 
     radial-gradient(ellipse 260% 200% at -400px -200px,
     hsl(var(--color-accent-hsl), 10%),
@@ -80,17 +83,12 @@ body {
   --liquid-sidebar-border-width: 1px;
   --liquid-sidebar-border-color: transparent;
   --toolbar-background: rgb(252 252 252 / 40%);
-
   --background-modifier-border: rgb( 200 200 200 / 50%);
-  
   --background-glass: rgb(246 246 246 / 50%);
   --backdrop-filter-glass: blur(10px) saturate(140%) brightness(1.1);
-
   --background-glass-subtle: rgb(255 255 255 / 60%);
   --backdrop-filter-glass-subtle: blur(4px) saturate(190%) brightness(1.03);
-
   --background-frosted-edge-fade: rgb(235 235 235 / 75%);
-
   --glass-shadow-inset-for-control:
     inset 0 1px 1px rgb(200 200 200 / 25%),   /* 顶，没有底部 */
     inset 1px 0 1px rgb(200 200 200 / 15%),   /* 左 */
@@ -114,6 +112,18 @@ body {
     inset 0 -4px 4px rgb(255 255 255 / 40%),  /* 底 */
     inset 10px 0 10px rgb(0 0 0 / 4%),   /* 左 */
     inset -10px 0 10px rgb(0 0 0 / 6%);  /* 右 */
+
+
+    // 用于小号control的内边框
+  --shadow-glass-border: 
+      inset 0 2px 2px rgb(255 255 255 / 75%),   /* 顶 */
+      inset 0 -2px 2px rgb(255 255 255 / 75%),  /* 底 */
+      
+      inset .5px 0 .5px rgb(0 0 0 / 25%),   /* 左 */
+      inset -.5px 0 .5px rgb(0 0 0 / 25%),  /* 右 */
+      inset 1px 0 1px rgb(0 0 0 / 10%),   /* 左 */
+      inset -1px 0 1px rgb(0 0 0 / 10%);  /* 右 */
+      
 }
 
 
@@ -125,19 +135,13 @@ body {
 .theme-dark {
   --liquid-sidebar-border-width: 1px;
   --liquid-sidebar-border-color: transparent;
-
   --toolbar-background: rgb(30 30 30 / 40%);
-
   --background-modifier-border: rgb( 220 220 240 / 15%);
-
-
   --background-glass-subtle: rgb(40 40 40 / 50%);
   --backdrop-filter-glass-subtle: blur(6px) saturate(190%) brightness(1.4);
-
   --background-glass: rgb(40 40 40 / 60%);
   --backdrop-filter-glass: blur(10px) saturate(180%) brightness(1.8);
-
-
+  --background-frosted-edge-fade: rgb(20 20 20 / 80%);
   --glass-shadow-inset-for-control:
     inset 0 1px 1px rgb(120 120 120 / 25%),   /* 顶 */
     inset 0 -1px 1px rgb(120 120 120 / 50%),  /* 底 */
@@ -165,7 +169,19 @@ body {
     inset 1px 0 1px rgb(255 255 255 / 0%),   /* 左 */
     inset -1px 0 1px rgb(255 255 255 / 0%);  /* 右 */
 
-  --background-frosted-edge-fade: rgb(20 20 20 / 80%);
+  
+  --shadow-glass-border: 
+      inset .5px 0 .5px rgb(0 0 0 / 35%),   /* 左 */
+    inset -.5px 0 .5px rgb(0 0 0 / 35%),  /* 右 */
+    inset 1px 0 1px rgb(0 0 0 / 20%),   /* 左 */
+    inset -1px 0 1px rgb(0 0 0 / 20%),  /* 右 */
+
+    inset 0 .5px .5px rgb(255 255 255 / 35%),   /* 顶 */
+    inset 0 -.5px .5px rgb(255 255 255 / 35%),  /* 底 */
+    inset 0 1px 1px rgb(255 255 255 / 25%),   /* 顶 */
+    inset 0 -1px 1px rgb(255 255 255 / 25%);  /* 底 */
+    
+
 }
 
 
@@ -177,7 +193,6 @@ body {
   // --traffic-lights-offset-y: 50px;
 
   --background-modifier-border-focus: hsl(var(--interactive-accent-hsl), 60%);
-  
   --backdrop-filter-frosted-edge: blur(2px);
   --background-glass-content: rgb(0 0 0 / 15%);
 
