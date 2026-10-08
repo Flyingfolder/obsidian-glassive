@@ -219,6 +219,7 @@ body {
 
 body {
   --text-on-accent: #fff !important;
+  --glassive-theme-color: hsl(var(--color-accent-hsl));
 }
 
 .theme-dark,
