@@ -51,12 +51,12 @@
     box-shadow: var(--shadow-glass-border), var(--glass-shadow-inset-l);
     border: 1px solid $background-modifier-hover;
 
-    .callout-content {
-        overflow: visible;
-        text-shadow: 
-            0 0 20px  rgb(var(--mono-rgb-100), 13%),
-            0 0 45px  rgb(var(--mono-rgb-100), 25%),
-
-    }
+    // 会引发性能崩溃
+    // .callout-content {
+    //     overflow: visible;
+    //     text-shadow: 
+    //         0 0 20px  rgb(var(--mono-rgb-100), 13%),
+    //         0 0 45px  rgb(var(--mono-rgb-100), 25%),
+    // }
 }
 
