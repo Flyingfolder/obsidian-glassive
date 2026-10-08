@@ -100,15 +100,22 @@ body {
     inset 3px 0 3px rgb(235 235 235 / 15%),   /* 左 */
     inset -3px 0 3px rgb(235 235 235 / 15%);  /* 右 */
 
+  // --glass-shadow-inset-l:
+  //   inset 0 3px 3px rgb(240 240 240 / 85%),    /* 顶 5px */
+  //   inset 0 -3px 3px rgb(240 240 240 / 50%),   /* 底 5px */
+  //   inset 8px 0 8px rgb(240 240 240 / 15%),  /* 左 10px */
+  //   inset -8px 0 8px rgb(240 240 240 / 15%); /* 右 10px */
+
+
   --glass-shadow-inset-l:
-    inset 0 3px 3px rgb(240 240 240 / 85%),    /* 顶 5px */
-    inset 0 -3px 3px rgb(240 240 240 / 50%),   /* 底 5px */
-    inset 8px 0 8px rgb(240 240 240 / 15%),  /* 左 10px */
-    inset -8px 0 8px rgb(240 240 240 / 15%); /* 右 10px */
+    inset 0 6px 6px rgb(0 0 0 / 3%),    /* 顶 5px */
+    inset 0 -3px 3px rgb(0 0 0 / 1%),   /* 底 5px */
+    inset 8px 0 5px rgb(0 0 0 / 1%),  /* 左 10px */
+    inset -8px 0 5px rgb(0 0 0 / 1%); /* 右 10px */
 
   // 大号玻璃块的灰蒙蒙的阴影和边缘反射高光
   --glass-shadow-inset-edge: 
-    inset 0 8px 8px rgb(255 255 255 / 85%),   /* 顶 */
+    inset 0 2px 2px rgb(255 255 255 / 100%),   /* 顶 */
     inset 0 -4px 4px rgb(255 255 255 / 40%),  /* 底 */
     inset 10px 0 10px rgb(0 0 0 / 4%),   /* 左 */
     inset -10px 0 10px rgb(0 0 0 / 6%);  /* 右 */

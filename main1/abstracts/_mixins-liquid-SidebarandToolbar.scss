@@ -4,6 +4,10 @@
 @use 'variables-glassive' as *; 
 @use 'mixins-forms' as *;
 
+
+$titlebar-height: 48px;
+
+
 // @use '../components/buttons' as *;
 
 @mixin liquid-glass-bg-normal($with-shadow: true, $with-border: true) {
@@ -12,11 +16,10 @@
     
 
     @if $with-border {
-        border: 1px solid rgb(100 100 100 / 30%);
+        border: 1px solid $background-modifier-hover-strong;
     }
 
     @if $with-shadow {
-        border: 1px solid rgb(0 0 0 / 15%);
         box-shadow: var(--glass-shadow-inset-l), var(--shadow-card), var(--glass-shadow-inset-edge);
     }
 }
@@ -26,11 +29,10 @@
     backdrop-filter: var(--backdrop-filter-glass-subtle);
 
     @if $with-border {
-        border: 1px solid rgb(100 100 100 / 30%);
+        border: 1px solid $background-modifier-hover-strong;
     }
 
     @if $with-shadow {
-        border: 1px solid rgb(0 0 0 / 15%);
         box-shadow: var(--glass-shadow-inset-l), var(--shadow-card), var(--glass-shadow-inset-edge);
     }
 }

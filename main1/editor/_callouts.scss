@@ -48,9 +48,8 @@
     --callout-radius: 40px;
 
     corner-shape: squircle;
-    box-shadow:  var(--glass-shadow-inset-l);
-    box-shadow: var(--shadow-glass-border),var(--glass-shadow-inset-l);
-    // box-shadow: var(--shadow-l);
+    box-shadow: var(--shadow-glass-border), var(--glass-shadow-inset-l);
+    border: 1px solid $background-modifier-hover;
 
     .callout-content {
         overflow: visible;

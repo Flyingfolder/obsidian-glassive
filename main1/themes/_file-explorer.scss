@@ -5,12 +5,18 @@
 
 @use '../abstracts' as *;
 
-
 .workspace-leaf-content[data-type="file-explorer"] {
-.nav-buttons-container {
-    padding: 0 40px;
-}
-.nav-action-button[aria-label="New folder"] {
-    margin-right: auto;
-}
+    .nav-header {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-buttons-container {
+        width: 100%;
+        max-width: 180px;
+    }
+
+    .nav-action-button[aria-label="New folder"] {
+        margin-right: auto;
+    }
 }

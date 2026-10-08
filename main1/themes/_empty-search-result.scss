@@ -46,6 +46,8 @@
 .style-settings-empty {
     @include search-empty();
 
+    background-color: transparent;
+
 
     .style-settings-empty-desc {
         font-size: $font-ui-small;

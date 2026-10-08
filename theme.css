@@ -276,7 +276,7 @@ button {
   background-color: var(--background-glass);
   -webkit-backdrop-filter: var(--backdrop-filter-glass);
           backdrop-filter: var(--backdrop-filter-glass);
-  border: 1px solid rgb(100 100 100 / 30%);
+  border: 1px solid color-mix(in oklch, var(--mono-100) 12%, transparent);
   box-shadow: var(--shadow-s), var(--glass-shadow-inset-l);
   line-height: 16px;
 
@@ -382,9 +382,11 @@ button {
   color: var(--text-on-accent);
 }
 
-.modal {
+.modal-container .modal {
   --modal-padding: 16px;
+  --modal-radius: 40px;
 
+  corner-shape: squircle;
   animation: fade-in var(--anim-duration-moderate) ease-out none, pop-in-subtle var(--anim-duration-moderate) ease-out none;
 }
 
@@ -598,7 +600,7 @@ input.prompt-input:focus-visible {
   background-color: var(--background-glass-subtle);
   -webkit-backdrop-filter: var(--backdrop-filter-glass-subtle);
           backdrop-filter: var(--backdrop-filter-glass-subtle);
-  border: 1px solid rgb(100 100 100 / 30%);
+  border: 1px solid color-mix(in oklch, var(--mono-100) 12%, transparent);
   border-radius: 40px;
   corner-shape: unset;
   box-shadow: var(--glass-shadow-inset-s), var(--shadow-s);
@@ -609,8 +611,7 @@ input.prompt-input:focus-visible {
   background-color: var(--background-glass);
   -webkit-backdrop-filter: var(--backdrop-filter-glass);
           backdrop-filter: var(--backdrop-filter-glass);
-  border: 1px solid rgb(100 100 100 / 30%);
-  border: 1px solid rgb(0 0 0 / 15%);
+  border: 1px solid color-mix(in oklch, var(--mono-100) 12%, transparent);
   box-shadow: var(--glass-shadow-inset-l), var(--shadow-card), var(--glass-shadow-inset-edge);
   transform-origin: 50% -20%;
   animation: fade-in var(--anim-duration-moderate) ease-out backwards, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) backwards;
@@ -697,8 +698,7 @@ input.prompt-input:focus-visible {
   background-color: var(--background-glass);
   -webkit-backdrop-filter: var(--backdrop-filter-glass);
           backdrop-filter: var(--backdrop-filter-glass);
-  border: 1px solid rgb(100 100 100 / 30%);
-  border: 1px solid rgb(0 0 0 / 15%);
+  border: 1px solid color-mix(in oklch, var(--mono-100) 12%, transparent);
   box-shadow: var(--glass-shadow-inset-l), var(--shadow-card), var(--glass-shadow-inset-edge);
   corner-shape: squircle;
   border-radius: 32px;
@@ -736,7 +736,7 @@ input.prompt-input:focus-visible {
   background-color: var(--background-glass);
   -webkit-backdrop-filter: var(--backdrop-filter-glass);
           backdrop-filter: var(--backdrop-filter-glass);
-  border: 1px solid rgb(100 100 100 / 30%);
+  border: 1px solid color-mix(in oklch, var(--mono-100) 12%, transparent);
   box-shadow: var(--shadow-s), var(--glass-shadow-inset-s);
 }
 
@@ -751,7 +751,7 @@ input.prompt-input:focus-visible {
   background-color: var(--background-glass);
   -webkit-backdrop-filter: var(--backdrop-filter-glass);
           backdrop-filter: var(--backdrop-filter-glass);
-  border: 1px solid rgb(100 100 100 / 30%);
+  border: 1px solid color-mix(in oklch, var(--mono-100) 12%, transparent);
 }
 
 .suggestion-container:has(.search-input-container) {
@@ -877,8 +877,8 @@ body {
   --callout-radius: 40px;
 
   corner-shape: squircle;
-  box-shadow: var(--glass-shadow-inset-l);
   box-shadow: var(--shadow-glass-border), var(--glass-shadow-inset-l);
+  border: 1px solid color-mix(in oklch, var(--mono-100) 7.5%, transparent);
 }
 
 .callout .callout-content {
@@ -1041,7 +1041,7 @@ body {
   background-color: var(--background-glass-subtle);
   -webkit-backdrop-filter: var(--backdrop-filter-glass-subtle);
           backdrop-filter: var(--backdrop-filter-glass-subtle);
-  border: 1px solid rgb(100 100 100 / 30%);
+  border: 1px solid color-mix(in oklch, var(--mono-100) 12%, transparent);
   box-shadow: var(--shadow-card), var(--glass-shadow-inset-l), var(--glass-shadow-inset-edge);
   border-radius: 40px;
 }
@@ -1496,6 +1496,22 @@ body {
   align-items: baseline;
 }
 
+.sync-history-content {
+  position: relative;
+}
+
+.sync-history-content .modal-setting-titlebar {
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(to bottom, color-mix(in oklch, var(--background-primary) 90%, transparent) 0, color-mix(in oklch, var(--background-primary) 60%, transparent) 80%, color-mix(in oklch, var(--background-primary) 20%, transparent) 100%);
+  border: unset;
+}
+
+.sync-history-content textarea {
+  animation: none;
+  padding-top: 60px;
+}
+
 .iconic-scroller {
   border-bottom: unset;
 }
@@ -1925,6 +1941,8 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .setting-page-titlebar {
   gap: 8px;
+
+  --settings-background: transparent;
 }
 
 .setting-page-titlebar .setting-page-back-button {
@@ -1952,6 +1970,51 @@ hr:has(+ .cmdr-sep-con.callout) {
   --icon-stroke: 2.5px;
 }
 
+.modal-setting-titlebar {
+  min-height: 48px;
+  font-size: 13px;
+  padding-right: 60px;
+  z-index: 1;
+}
+
+.modal-setting-titlebar .modal-setting-titlebar-actions {
+  gap: 12px;
+}
+
+.modal-setting-titlebar .modal-setting-title {
+  font-size: inherit;
+  font-weight: 500;
+}
+
+.modal-setting-titlebar button {
+  height: 32px;
+  width: fit-content;
+  color: var(--mono-100);
+  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  border-radius: 100px;
+  corner-shape: unset;
+  background: var(--toolbar-contols-background);
+}
+
+.theme-light .modal-setting-titlebar button:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+}
+
+.theme-dark .modal-setting-titlebar button:hover {
+  background-color: var(--color-base-40);
+}
+
+.modal-setting-titlebar button .svg-icon {
+  /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
+  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
+
+  --icon-stroke: 2.5px;
+}
+
+.community-modal-info {
+  overflow: visible;
+}
+
 .modal.mod-community-modal.mod-sidebar-layout .modal-sidebar {
   padding: unset;
 }
@@ -1964,7 +2027,7 @@ hr:has(+ .cmdr-sep-con.callout) {
   display: flex;
   flex-direction: column;
   gap: unset;
-  padding: 12px 12px 4px;
+  padding: 8px;
 }
 
 .modal.mod-community-modal.mod-sidebar-layout .community-modal-controls > * {
@@ -2192,13 +2255,13 @@ body {
     inset -3px 0 3px rgb(235 235 235 / 15%); /* 右 */
 
   --glass-shadow-inset-l:
-    inset 0 3px 3px rgb(240 240 240 / 85%), /* 顶 5px */
-    inset 0 -3px 3px rgb(240 240 240 / 50%), /* 底 5px */
-    inset 8px 0 8px rgb(240 240 240 / 15%), /* 左 10px */
-    inset -8px 0 8px rgb(240 240 240 / 15%); /* 右 10px */
+    inset 0 6px 6px rgb(0 0 0 / 3%), /* 顶 5px */
+    inset 0 -3px 3px rgb(0 0 0 / 1%), /* 底 5px */
+    inset 8px 0 5px rgb(0 0 0 / 1%), /* 左 10px */
+    inset -8px 0 5px rgb(0 0 0 / 1%); /* 右 10px */
 
   --glass-shadow-inset-edge:
-    inset 0 8px 8px rgb(255 255 255 / 85%), /* 顶 */
+    inset 0 2px 2px rgb(255 255 255 / 100%), /* 顶 */
     inset 0 -4px 4px rgb(255 255 255 / 40%), /* 底 */
     inset 10px 0 10px rgb(0 0 0 / 4%), /* 左 */
     inset -10px 0 10px rgb(0 0 0 / 6%); /* 右 */
@@ -2318,6 +2381,10 @@ body {
           mask-position: center;
   -webkit-mask-size: contain;
           mask-size: contain;
+}
+
+.style-settings-empty {
+  background-color: transparent;
 }
 
 .style-settings-empty .style-settings-empty-desc {
@@ -2633,8 +2700,14 @@ body {
   animation: fade-in-partial var(--anim-duration-moderate) linear none, unblur var(--anim-duration-moderate) ease none, tab-appear-flex-grow-up var(--anim-duration-moderate) ease;
 }
 
+.workspace-leaf-content[data-type="file-explorer"] .nav-header {
+  display: flex;
+  justify-content: center;
+}
+
 .workspace-leaf-content[data-type="file-explorer"] .nav-buttons-container {
-  padding: 0 40px;
+  width: 100%;
+  max-width: 180px;
 }
 
 .workspace-leaf-content[data-type="file-explorer"] .nav-action-button[aria-label="New folder"] {

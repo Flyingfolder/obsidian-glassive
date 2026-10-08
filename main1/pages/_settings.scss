@@ -30,12 +30,39 @@
 }
 
 
+// 设置页面的 titlebar
 .setting-page-titlebar {
     gap: 8px;
 
-    .setting-page-back-button {
-        @include liquid-toolbar-control;
+    --settings-background: transparent;
+
+    .setting-page-back-button {@include liquid-toolbar-control;}
+}
+
+
+// 其他页面的titlebar 比如 filerecovery
+
+.modal-setting-titlebar {
+    min-height: $titlebar-height;
+    font-size: $font-ui-small;
+    padding-right: 60px;
+    z-index: 1;
+
+    .modal-setting-titlebar-actions {
+        gap: 12px;
     }
+
+    .modal-setting-title {
+        font-size: inherit;
+        font-weight: 500;
+    }
+
+    button {@include liquid-toolbar-control($control-width: fit-content);}    
+}
+
+
+.community-modal-info {
+    overflow: visible;
 }
 
 

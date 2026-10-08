@@ -17,14 +17,11 @@
     .modal-sidebar-inner {
         border: unset;
         background-color: unset;
-
     }
-
-
 
     // sidebar item
     .file-recovery-list-item-header {
-        @include liquid-sidebar-item($is-selected-status-name: ".is-active");   
+        @include liquid-sidebar-item($is-selected-status-name: ".is-active");
 
         min-height: 36px;
         padding-inline-start: 10px;
@@ -35,50 +32,31 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: baseline;
+    }    
+}
+
+
+
+
+.sync-history-content {
+    position: relative;
+
+    .modal-setting-titlebar {
+        position: absolute;
+        width: 100%;
+        background: linear-gradient(to bottom,
+            color-mix(in oklch, $background-primary 90%, transparent) 0,
+            color-mix(in oklch, $background-primary 60%, transparent) 80%,
+            color-mix(in oklch, $background-primary 20%, transparent) 100%);
+        border: unset;
     }
 
-
-
-
-    // // 右侧 ------------------------------------------
-    // // toolbar
-    // .sync-history-content {position: relative;}
-    // .modal-setting-titlebar {
-    //     @include liquid-toolbar;
-    // }
-
-
-    // // toolebar-title 
-    // .modal-setting-title {
-    //     font-size: $font-ui-small;
-    //     font-weight: 500;
-    //     font-size: 15px;
-    //     padding-left: 8px;
-    // }
-
-    // // toolbar items
-    // .modal-setting-titlebar-actions {gap: 16px;}
-    
-    // button {
-    //     @include liquid-toolbar-item-text;
-    // }
-    // // 把特殊的按钮变成 text-button
-    // .modal-setting-titlebar-toggle {
-    //     @include toggle-as-button;
-    //     @include liquid-toolbar-item-text;
-    // }    
-
-
-    // // toolbar 下方的正文部分
-    // .file-recovery-text,
-    // .file-recovery-diff {
-    //     padding-top: 60px;
-    // }
-
-
-
-    
+    textarea {
+        animation: none;
+        padding-top: 60px;
+    }
 }
+
 
 
 

@@ -4,10 +4,12 @@
 
 
 
-.modal {
+.modal-container .modal  {
     //出现时的动画
     --modal-padding: 16px;
+    --modal-radius: 40px;
 
+    corner-shape: squircle;
     animation: 
         fade-in var(--anim-duration-moderate) ease-out none,
         pop-in-subtle var(--anim-duration-moderate) ease-out none;
@@ -22,23 +24,8 @@
 
     .modal-header-button {
         inset: 8px 8px auto auto;
-        
-        // 圆形 ------------------------------------
 
         @include liquid-toolbar-control;
-
-        
-
-
-        
-        // 方形 ------------------------------------
-        // inset: 10px 10px auto auto;
-        // padding: 6px;
-        // background-color: var(--interactive-normal);
-        // border-radius: 99px;
-        // corner-shape: squircle;
-        
-        // &:hover {background-color: $background-modifier-hover-subtle;}
 
     }
 
@@ -53,9 +40,6 @@
             margin: 24px -16px -16px;
         }
     }
-
-
-
 }
 
 
