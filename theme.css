@@ -118,6 +118,84 @@
   }
 }
 
+/* @settings
+
+name: Glassive
+id: Glassive Theme Setting
+settings:
+    - 
+        id: color
+        title: color
+        type: heading
+        level: 1
+        collapsed: true
+
+
+
+    - 
+        id: accent
+        title: Accent Color
+        description: 
+        type: class-select
+        allowEmpty: false
+        default: theme-glassive-accent-indigo
+        options:
+            - 
+                label: Obsidian Default
+                value: theme-glassive-accent-user-custom
+            - 
+                label: Red
+                value: theme-glassive-accent-red
+            - 
+                label: Orange
+                value: theme-glassive-accent-orange
+            - 
+                label: Yellow
+                value: theme-glassive-accent-yellow
+            - 
+                label: Green
+                value: theme-glassive-accent-green
+            - 
+                label: Mint
+                value: theme-glassive-accent-mint
+            - 
+                label: Teal
+                value: theme-glassive-accent-teal
+            - 
+                label: Cyan
+                value: theme-glassive-accent-cyan
+            - 
+                label: Blue
+                value: theme-glassive-accent-blue
+            - 
+                label: Indigo
+                value: theme-glassive-accent-indigo
+            -
+                label: Purple
+                value: theme-glassive-accent-purple
+            -
+                label: Pink
+                value: theme-glassive-accent-pink
+            -
+                label: Brown
+                value: theme-glassive-accent-brown
+            -
+                label: Black
+                value: theme-glassive-accent-black
+
+    - 
+        id: interface
+        title: Interface
+        type: heading
+        level: 1
+        collapsed: true
+    -   
+        id: nav-item-size-smaller
+        title: small nav item size
+        description: 更小的 导航（比如文件浏览器、大纲）中的按钮的大小
+        type: class-toggle
+        default: false
+ */
 body {
   --background-modifier-hover: color-mix(in oklch, var(--mono-100) 7.5%, transparent);
   --radius-s: 6px;
@@ -137,6 +215,22 @@ body {
   --background-primary: var(--color-base-20);
   --background-primary-alt: rgb(var(--mono-rgb-100), 3%);
   --background-secondary: var(--color-base-00);
+}
+
+body {
+  --text-on-accent: #fff !important;
+}
+
+.theme-dark,
+.theme-light {
+  /* 你依然可以用最直观的 HSL 定义基础色 */
+  --color-accent: var(--glassive-theme-color);
+  --color-accent-1: color-mix(in oklch, var(--color-accent), white 4%);
+  --color-accent-2: color-mix(in oklch, var(--color-accent), white 10%);
+}
+
+.theme-glassive-accent-user-custom {
+  --glassive-theme-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
 }
 
 .markdown-source-view,
@@ -881,11 +975,6 @@ body {
   border: 1px solid color-mix(in oklch, var(--mono-100) 7.5%, transparent);
 }
 
-.callout .callout-content {
-  overflow: visible;
-  text-shadow: 0 0 20px rgb(var(--mono-rgb-100), 13%), 0 0 45px rgb(var(--mono-rgb-100), 25%);
-}
-
 .document-search-container {
   max-width: 850px;
   width: 100%;
@@ -1451,7 +1540,6 @@ body {
 
 .modal.mod-sync-history.mod-sidebar-layout .file-recovery-list-item-header {
   height: 32px;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   padding: 0 8px;
@@ -1686,7 +1774,6 @@ body {
 
 .modal-container.cmdr-setting-modal .modal-content .cmdr-setting-header .cmdr-tab {
   height: 32px;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   padding: 0 8px;
@@ -1828,6 +1915,25 @@ hr:has(+ .cmdr-sep-con.callout) {
   gap: 8px;
 }
 
+[data-type="style-settings"] .view-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+[data-type="style-settings"] .view-content > * {
+  max-width: 600px;
+  width: 100%;
+}
+
+[data-type="style-settings"] .style-settings-heading {
+  border: unset;
+}
+
+[data-type="style-settings"] .style-settings-container .setting-item:not(.setting-item-heading) {
+  flex-direction: row;
+}
+
 /* stylelint-disable selector-class-pattern */
 .vertical-tab-content .setting-group:first-child:has(.choiceFilterBar) {
   margin-bottom: 80px;
@@ -1899,7 +2005,6 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.mod-settings.mod-sidebar-layout .vertical-tab-nav-item {
   height: 32px;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   padding: 0 8px;
@@ -2193,7 +2298,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 .is-focused {
   --liquid-sidebar-background-image:
     radial-gradient(ellipse 400% 160% at -500px -20px,
-    hsl(var(--color-accent-hsl), 10%),
+    hsl(from var(--color-accent) h s l / 10%),
     rgb(var(--mono-rgb-0), 40%));
   --liquid-sidebar-shadow:
     0px 0px 8px rgb(0 0 0 / 4%), /* 第一层：靠近元素的、稍微清晰的轮廓 */
@@ -2325,6 +2430,126 @@ body {
   --background-modifier-border-focus: hsl(var(--interactive-accent-hsl), 60%);
   --backdrop-filter-frosted-edge: blur(2px);
   --background-glass-content: rgb(0 0 0 / 15%);
+}
+
+.theme-glassive-accent-red.theme-light {
+  --glassive-theme-color: hsl(359deg 100% 61%);
+  --color-accent-hsl: 359deg, 100%, 61%;
+}
+
+.theme-glassive-accent-red.theme-dark {
+  --glassive-theme-color: hsl(359deg 100% 63%);
+  --color-accent-hsl: 359deg, 100%, 63%;
+}
+
+.theme-glassive-accent-orange.theme-light {
+  --glassive-theme-color: hsl(28deg 100% 58%);
+  --color-accent-hsl: 28deg, 100%, 58%;
+}
+
+.theme-glassive-accent-orange.theme-dark {
+  --glassive-theme-color: hsl(28deg 100% 59%);
+  --color-accent-hsl: 28deg, 100%, 59%;
+}
+
+.theme-glassive-accent-yellow.theme-light {
+  --glassive-theme-color: hsl(48deg 100% 50%);
+  --color-accent-hsl: 48deg, 100%, 50%;
+}
+
+.theme-glassive-accent-yellow.theme-dark {
+  --glassive-theme-color: hsl(50deg 100% 50%);
+  --color-accent-hsl: 50deg, 100%, 50%;
+}
+
+.theme-glassive-accent-green.theme-light {
+  --glassive-theme-color: hsl(135deg 59% 49%);
+  --color-accent-hsl: 135deg, 59%, 49%;
+}
+
+.theme-glassive-accent-green.theme-dark {
+  --glassive-theme-color: hsl(135deg 64% 50%);
+  --color-accent-hsl: 135deg, 64%, 50%;
+}
+
+.theme-glassive-accent-mint.theme-light {
+  --glassive-theme-color: hsl(174deg 100% 39%);
+  --color-accent-hsl: 174deg, 100%, 39%;
+}
+
+.theme-glassive-accent-mint.theme-dark {
+  --glassive-theme-color: hsl(174deg 100% 43%);
+  --color-accent-hsl: 174deg, 100%, 43%;
+}
+
+.theme-glassive-accent-teal.theme-light {
+  --glassive-theme-color: hsl(184deg 100% 41%);
+  --color-accent-hsl: 184deg, 100%, 41%;
+}
+
+.theme-glassive-accent-teal.theme-dark {
+  --glassive-theme-color: hsl(184deg 100% 44%);
+  --color-accent-hsl: 184deg, 100%, 44%;
+}
+
+.theme-glassive-accent-cyan.theme-light {
+  --glassive-theme-color: hsl(190deg 100% 45%);
+  --color-accent-hsl: 190deg, 100%, 45%;
+}
+
+.theme-glassive-accent-cyan.theme-dark {
+  --glassive-theme-color: hsl(193deg 99% 62%);
+  --color-accent-hsl: 193deg, 99%, 62%;
+}
+
+.theme-glassive-accent-blue.theme-light {
+  --glassive-theme-color: hsl(208deg 100% 50%);
+  --color-accent-hsl: 208deg, 100%, 50%;
+}
+
+.theme-glassive-accent-blue.theme-dark {
+  --glassive-theme-color: hsl(206deg 100% 50%);
+  --color-accent-hsl: 206deg, 100%, 50%;
+}
+
+.theme-glassive-accent-indigo.theme-light {
+  --glassive-theme-color: hsl(245deg 89% 65%);
+  --color-accent-hsl: 245deg, 89%, 65%;
+}
+
+.theme-glassive-accent-indigo.theme-dark {
+  --glassive-theme-color: hsl(234deg 100% 71%);
+  --color-accent-hsl: 234deg, 100%, 71%;
+}
+
+.theme-glassive-accent-purple.theme-light {
+  --glassive-theme-color: hsl(293deg 74% 53%);
+  --color-accent-hsl: 293deg, 74%, 53%;
+}
+
+.theme-glassive-accent-purple.theme-dark {
+  --glassive-theme-color: hsl(293deg 88% 58%);
+  --color-accent-hsl: 293deg, 88%, 58%;
+}
+
+.theme-glassive-accent-pink.theme-light {
+  --glassive-theme-color: hsl(349deg 100% 59%);
+  --color-accent-hsl: 349deg, 100%, 59%;
+}
+
+.theme-glassive-accent-pink.theme-dark {
+  --glassive-theme-color: hsl(348deg 100% 61%);
+  --color-accent-hsl: 348deg, 100%, 61%;
+}
+
+.theme-glassive-accent-brown.theme-light {
+  --glassive-theme-color: hsl(25deg 32% 52%);
+  --color-accent-hsl: 25deg, 32%, 52%;
+}
+
+.theme-glassive-accent-brown.theme-dark {
+  --glassive-theme-color: hsl(27deg 36% 56%);
+  --color-accent-hsl: 27deg, 36%, 56%;
 }
 
 .suggestion-empty,
@@ -2594,7 +2819,9 @@ body {
 }
 
 .workspace-ribbon.mod-primary.is-collapsed::before {
+  transition: background-color 250ms 95ms ease-in-out;
   background-color: var(--ribbon-background-collapsed);
+  border-inline-end-color: var(--divider-color);
 }
 
 .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {

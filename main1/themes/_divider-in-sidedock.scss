@@ -4,7 +4,6 @@
 
 
 .workspace-split.mod-sidedock > * .workspace-leaf-resize-handle  {
-
     margin-left: 10px;
     margin-right: 10px;
     width: auto;
@@ -27,17 +26,22 @@
 .workspace-ribbon.mod-primary {
     margin-top: calc( var(--header-height) * 2);
     border: unset;
+
     &::before {
         height: calc( var(--header-height) * 2 + 1px);
-
     }
 }
 
+
 .workspace-ribbon.mod-primary.is-collapsed::before {
+    transition: background-color 250ms 95ms ease-in-out;
     background-color: var(--ribbon-background-collapsed);
+    border-inline-end-color: var(--divider-color);
 }
 
 
+
+// root 区 tab之间的分割线
 
 .workspace-split.mod-vertical>*>.workspace-leaf-resize-handle {
     inset-inline-end: 0;

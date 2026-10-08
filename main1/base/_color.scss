@@ -5,7 +5,9 @@
 
 // 强调色
 
-
+body {
+  --text-on-accent: #fff !important;
+}
 
 .theme-dark,
 .theme-light {
