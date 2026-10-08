@@ -3,3 +3,23 @@
 
 
 
+// 强调色
+
+
+
+.theme-dark,
+.theme-light {
+  /* 你依然可以用最直观的 HSL 定义基础色 */
+  --color-accent: var(--glassive-theme-color);
+
+  
+//   /* 相当于之前的 accent-1 (提亮约 15%) */
+  --color-accent-1: color-mix(in oklch, var(--color-accent), white 4%);
+
+//   /* 相当于之前的 accent-2 (提亮约 30%) */
+  --color-accent-2: color-mix(in oklch, var(--color-accent), white 10%);
+}
+
+.theme-glassive-accent-user-custom {
+    --glassive-theme-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
+}

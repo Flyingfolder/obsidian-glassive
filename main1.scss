@@ -5,7 +5,7 @@
 
 // 1. Abstracts — 变量 / mixin / 动画
 @use 'main1/abstracts';
-// @use 'main1/abstracts/style-settings';
+@use 'main1/abstracts/style-settings';
 
 // 2. Base — reset 与全局基础样式
 @use 'main1/base/reset';
@@ -42,6 +42,7 @@
 @use 'main1/pages/plugin-iconic';
 @use 'main1/pages/plugin-commander';
 @use 'main1/pages/detailed-pages/commander-macros';
+@use 'main1/pages/plugin-style-settings';
 
 // @use 'main1/pages/plugin-modalForm-newform_datatype';    //有问题，容易导致css动画卡顿
 // @use 'main1/pages/plugin-modalForm-newform_header';      //有问题，容易导致css动画卡顿
@@ -63,6 +64,7 @@
 
 // 7. Themes — 主题级覆盖
 @use 'main1/themes/liquid-variables';
+@use 'main1/themes/accent-color';
 @use 'main1/themes/empty-search-result';
 @use 'main1/themes/tab-header-container-in-root';
 @use 'main1/themes/tab-header-container-in-sidebar';

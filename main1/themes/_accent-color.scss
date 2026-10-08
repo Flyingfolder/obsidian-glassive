@@ -1,0 +1,240 @@
+
+.theme-glassive-accent-red {
+    &.theme-light {
+        // color: hsl(359deg 100% 61%);
+        // --accent-h: 4 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 47.29% !important;
+        --glassive-theme-color: hsl(359deg 100% 61%);
+        --color-accent-hsl: 359deg, 100%, 61%;
+    }
+
+    &.theme-dark {
+        // color: hsl(359deg 100% 63%);
+        // --accent-h: 4 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 48.84% !important;
+        --glassive-theme-color: hsl(359deg 100% 63%);
+        --color-accent-hsl: 359deg, 100%, 63%;
+    }
+}
+
+.theme-glassive-accent-orange {
+    &.theme-light {
+        // color: hsl(28deg 100% 58%);
+        // --accent-h: 33 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 44.96% !important;
+        --glassive-theme-color: hsl(28deg 100% 58%);
+        --color-accent-hsl: 28deg, 100%, 58%;
+    }
+
+    &.theme-dark {
+        // color: hsl(28deg 100% 59%);
+        // --accent-h: 33 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 45.74% !important;
+        --glassive-theme-color: hsl(28deg 100% 59%);
+        --color-accent-hsl: 28deg, 100%, 59%;
+    }
+}
+
+.theme-glassive-accent-yellow {
+    &.theme-light {
+        // color: hsl(48deg 100% 50%);
+        // --accent-h: 53 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 38.76% !important;
+        --glassive-theme-color: hsl(48deg 100% 50%);
+        --color-accent-hsl: 48deg, 100%, 50%;
+    }
+
+    &.theme-dark {
+        // color: hsl(50deg 100% 50%);
+        // --accent-h: 55 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 38.76% !important;
+        --glassive-theme-color: hsl(50deg 100% 50%);
+        --color-accent-hsl: 50deg, 100%, 50%;
+    }
+}
+
+.theme-glassive-accent-green {
+    &.theme-light {
+        // color: hsl(135deg 59% 49%);
+        // --accent-h: 135 !important;
+        // --accent-s: 59% !important;
+        // --accent-l: 49% !important;
+        --glassive-theme-color: hsl(135deg 59% 49%);
+        --color-accent-hsl: 135deg, 59%, 49%;
+    }
+
+    &.theme-dark {
+        // color: hsl(135deg 64% 50%);
+        // --accent-h: 135 !important;
+        // --accent-s: 64% !important;
+        // --accent-l: 50% !important;
+        --glassive-theme-color: hsl(135deg 64% 50%);
+        --color-accent-hsl: 135deg, 64%, 50%;
+    }
+}
+
+.theme-glassive-accent-mint {
+    &.theme-light {
+        // color: hsl(174deg 100% 39%);
+        // --accent-h: 179 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 30.23% !important;
+        --glassive-theme-color: hsl(174deg 100% 39%);
+        --color-accent-hsl: 174deg, 100%, 39%;
+    }
+
+    &.theme-dark {
+        // color: hsl(174deg 100% 43%);
+        // --accent-h: 179 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 33.33% !important;
+        --glassive-theme-color: hsl(174deg 100% 43%);
+        --color-accent-hsl: 174deg, 100%, 43%;
+    }
+}
+
+.theme-glassive-accent-teal {
+    &.theme-light {
+        // color: hsl(184deg 100% 41%);
+        // --accent-h: 189 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 31.78% !important;
+        --glassive-theme-color: hsl(184deg 100% 41%);
+        --color-accent-hsl: 184deg, 100%, 41%;
+    }
+
+    &.theme-dark {
+        // color: hsl(184deg 100% 44%);
+        // --accent-h: 189 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 34.11% !important;
+        --glassive-theme-color: hsl(184deg 100% 44%);
+        --color-accent-hsl: 184deg, 100%, 44%;
+    }
+}
+
+.theme-glassive-accent-cyan {
+    &.theme-light {
+        // color: hsl(190deg 100% 45%);
+        // --accent-h: 195 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 34.88% !important;
+        --glassive-theme-color: hsl(190deg 100% 45%);
+        --color-accent-hsl: 190deg, 100%, 45%;
+    }
+
+    &.theme-dark {
+        // color: hsl(193deg 99% 62%);
+        // --accent-h: 198 !important;
+        // --accent-s: 94.29% !important;
+        // --accent-l: 48.06% !important;
+        --glassive-theme-color: hsl(193deg 99% 62%);
+        --color-accent-hsl: 193deg, 99%, 62%;
+    }
+}
+
+.theme-glassive-accent-blue {
+    &.theme-light {
+        // color: hsl(208deg 100% 50%);
+        // --accent-h: 213 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 38.76% !important;
+        --glassive-theme-color: hsl(208deg 100% 50%);
+        --color-accent-hsl: 208deg, 100%, 50%;
+    }
+
+    &.theme-dark {
+        // color: hsl(206deg 100% 50%);
+        // --accent-h: 211 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 38.76% !important;
+        --glassive-theme-color: hsl(206deg 100% 50%);
+        --color-accent-hsl: 206deg, 100%, 50%;
+    }
+}
+
+.theme-glassive-accent-indigo {
+    &.theme-light {
+        // color: hsl(245deg 89% 65%);
+        // --accent-h: 245 !important;
+        // --accent-s: 89% !important;
+        // --accent-l: 65% !important;
+        --glassive-theme-color: hsl(245deg 89% 65%);
+        --color-accent-hsl: 245deg, 89%, 65%;
+    }
+
+    &.theme-dark {
+        // color: hsl(234deg 100% 71%);
+        // --accent-h: 239 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 55.04% !important;
+        --glassive-theme-color: hsl(234deg 100% 71%);
+        --color-accent-hsl: 234deg, 100%, 71%;
+    }
+}
+
+.theme-glassive-accent-purple {
+    &.theme-light {
+        // color: hsl(293deg 74% 53%);
+        // --accent-h: 293 !important;
+        // --accent-s: 74% !important;
+        // --accent-l: 53% !important;
+        --glassive-theme-color: hsl(293deg 74% 53%);
+        --color-accent-hsl: 293deg, 74%, 53%;
+    }
+
+    &.theme-dark {
+        // color: hsl(293deg 88% 58%);
+        // --accent-h: 293 !important;
+        // --accent-s: 88% !important;
+        // --accent-l: 58% !important;
+        --glassive-theme-color: hsl(293deg 88% 58%);
+        --color-accent-hsl: 293deg, 88%, 58%;
+    }
+}
+
+.theme-glassive-accent-pink {
+    &.theme-light {
+        // color: hsl(349deg 100% 59%);
+        // --accent-h: 354 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 45.74% !important;
+        --glassive-theme-color: hsl(349deg 100% 59%);
+        --color-accent-hsl: 349deg, 100%, 59%;
+    }
+
+    &.theme-dark {
+        // color: hsl(348deg 100% 61%);
+        // --accent-h: 353 !important;
+        // --accent-s: 95.24% !important;
+        // --accent-l: 47.29% !important;
+        --glassive-theme-color: hsl(348deg 100% 61%);
+        --color-accent-hsl: 348deg, 100%, 61%;
+    }
+}
+
+.theme-glassive-accent-brown {
+    &.theme-light {
+        // color: hsl(25deg 32% 52%);
+        // --accent-h: 25 !important;
+        // --accent-s: 32% !important;
+        // --accent-l: 52% !important;
+        --glassive-theme-color: hsl(25deg 32% 52%);
+        --color-accent-hsl: 25deg, 32%, 52%;
+    }
+
+    &.theme-dark {
+        // color: hsl(27deg 36% 56%);
+        // --accent-h: 27 !important;
+        // --accent-s: 36% !important;
+        // --accent-l: 56% !important;
+        --glassive-theme-color: hsl(27deg 36% 56%);
+        --color-accent-hsl: 27deg, 36%, 56%;
+    }
+}

@@ -1,0 +1,30 @@
+
+
+
+
+
+
+
+[data-type="style-settings"] {
+    .view-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .view-content>* {
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .style-settings-heading {
+        border: unset;
+    }
+
+    
+}
+
+
+[data-type="style-settings"] .style-settings-container .setting-item:not(.setting-item-heading) {
+    flex-direction: row;
+}

@@ -97,7 +97,7 @@ $titlebar-height: 48px;
 
 @mixin liquid-sidebar-item($is-selected-status-name) {
     height: $control-height-l;
-    border-radius: $radius-m;
+    // border-radius: $radius-m;
     display: flex;
     align-items: center;
     padding: 0 8px;
