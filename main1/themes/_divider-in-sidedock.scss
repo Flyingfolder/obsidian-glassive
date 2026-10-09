@@ -46,7 +46,7 @@
 .workspace-split.mod-vertical>*>.workspace-leaf-resize-handle {
     inset-inline-end: 0;
     bottom: 0;
-    top: calc( var(--header-height) * 2);
+    // top: calc( var(--header-height) * 2);
     width: var(--divider-width-hover);
-    height: var(--divider-vertical-height);
+    height: calc(var(--divider-vertical-height) - var(--header-height) * 2);
 }

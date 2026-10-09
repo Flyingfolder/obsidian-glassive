@@ -988,6 +988,45 @@ body {
   animation: fade-in var(--anim-duration-moderate) ease-out backwards, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) backwards;
 }
 
+body {
+  --table-background: transparent;
+  --table-border-width: 1px;
+  --table-border-color: var(--background-modifier-border);
+  --table-white-space: break-spaces;
+  --table-header-background-hover: inherit;
+  --table-header-border-width: 0;
+  --table-header-border-color: var(--table-border-color);
+  --table-header-font: inherit;
+  --table-header-size: 14px;
+  --table-header-weight: calc(var(--font-weight) + var(--bold-modifier));
+  --table-header-color: var(--text-normal);
+  --table-line-height: var(--line-height-tight);
+  --table-text-size: var(--font-preferred-size);
+  --table-text-color: inherit;
+  --table-column-min-width: 6ch;
+  --table-column-max-width: none;
+  --table-column-first-border-width: 0;
+  --table-column-last-border-width: 0;
+  --table-row-background-hover: var(--table-background);
+  --table-row-alt-background: var(--table-background);
+  --table-row-alt-background-hover: var(--table-background);
+  --table-row-last-border-width: var(--table-border-width);
+  --table-selection: color-mix(in oklch, var(--color-accent) 10%, transparent);
+  --table-selection-blend-mode: var(--highlight-mix-blend-mode);
+  --table-selection-border-color: var(--interactive-accent);
+  --table-selection-border-width: 2px;
+  --table-selection-border-radius: 4px;
+  --table-cell-vertical-alignment: top;
+  --table-drag-handle-background: transparent;
+  --table-drag-handle-background-active: var(--table-selection-border-color);
+  --table-drag-handle-color: var(--text-faint);
+  --table-drag-handle-color-active: var(--text-on-accent);
+  --table-drop-indicator-half-width: 2px;
+  --table-add-button-background: transparent;
+  --table-add-button-border-width: var(--table-border-width);
+  --table-add-button-border-color: var(--background-modifier-border);
+}
+
 .menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:placeholder-shown)) .suggestion-group[data-group="actions"] .suggestion-item:nth-child(2),
 .menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:placeholder-shown)) .suggestion-group[data-group="actions"] .suggestion-item:nth-child(3),
 .menu.bases-toolbar-menu.bases-toolbar-properties-menu:not(:has(input:placeholder-shown)) .suggestion-group[data-group="actions"] .suggestion-item:nth-child(2),
@@ -2832,9 +2871,8 @@ body {
 .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {
   inset-inline-end: 0;
   bottom: 0;
-  top: calc(var(--header-height) * 2);
   width: var(--divider-width-hover);
-  height: var(--divider-vertical-height);
+  height: calc(var(--divider-vertical-height) - var(--header-height) * 2);
 }
 
 .workspace-split.mod-root .workspace-tabs:not(.mod-top) .view-header-title-container {
