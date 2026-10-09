@@ -1001,21 +1001,14 @@ body {
   --table-header-weight: calc(var(--font-weight) + var(--bold-modifier));
   --table-header-color: var(--text-normal);
   --table-line-height: var(--line-height-tight);
-  --table-text-size: var(--font-preferred-size);
-  --table-text-color: inherit;
-  --table-column-min-width: 6ch;
-  --table-column-max-width: none;
+  --table-text-size: 14px;
+  --table-text-color: color-mix(in oklch, var(--color-base-100) 70%, transparent);
   --table-column-first-border-width: 0;
   --table-column-last-border-width: 0;
   --table-row-background-hover: var(--table-background);
-  --table-row-alt-background: var(--table-background);
-  --table-row-alt-background-hover: var(--table-background);
-  --table-row-last-border-width: var(--table-border-width);
+  --table-row-last-border-width: 0;
   --table-selection: color-mix(in oklch, var(--color-accent) 10%, transparent);
   --table-selection-blend-mode: var(--highlight-mix-blend-mode);
-  --table-selection-border-color: var(--interactive-accent);
-  --table-selection-border-width: 2px;
-  --table-selection-border-radius: 4px;
   --table-cell-vertical-alignment: top;
   --table-drag-handle-background: transparent;
   --table-drag-handle-background-active: var(--table-selection-border-color);
@@ -1025,6 +1018,88 @@ body {
   --table-add-button-background: transparent;
   --table-add-button-border-width: var(--table-border-width);
   --table-add-button-border-color: var(--background-modifier-border);
+}
+
+.cm-html-embed td,
+.markdown-rendered td,
+.cm-html-embed th,
+.markdown-rendered th {
+  padding: var(--size-2-2) var(--size-4-2);
+  border: var(--table-border-width) solid var(--table-border-color);
+  max-width: var(--table-column-max-width);
+  min-width: var(--table-column-min-width);
+  vertical-align: var(--table-cell-vertical-alignment);
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget {
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+  z-index: 1;
+  contain: unset !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper {
+  padding: 8px;
+}
+
+.markdown-source-view.mod-cm6 .cm-content > .cm-table-widget[contenteditable="false"] {
+  transition: box-shadow var(--anim-duration-moderate) ease;
+  border-radius: 40px;
+  corner-shape: squircle;
+}
+
+.markdown-source-view.mod-cm6 .cm-content > .cm-table-widget[contenteditable="false"]:focus-within {
+  box-shadow: var(--shadow-card);
+}
+
+.table-cell-wrapper {
+  align-content: center;
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper {
+  padding-bottom: 40px;
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn {
+  inset: auto auto 0 0;
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn::after {
+  content: "Add Row";
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn {
+  inset: auto 0 0 auto;
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn::after {
+  content: "Add Column";
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget:focus-within .table-col-btn, .markdown-source-view.mod-cm6 .cm-table-widget:focus-within .table-row-btn {
+  opacity: 1;
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn,
+.markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn {
+  height: 30px;
+  width: auto;
+  padding: 0 8px;
+  border-radius: 99px;
+  corner-shape: squircle;
+  border: unset;
+  cursor: default;
+  color: rgb(var(--mono-rgb-100), 55%);
+  font-size: 13px;
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn:hover,
+.markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 12%, transparent);
 }
 
 .menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:placeholder-shown)) .suggestion-group[data-group="actions"] .suggestion-item:nth-child(2),
@@ -2718,6 +2793,10 @@ body {
   text-overflow: clip;
 }
 
+.workspace-split.mod-root .workspace-tab-header-new-tab {
+  margin-left: 0;
+}
+
 .workspace-split.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
   overflow: clip;
   overflow-clip-margin: 35px;
@@ -2947,7 +3026,7 @@ body {
   width: auto;
   height: auto;
   inset: 12px;
-  box-shadow: inset 0 0 0 2px var(--interactive-accent), inset 0 0 20px hsl(var(--interactive-accent-hsl), 40%), inset 0 0 60px hsl(var(--interactive-accent-hsl), 60%), inset 0 0 220px var(--color-base-25);
+  box-shadow: inset 0 0 0 2px color-mix(in oklch, var(--interactive-accent) 60%, transparent), inset 0 0 30px hsl(var(--interactive-accent-hsl), 10%), inset 0 0 100px hsl(var(--interactive-accent-hsl), 30%), inset 0 0 220px var(--color-base-35);
   transform-origin: 100% center;
   animation: drop-overlay-scale 200ms ease, fade-in var(--anim-duration-moderate) ease-in none;
 }

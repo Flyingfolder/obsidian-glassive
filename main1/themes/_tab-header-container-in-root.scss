@@ -68,6 +68,10 @@
         text-overflow: clip;
     }
 
+    .workspace-tab-header-new-tab {
+        margin-left: 0;
+    }
+
     // 保证阴影能溢出
     .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
         overflow: clip;

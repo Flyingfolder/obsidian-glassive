@@ -1,5 +1,8 @@
 
 
+
+@use '../abstracts' as *; 
+
 body {
   --table-background: transparent;
   --table-border-width: 1px;
@@ -14,24 +17,24 @@ body {
   --table-header-weight: calc(var(--font-weight) + var(--bold-modifier));
   --table-header-color: var(--text-normal);
   --table-line-height: var(--line-height-tight);
-  --table-text-size: var(--font-preferred-size);
-  --table-text-color: inherit;
+  --table-text-size: 14px;
+  --table-text-color: color-mix(in oklch, #{$text-normal} 70%, transparent);
 // 
-  --table-column-min-width: 6ch;
-  --table-column-max-width: none;
+//   --table-column-min-width: 6ch;
+//   --table-column-max-width: none;
 //   --table-column-alt-background: var(--table-background);
-  --table-column-first-border-width: 0;
-  --table-column-last-border-width: 0;
-  --table-row-background-hover: var(--table-background);
-  --table-row-alt-background: var(--table-background);
-  --table-row-alt-background-hover: var(--table-background);
-  --table-row-last-border-width: var(--table-border-width);
+  --table-column-first-border-width: 0;                             //*
+  --table-column-last-border-width: 0;                              //*
+  --table-row-background-hover: var(--table-background);          //*
+//   --table-row-alt-background: var(--table-background);
+//   --table-row-alt-background-hover: var(--table-background);
+  --table-row-last-border-width: 0;
 // 
   --table-selection: color-mix(in oklch, var(--color-accent) 10%, transparent);
   --table-selection-blend-mode: var(--highlight-mix-blend-mode);
-  --table-selection-border-color: var(--interactive-accent);
-  --table-selection-border-width: 2px;
-  --table-selection-border-radius: 4px;
+//   --table-selection-border-color: var(--interactive-accent);
+//   --table-selection-border-width: 2px;
+//   --table-selection-border-radius: 4px;
 // 
   --table-cell-vertical-alignment: top;
 // 
@@ -45,4 +48,98 @@ body {
   --table-add-button-border-width: var(--table-border-width);
   --table-add-button-border-color: var(--background-modifier-border);
 
+}
+
+.cm-html-embed td,
+.markdown-rendered td,
+.cm-html-embed th,
+.markdown-rendered th {
+    padding: var(--size-2-2) var(--size-4-2);
+    border: var(--table-border-width) solid var(--table-border-color);
+    max-width: var(--table-column-max-width);
+    min-width: var(--table-column-min-width);
+    vertical-align: var(--table-cell-vertical-alignment);
+    border-left-width: 0;
+    border-right-width: 0;
+
+
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget {
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    z-index: 1;
+    // box-shadow: var(--shadow-l);
+    contain: unset !important;
+
+
+    .table-cell-wrapper {
+        padding: 8px;
+    }
+}
+
+
+.markdown-source-view.mod-cm6 .cm-content > .cm-table-widget[contenteditable="false"] {
+    transition: box-shadow var(--anim-duration-moderate) ease;
+    border-radius: 40px;
+    corner-shape: squircle;
+        
+    &:focus-within  {
+        box-shadow: var(--shadow-card);
+    }
+
+    // .table-wrapper {
+    //     max-width: min(600px, 100%);
+    //     width: 100%;
+    //     transition: box-shadow var(--anim-duration-moderate) ease;
+    // }
+}
+
+
+.table-cell-wrapper {
+    align-content: center;
+}
+
+
+
+
+
+.markdown-source-view.mod-cm6 .cm-table-widget {
+    .table-wrapper {
+      padding-bottom: 40px;
+    }
+
+    .table-row-btn {
+      inset: auto auto 0 0;
+      &::after {content: "Add Row";}
+    }
+
+    .table-col-btn {
+      inset: auto 0 0 auto;
+      &::after {content: "Add Column";}
+    }
+
+    
+    &:focus-within .table-col-btn,
+    &:focus-within .table-row-btn {
+      opacity: 1;
+    }
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn,
+.markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn {
+    height: 30px;
+    width: auto;
+    padding: 0 8px;
+    border-radius: 99px;
+    corner-shape: squircle;
+    border: unset;
+    cursor: default;
+    color: $text-muted;
+    font-size: $font-ui-small;
+    background-color: $background-modifier-hover-subtle;
+    &:hover {background-color: $background-modifier-hover-strong;}
+
+    
 }
