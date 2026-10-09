@@ -12,107 +12,136 @@
     .modal-sidebar {padding: unset;}
     .community-modal-search-summary.u-muted {display: none;}
 
-    .community-modal-controls {
+
+    .community-modal-controls>* {
+        margin: unset;
+        padding: unset;
+    }
+
+    // 当没有右侧的详情页面的时候：
+    // 把头部的 各个控件都做成悬浮的样式 ---–---–---–---–---–---–---–---–---–---–
+
+    .modal-sidebar:last-child .community-modal-controls {
         display: flex;
-        flex-direction: column;
-        gap: unset;
-        padding: 8px;
+        flex-direction: row;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        backdrop-filter: unset;
+        padding: 8px 8px 20px;
+        height: 60px;
 
-        &>* {
-            margin: unset;
-            padding: unset;
+        // 效果：压暗
+
+        background: linear-gradient(to bottom,
+            color-mix(in oklch, $background-primary 90%, transparent) 0,
+            color-mix(in oklch, $background-primary 60%, transparent) 80%,
+            color-mix(in oklch, $background-primary 20%, transparent) 100%);
+
+        // search input
+        .search-input-container {@include liquid-toolbar-search-input();}
+
+        // filter icon button
+        .clickable-icon {@include liquid-toolbar-control;}
+
+        // show installed
+        .community-modal-search+.setting-item.mod-toggle {
+            .setting-item-info {display: none;}
+
+            margin-left: 12px;
+
+            @include liquid-toolbar-text-button-changing-from-toggles($label: 'Installed');
+
         }
-        * {font-size: $font-ui-small;}
-        input {background: unset;}
 
-    }
-    
-    .community-modal-search-results {
-        gap: 24px;
-    }
-
-
-    // 制作顶部的悬浮效果 ----------------------------------------
-    .modal-sidebar {
-        position: relative;
-
-        .community-modal-controls {
-            position: absolute;
-            z-index: 1;
-            inset: 0 0 auto;
-
-            @include liquid-glass-bg-subtle($with-border: false, $with-shadow: false);
-
-            border-bottom: 1px solid $background-modifier-seperator;
-        }
-
-        .community-modal-search-results-wrapper {
-            padding-top: 100px;
+        &+.community-modal-search-results-wrapper {
+            padding-top: 50px;
             border: unset;
+
+            .community-modal-search-results {
+                gap: 16px 24px;
+            }
+
         }
+
     }
 }
 
+
+
+
+// 右侧的界面 --------------
+
 .community-modal-details {
-    background-color: $background-primary;
     border: unset;
 }
 
-
-// theme 页面
-.community-item {
-    border-radius: 32px;
-    corner-shape: squircle;
-    overflow: hidden;
-}
-
-.mod-community-theme .community-item {
+.community-modal-details {
     position: relative;
-    padding: unset;
-    padding-bottom: 12px;
 
-    .community-item-screenshot {
-        order: -1;
-        border-radius: unset;
-        margin: 0 0 8px;
+    .community-modal-meta {
+        background-color: $background-modifier-hover-subtle;
+        padding: 20px 20px 20px;
+        border-radius: 40px;
+        corner-shape: squircle;
+        box-shadow: var(--shadow-card), var(--glass-shadow-inset-for-control);
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto 80px;
     }
 
-    &>*:not(.community-item-screenshot) {
-        padding-inline-start: 12px;
+    .community-modal-info-name {
+        margin-bottom: 8px;
     }
-}
 
-
-// 制作悬浮的左侧sidebar面板
-.modal:has(.community-modal-details) {
-    @include modal-with-sidebar($sidebar-wrapper: "modal-sidebar", $sidebar-scroller: "community-modal-search-results");
-
-    .community-modal-controls {
-        border-top-left-radius: inherit;
-        border-top-right-radius: inherit;
-        corner-shape: inherit;
+    .community-modal-button-container {
+        border-top: 1px solid $background-modifier-seperator;
+        height: fit-content;
+        padding-top: 12px;
+        align-items: center;
     }
 }
 
 
+// buttons
 
 
-// 制作玻璃效果的输入框
+.community-modal-button-container button.mod-destructive {
+    &.mod-destructive+.mod-destructive,
+    &.mod-destructive+.mod-destructive+.mod-destructive {
+        --text-color: var(--text-error);
 
-.community-modal-search {
-    .search-input-container {
-        --input-height: 32px;
 
-        @include liquid-toolbar-control($control-width: 100%);
+        background-color: color-mix(in oklch, var(--background-modifier-error) 10%, transparent);
+        text-decoration: none;
     }
 
-    input {
-        // @include liquid-toolbar-control($control-width: 100%);
-        box-shadow: unset;
-        height: 100%;
-        // #todo 细节修改的很糟糕。你下次看到这里的时候，提醒我完善。
+    & ~ button {
+        background-color: transparent;
+
+        --text-color: #{$interactive-accent};
+
+        cursor: pointer;
+        text-decoration: underline;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

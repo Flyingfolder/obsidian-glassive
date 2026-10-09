@@ -347,10 +347,6 @@ body {
   corner-shape: squircle;
 }
 
-button:active {
-  background-color: color-mix(in oklch, var(--mono-100) 12%, transparent);
-}
-
 button {
   padding: var(--size-4-1) var(--size-4-3);
 
@@ -494,10 +490,11 @@ button {
 .modal .modal-header-button {
   inset: 8px 8px auto auto;
   height: 32px;
+  padding: 4px;
   width: 32px;
   color: var(--mono-100);
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-  border-radius: 100px;
+  border-radius: 99px;
   corner-shape: unset;
   background: var(--toolbar-contols-background);
 }
@@ -514,7 +511,7 @@ button {
   /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
   filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
 
-  --icon-stroke: 2.5px;
+  --icon-stroke: 2px;
 }
 
 .modal .modal-button-container {
@@ -2167,10 +2164,11 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .setting-page-titlebar .setting-page-back-button {
   height: 32px;
+  padding: 4px;
   width: 32px;
   color: var(--mono-100);
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-  border-radius: 100px;
+  border-radius: 99px;
   corner-shape: unset;
   background: var(--toolbar-contols-background);
 }
@@ -2187,7 +2185,7 @@ hr:has(+ .cmdr-sep-con.callout) {
   /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
   filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
 
-  --icon-stroke: 2.5px;
+  --icon-stroke: 2px;
 }
 
 .modal-setting-titlebar {
@@ -2208,10 +2206,11 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal-setting-titlebar button {
   height: 32px;
+  padding: 4px;
   width: fit-content;
   color: var(--mono-100);
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-  border-radius: 100px;
+  border-radius: 99px;
   corner-shape: unset;
   background: var(--toolbar-contols-background);
 }
@@ -2228,67 +2227,11 @@ hr:has(+ .cmdr-sep-con.callout) {
   /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
   filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
 
-  --icon-stroke: 2.5px;
+  --icon-stroke: 2px;
 }
 
 .community-modal-info {
   overflow: visible;
-}
-
-.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar {
-  padding: unset;
-}
-
-.modal.mod-community-modal.mod-sidebar-layout .community-modal-search-summary.u-muted {
-  display: none;
-}
-
-.modal.mod-community-modal.mod-sidebar-layout .community-modal-controls {
-  display: flex;
-  flex-direction: column;
-  gap: unset;
-  padding: 8px;
-}
-
-.modal.mod-community-modal.mod-sidebar-layout .community-modal-controls > * {
-  margin: unset;
-  padding: unset;
-}
-
-.modal.mod-community-modal.mod-sidebar-layout .community-modal-controls * {
-  font-size: 13px;
-}
-
-.modal.mod-community-modal.mod-sidebar-layout .community-modal-controls input {
-  background: unset;
-}
-
-.modal.mod-community-modal.mod-sidebar-layout .community-modal-search-results {
-  gap: 24px;
-}
-
-.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar {
-  position: relative;
-}
-
-.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar .community-modal-controls {
-  position: absolute;
-  z-index: 1;
-  inset: 0 0 auto;
-  background-color: var(--background-glass-subtle);
-  -webkit-backdrop-filter: var(--backdrop-filter-glass-subtle);
-          backdrop-filter: var(--backdrop-filter-glass-subtle);
-  border-bottom: 1px solid rgb(var(--mono-rgb-100), 12%);
-}
-
-.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar .community-modal-search-results-wrapper {
-  padding-top: 100px;
-  border: unset;
-}
-
-.community-modal-details {
-  background-color: var(--background-primary);
-  border: unset;
 }
 
 .community-item {
@@ -2313,74 +2256,304 @@ hr:has(+ .cmdr-sep-con.callout) {
   padding-inline-start: 12px;
 }
 
-.modal:has(.community-modal-details) {
-  border-radius: 40px;
-  corner-shape: squircle;
+.modal.mod-community-modal {
   background-color: var(--background-primary);
-
-  --modal-sidebar-background: transparent;
-
-  background-image: none;
+  background-image: unset;
 }
 
-.modal:has(.community-modal-details) .modal-content {
-  display: flex;
-  flex-direction: row;
-  padding-left: 7px;
+.modal-sidebar:not(:last-child) {
+  position: relative;
 }
 
-.modal:has(.community-modal-details) .modal-sidebar {
-  margin: 7px 0;
-  border: 1px solid var(--liquid-sidebar-border-color);
-  box-shadow: var(--liquid-sidebar-shadow);
-  corner-shape: squircle;
-  overflow: hidden;
-  border-radius: 30px;
-  z-index: 10;
-  background-color: var(--background-secondary);
-  background-image: var(--liquid-sidebar-background-image);
-}
-
-.modal:has(.community-modal-details) .community-modal-search-results {
-  padding: 9px;
-}
-
-.modal:has(.community-modal-details) .community-modal-controls {
+.modal-sidebar:not(:last-child) .community-modal-controls {
+  padding: 12px;
+  position: absolute;
+  z-index: 1;
+  inset: 0 0 auto;
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
   corner-shape: inherit;
+  background: linear-gradient(to bottom, color-mix(in oklch, var(--background-primary) 90%, transparent) 0, color-mix(in oklch, var(--background-primary) 60%, transparent) 80%, color-mix(in oklch, var(--background-primary) 10%, transparent) 100%);
 }
 
-.community-modal-search .search-input-container {
+.modal-sidebar:not(:last-child) .community-modal-search-results-wrapper {
+  padding-top: 80px;
+  border: unset;
+}
+
+.modal-sidebar:not(:last-child) .community-modal-search + .setting-item.mod-toggle .setting-item-info {
+  display: none;
+}
+
+.modal-sidebar:not(:last-child) .community-modal-search + .setting-item.mod-toggle {
+  font-size: 13px;
+  width: fit-content;
+}
+
+.modal-sidebar:not(:last-child) .community-modal-search + .setting-item.mod-toggle::before {
+  content: "Installed";
+}
+
+.modal-sidebar:not(:last-child) .community-modal-search + .setting-item.mod-toggle .checkbox-container {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  opacity: 0;
+}
+
+.modal-sidebar:not(:last-child) .community-modal-search + .setting-item.mod-toggle {
+  gap: unset;
+  border-radius: 99px;
+  corner-shape: unset;
+  padding: 0 10px;
+  color: var(--mono-100);
+  background: var(--toolbar-contols-background);
+  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+}
+
+.theme-light .modal-sidebar:not(:last-child) .community-modal-search + .setting-item.mod-toggle:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+}
+
+.theme-dark .modal-sidebar:not(:last-child) .community-modal-search + .setting-item.mod-toggle:hover {
+  background-color: var(--color-base-40);
+}
+
+.theme-light .modal-sidebar:not(:last-child) .community-modal-search + .setting-item.mod-toggle:has(.is-enabled) {
+  background-color: var(--color-accent-1);
+}
+
+.theme-dark .modal-sidebar:not(:last-child) .community-modal-search + .setting-item.mod-toggle:has(.is-enabled) {
+  background-color: var(--color-accent-1);
+}
+
+.modal-sidebar:not(:last-child) .community-modal-search + .setting-item.mod-toggle .setting-item-control {
+  gap: unset;
+}
+
+.modal-sidebar:not(:last-child) .community-modal-search + .setting-item.mod-toggle {
+  height: 24px;
+  margin-top: 12px;
+}
+
+.modal-sidebar {
+  z-index: 10;
+}
+
+.community-modal-search-results .community-item.tappable {
+  border-radius: 32px;
+  corner-shape: squircle;
+  overflow: hidden;
+  background-color: unset;
+  background-color: color-mix(in oklch, var(--mono-100) 3.5%, transparent);
+  border: unset;
+  box-shadow: var(--glass-shadow-inset-l);
+}
+
+.community-modal-search-results .community-item.tappable.is-selected {
+  background-color: var(--background-primary);
+}
+
+.theme-dark .community-modal-search-results .community-item.tappable.is-selected {
+  background-color: color-mix(in oklch, var(--mono-100) 12%, transparent);
+}
+
+.community-modal-search-results .community-item.tappable.is-selected {
+  box-shadow: var(--shadow-card);
+  z-index: 1;
+}
+
+.community-modal-search-results .community-item.tappable.is-selected:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 3.5%, transparent);
+}
+
+.community-modal-search-results-wrapper {
+  padding-right: 80px;
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar {
+  padding: unset;
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .community-modal-search-summary.u-muted {
+  display: none;
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .community-modal-controls > * {
+  margin: unset;
+  padding: unset;
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  -webkit-backdrop-filter: unset;
+          backdrop-filter: unset;
+  padding: 8px 8px 20px;
+  height: 60px;
+  background: linear-gradient(to bottom, color-mix(in oklch, var(--background-primary) 90%, transparent) 0, color-mix(in oklch, var(--background-primary) 60%, transparent) 80%, color-mix(in oklch, var(--background-primary) 20%, transparent) 100%);
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .search-input-container {
   --input-height: 32px;
 
   height: 32px;
-  width: 100%;
+  width: 320px;
   color: var(--mono-100);
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-  border-radius: 100px;
+  border-radius: 99px;
   corner-shape: unset;
   background: var(--toolbar-contols-background);
 }
 
-.theme-light .community-modal-search .search-input-container:hover {
-  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .community-modal-search .search-input-container:hover {
-  background-color: var(--color-base-40);
-}
-
-.community-modal-search .search-input-container .svg-icon {
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .search-input-container .svg-icon {
   /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
   filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
 
   --icon-stroke: 2.5px;
 }
 
-.community-modal-search input {
-  box-shadow: unset;
-  height: 100%;
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .search-input-container input {
+  --input-border-width: 0;
+
+  height: inherit;
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .clickable-icon {
+  height: 32px;
+  padding: 4px;
+  width: 32px;
+  color: var(--mono-100);
+  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--toolbar-contols-background);
+}
+
+.theme-light .modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .clickable-icon:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+}
+
+.theme-dark .modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .clickable-icon:hover {
+  background-color: var(--color-base-40);
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .clickable-icon .svg-icon {
+  /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
+  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
+
+  --icon-stroke: 2px;
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .community-modal-search + .setting-item.mod-toggle .setting-item-info {
+  display: none;
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .community-modal-search + .setting-item.mod-toggle {
+  margin-left: 12px;
+  font-size: 13px;
+  width: fit-content;
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .community-modal-search + .setting-item.mod-toggle::before {
+  content: "Installed";
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .community-modal-search + .setting-item.mod-toggle .checkbox-container {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  opacity: 0;
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .community-modal-search + .setting-item.mod-toggle {
+  gap: unset;
+  border-radius: 99px;
+  corner-shape: unset;
+  padding: 0 10px;
+  color: var(--mono-100);
+  background: var(--toolbar-contols-background);
+  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+}
+
+.theme-light .modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .community-modal-search + .setting-item.mod-toggle:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+}
+
+.theme-dark .modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .community-modal-search + .setting-item.mod-toggle:hover {
+  background-color: var(--color-base-40);
+}
+
+.theme-light .modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .community-modal-search + .setting-item.mod-toggle:has(.is-enabled) {
+  background-color: var(--color-accent-1);
+}
+
+.theme-dark .modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .community-modal-search + .setting-item.mod-toggle:has(.is-enabled) {
+  background-color: var(--color-accent-1);
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls .community-modal-search + .setting-item.mod-toggle .setting-item-control {
+  gap: unset;
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls + .community-modal-search-results-wrapper {
+  padding-top: 50px;
+  border: unset;
+}
+
+.modal.mod-community-modal.mod-sidebar-layout .modal-sidebar:last-child .community-modal-controls + .community-modal-search-results-wrapper .community-modal-search-results {
+  gap: 16px 24px;
+}
+
+.community-modal-details {
+  border: unset;
+}
+
+.community-modal-details {
+  position: relative;
+}
+
+.community-modal-details .community-modal-meta {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+  padding: 20px 20px 20px;
+  border-radius: 40px;
+  corner-shape: squircle;
+  box-shadow: var(--shadow-card), var(--glass-shadow-inset-for-control);
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto 80px;
+}
+
+.community-modal-details .community-modal-info-name {
+  margin-bottom: 8px;
+}
+
+.community-modal-details .community-modal-button-container {
+  border-top: 1px solid rgb(var(--mono-rgb-100), 12%);
+  height: fit-content;
+  padding-top: 12px;
+  align-items: center;
+}
+
+.community-modal-button-container button.mod-destructive.mod-destructive + .mod-destructive, .community-modal-button-container button.mod-destructive.mod-destructive + .mod-destructive + .mod-destructive {
+  --text-color: var(--text-error);
+
+  background-color: color-mix(in oklch, var(--background-modifier-error) 10%, transparent);
+  text-decoration: none;
+}
+
+.community-modal-button-container button.mod-destructive ~ button {
+  background-color: transparent;
+
+  --text-color: var(--color-accent-1);
+
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .callout-suggestions-container .suggestion-item.callout-suggestions-item .callout {

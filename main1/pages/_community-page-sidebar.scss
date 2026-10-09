@@ -1,0 +1,189 @@
+
+
+@use '../abstracts' as *; 
+
+
+
+
+// theme 页面
+.community-item {
+    border-radius: 32px;
+    corner-shape: squircle;
+    overflow: hidden;
+}
+
+.mod-community-theme .community-item {
+    position: relative;
+    padding: unset;
+    padding-bottom: 12px;
+
+    .community-item-screenshot {
+        order: -1;
+        border-radius: unset;
+        margin: 0 0 8px;
+    }
+
+    &>*:not(.community-item-screenshot) {
+        padding-inline-start: 12px;
+    }
+}
+
+
+// ================================================================================================================
+// // 制作悬浮的左侧sidebar面板 这是 Liquid glass 风格的
+// ================================================================================================================
+
+// .modal:has(.community-modal-details) {
+//     @include modal-with-sidebar($sidebar-wrapper: "modal-sidebar", $sidebar-scroller: "community-modal-search-results");
+
+// }
+
+
+
+
+
+
+// // 右侧展开时
+// // 制作顶部的悬浮效果 ----------------------------------------
+// .modal-sidebar:not(:last-child) {
+//     position: relative;
+
+//     .community-modal-controls {
+//         padding: 12px;
+//         position: absolute;
+//         z-index: 1;
+//         inset: 0 0 auto;
+//         border-top-left-radius: inherit;        
+//         border-top-right-radius: inherit;
+//         corner-shape: inherit;
+
+//         @include liquid-glass-bg-subtle($with-border: false, $with-shadow: false);
+
+//         border-bottom: 1px solid $background-modifier-seperator;
+//     }
+
+//     .community-modal-search-results-wrapper {
+//         padding-top: 100px;
+//         border: unset;
+//     }
+
+//     // 小号的show installed only
+//     .community-modal-search+.setting-item.mod-toggle {
+//         .setting-item-info {display: none;}     
+
+//         @include liquid-toolbar-text-button-changing-from-toggles($label: 'Installed');
+
+//         height: 24px;
+//         margin-top: 12px;
+
+
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ================================================================================================================
+// 这是新的阴影风格
+// ================================================================================================================
+
+.modal.mod-community-modal  {
+    background-color: $background-primary;
+    background-image: unset;
+}
+
+
+
+// 右侧展开时
+// 制作顶部的悬浮效果 ----------------------------------------
+.modal-sidebar:not(:last-child) {
+    position: relative;
+
+    .community-modal-controls {
+        padding: 12px;
+        position: absolute;
+        z-index: 1;
+        inset: 0 0 auto;
+        // 
+        border-top-left-radius: inherit;        
+        border-top-right-radius: inherit;
+        corner-shape: inherit;
+        background: linear-gradient(to bottom,
+            color-mix(in oklch, $background-primary 90%, transparent) 0,
+            color-mix(in oklch, $background-primary 60%, transparent) 80%,
+            color-mix(in oklch, $background-primary 10%, transparent) 100%);
+
+    }
+
+    .community-modal-search-results-wrapper {
+        padding-top: 80px;
+        border: unset;
+    }
+
+    // 小号的show installed only
+    .community-modal-search+.setting-item.mod-toggle {
+        .setting-item-info {display: none;}     
+
+        @include liquid-toolbar-text-button-changing-from-toggles($label: 'Installed');
+
+        height: 24px;
+        margin-top: 12px;
+
+    }
+}
+
+
+// .community-modal-search-results-wrapper {
+//     overflow: visible;
+
+// }
+
+// .community-modal-search-results {
+//     overflow: visible;
+// box-shadow: var(--shadow-l);
+
+
+// }
+
+.modal-sidebar {
+    z-index: 10;
+}
+
+.community-modal-search-results .community-item.tappable {
+    border-radius: 32px;
+    corner-shape: squircle;
+    overflow: hidden;
+    background-color: unset;
+    background-color: $background-modifier-hover-exsubtle;
+    border: unset;
+    box-shadow: var(--glass-shadow-inset-l);
+
+
+    &.is-selected {
+        background-color: $background-primary;
+
+        .theme-dark & {
+            background-color: $background-modifier-hover-strong;
+        }
+
+        box-shadow: var(--shadow-card);
+        z-index: 1;
+        // &:hover {background-color: color-mix(in oklch, $background-primary 20%, transparent);}
+        &:hover {background-color: $background-modifier-hover-exsubtle;}
+    }
+}
+
+
+
+.community-modal-search-results-wrapper {
+    padding-right: 80px;
+}
