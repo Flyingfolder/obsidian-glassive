@@ -2149,6 +2149,10 @@ hr:has(+ .cmdr-sep-con.callout) {
   background: unset;
 }
 
+.modal.mod-community-modal.mod-sidebar-layout .community-modal-search-results {
+  gap: 24px;
+}
+
 .modal.mod-community-modal.mod-sidebar-layout .modal-sidebar {
   position: relative;
 }
