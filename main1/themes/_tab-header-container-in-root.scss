@@ -12,7 +12,10 @@
 }
 
 
-
+.mod-macos.is-hidden-frameless:not(.is-popout-window, .is-mobile) .sidebar-toggle-button.mod-secondary {
+    // background-color: transparent;
+    --tab-container-background: #{$background-primary};
+}
 
 .workspace-split.mod-root .workspace-tabs {
     --tab-background-active: transparent; //掌管tabheader（不是inner）的bg

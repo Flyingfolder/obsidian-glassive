@@ -132,6 +132,17 @@ body {
       inset 1px 0 1px rgb(0 0 0 / 10%),   /* 左 */
       inset -1px 0 1px rgb(0 0 0 / 10%);  /* 右 */
       
+
+  --shadow-glass-border-tilted: 
+    inset .5px 0 .5px rgb(255 255 255 / 70%),   /* 左 - 白 (提亮透明度，增强高光) */
+    inset -.5px 0 .5px rgb(255 255 255 / 70%),  /* 右 - 白 */
+    inset 1px 0 1px rgb(0 0 0 / 10%),           /* 左 - 黑 (降低透明度，防止太突兀) */
+    inset -1px 0 1px rgb(255 255 255 / 50%),    /* 右 - 白 */
+
+    inset 0 .5px .5px rgb(0 0 0 / 8%),         /* 顶 - 黑 (降低透明度) */
+    inset 0 -.5px .5px rgb(0 0 0 / 8%),         /* 底 - 黑 */
+    inset 0 1px 1px rgb(0 0 0 / 3%),           /* 顶 - 黑 */
+    inset 0 -1px 1px rgb(0 0 0 / 3%);           /* 底 - 黑 */
 }
 
 
@@ -189,7 +200,17 @@ body {
     inset 0 -.5px .5px rgb(255 255 255 / 35%),  /* 底 */
     inset 0 1px 1px rgb(255 255 255 / 25%),   /* 顶 */
     inset 0 -1px 1px rgb(255 255 255 / 25%);  /* 底 */
-    
+   
+  --shadow-glass-border-tilted: 
+    inset .5px 0 .5px rgb(0 0 0 / 35%),   /* 左 */
+    inset -.5px 0 .5px rgb(0 0 0 / 35%),  /* 右 */
+    inset 1px 0 1px rgb(255 255 255 / 15%),   /* 左 */
+    inset -1px 0 1px rgb(0 0 0 / 20%),  /* 右 */
+
+    inset 0 .5px .5px rgb(255 255 255 / 35%),   /* 顶 */
+    inset 0 -.5px .5px rgb(255 255 255 / 5%),  /* 底 */
+    inset 0 1px 1px rgb(255 255 255 / 15%),   /* 顶 */
+    inset 0 -1px 1px rgb(255 255 255 / 2%);  /* 底 */
 
 }
 

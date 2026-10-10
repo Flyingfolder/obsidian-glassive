@@ -33,6 +33,8 @@
             cursor: pointer;
             &:hover {color: $text-muted;}
         }
+
+        .setting-search-result-tab-sublabel {color: $text-muted;}
     }
 
     .file-recovery-list-item-details {

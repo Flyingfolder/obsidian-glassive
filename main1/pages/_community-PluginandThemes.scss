@@ -107,6 +107,7 @@
         background: var(--toolbar-contols-background);
         box-shadow: var(--shadow-card), var(--glass-shadow-inset-for-control);
         z-index: 1;
+        .community-item-name {color: var(--text-accent);}
         // &:hover {background-color: color-mix(in oklch, $background-primary 20%, transparent);}
         // &:hover {background-color: $background-modifier-hover-exsubtle;}
         &:hover {background: var(--toolbar-contols-background);}
@@ -190,10 +191,13 @@
         padding: 20px 20px 20px;
         border-radius: 40px;
         corner-shape: squircle;
-        box-shadow: var(--shadow-card), var(--glass-shadow-inset-for-control);
+        box-shadow: var(--shadow-card), var(--shadow-glass-border-tilted);
         max-width: 600px;
         width: 100%;
         margin: 0 auto 80px;
+        animation: 
+            fade-in var(--anim-duration-slow) ease,
+            move-up-far var(--anim-duration-slow) ease;
     }
 
     .community-modal-info-name {

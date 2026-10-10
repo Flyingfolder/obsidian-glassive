@@ -73,8 +73,8 @@ $titlebar-height: 48px;
 
     .#{$sidebar-wrapper} {
         margin: 7px 0; //toolbar padding
-        border: 1px solid var(--liquid-sidebar-border-color);
-        box-shadow: var(--liquid-sidebar-shadow);
+        // border: 1px solid var(--liquid-sidebar-border-color);
+        box-shadow: var(--liquid-sidebar-shadow), var(--shadow-glass-border-tilted);
         corner-shape: squircle;
         overflow: hidden;
         border-radius: 30px;

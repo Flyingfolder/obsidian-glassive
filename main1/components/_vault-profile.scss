@@ -1,0 +1,35 @@
+
+
+
+@use '../abstracts' as *; 
+
+
+
+body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vault-profile {
+    border: unset;
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    padding-top: 40px;
+    transition: opacity var(--anim-duration-moderate);
+    background: linear-gradient(to bottom, transparent 0, 
+    color-mix(in oklch, 
+        $background-secondary 60%, transparent) 20px,
+        $background-secondary 60px);
+
+    & {pointer-events: none;}
+    &>* {pointer-events: auto;}
+
+    // .workspace-drawer-vault-switcher {
+    //     flex-grow: 1;
+    // }
+}
+
+
+.nav-files-container {
+    padding-bottom: max(var(--safe-area-inset-bottom), 60px);
+}
+
+.workspace-leaf-content[data-type="bookmarks"] .view-content {
+    padding-bottom: 60px;
+}

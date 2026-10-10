@@ -48,7 +48,7 @@
     --callout-radius: 40px;
 
     corner-shape: squircle;
-    box-shadow: var(--shadow-glass-border), var(--glass-shadow-inset-l);
+    box-shadow: var(--shadow-glass-border-tilted), var(--glass-shadow-inset-l);
     border: 1px solid $background-modifier-hover;
 
     // 会引发性能崩溃
