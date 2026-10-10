@@ -232,6 +232,7 @@
 
         background-color: color-mix(in oklch, var(--background-modifier-error) 10%, transparent);
         text-decoration: none;
+        padding: var(--size-4-1) var(--size-4-3);
     }
 
     & ~ button {
@@ -241,5 +242,6 @@
 
         cursor: pointer;
         text-decoration: underline;
+        padding: 4px 0;
     }
 }

@@ -935,6 +935,24 @@ body {
   --nav-tag-color: rgb(var(--mono-rgb-100), 55%);
 }
 
+.notice-container {
+  overflow: visible;
+}
+
+.notice {
+  --notice-corner-shape: squircle;
+  --notice-radius: 24px;
+  --notice-color: var(--color-base-100);
+  --notice-padding: 12px 20px;
+  --notice-border: none;
+
+  background-color: var(--background-glass);
+  -webkit-backdrop-filter: var(--backdrop-filter-glass);
+          backdrop-filter: var(--backdrop-filter-glass);
+  box-shadow: var(--glass-shadow-inset-l), var(--shadow-card), var(--glass-shadow-inset-edge);
+  box-shadow: var(--shadow-card), var(--shadow-glass-border-tilted);
+}
+
 .mod-secondary-split .workspace-tab-header-container .workspace-tab-header-container-inner {
   padding-right: 32px;
 }
@@ -2599,6 +2617,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
   background-color: color-mix(in oklch, var(--background-modifier-error) 10%, transparent);
   text-decoration: none;
+  padding: var(--size-4-1) var(--size-4-3);
 }
 
 .community-modal-button-container button.mod-destructive ~ button {
@@ -2608,6 +2627,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
   cursor: pointer;
   text-decoration: underline;
+  padding: 4px 0;
 }
 
 .callout-suggestions-container .suggestion-item.callout-suggestions-item .callout {
