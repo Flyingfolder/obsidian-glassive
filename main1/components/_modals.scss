@@ -31,9 +31,17 @@
 
     .modal-button-container {
         padding: 16px;
-        gap: 12px;
+        gap: 20px;
 
         .mod-cta {order: 1;}
+
+        button {
+            border-radius: 20px;
+            corner-shape: unset;
+            height: 32px;   
+            box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+            // background: var(--toolbar-contols-background);
+        }
 
         &:last-child {
             border-top: 1px solid $background-modifier-seperator;

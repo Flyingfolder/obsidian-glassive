@@ -516,11 +516,18 @@ button {
 
 .modal .modal-button-container {
   padding: 16px;
-  gap: 12px;
+  gap: 20px;
 }
 
 .modal .modal-button-container .mod-cta {
   order: 1;
+}
+
+.modal .modal-button-container button {
+  border-radius: 20px;
+  corner-shape: unset;
+  height: 32px;
+  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
 }
 
 .modal .modal-button-container:last-child {
@@ -2256,22 +2263,6 @@ hr:has(+ .cmdr-sep-con.callout) {
   overflow: visible;
 }
 
-.mod-community-theme .community-item {
-  position: relative;
-  padding: unset;
-  padding-bottom: 12px;
-}
-
-.mod-community-theme .community-item .community-item-screenshot {
-  order: -1;
-  border-radius: unset;
-  margin: 0 0 8px;
-}
-
-.mod-community-theme .community-item > *:not(.community-item-screenshot) {
-  padding-inline-start: 12px;
-}
-
 .modal.mod-community-modal {
   background-color: var(--background-primary);
   background-image: unset;
@@ -2696,8 +2687,8 @@ body {
     inset -10px 0 10px rgb(0 0 0 / 6%); /* 右 */
 
   --shadow-glass-border:
-      inset 0 2px 2px rgb(255 255 255 / 75%), /* 顶 */
-      inset 0 -2px 2px rgb(255 255 255 / 75%), /* 底 */
+      inset 0 2px 2px rgb(255 255 255 / 55%), /* 顶 */
+      inset 0 -2px 2px rgb(255 255 255 / 55%), /* 底 */
 
       inset .5px 0 .5px rgb(0 0 0 / 25%), /* 左 */
       inset -.5px 0 .5px rgb(0 0 0 / 25%), /* 右 */
@@ -2741,7 +2732,7 @@ body {
     inset -1px 0 1px rgb(255 255 255 / 0%); /* 右 */
 
   --shadow-glass-border:
-      inset .5px 0 .5px rgb(0 0 0 / 35%), /* 左 */
+    inset .5px 0 .5px rgb(0 0 0 / 35%), /* 左 */
     inset -.5px 0 .5px rgb(0 0 0 / 35%), /* 右 */
     inset 1px 0 1px rgb(0 0 0 / 20%), /* 左 */
     inset -1px 0 1px rgb(0 0 0 / 20%), /* 右 */
