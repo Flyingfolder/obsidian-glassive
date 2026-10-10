@@ -14,10 +14,25 @@
 
 
     // 左侧 ------------------------------------------
-    
+    .setting-search-results {
+        gap: 16px;
+    }
     // sidebar item
     .vertical-tab-nav-item {
         @include liquid-sidebar-item($is-selected-status-name: ".is-active");
+
+        &.setting-search-result-item {
+            padding-inline-start: var(--size-4-8);
+            height: 28px;
+        }
+
+        &.setting-search-result-show-more {
+            font-size: $font-ui-small;
+            color: $text-muted;
+            height: 20px;
+            cursor: pointer;
+            &:hover {color: $text-muted;}
+        }
     }
 
     .file-recovery-list-item-details {
@@ -33,6 +48,8 @@
 // 设置页面的 titlebar
 .setting-page-titlebar {
     gap: 8px;
+    padding: 8px 48px 20px 8px;
+    height: 60px;
 
     --settings-background: transparent;
 

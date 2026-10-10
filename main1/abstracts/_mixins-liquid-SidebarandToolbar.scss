@@ -155,11 +155,13 @@ $titlebar-height: 48px;
 }
 
 
-@mixin liquid-toolbar-search-input($control-width: 320px) {
+@mixin liquid-toolbar-search-input($control-max-width: 320px) {
     --input-height: 32px;
 
     height: 32px;
-    width: $control-width;
+    width: 100%;
+    max-width: $control-max-width;
+    flex-grow: 1;
     color: var(--mono-100);
     box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
     border-radius: 99px;
@@ -176,6 +178,7 @@ $titlebar-height: 48px;
     input {
         --input-border-width: 0;
 
+        background-color: unset;
         height: inherit;
     }
 }
@@ -183,8 +186,9 @@ $titlebar-height: 48px;
 
 
 @mixin liquid-toolbar-text-button-changing-from-toggles($label) {
-    font-size: $font-ui-small;
+    height: 32px;
     width: fit-content;
+    font-size: $font-ui-small;
 
     &::before {
         content: $label;
@@ -214,7 +218,6 @@ $titlebar-height: 48px;
     }
 
     &:has(.is-enabled) {
-        
         .theme-light & {background-color: $interactive-accent;}
         .theme-dark  & {background-color: $interactive-accent;}
     }

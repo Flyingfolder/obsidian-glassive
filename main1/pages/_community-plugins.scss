@@ -6,12 +6,20 @@
 
 
 
+.modal.mod-community-modal  {
+    background-color: $background-primary;
+    background-image: unset;
+}
 
 
-.modal.mod-community-modal.mod-sidebar-layout {
-    .modal-sidebar {padding: unset;}
+
+.modal.mod-community-modal .modal-sidebar  {
+    position: relative;
+    min-width: 320px;
+    z-index: 1;
+    padding: unset;
+    
     .community-modal-search-summary.u-muted {display: none;}
-
 
     .community-modal-controls>* {
         margin: unset;
@@ -21,9 +29,9 @@
     // 当没有右侧的详情页面的时候：
     // 把头部的 各个控件都做成悬浮的样式 ---–---–---–---–---–---–---–---–---–---–
 
-    .modal-sidebar:last-child .community-modal-controls {
+    .community-modal-controls {
         display: flex;
-        flex-direction: row;
+        flex-flow: row wrap;
         position: absolute;
         width: 100%;
         z-index: 1;
@@ -39,10 +47,15 @@
             color-mix(in oklch, $background-primary 20%, transparent) 100%);
 
         // search input
-        .search-input-container {@include liquid-toolbar-search-input();}
+        .community-modal-search {
+            max-width: 400px;
+            width: 100%; //顶飞强制换航
+            flex-grow: 1;
 
-        // filter icon button
-        .clickable-icon {@include liquid-toolbar-control;}
+            .search-input-container {@include liquid-toolbar-search-input($control-max-width: auto);}
+            .clickable-icon {@include liquid-toolbar-control; min-width: 32px;}     //filter
+        }
+        
 
         // show installed
         .community-modal-search+.setting-item.mod-toggle {
@@ -55,32 +68,125 @@
         }
 
         &+.community-modal-search-results-wrapper {
-            padding-top: 50px;
             border: unset;
 
-            .community-modal-search-results {
-                gap: 16px 24px;
-            }
-
+            .community-modal-search-results {padding: 80px 20px;}
         }
 
     }
 }
 
 
-
-
-// 右侧的界面 --------------
-
-.community-modal-details {
+.community-modal-search-results-wrapper {
     border: unset;
+
+    .community-modal-search-results {
+        gap: 32px 20px;
+    }
 }
+
+
+
+
+
+
+
+
+
+.community-modal-search-results .community-item.tappable {
+    border-radius: 32px;
+    corner-shape: squircle;
+    overflow: hidden;
+    background-color: unset;
+    background-color: $background-modifier-hover-exsubtle;
+    border: unset;
+    box-shadow: var(--glass-shadow-inset-l);
+
+
+    &.is-selected {
+        background: var(--toolbar-contols-background);
+        box-shadow: var(--shadow-card), var(--glass-shadow-inset-for-control);
+        z-index: 1;
+        // &:hover {background-color: color-mix(in oklch, $background-primary 20%, transparent);}
+        // &:hover {background-color: $background-modifier-hover-exsubtle;}
+        &:hover {background: var(--toolbar-contols-background);}
+    }
+}
+
+
+
+
+
+.mod-community-theme .community-item {
+    position: relative;
+    padding: unset;
+    padding-bottom: 12px;
+
+    .community-item-screenshot {
+        order: -1;
+        border-radius: unset;
+        margin: 0 0 8px;
+    }
+
+    &>*:not(.community-item-screenshot) {
+        padding-inline-start: 12px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 展开的时候 ------------------------------------------------------------------------------------------
+.modal.mod-community-modal .modal-sidebar:has(+.community-modal-details) {
+    .community-modal-search-results-wrapper {
+        padding-right: 40px;
+    }
+
+    .community-modal-search+.setting-item.mod-toggle {
+        .setting-item-info {display: none;}
+
+        @include liquid-toolbar-text-button-changing-from-toggles($label: 'Installed');
+
+        height: 24px;
+        margin: 12px 0 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// 右侧的界面 ----------------------------------------------
+
 
 .community-modal-details {
     position: relative;
+    border: unset;
 
     .community-modal-meta {
-        background-color: $background-modifier-hover-subtle;
+        background-color: var(--card-background);
         padding: 20px 20px 20px;
         border-radius: 40px;
         corner-shape: squircle;
@@ -91,26 +197,34 @@
     }
 
     .community-modal-info-name {
-        margin-bottom: 8px;
+        margin-bottom: 10px;
+    }
+
+    .community-modal-info-desc {
+        border-top: 1px solid $background-modifier-seperator;
+        padding-top: 10px;
+        margin-top: 10px;
+        font-size: $font-ui-small;
     }
 
     .community-modal-button-container {
         border-top: 1px solid $background-modifier-seperator;
         height: fit-content;
         padding-top: 12px;
-        align-items: center;
+        // align-items: center;
+        padding-top: 10px;
+        margin-top: 10px;
     }
 }
 
 
-// buttons
+// buttons ----------------------------------------
 
 
 .community-modal-button-container button.mod-destructive {
     &.mod-destructive+.mod-destructive,
     &.mod-destructive+.mod-destructive+.mod-destructive {
         --text-color: var(--text-error);
-
 
         background-color: color-mix(in oklch, var(--background-modifier-error) 10%, transparent);
         text-decoration: none;
@@ -125,25 +239,3 @@
         text-decoration: underline;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

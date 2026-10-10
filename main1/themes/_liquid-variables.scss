@@ -80,6 +80,7 @@ body {
 
 
 .theme-light {
+  --card-background: #{$background-primary};
   --liquid-sidebar-border-width: 1px;
   --liquid-sidebar-border-color: transparent;
   --toolbar-background: rgb(252 252 252 / 40%);
@@ -140,6 +141,7 @@ body {
 
 
 .theme-dark {
+  --card-background: var(--color-base-35);
   --liquid-sidebar-border-width: 1px;
   --liquid-sidebar-border-color: transparent;
   --toolbar-background: rgb(30 30 30 / 40%);

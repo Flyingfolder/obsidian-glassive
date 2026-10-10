@@ -13,21 +13,15 @@
 
 
 
-.theme-light .mod-root {
-    --tab-inner-background-active: #{$background-primary};
-}
 
-.theme-dark .mod-root {
-    --tab-inner-background-active: #{var(--color-base-35)};
-}
-
-.workspace-split.mod-root {
+.workspace-split.mod-root .workspace-tabs {
     --tab-background-active: transparent; //掌管tabheader（不是inner）的bg
+    --tab-inner-background-active: var(--card-background);
+    --tab-container-background: #{$background-primary};
 
     // 重制 ------------------------------------------------------------------------
     .workspace-tab-header {
         corner-shape: unset;
-        // padding: unset;
         box-shadow: unset;
         padding: 0 4px 5px; //重新对齐icon
         &:hover {box-shadow: unset;}
@@ -35,8 +29,6 @@
 
     .sidebar-toggle-button,
     .workspace-tab-header-container {
-        --tab-container-background: #{$background-primary};
-        // z-index: 1;
         border: unset;
     }
 
@@ -58,9 +50,8 @@
     }
 
     .workspace-tab-header.is-active .workspace-tab-header-inner {
-        box-shadow: 
-            var(--glass-shadow-inset-for-control),
-            var(--shadow-card-mini);
+        box-shadow: var(--glass-shadow-inset-for-control), var(--shadow-card-mini);
+        background-color: var(--card-background);
     }
 
     // 其他的 style
@@ -73,8 +64,12 @@
     }
 
     // 保证阴影能溢出
-    .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
-        overflow: clip;
-        overflow-clip-margin: 35px;
-    }
+
+}
+
+
+.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
+    // overflow: clip;
+    overflow: visible;
+    // overflow-clip-margin: 35px;
 }
