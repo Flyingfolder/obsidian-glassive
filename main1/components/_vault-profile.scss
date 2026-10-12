@@ -11,7 +11,7 @@ body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vaul
     bottom: 0;
     z-index: 1;
     padding-top: 40px;
-    transition: opacity var(--anim-duration-moderate);
+    transition: opacity $anim-duration-moderate;
     background: linear-gradient(to bottom, transparent 0, 
     color-mix(in oklch, 
         $background-secondary 60%, transparent) 20px,

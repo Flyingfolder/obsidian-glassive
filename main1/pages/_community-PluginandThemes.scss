@@ -52,8 +52,8 @@
             width: 100%; //顶飞强制换航
             flex-grow: 1;
 
-            .search-input-container {@include liquid-toolbar-search-input($control-max-width: auto);}
-            .clickable-icon {@include liquid-toolbar-control; min-width: 32px;}     //filter
+            .search-input-container {@include liquid-toolbar-search-input($control-max-width: unset);}
+            .clickable-icon {@include liquid-toolbar-icon-button;}     //filter
         }
         
 
@@ -64,6 +64,9 @@
             margin-left: 12px;
 
             @include liquid-toolbar-text-button-changing-from-toggles($label: 'Installed');
+
+            margin-left: 12px;
+
 
         }
 
@@ -163,7 +166,7 @@
     .community-modal-search+.setting-item.mod-toggle {
         .setting-item-info {display: none;}
 
-        @include liquid-toolbar-text-button-changing-from-toggles($label: 'Installed');
+        // @include liquid-toolbar-text-button-changing-from-toggles($label: 'Installed');
 
         height: 24px;
         margin: 12px 0 0;
@@ -196,8 +199,8 @@
         width: 100%;
         margin: 0 auto 80px;
         animation: 
-            fade-in var(--anim-duration-slow) ease,
-            move-up-far var(--anim-duration-slow) ease;
+            fade-in $anim-duration-slow ease,
+            move-up-far $anim-duration-slow ease;
     }
 
     .community-modal-info-name {

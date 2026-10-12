@@ -5,8 +5,8 @@
 
 .canvas-node-container {
     animation:
-        fade-in var(--anim-duration-moderate) ease-i forwards,
-        scale-up-small-items var(--anim-duration-moderate) ease forwards;
+        fade-in $anim-duration-moderate ease-in forwards,
+        scale-up-small-items $anim-duration-moderate ease forwards;
 }
 
 

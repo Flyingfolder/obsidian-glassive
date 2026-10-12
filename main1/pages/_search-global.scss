@@ -1,0 +1,38 @@
+
+@use '../abstracts' as *;
+
+
+.search-row {
+    margin: unset;
+    padding: 4px 8px;
+    min-height: 40px;
+    border-bottom: 1px solid $background-modifier-seperator;
+}
+
+
+
+.search-params {
+    gap: unset;
+    margin: unset;
+    padding: $form-group-padding 12px 0;
+
+    .setting-item {
+        margin: unset;
+        min-height: 32px;
+    }
+}
+
+
+.search-results-info {
+    padding: 4px 0;
+    margin: 0 12px;
+}
+
+
+
+.app-container:has(~.popover) {
+    .horizontal-main-container {
+        opacity: 0.6;
+        transition: opacity $anim-duration-slow;
+    }
+}

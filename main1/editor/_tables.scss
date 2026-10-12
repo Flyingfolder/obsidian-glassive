@@ -13,12 +13,12 @@ body {
   --table-header-border-width: 0; //*
   --table-header-border-color: var(--table-border-color); //????
   --table-header-font: inherit;
-  --table-header-size: 14px;
+  --table-header-size: #{$font-size-small};
   --table-header-weight: calc(var(--font-weight) + var(--bold-modifier));
   --table-header-color: var(--text-normal);
-  --table-line-height: var(--line-height-tight);
-  --table-text-size: 14px;
-  --table-text-color: color-mix(in oklch, #{$text-normal} 70%, transparent);
+  --table-line-height: 20px; //var(--line-height-tight);
+  --table-text-size: #{$font-size-small};                                     //*
+  --table-text-color: color-mix(in oklch, #{$text-normal} 70%, transparent);  //*
 // 
 //   --table-column-min-width: 6ch;
 //   --table-column-max-width: none;
@@ -80,7 +80,7 @@ body {
 
 
 .markdown-source-view.mod-cm6 .cm-content > .cm-table-widget[contenteditable="false"] {
-    transition: box-shadow var(--anim-duration-moderate) ease;
+    transition: box-shadow $anim-duration-moderate ease;
     border-radius: 40px;
     corner-shape: squircle;
         
@@ -91,7 +91,7 @@ body {
     // .table-wrapper {
     //     max-width: min(600px, 100%);
     //     width: 100%;
-    //     transition: box-shadow var(--anim-duration-moderate) ease;
+    //     transition: box-shadow $anim-duration-moderate ease;
     // }
 }
 

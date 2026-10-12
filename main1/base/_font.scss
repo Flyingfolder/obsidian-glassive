@@ -1,12 +1,20 @@
 
 
+@use '../abstracts' as *;
+
+body {
+  --font-preferred-size: #{$font-size-base}; //17
+  --font-smaller: #{$font-size-small};    //14
+  --font-smallest: #{$font-size-smallest};    //12
+  // 
+  --code-size: #{$code-size}
+}
 
 
 
 .markdown-source-view,
 .markdown-reading-view {
     -webkit-font-smoothing: antialiased;
-    font-size: 17px;
 }
 
 
@@ -15,7 +23,7 @@
 body {
 
 //   --link-color: var(--text-accent);
-//   --link-color-hover: var(--text-accent-hover);
+//   --link-color-hover: var(--text-accent-hover);[[[[
   --link-decoration: none;
 
 //   --link-decoration-hover: underline;

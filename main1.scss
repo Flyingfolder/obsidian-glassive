@@ -46,6 +46,7 @@
 @use 'main1/pages/plugin-commander';
 @use 'main1/pages/detailed-pages/commander-macros';
 @use 'main1/pages/plugin-style-settings';
+@use 'main1/pages/search-global';
 
 // @use 'main1/pages/plugin-modalForm-newform_datatype';    //有问题，容易导致css动画卡顿
 // @use 'main1/pages/plugin-modalForm-newform_header';      //有问题，容易导致css动画卡顿

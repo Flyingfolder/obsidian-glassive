@@ -5,20 +5,17 @@
 
 
 @use 'variables-glassive' as *; 
-
-
 @use 'mixins-liquid-SidebarandToolbar' as *;
 
 
 
 @mixin tab-views {
 
-    @include liquid-toolbar-item($toolbar-item-width: fit-content);
+    // @include liquid-toolbar-item($toolbar-item-width: fit-content);
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     justify-self: center;
-
     gap: 3px;
     padding: 3px;
 
@@ -39,23 +36,15 @@
         margin: unset;
         transform: unset;
         transition: unset;
-
-
         display: flex;
         flex-direction: row;
         align-items: center;
         height: $control-height-m;
-        
         padding: 0 10px; 
         gap: 4px;
-
-        
-
         font-size: var(--font-ui-small); 
         font-weight: 400;
-
         border-radius: 18px;
-
         cursor: default;
         
 
@@ -106,25 +95,19 @@
 
 // 例子：日历的 left-sidebar 的 view-container
 @mixin segmented-controls {
-    
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
     justify-self: center;
-
     width: auto;
     height: 28px;
-
     gap: 1px;
     padding: unset;
     margin: unset;
-    
     background-color: $background-modifier-hover-subtle;
     box-shadow: none;
-
     border: unset;
     border-radius: 14px;
-
     overflow: hidden;
 }
 

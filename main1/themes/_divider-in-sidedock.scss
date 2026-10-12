@@ -20,7 +20,7 @@
 
 .view-header {
     border-bottom: 1px solid $background-modifier-seperator;
-    min-height: 41px;
+    min-height: var(--header-height);
 }
 
 .workspace-ribbon.mod-primary {
@@ -28,7 +28,7 @@
     border: unset;
 
     &::before {
-        height: calc( var(--header-height) * 2 + 1px);
+        height: calc( var(--header-height) * 2);
     }
 }
 

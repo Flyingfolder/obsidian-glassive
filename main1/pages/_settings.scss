@@ -17,7 +17,11 @@
     .setting-search-results {
         gap: 16px;
     }
-    // sidebar item
+
+    // .setting-search-container input {
+    //     background-color: unset;
+    // }
+    // sidebar item 的搜索结果
     .vertical-tab-nav-item {
         @include liquid-sidebar-item($is-selected-status-name: ".is-active");
 
@@ -37,12 +41,8 @@
         .setting-search-result-tab-sublabel {color: $text-muted;}
     }
 
-    .file-recovery-list-item-details {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+    
+
 
 }
 
@@ -55,7 +55,7 @@
 
     --settings-background: transparent;
 
-    .setting-page-back-button {@include liquid-toolbar-control;}
+    .setting-page-back-button {@include liquid-toolbar-icon-button;}
 }
 
 
@@ -64,7 +64,7 @@
 .modal-setting-titlebar {
     min-height: $titlebar-height;
     font-size: $font-ui-small;
-    padding-right: 60px;
+    padding-right: 52px;
     z-index: 1;
 
     .modal-setting-titlebar-actions {
@@ -76,7 +76,7 @@
         font-weight: 500;
     }
 
-    button {@include liquid-toolbar-control($control-width: fit-content);}    
+    button {@include liquid-toolbar-text-button;}
 }
 
 

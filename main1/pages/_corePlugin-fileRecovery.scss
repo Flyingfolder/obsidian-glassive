@@ -19,11 +19,11 @@
         background-color: unset;
     }
 
-    // sidebar item
+    // 左侧的 sidebar item
     .file-recovery-list-item-header {
         @include liquid-sidebar-item($is-selected-status-name: ".is-active");
 
-        min-height: 36px;
+        min-height: 32px;
         padding-inline-start: 10px;
     }
 
@@ -34,6 +34,7 @@
         align-items: baseline;
     }    
 }
+
 
 
 
@@ -49,6 +50,10 @@
             color-mix(in oklch, $background-primary 60%, transparent) 80%,
             color-mix(in oklch, $background-primary 20%, transparent) 100%);
         border: unset;
+
+        .modal-setting-titlebar-actions>.modal-setting-titlebar-toggle {
+            @include liquid-toolbar-text-button-changing-from-toggles($label: null);
+        }
     }
 
     textarea {

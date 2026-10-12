@@ -37,7 +37,7 @@
         height: 100%;
         background-color: $background-secondary;
 
-        transition: height var(--anim-duration-slow) ease;
+        transition: height $anim-duration-slow ease;
     }
     &.is-editing::before {
         inset: auto 0 0 0;
@@ -47,7 +47,7 @@
     // 增加切换状态时的动画
     .markdown-embed-content.node-insert-event {
         animation: 
-            fade-in-partial var(--anim-duration-moderate) ease-in;
+            fade-in-partial $anim-duration-moderate ease-in;
     }
 
 }

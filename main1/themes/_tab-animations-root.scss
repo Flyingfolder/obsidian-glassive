@@ -1,5 +1,7 @@
 
 
+@use '../abstracts' as *;
+
 // root tab 显示动画 ============================
 
 @keyframes tab-appear-flex-grow-up {
@@ -31,13 +33,13 @@
 
 .app-container:not(.workspace-fake-target-container) .mod-root .workspace-tabs {
         animation: 
-            fade-in-partial var(--anim-duration-moderate) linear none,
-            unblur var(--anim-duration-moderate) ease none,
-            tab-appear-flex-grow-up var(--anim-duration-moderate) ease;
+            fade-in-partial $anim-duration-moderate linear none,
+            unblur $anim-duration-moderate ease none,
+            tab-appear-flex-grow-up $anim-duration-moderate ease;
 
     // animation: 
-    //     tab-appear-flex-grow-up var(--anim-duration-moderate) ease,
-    //     blur-fade-in var(--anim-duration-moderate) ease none;
+    //     tab-appear-flex-grow-up $anim-duration-moderate ease,
+    //     blur-fade-in $anim-duration-moderate ease none;
 }
 
 // @keyframes item-darken {
@@ -46,7 +48,7 @@
 // }
 
 // .workspace-fake-target-container .mod-root .workspace-tabs {
-//     animation: item-darken var(--anim-duration-moderate) ease forwards;
+//     animation: item-darken $anim-duration-moderate ease forwards;
 // }
 
 // // 排除情况：当页面中只有唯一一个tab的时候，删掉动画

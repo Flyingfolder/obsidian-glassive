@@ -109,7 +109,6 @@ $titlebar-height: 48px;
     transition: unset;
     cursor: default;
     
-
     &:hover {
         text-shadow: 0 0 .3px currentcolor;
         background-color: unset;
@@ -131,71 +130,87 @@ $titlebar-height: 48px;
 
 
 
-@mixin liquid-toolbar-control($control-width: 32px) {
-    height: 32px;
-    padding: 4px;
-    width: $control-width;
+
+
+
+
+@mixin _liquid-toolbar-base() {
     color: var(--mono-100);
     box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
     border-radius: 99px;
     corner-shape: unset;
     background: var(--toolbar-contols-background);
+    // 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: unset;
+    font-size: $font-ui-small;
 
     &:hover {
         .theme-light & {background-color: $background-modifier-hover-subtle;}
         .theme-dark  & {background-color: var(--color-base-40);}
     }
+}
+
+
+
+@mixin liquid-toolbar-icon-button {
+    @include _liquid-toolbar-base();
+
+    padding: 6px;
+    min-width: 32px;
+    min-height: 32px;
 
     .svg-icon {
-        /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
         filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100) / 100%));
 
-        --icon-stroke: 2px;
+        --icon-stroke: 1.75px;
+        --icon-size: 18px;
     }
 }
 
 
+@mixin liquid-toolbar-text-button {
+    @include _liquid-toolbar-base();
+
+    padding: 0 12px;
+    min-width: fit-content;
+    min-height: 32px;
+}
+
+
+
 @mixin liquid-toolbar-search-input($control-max-width: 320px) {
+    @include _liquid-toolbar-base();
+
     --input-height: 32px;
+    --input-border-width: 0;
+    --background-modifier-form-field: transparent;
 
     height: 32px;
     width: 100%;
     max-width: $control-max-width;
     flex-grow: 1;
-    color: var(--mono-100);
-    box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-    border-radius: 99px;
-    corner-shape: unset;
-    background: var(--toolbar-contols-background);
-
-    .svg-icon {
-        /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
-        filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100) / 100%));
-
-        --icon-stroke: 2.5px;
-    }
-
-    input {
-        --input-border-width: 0;
-
-        background-color: unset;
-        height: inherit;
-    }
 }
 
 
 
 @mixin liquid-toolbar-text-button-changing-from-toggles($label) {
+    @include _liquid-toolbar-base();
+
+    padding: 0 12px;
     height: 32px;
     width: fit-content;
-    font-size: $font-ui-small;
+    gap: unset;
+    position: relative;
 
     &::before {
-        content: $label;
+        content: $label; //在这里输入toggle 的标签
     }
+
     // 隐藏toggle，并扩大点击区域
-
-
     .checkbox-container {
         position: absolute;
         inset: 0;
@@ -204,26 +219,12 @@ $titlebar-height: 48px;
         opacity: 0;
     }
 
-    gap: unset;
-    border-radius: 99px;
-    corner-shape: unset;
-    padding: 0 10px;
-    color: var(--mono-100);
-    background: var(--toolbar-contols-background);
-    box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-
-    &:hover {
-        .theme-light & {background-color: $background-modifier-hover-subtle;}
-        .theme-dark  & {background-color: var(--color-base-40);}
-    }
-
     &:has(.is-enabled) {
+        color: #fff;
         .theme-light & {background-color: $interactive-accent;}
         .theme-dark  & {background-color: $interactive-accent;}
     }
 
-    .setting-item-control {
-        gap: unset;
-    }
+    .setting-item-control {gap: unset;}
 }
 

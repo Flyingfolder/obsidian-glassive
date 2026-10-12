@@ -11,6 +11,10 @@
 
 /* Text */
 
+/* Motion — durations (Obsidian core vars 的 Sass 别名) */
+
+/* Motion — easings */
+
 /* UI font sizes */
 @keyframes fade-in {
   from {
@@ -201,7 +205,7 @@ body {
   --radius-s: 6px;
   --input-radius: 10px;
   --text-muted: rgb(var(--mono-rgb-100), 55%);
-  --text-faint: var(--color-base-50);
+  --text-faint: rgb(var(--mono-rgb-100), 25%);
   --text-muted-on-accent: rgb(255 255 255 / 75%);
 }
 
@@ -234,10 +238,16 @@ body {
   --glassive-theme-color: hsl(var(--accent-h) var(--accent-s) var(--accent-l));
 }
 
+body {
+  --font-preferred-size: 17px;
+  --font-smaller: 14px;
+  --font-smallest: 12px;
+  --code-size: 0.8235294118em ;
+}
+
 .markdown-source-view,
 .markdown-reading-view {
   -webkit-font-smoothing: antialiased;
-  font-size: 17px;
 }
 
 /* Links */
@@ -245,15 +255,11 @@ body {
   --link-decoration: none;
 }
 
-input {
+body {
   corner-shape: squircle;
 
   --input-height: 28px;
-  --input-radius: 100px;
-}
-
-.search-input-container {
-  --input-height: 28px;
+  --input-radius: 99px;
 }
 
 textarea,
@@ -489,14 +495,17 @@ button {
 
 .modal .modal-header-button {
   inset: 8px 8px auto auto;
-  height: 32px;
-  padding: 4px;
-  width: 32px;
   color: var(--mono-100);
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
   border-radius: 99px;
   corner-shape: unset;
   background: var(--toolbar-contols-background);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: unset;
+  font-size: 13px;
 }
 
 .theme-light .modal .modal-header-button:hover {
@@ -507,11 +516,17 @@ button {
   background-color: var(--color-base-40);
 }
 
+.modal .modal-header-button {
+  padding: 6px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
 .modal .modal-header-button .svg-icon {
-  /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
   filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
 
-  --icon-stroke: 2px;
+  --icon-stroke: 1.75px;
+  --icon-size: 18px;
 }
 
 .modal .modal-button-container {
@@ -941,15 +956,14 @@ body {
 
 .notice {
   --notice-corner-shape: squircle;
-  --notice-radius: 24px;
+  --notice-radius: 32px;
   --notice-color: var(--color-base-100);
   --notice-padding: 12px 20px;
   --notice-border: none;
 
-  background-color: var(--background-glass);
-  -webkit-backdrop-filter: var(--backdrop-filter-glass);
-          backdrop-filter: var(--backdrop-filter-glass);
-  box-shadow: var(--glass-shadow-inset-l), var(--shadow-card), var(--glass-shadow-inset-edge);
+  background-color: var(--background-glass-subtle);
+  -webkit-backdrop-filter: var(--backdrop-filter-glass-subtle);
+          backdrop-filter: var(--backdrop-filter-glass-subtle);
   box-shadow: var(--shadow-card), var(--shadow-glass-border-tilted);
 }
 
@@ -1020,7 +1034,7 @@ body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vaul
   --callout-radius: 40px;
 
   corner-shape: squircle;
-  box-shadow: var(--shadow-glass-border-tilted), var(--glass-shadow-inset-l);
+  box-shadow: var(--shadow-glass-border), var(--glass-shadow-inset-l);
   border: 1px solid color-mix(in oklch, var(--mono-100) 7.5%, transparent);
 }
 
@@ -1048,7 +1062,7 @@ body {
   --table-header-size: 14px;
   --table-header-weight: calc(var(--font-weight) + var(--bold-modifier));
   --table-header-color: var(--text-normal);
-  --table-line-height: var(--line-height-tight);
+  --table-line-height: 20px;
   --table-text-size: 14px;
   --table-text-color: color-mix(in oklch, var(--color-base-100) 70%, transparent);
   --table-column-first-border-width: 0;
@@ -1333,7 +1347,7 @@ body {
   border-radius: 20px;
   corner-shape: squircle;
 
-  --icon-color: $interactive-accent;
+  --icon-color: var(--color-accent-1);
 
   font-weight: 600;
   color: var(--color-accent-1);
@@ -1615,7 +1629,7 @@ body {
 }
 
 .canvas-node-container {
-  animation: fade-in var(--anim-duration-moderate) ease-i forwards, scale-up-small-items var(--anim-duration-moderate) ease forwards;
+  animation: fade-in var(--anim-duration-moderate) ease-in forwards, scale-up-small-items var(--anim-duration-moderate) ease forwards;
 }
 
 .canvas-controls {
@@ -1735,7 +1749,7 @@ body {
 }
 
 .modal.mod-sync-history.mod-sidebar-layout .file-recovery-list-item-header {
-  min-height: 36px;
+  min-height: 32px;
   padding-inline-start: 10px;
 }
 
@@ -1755,6 +1769,60 @@ body {
   width: 100%;
   background: linear-gradient(to bottom, color-mix(in oklch, var(--background-primary) 90%, transparent) 0, color-mix(in oklch, var(--background-primary) 60%, transparent) 80%, color-mix(in oklch, var(--background-primary) 20%, transparent) 100%);
   border: unset;
+}
+
+.sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle {
+  color: var(--mono-100);
+  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--toolbar-contols-background);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: unset;
+  font-size: 13px;
+}
+
+.theme-light .sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+}
+
+.theme-dark .sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle:hover {
+  background-color: var(--color-base-40);
+}
+
+.sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle {
+  padding: 0 12px;
+  height: 32px;
+  width: fit-content;
+  gap: unset;
+  position: relative;
+}
+
+.sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle .checkbox-container {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  opacity: 0;
+}
+
+.sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle:has(.is-enabled) {
+  color: #fff;
+}
+
+.theme-light .sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle:has(.is-enabled) {
+  background-color: var(--color-accent-1);
+}
+
+.theme-dark .sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle:has(.is-enabled) {
+  background-color: var(--color-accent-1);
+}
+
+.sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle .setting-item-control {
+  gap: unset;
 }
 
 .sync-history-content textarea {
@@ -2095,6 +2163,34 @@ hr:has(+ .cmdr-sep-con.callout) {
   flex-direction: row;
 }
 
+.search-row {
+  margin: unset;
+  padding: 4px 8px;
+  min-height: 40px;
+  border-bottom: 1px solid rgb(var(--mono-rgb-100), 12%);
+}
+
+.search-params {
+  gap: unset;
+  margin: unset;
+  padding: 6px 12px 0;
+}
+
+.search-params .setting-item {
+  margin: unset;
+  min-height: 32px;
+}
+
+.search-results-info {
+  padding: 4px 0;
+  margin: 0 12px;
+}
+
+.app-container:has(~ .popover) .horizontal-main-container {
+  opacity: 0.6;
+  transition: opacity var(--anim-duration-slow);
+}
+
 /* stylelint-disable selector-class-pattern */
 .vertical-tab-content .setting-group:first-child:has(.choiceFilterBar) {
   margin-bottom: 80px;
@@ -2221,13 +2317,6 @@ hr:has(+ .cmdr-sep-con.callout) {
   color: rgb(var(--mono-rgb-100), 55%);
 }
 
-.modal.mod-settings.mod-sidebar-layout .file-recovery-list-item-details {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .setting-page-titlebar {
   gap: 8px;
   padding: 8px 48px 20px 8px;
@@ -2237,14 +2326,17 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 .setting-page-titlebar .setting-page-back-button {
-  height: 32px;
-  padding: 4px;
-  width: 32px;
   color: var(--mono-100);
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
   border-radius: 99px;
   corner-shape: unset;
   background: var(--toolbar-contols-background);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: unset;
+  font-size: 13px;
 }
 
 .theme-light .setting-page-titlebar .setting-page-back-button:hover {
@@ -2255,17 +2347,23 @@ hr:has(+ .cmdr-sep-con.callout) {
   background-color: var(--color-base-40);
 }
 
+.setting-page-titlebar .setting-page-back-button {
+  padding: 6px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
 .setting-page-titlebar .setting-page-back-button .svg-icon {
-  /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
   filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
 
-  --icon-stroke: 2px;
+  --icon-stroke: 1.75px;
+  --icon-size: 18px;
 }
 
 .modal-setting-titlebar {
   min-height: 48px;
   font-size: 13px;
-  padding-right: 60px;
+  padding-right: 52px;
   z-index: 1;
 }
 
@@ -2279,14 +2377,17 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 .modal-setting-titlebar button {
-  height: 32px;
-  padding: 4px;
-  width: fit-content;
   color: var(--mono-100);
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
   border-radius: 99px;
   corner-shape: unset;
   background: var(--toolbar-contols-background);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: unset;
+  font-size: 13px;
 }
 
 .theme-light .modal-setting-titlebar button:hover {
@@ -2297,11 +2398,10 @@ hr:has(+ .cmdr-sep-con.callout) {
   background-color: var(--color-base-40);
 }
 
-.modal-setting-titlebar button .svg-icon {
-  /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
-  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
-
-  --icon-stroke: 2px;
+.modal-setting-titlebar button {
+  padding: 0 12px;
+  min-width: fit-content;
+  min-height: 32px;
 }
 
 .community-modal-info {
@@ -2349,42 +2449,50 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container {
+  color: var(--mono-100);
+  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--toolbar-contols-background);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: unset;
+  font-size: 13px;
+}
+
+.theme-light .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+}
+
+.theme-dark .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container:hover {
+  background-color: var(--color-base-40);
+}
+
+.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container {
   --input-height: 32px;
+  --input-border-width: 0;
+  --background-modifier-form-field: transparent;
 
   height: 32px;
   width: 100%;
-  max-width: auto;
+  max-width: unset;
   flex-grow: 1;
-  color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-  border-radius: 99px;
-  corner-shape: unset;
-  background: var(--toolbar-contols-background);
-}
-
-.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container .svg-icon {
-  /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
-  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
-
-  --icon-stroke: 2.5px;
-}
-
-.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container input {
-  --input-border-width: 0;
-
-  background-color: unset;
-  height: inherit;
 }
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon {
-  height: 32px;
-  padding: 4px;
-  width: 32px;
   color: var(--mono-100);
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
   border-radius: 99px;
   corner-shape: unset;
   background: var(--toolbar-contols-background);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: unset;
+  font-size: 13px;
 }
 
 .theme-light .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon:hover {
@@ -2395,15 +2503,17 @@ hr:has(+ .cmdr-sep-con.callout) {
   background-color: var(--color-base-40);
 }
 
-.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon .svg-icon {
-  /* 参数依次为：X偏移 Y偏移 模糊半径 阴影颜色 */
-  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
-
-  --icon-stroke: 2px;
+.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon {
+  padding: 6px;
+  min-width: 32px;
+  min-height: 32px;
 }
 
-.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon {
-  min-width: 32px;
+.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon .svg-icon {
+  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
+
+  --icon-stroke: 1.75px;
+  --icon-size: 18px;
 }
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle .setting-item-info {
@@ -2412,9 +2522,33 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle {
   margin-left: 12px;
+  color: var(--mono-100);
+  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--toolbar-contols-background);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: unset;
+  font-size: 13px;
+}
+
+.theme-light .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+}
+
+.theme-dark .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle:hover {
+  background-color: var(--color-base-40);
+}
+
+.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle {
+  padding: 0 12px;
   height: 32px;
   width: fit-content;
-  font-size: 13px;
+  gap: unset;
+  position: relative;
 }
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle::before {
@@ -2429,22 +2563,8 @@ hr:has(+ .cmdr-sep-con.callout) {
   opacity: 0;
 }
 
-.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle {
-  gap: unset;
-  border-radius: 99px;
-  corner-shape: unset;
-  padding: 0 10px;
-  color: var(--mono-100);
-  background: var(--toolbar-contols-background);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-}
-
-.theme-light .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle:hover {
-  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle:hover {
-  background-color: var(--color-base-40);
+.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle:has(.is-enabled) {
+  color: #fff;
 }
 
 .theme-light .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle:has(.is-enabled) {
@@ -2457,6 +2577,10 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle .setting-item-control {
   gap: unset;
+}
+
+.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle {
+  margin-left: 12px;
 }
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls + .community-modal-search-results-wrapper {
@@ -2521,54 +2645,6 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search + .setting-item.mod-toggle .setting-item-info {
   display: none;
-}
-
-.modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search + .setting-item.mod-toggle {
-  height: 32px;
-  width: fit-content;
-  font-size: 13px;
-}
-
-.modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search + .setting-item.mod-toggle::before {
-  content: "Installed";
-}
-
-.modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search + .setting-item.mod-toggle .checkbox-container {
-  position: absolute;
-  inset: 0;
-  width: auto;
-  height: auto;
-  opacity: 0;
-}
-
-.modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search + .setting-item.mod-toggle {
-  gap: unset;
-  border-radius: 99px;
-  corner-shape: unset;
-  padding: 0 10px;
-  color: var(--mono-100);
-  background: var(--toolbar-contols-background);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-}
-
-.theme-light .modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search + .setting-item.mod-toggle:hover {
-  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search + .setting-item.mod-toggle:hover {
-  background-color: var(--color-base-40);
-}
-
-.theme-light .modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search + .setting-item.mod-toggle:has(.is-enabled) {
-  background-color: var(--color-accent-1);
-}
-
-.theme-dark .modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search + .setting-item.mod-toggle:has(.is-enabled) {
-  background-color: var(--color-accent-1);
-}
-
-.modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search + .setting-item.mod-toggle .setting-item-control {
-  gap: unset;
 }
 
 .modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search + .setting-item.mod-toggle {
@@ -3194,7 +3270,7 @@ body {
 
 .view-header {
   border-bottom: 1px solid rgb(var(--mono-rgb-100), 12%);
-  min-height: 41px;
+  min-height: var(--header-height);
 }
 
 .workspace-ribbon.mod-primary {
@@ -3203,7 +3279,7 @@ body {
 }
 
 .workspace-ribbon.mod-primary::before {
-  height: calc(var(--header-height) * 2 + 1px);
+  height: calc(var(--header-height) * 2);
 }
 
 .workspace-ribbon.mod-primary.is-collapsed::before {

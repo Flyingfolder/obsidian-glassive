@@ -1,15 +1,17 @@
 
 
+@use '../abstracts' as *;
+
 // workspace-fake-target-overlay =========================================================
 
 .workspace-tabs[style="opacity: 0;"] {
-    transition: opacity var(--anim-duration-moderate) ease;
+    transition: opacity $anim-duration-moderate ease;
 }
 
 
 
 .workspace-fake-target-overlay {
-    animation: fade-in-partial var(--anim-duration-slow) ease-out none;
+    animation: fade-in-partial $anim-duration-slow ease-out none;
 }
 
 // 拖拽时候出现的一坨颜色，用来预览放置新tab的位置.workspace-drop-overlay ========================================================
@@ -58,7 +60,7 @@
     transform-origin: 100% center;
     animation: 
         drop-overlay-scale 200ms ease,
-        fade-in var(--anim-duration-moderate) ease-in none;
+        fade-in $anim-duration-moderate ease-in none;
 }
 
 

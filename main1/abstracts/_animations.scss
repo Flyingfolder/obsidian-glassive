@@ -1,6 +1,8 @@
 
 
 
+@use 'variables-glassive' as *;
+
 @keyframes fade-in {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -55,8 +57,8 @@
 }
 
 @mixin pop-in-anim($transform-origin: 50% -20%,
-    $opacity-animation-duration: var(--anim-duration-moderate),
-    $pop-up-animation-duration: var(--anim-duration-moderate)) {
+    $opacity-animation-duration: $anim-duration-moderate,
+    $pop-up-animation-duration: $anim-duration-moderate) {
 
     transform-origin: $transform-origin;
     animation:

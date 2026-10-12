@@ -1,4 +1,4 @@
-
+@use "sass:math";
 
 
 
@@ -47,7 +47,7 @@ $background-modifier-error: var(--color-red);
 $background-modifier-error-hover: var(--color-red);
 $background-modifier-success-rgb: var(--color-green-rgb);
 $background-modifier-success: var(--color-green);
-$background-modifier-message: rgb(0, 0, 0, 90%);
+$background-modifier-message: rgb(0 0 0 / 90%);
 
 /* Inputs */
 $background-modifier-form-field: var(--color-base-00);
@@ -73,21 +73,13 @@ $interactive-accent: var(--color-accent-1);
 $interactive-accent-hover: var(--color-accent-2);
 
 
-$text-normal: var(--color-base-100);
-$text-muted: rgb(var(--mono-rgb-100), 55%);
-$text-faint: var(--color-base-50);
-$text-muted-on-accent: rgb(255, 255, 255, 75%);
 
 
 $line-height-ui-smaller: 14px;
 $line-height-ui-small: 16px;
 $line-height-control: $line-height-ui-small;
 
-/* UI font sizes */
-$font-ui-smaller: 12px;
-$font-ui-small: 13px;
-$font-ui-medium: 15px;
-$font-ui-large: 20px;
+
 
 
 
@@ -101,7 +93,40 @@ $input-radius-s: 6px;
 $menu-group-gap: 6px;
 
 
+/* Motion — durations (Obsidian core vars 的 Sass 别名) */
+$anim-duration-none:      var(--anim-duration-none);
+$anim-duration-superfast: var(--anim-duration-superfast);
+$anim-duration-fast:      var(--anim-duration-fast);
+$anim-duration-moderate:  var(--anim-duration-moderate);
+$anim-duration-slow:      var(--anim-duration-slow);
+
+/* Motion — easings */
+$anim-motion-smooth: var(--anim-motion-smooth);
+$anim-motion-delay:  var(--anim-motion-delay);
+$anim-motion-jumpy:  var(--anim-motion-jumpy);
+$anim-motion-swing:  var(--anim-motion-swing);
 
 
 
 
+
+/* UI font sizes */
+$font-ui-smaller: 12px;
+$font-ui-small: 13px;
+$font-ui-medium: 15px;
+$font-ui-large: 20px;
+
+
+$font-size-base: 17px; 
+$font-size-small: 14px;
+$font-size-smallest: 12px;
+
+$code-size: math.div($font-size-small, $font-size-base) * 1em;  //0.8235294118
+
+
+
+
+$text-normal: var(--color-base-100);
+$text-muted: rgb(var(--mono-rgb-100), 55%);
+$text-faint: rgb(var(--mono-rgb-100), 25%);
+$text-muted-on-accent: rgb(255 255 255 / 75%);

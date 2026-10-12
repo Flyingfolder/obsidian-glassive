@@ -6,14 +6,14 @@
 
 
 .workspace-split.mod-root .workspace-tabs:not(.mod-top) {
-    .view-header-title-container {transition: opacity var(--anim-duration-fast);}
+    .view-header-title-container {transition: opacity $anim-duration-fast;}
     
     .workspace-tab-header-container {
-        transition: padding var(--anim-duration-moderate) ease;
+        transition: padding $anim-duration-moderate ease;
     }
 
     .workspace-tab-container {
-        transition: margin var(--anim-duration-moderate) ease;
+        transition: margin $anim-duration-moderate ease;
     }
 
 }

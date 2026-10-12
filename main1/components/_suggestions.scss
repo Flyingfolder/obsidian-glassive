@@ -12,8 +12,8 @@
 .suggestion-container {
     transform-origin: 50% -20%;
     animation: 
-        fade-in var(--anim-duration-moderate) ease-out none, 
-        pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) forwards;
+        fade-in $anim-duration-moderate ease-out none, 
+        pop-in $anim-duration-moderate cubic-bezier(0.32, 0.1, 0.2, 0.99) forwards;
 
     @include liquid-glass-bg-normal($with-shadow: true);
 
@@ -111,15 +111,15 @@
     .search-input-container {
         transform-origin: 0 -40px;
         animation:
-            fade-in var(--anim-duration-fast) ease-out  both,
-            pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99)  both;
+            fade-in $anim-duration-fast ease-out  both,
+            pop-in $anim-duration-moderate cubic-bezier(0.32, 0.1, 0.2, 0.99)  both;
     }
 
     .suggestion {
         transform-origin: 0 -160px;
         animation:
-            fade-in var(--anim-duration-moderate) ease-out 60ms both,
-            pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) 30ms both;
+            fade-in $anim-duration-moderate ease-out 60ms both,
+            pop-in $anim-duration-moderate cubic-bezier(0.32, 0.1, 0.2, 0.99) 30ms both;
     }
 }
 

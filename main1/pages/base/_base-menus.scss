@@ -44,7 +44,7 @@
             corner-shape: squircle;
 
             
-            --icon-color: $interactive-accent;
+            --icon-color: #{$interactive-accent};
 
             font-weight: 600;
             color: $interactive-accent;
@@ -75,8 +75,8 @@
 .menu.bases-toolbar-menu {
     .bases-toolbar-menu-container:has(.bases-toolbar-menu-form) {
         animation:
-            fade-in var(--anim-duration-moderate) ease-out none,
-            pop-in-subtle var(--anim-duration-moderate) ease-out none;
+            fade-in $anim-duration-moderate ease-out none,
+            pop-in-subtle $anim-duration-moderate ease-out none;
     }
 
     // form header ---------------------------------------------------------------

@@ -118,8 +118,8 @@ input.prompt-input:focus-visible {
         corner-shape: unset;
         box-shadow: var(--glass-shadow-inset-s), var(--shadow-s);
         animation: 
-            show-prompt-input   var(--anim-duration-moderate) ease none,
-            fade-in             var(--anim-duration-moderate) ease none;
+            show-prompt-input   $anim-duration-moderate ease none,
+            fade-in             $anim-duration-moderate ease none;
     }
 
     .prompt-results {

@@ -49,7 +49,7 @@
     // bg
     .workspace-tab-header-inner {
         background-color: $background-modifier-hover-exsubtle;
-        transition: box-shadow var(--anim-duration-moderate) ease;
+        transition: box-shadow $anim-duration-moderate ease;
     }
 
     .workspace-tab-header.is-active .workspace-tab-header-inner {

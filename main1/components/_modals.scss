@@ -11,8 +11,8 @@
 
     corner-shape: squircle;
     animation: 
-        fade-in var(--anim-duration-moderate) ease-out none,
-        pop-in-subtle var(--anim-duration-moderate) ease-out none;
+        fade-in $anim-duration-moderate ease-out none,
+        pop-in-subtle $anim-duration-moderate ease-out none;
 }
 
 .modal {
@@ -25,7 +25,7 @@
     .modal-header-button {
         inset: 8px 8px auto auto;
 
-        @include liquid-toolbar-control;
+        @include liquid-toolbar-icon-button;
 
     }
 
