@@ -18,7 +18,7 @@
     }
 
 
-    --bases-table-header-background: color-mix(in oklch, var(--color-base-70) 10%, transparent);
+    --bases-table-header-background: color-mix(in oklch, var(--mono-100) 5%, transparent);
 
     // .bases-table .bases-tr {
     //     &:nth-child(even)   {background-color: var(--color-base-25);      }
@@ -33,10 +33,6 @@
 
 .workspace-leaf-content[data-type="markdown"] .block-language-base,
 .workspace-leaf-content[data-type="markdown"] .bases-embed {
-
-
-
-
     .embed-action,
     .bases-toolbar .bases-toolbar-item {
         opacity: 0;

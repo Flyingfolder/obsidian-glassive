@@ -97,7 +97,6 @@ $titlebar-height: 48px;
 
 @mixin liquid-sidebar-item($is-selected-status-name) {
     height: $control-height-l;
-    // border-radius: $radius-m;
     display: flex;
     align-items: center;
     padding: 0 8px;
@@ -108,6 +107,8 @@ $titlebar-height: 48px;
     line-height: $line-height-control;
     transition: unset;
     cursor: default;
+    border-radius: 99px;
+    corner-shape: squircle;
     
     &:hover {
         text-shadow: 0 0 .3px currentcolor;
@@ -120,7 +121,7 @@ $titlebar-height: 48px;
     &#{$is-selected-status-name} {
         background-color: var(--background-modifier-hover);
         color: var(--text-accent);
-        border-radius: $radius-m;
+        border-radius: 99px;
     }
 
     * {color: currentcolor;}

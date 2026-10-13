@@ -54,30 +54,6 @@ $background-modifier-form-field: var(--color-base-00);
 $background-modifier-form-field-hover: var(--background-modifier-form-field);
 
 
-/* Text */
-
-$text-on-accent: white;
-$text-on-accent-inverted: black;
-$text-error: var(--color-red);
-$text-warning: var(--color-orange);
-$text-success: var(--color-green);
-$text-selection: hsl(var(--color-accent-hsl), 20%);
-$text-highlight-bg-rgb: 255, 208, 0;
-$text-highlight-bg: rgb(var(--text-highlight-bg-rgb), 40%);
-$text-accent: var(--color-accent);
-$text-accent-hover: var(--color-accent-2);
-$interactive-normal: var(--color-base-00);
-$interactive-hover: var(--color-base-10);
-$interactive-accent-hsl: var(--color-accent-hsl);
-$interactive-accent: var(--color-accent-1);
-$interactive-accent-hover: var(--color-accent-2);
-
-
-
-
-$line-height-ui-smaller: 14px;
-$line-height-ui-small: 16px;
-$line-height-control: $line-height-ui-small;
 
 
 
@@ -130,3 +106,31 @@ $text-normal: var(--color-base-100);
 $text-muted: rgb(var(--mono-rgb-100), 55%);
 $text-faint: rgb(var(--mono-rgb-100), 25%);
 $text-muted-on-accent: rgb(255 255 255 / 75%);
+
+
+
+
+/* Text */ // 还没完善---------------
+
+$text-on-accent: white;
+$text-on-accent-inverted: black;
+$text-error: var(--color-red);
+$text-warning: var(--color-orange);
+$text-success: var(--color-green);
+$text-selection: hsl(var(--color-accent-hsl), 20%);
+$text-highlight-bg-rgb: 255, 208, 0;
+$text-highlight-bg: rgb(var(--text-highlight-bg-rgb), 40%);
+$text-accent: var(--color-accent);
+$text-accent-hover: var(--color-accent-2);
+$interactive-normal: var(--color-base-00);
+$interactive-hover: var(--color-base-10);
+$interactive-accent-hsl: var(--color-accent-hsl);
+$interactive-accent: var(--color-accent-1);
+$interactive-accent-hover: var(--color-accent-2);
+
+/* Text */ // 还没完善---------------
+
+
+$line-height-ui-smaller: 14px;  //适配 $font-ui-smaller 12px
+$line-height-ui-small: 16px;    // 适配 $font-ui-small: 13px
+$line-height-control: $line-height-ui-small;

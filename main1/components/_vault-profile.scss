@@ -12,17 +12,15 @@ body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vaul
     z-index: 1;
     padding-top: 40px;
     transition: opacity $anim-duration-moderate;
-    background: linear-gradient(to bottom, transparent 0, 
-    color-mix(in oklch, 
-        $background-secondary 60%, transparent) 20px,
-        $background-secondary 60px);
+    background: 
+        linear-gradient(to bottom, 
+            transparent 0, 
+            color-mix(in oklch, $background-secondary 60%, transparent) 20px, 
+            color-mix(in oklch, $background-secondary 90%, transparent) 60px);
 
     & {pointer-events: none;}
     &>* {pointer-events: auto;}
 
-    // .workspace-drawer-vault-switcher {
-    //     flex-grow: 1;
-    // }
 }
 
 

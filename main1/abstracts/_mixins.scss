@@ -37,12 +37,17 @@
 
 @mixin input-search-s {
     --input-height: #{$control-height-m};
+    --input-border-width-focus: 2px;
+
+    overflow: visible;
 
     input {
         box-shadow: 0 0 0 1px var(--background-modifier-border);
-        border-radius: 40px;
+        border-radius: 99px;
         corner-shape: squircle;
-    }
 
-    // &::before {color: $text-faint;}
+        &:focus-visible {
+            box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
+        }
+    }
 }
