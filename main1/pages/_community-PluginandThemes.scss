@@ -233,7 +233,7 @@
     &.mod-destructive+.mod-destructive+.mod-destructive {
         --text-color: var(--text-error);
 
-        background-color: color-mix(in oklch, var(--background-modifier-error) 10%, transparent);
+        background-color: color-mix(in oklch, var(--background-modifier-error) 25%, transparent);
         text-decoration: none;
         padding: var(--size-4-1) var(--size-4-3);
     }
