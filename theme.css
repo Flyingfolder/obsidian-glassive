@@ -1537,6 +1537,10 @@ body {
   --bases-table-column-border-width: 1px;
 }
 
+.bases-view[data-view-type="table"] .bases-thead .bases-table-header {
+  align-items: center;
+}
+
 .bases-view[data-view-type="table"] .bases-thead .bases-td {
   box-shadow: unset;
 }
@@ -1548,7 +1552,7 @@ body {
 .bases-view[data-view-type="table"] .bases-thead .bases-td:not(:last-child)::after {
   content: "";
   position: absolute;
-  inset: 7px 0 7px auto;
+  inset: 6px 0 6px auto;
   width: 1px;
   background-color: rgb(var(--mono-rgb-100), 12%);
 }
@@ -1557,12 +1561,18 @@ body {
   background-color: unset;
 }
 
-.bases-view[data-view-type="table"] .bases-table .bases-tr:nth-child(even) {
-  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+.bases-table + .bases-table > .bases-group-heading {
+  margin-top: 24px;
 }
 
-.bases-view[data-view-type="table"] .bases-table .bases-tr:nth-child(odd) {
-  background-color: color-mix(in oklch, var(--mono-100) 2%, transparent);
+.bases-table .bases-group-heading .bases-group-value {
+  order: -1;
+  font-size: 13px;
+}
+
+.bases-table .bases-group-heading {
+  padding-inline-start: 26px;
+  color: rgb(var(--mono-rgb-100), 55%);
 }
 
 .bases-view[data-view-type="table"] .bases-thead .bases-td:first-child .bases-table-header-label {
@@ -1573,24 +1583,57 @@ body {
   padding-inline-start: 26px;
 }
 
-.workspace-leaf-content[data-type="markdown"] .block-language-base .bases-view,
-.workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view {
+.workspace-leaf-content[data-type="bases"] .bases-table .bases-tr {
+  background-clip: padding-box;
+  border-radius: 99px;
+  border: 2px solid transparent;
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+.bases-table:only-child .bases-tr {
+  background-clip: padding-box;
+}
+
+.bases-table:only-child .bases-tr:nth-child(even) {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+}
+
+.bases-table:only-child .bases-tr:nth-child(odd) {
+  background-color: transparent;
+}
+
+.bases-table .bases-tr {
+  background-clip: padding-box;
+}
+
+.bases-table .bases-tr:nth-child(even) {
+  background-color: transparent;
+}
+
+.bases-table .bases-tr:nth-child(odd) {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+}
+
+.workspace-leaf-content[data-type="markdown"] :is(.block-language-base, .bases-embed) .bases-view {
+  --border-width: 0px;
+  --bases-table-header-background: color-mix(in oklch, var(--mono-100) 10%, transparent);
+
   border-radius: 28px;
   corner-shape: squircle;
-
-  --bases-table-row-height: 24px;
-  --border-width: 0px;
 }
 
-.workspace-leaf-content[data-type="markdown"] .block-language-base .bases-view .bases-thead,
-.workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view .bases-thead {
+.workspace-leaf-content[data-type="markdown"] :is(.block-language-base, .bases-embed) .bases-view .bases-thead {
   --bases-table-font-size: 12px;
-  --bases-table-row-height: 28px;
+  --bases-table-row-height: 24px;
 }
 
-.workspace-leaf-content[data-type="markdown"] .block-language-base .bases-view,
-.workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view {
-  --bases-table-header-background: color-mix(in oklch, var(--mono-100) 5%, transparent);
+.workspace-leaf-content[data-type="markdown"] :is(.block-language-base, .bases-embed) .bases-view .bases-table .bases-tr:nth-child(even) {
+  background-color: var(--color-base-25);
+}
+
+.workspace-leaf-content[data-type="markdown"] :is(.block-language-base, .bases-embed) .bases-view .bases-table .bases-tr:nth-child(odd) {
+  background-color: var(--color-base-10);
 }
 
 .workspace-leaf-content[data-type="markdown"] .block-language-base .embed-action,

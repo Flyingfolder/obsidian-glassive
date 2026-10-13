@@ -49,6 +49,10 @@
         --bases-table-row-border-width: 1.5px;
         --bases-table-column-border-width: 1px;
 
+        .bases-table-header {
+            align-items: center;
+        }
+
 
         .bases-td {
             box-shadow: unset;
@@ -57,7 +61,7 @@
             &:not(:last-child)::after {
                 content: '';
                 position: absolute;
-                inset: 7px 0 7px auto;
+                inset: 6px 0 6px auto;
                 width: 1px;
                 background-color: $background-modifier-seperator;
             }
@@ -66,19 +70,31 @@
 
     .bases-tbody {
         background-color: unset;
-
-    }
-
-    .bases-table .bases-tr {
-
-
-        &:nth-child(even)   {background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);}
-        &:nth-child(odd)    {background-color: color-mix(in oklch, var(--mono-100) 2%, transparent);}
-
     }
 }
 
 
+
+
+
+// group heading
+.bases-table + .bases-table > .bases-group-heading {
+    margin-top: 24px;
+}
+
+.bases-table .bases-group-heading {
+    .bases-group-value {
+        order: -1;
+        font-size: $font-ui-small;
+    }
+
+    padding-inline-start: 26px;
+    color: $text-muted;
+
+}
+
+
+// 左侧留有padding空余
 .bases-view[data-view-type="table"] {
     .bases-thead .bases-td:first-child .bases-table-header-label {
         padding-inline-start: 8px;
@@ -91,4 +107,53 @@
 
 
 
+
+
+
+// 设计 row bg ==========================================================================================
+// 首先是 base 页面
+.workspace-leaf-content[data-type="bases"] .bases-table .bases-tr {
+    background-clip: padding-box;
+    border-radius: 99px;
+    border: 2px solid transparent;
+    border-top-width: 0;
+    border-bottom-width: 0;
+
+}
+
+.bases-table:only-child .bases-tr {
+    background-clip: padding-box;
+
+    &:nth-child(even)   {background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);}
+    &:nth-child(odd)    {background-color: transparent;}
+}
+
+.bases-table .bases-tr {
+    background-clip: padding-box;
+
+    &:nth-child(even)   {background-color: transparent;}
+    &:nth-child(odd)    {background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);}
+}
+
+
+
+
+// 其次是 embed 页面
+.workspace-leaf-content[data-type="markdown"] :is(.block-language-base, .bases-embed) .bases-view {
+    --border-width: 0px;
+    --bases-table-header-background: color-mix(in oklch, var(--mono-100) 10%, transparent);
+
+    border-radius: 28px;
+    corner-shape: squircle;
+
+    .bases-thead {
+        --bases-table-font-size: #{$font-ui-smaller};   
+        --bases-table-row-height: #{$control-height-s};
+    }
+
+    .bases-table .bases-tr {
+        &:nth-child(even)   {background-color: var(--color-base-25);      }
+        &:nth-child(odd)    {background-color: var(--color-base-10);      }
+    }
+}
 

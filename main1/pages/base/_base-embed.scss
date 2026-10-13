@@ -2,30 +2,6 @@
 
 
 
-.workspace-leaf-content[data-type="markdown"] .block-language-base .bases-view,
-.workspace-leaf-content[data-type="markdown"] .bases-embed .bases-view {
-    border-radius: 28px;
-    corner-shape: squircle;
-
-    --bases-table-row-height: #{$control-height-s};
-    --border-width: 0px;
-    
-
-
-    .bases-thead {
-        --bases-table-font-size: #{$font-ui-smaller};
-        --bases-table-row-height: #{$control-height-m};
-    }
-
-
-    --bases-table-header-background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-
-    // .bases-table .bases-tr {
-    //     &:nth-child(even)   {background-color: var(--color-base-25);      }
-    //     &:nth-child(odd)    {background-color: var(--color-base-10);      }
-    // }
-}
-
 
 
 
