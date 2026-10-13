@@ -10,7 +10,7 @@
     font-weight: 600;
     height: max(200px, 100%);
     text-align: center;
-    align-content: center;
+    place-content: center center;
 
     &::before {
         content: "";
@@ -56,5 +56,25 @@
         line-height: 16px;
     }
 }
+
+
+
+
+
+
+// .community-modal-search-results:has(> .community-item:only-child) {
+//     // display: flex;
+//     // width: 100%;
+//     // height: 100%;
+//     // justify-content: center;
+//     // align-items: center;
+
+//     .community-item:not(:has(> .community-item > *)) {
+//         border: unset;
+
+//         @include search-empty();
+
+//     }
+// }
 
 

@@ -2523,6 +2523,7 @@ hr:has(+ .cmdr-sep-con.callout) {
   --input-height: 32px;
   --input-border-width: 0;
   --background-modifier-form-field: transparent;
+  --background-modifier-form-field-hover: transparent;
 
   height: 32px;
   width: 100%;
@@ -3072,7 +3073,7 @@ body {
   font-weight: 600;
   height: max(200px, 100%);
   text-align: center;
-  align-content: center;
+  place-content: center center;
 }
 
 .suggestion-empty::before,
@@ -3100,7 +3101,7 @@ body {
   font-weight: 600;
   height: max(200px, 100%);
   text-align: center;
-  align-content: center;
+  place-content: center center;
 }
 
 .style-settings-empty::before {
