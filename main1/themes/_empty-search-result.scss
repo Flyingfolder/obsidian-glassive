@@ -78,3 +78,13 @@
 // }
 
 
+.canvas-empty-embed-container {
+    padding-bottom: 40px
+}
+
+.canvas-empty-embed-label {
+    @include search-empty();
+
+    font-size: $font-size-base;
+    max-width: 80%;
+}

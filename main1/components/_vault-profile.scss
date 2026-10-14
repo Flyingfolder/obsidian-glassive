@@ -21,6 +21,12 @@ body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vaul
     & {pointer-events: none;}
     &>* {pointer-events: auto;}
 
+
+    .workspace-drawer-vault-switcher {
+        width: 160px;
+        flex-grow: 0;
+        min-width: fit-content;
+    }
 }
 
 

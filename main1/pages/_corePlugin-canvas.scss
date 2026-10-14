@@ -1,61 +1,42 @@
 
 
+
+
+
 @use '../abstracts' as *; 
 
-
 .canvas-node-container {
+    border-radius: 40px;
+    corner-shape: squircle;
     animation:
-        fade-in $anim-duration-moderate ease-in forwards,
-        scale-up-small-items $anim-duration-moderate ease forwards;
+        fade-in-partial $anim-duration-fast ease-in forwards,
+        scale-up $anim-duration-moderate ease forwards;
+    box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+    box-shadow:  var(--shadow-glass-border);
+    // box-shadow: unset;
+    border-width: 0.5px;
+
+    // cursor
+
+
+    .canvas-wrapper:not(.mod-readonly) .canvas-node:not(.is-editing) &:active {cursor: unset;}
+    .canvas-wrapper:not(.mod-readonly) .canvas-node:not(.is-editing) & {cursor: unset;}
+    .canvas-node.is-focused.is-dragging & {box-shadow: unset;}
+}
+
+// .canvas-node-interaction-layer:hover .canvas-node-connection-point::after {
+//     body:not(.is-mobile) & {
+//         --resizer-size: 12px;
+//     }
+
+//     opacity: 1;
+// }
+
+
+.canvas-wrapper.is-dragging {
+    cursor: unset;
 }
 
 
-.canvas-controls {
-    inset: unset;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: var(--background-primary);
-    border-bottom: 1px solid $background-modifier-seperator;
-    gap: unset;
-    padding: 0 12px;
-
-    height: var(--header-height);
-    
 
 
-    .canvas-control-group {
-        border-radius: unset;
-        background-color: unset;
-        border: unset;
-        box-shadow: unset;
-        display: flex;
-        flex-direction: row;
-        
-    }
-
-
-    .canvas-control-item {        
-        border: unset;
-        color: var(--text-muted);
-        padding: var(--size-2-2) var(--size-2-3);
-        border-radius: $radius-s;
-
-    }
-
-
-    // 排序
-    .canvas-control-group:has([aria-label="Canvas settings"]) {
-        order: 1;
-    }
-
-    .canvas-control-group:has([aria-label="Undo"]) {
-        order: -1;
-    }
-
-    .canvas-control-group:has([aria-label="Zoom in"]) {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}

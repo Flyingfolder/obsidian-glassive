@@ -138,31 +138,51 @@ $titlebar-height: 48px;
 @mixin _liquid-toolbar-base() {
     color: var(--mono-100);
     box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+    border: unset;
+    margin: unset;
     border-radius: 99px;
     corner-shape: unset;
-    background: var(--toolbar-contols-background);
+    background: var(--toolbar-controls-background);
     // 
     display: inline-flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    margin: unset;
     font-size: $font-ui-small;
 
     &:hover {
-        .theme-light & {background-color: $background-modifier-hover-subtle;}
-        .theme-dark  & {background-color: var(--color-base-40);}
+        .theme-light & {background: $background-modifier-hover-subtle;}
+        .theme-dark  & {background: var(--color-base-40);}
     }
 }
 
+@mixin liquid-toolbar-icon-group {
+    // @include _liquid-toolbar-base();
+    color: var(--mono-100);
+    box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+    border: unset;
+    margin: unset;
+    border-radius: 99px;
+    corner-shape: unset;
+    background: var(--toolbar-controls-background);
+    // 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-size: $font-ui-small;
+// 
+    padding: 3px;
+    margin: unset;
+    border: unset;
+    gap: 3px;
+    min-height: fit-content;
+    corner-shape: unset;
+    border-radius: 99px;
+}
 
-
-@mixin liquid-toolbar-icon-button {
+@mixin liquid-toolbar-icon-button($is-grouped: false) {
     @include _liquid-toolbar-base();
-
-    padding: 6px;
-    min-width: 32px;
-    min-height: 32px;
 
     .svg-icon {
         filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100) / 100%));
@@ -170,8 +190,23 @@ $titlebar-height: 48px;
         --icon-stroke: 1.75px;
         --icon-size: 18px;
     }
-}
 
+    @if $is-grouped {
+        // Grouped: 多个 icon 构成一个 group
+        padding: 3px;
+        min-width: 26px;
+        min-height: 26px;
+        box-shadow: unset;
+    }
+
+ /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+ @else {
+        // Standalone: 单独显示 (默认)
+        padding: 6px;
+        min-width: 32px;
+        min-height: 32px;
+    }
+}
 
 @mixin liquid-toolbar-text-button {
     @include _liquid-toolbar-base();
@@ -195,6 +230,10 @@ $titlebar-height: 48px;
     width: 100%;
     max-width: $control-max-width;
     flex-grow: 1;
+
+    :is(.theme-light, .theme-dark) &:hover {
+        background: var(--toolbar-controls-background);
+    }
 }
 
 
@@ -223,8 +262,8 @@ $titlebar-height: 48px;
 
     &:has(.is-enabled) {
         color: #fff;
-        .theme-light & {background-color: $interactive-accent;}
-        .theme-dark  & {background-color: $interactive-accent;}
+        .theme-light & {background: $interactive-accent;}
+        .theme-dark  & {background: $interactive-accent;}
     }
 
     .setting-item-control {gap: unset;}

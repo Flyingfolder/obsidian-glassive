@@ -38,7 +38,7 @@
   //   rgb(249, 249, 249);
 
   // --toolbar-items-background: linear-gradient(var(--background-primary), var(--background-primary));
-  --toolbar-contols-background: #fff;
+  --toolbar-controls-background: linear-gradient(#fff, #fff),  #fff;
   --liquid-modal-background-image: none;
 }
 
@@ -48,7 +48,7 @@
   --liquid-sidebar-border-color: rgb( 255 255 255 / 12%); //这个边框更能融入背景的深色中去
   // -------
 
-    --toolbar-contols-background: 
+    --toolbar-controls-background: 
         linear-gradient(
             hsl(var(--interactive-accent-hsl), 5%), 
             hsl(var(--interactive-accent-hsl), 5%)), 

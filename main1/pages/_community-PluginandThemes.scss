@@ -107,13 +107,13 @@
 
 
     &.is-selected {
-        background: var(--toolbar-contols-background);
+        background: var(--toolbar-controls-background);
         box-shadow: var(--shadow-card), var(--glass-shadow-inset-for-control);
         z-index: 1;
         .community-item-name {color: var(--text-accent);}
         // &:hover {background-color: color-mix(in oklch, $background-primary 20%, transparent);}
         // &:hover {background-color: $background-modifier-hover-exsubtle;}
-        &:hover {background: var(--toolbar-contols-background);}
+        &:hover {background: var(--toolbar-controls-background);}
     }
 }
 
@@ -228,7 +228,7 @@
 // buttons ----------------------------------------
 
 
-.community-modal-button-container button.mod-destructive {
+.community-modal-button-container button {
     &.mod-destructive+.mod-destructive,
     &.mod-destructive+.mod-destructive+.mod-destructive {
         --text-color: var(--text-error);
@@ -238,7 +238,10 @@
         padding: var(--size-4-1) var(--size-4-3);
     }
 
-    & ~ button {
+    &.mod-cta~.mod-cta {}
+
+    &.mod-cta~button:not(.mod-destructive, .mod-cta),
+    &.mod-destructive ~ button {
         background-color: transparent;
 
         --text-color: #{$interactive-accent};
@@ -248,5 +251,14 @@
         padding: 4px 0;
     }
 }
+
+
+
+
+
+
+
+
+
 
 
