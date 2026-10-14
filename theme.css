@@ -1707,7 +1707,6 @@ body {
 .canvas-controls .canvas-control-group {
   position: absolute;
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-  background-color: var(--background-primary);
   overflow: visible;
 }
 
@@ -1724,7 +1723,7 @@ body {
 }
 
 .canvas-controls .canvas-control-group:has([aria-label="Canvas help"]) {
-  inset: 8px 60px auto auto;
+  inset: 8px 52px auto auto;
 }
 
 .canvas-control-group:first-child,
