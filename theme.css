@@ -106,6 +106,24 @@
   }
 }
 
+@keyframes pop-in-strong {
+  0% {
+    scale: 1;
+  }
+
+  60% {
+    scale: 1.025;
+  }
+
+  99% {
+    scale: 1;
+  }
+
+  100% {
+    scale: unset;
+  }
+}
+
 @keyframes pop-in {
   0% {
     scale: 0.8;
@@ -352,6 +370,9 @@ button {
 
   border-radius: 99px;
   corner-shape: squircle;
+}
+
+button:not(.clickable-icon) {
   min-width: 72px;
 }
 
@@ -3143,27 +3164,30 @@ hr:has(+ .cmdr-sep-con.callout) {
   gap: 32px 20px;
 }
 
-.community-modal-search-results .community-item.tappable {
+.community-modal-search-results-wrapper .community-modal-search-results .community-item {
   border-radius: 32px;
   corner-shape: squircle;
+  max-width: 280px;
   overflow: hidden;
   background-color: unset;
   background-color: color-mix(in oklch, var(--mono-100) 3.5%, transparent);
   border: unset;
   box-shadow: var(--glass-shadow-inset-l);
+  transition: all var(--anim-duration-moderate);
 }
 
-.community-modal-search-results .community-item.tappable.is-selected {
+.community-modal-search-results-wrapper .community-modal-search-results .community-item.is-selected {
   background: var(--toolbar-controls-background);
   box-shadow: var(--shadow-card-mini), var(--glass-shadow-inset-for-control);
   z-index: 1;
+  animation: pop-in-strong var(--anim-duration-moderate) ease;
 }
 
-.community-modal-search-results .community-item.tappable.is-selected .community-item-name {
+.community-modal-search-results-wrapper .community-modal-search-results .community-item.is-selected .community-item-name {
   color: var(--text-accent);
 }
 
-.community-modal-search-results .community-item.tappable.is-selected:hover {
+.community-modal-search-results-wrapper .community-modal-search-results .community-item.is-selected:hover {
   background: var(--toolbar-controls-background);
 }
 
@@ -3181,10 +3205,6 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .mod-community-theme .community-item > *:not(.community-item-screenshot) {
   padding-inline-start: 12px;
-}
-
-.modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search-results-wrapper {
-  padding-right: 40px;
 }
 
 .modal.mod-community-modal .modal-sidebar:has(+ .community-modal-details) .community-modal-search + .setting-item.mod-toggle .setting-item-info {

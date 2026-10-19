@@ -52,6 +52,12 @@
     100% { scale: unset; }
 }
 
+@keyframes pop-in-strong {
+    0%   { scale: 1; }
+    60%  { scale: 1.025; }
+    99%  { scale: 1; }
+    100% { scale: unset; }
+}
 
 
 

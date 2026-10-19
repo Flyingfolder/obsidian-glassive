@@ -65,6 +65,10 @@ button {
 
     border-radius: 99px;
     corner-shape: squircle;
+}
+
+
+button:not(.clickable-icon) {
     min-width: 72px;
 }
 

@@ -96,20 +96,23 @@
 
 
 
-.community-modal-search-results .community-item.tappable {
+.community-modal-search-results-wrapper .community-modal-search-results .community-item {
     border-radius: 32px;
     corner-shape: squircle;
+    max-width: 280px;
     overflow: hidden;
     background-color: unset;
     background-color: $background-modifier-hover-exsubtle;
     border: unset;
     box-shadow: var(--glass-shadow-inset-l);
+    transition: all $anim-duration-moderate;
 
 
     &.is-selected {
         background: var(--toolbar-controls-background);
         box-shadow: var(--shadow-card-mini), var(--glass-shadow-inset-for-control);
         z-index: 1;
+        animation: pop-in-strong $anim-duration-moderate ease;
         .community-item-name {color: var(--text-accent);}
         &:hover {background: var(--toolbar-controls-background);}
     }
@@ -158,7 +161,7 @@
 // 展开的时候 ------------------------------------------------------------------------------------------
 .modal.mod-community-modal .modal-sidebar:has(+.community-modal-details) {
     .community-modal-search-results-wrapper {
-        padding-right: 40px;
+        // padding-right: 40px;
     }
 
     .community-modal-search+.setting-item.mod-toggle {
