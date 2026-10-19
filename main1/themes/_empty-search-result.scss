@@ -34,7 +34,7 @@
 // SCSS ======================================================
 // ======================================================
 
-
+.pane-empty, //outline core plugin "no headings found"
 .suggestion-empty,
 .search-result-container.mod-global-search .search-empty-state {
     @include search-empty();
@@ -88,3 +88,11 @@
     font-size: $font-size-base;
     max-width: 80%;
 }
+
+
+
+
+
+
+
+

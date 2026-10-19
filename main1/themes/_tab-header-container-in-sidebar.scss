@@ -9,18 +9,22 @@
     .workspace-tab-header-container {
         border: unset;
         z-index: 1;
+        
     }
 
     .workspace-tab-header-container-inner {
         background-color: $background-primary;
         padding: 4px;
         border-radius: 20px;
-        box-shadow: var(--shadow-s), var(--glass-shadow-inset-edge);
+        box-shadow: var(--shadow-s),  var(--shadow-glass-border);
         gap: 4px;
     }
 
     &.mod-top .workspace-tab-header-container-inner {
-        margin-left: 12px;
+        margin-left: 8px;
+        margin-top: 5px;
+        
+        
     }
 
 
@@ -45,8 +49,6 @@
 
         .workspace-tab-header-inner-icon .svg-icon {
             color: #{$interactive-accent};
-
-            --icon-stroke: 2.5px;
         }
     }
 }
@@ -86,4 +88,32 @@
     }
 }
 
+
+
+
+.workspace-split.mod-sidedock {
+    .workspace-tab-header-container {
+        height: fit-content;
+    }
+
+    .sidebar-toggle-button.mod-left {
+        margin-left: 12px;
+    }
+
+    .workspace-tab-header-container-inner {
+        width: 100%;
+        height: 30px;
+        padding: 3px !important;
+        justify-content: space-around;
+
+
+        .workspace-tab-header {
+            flex-grow: 1;
+
+            &:active .workspace-tab-header-inner {
+                background-color: $background-modifier-seperator;
+            }
+        }
+    }
+}
 

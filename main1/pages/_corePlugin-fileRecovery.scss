@@ -44,12 +44,10 @@
 
     .modal-setting-titlebar {
         position: absolute;
-        width: 100%;
         background: linear-gradient(to bottom,
             color-mix(in oklch, $background-primary 90%, transparent) 0,
             color-mix(in oklch, $background-primary 60%, transparent) 80%,
             color-mix(in oklch, $background-primary 20%, transparent) 100%);
-        border: unset;
 
         .modal-setting-titlebar-actions>.modal-setting-titlebar-toggle {
             @include liquid-toolbar-text-button-changing-from-toggles($label: null);

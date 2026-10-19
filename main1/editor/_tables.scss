@@ -50,19 +50,16 @@ body {
 
 }
 
+.cm-html-embed thead tr > th, .markdown-rendered thead tr > th {
+    border-bottom-width: 0;
+}
+
 .cm-html-embed td,
 .markdown-rendered td,
 .cm-html-embed th,
 .markdown-rendered th {
-    padding: var(--size-2-2) var(--size-4-2);
-    border: var(--table-border-width) solid var(--table-border-color);
-    max-width: var(--table-column-max-width);
-    min-width: var(--table-column-min-width);
-    vertical-align: var(--table-cell-vertical-alignment);
     border-left-width: 0;
     border-right-width: 0;
-
-
 }
 
 .markdown-source-view.mod-cm6 .cm-table-widget {
@@ -84,7 +81,7 @@ body {
     border-radius: 40px;
     corner-shape: squircle;
         
-    &:focus-within  {
+    &.has-focus  {
         box-shadow: var(--shadow-glass-border-tilted), var(--shadow-card);
     }
 
@@ -102,6 +99,13 @@ body {
 
 
 
+.callout-content table {
+  justify-self: center;
+}
+
+// ========================================================================================================================
+// row column button ======================================================================================================
+// ========================================================================================================================
 
 
 .markdown-source-view.mod-cm6 .cm-table-widget {
@@ -118,27 +122,35 @@ body {
       inset: auto 0 0 auto;
       &::after {content: "Add Column";}
     }
+}
 
-    
+
+.markdown-source-view.mod-cm6 .cm-table-widget {
+    .table-row-btn,
+    .table-col-btn {
+      height: 30px;
+      width: auto;
+      padding: 0 8px;
+      border-radius: 99px;
+      corner-shape: squircle;
+      border: unset;
+      cursor: default;
+      pointer-events: none; 
+      color: $text-muted;
+      font-size: $font-ui-small;
+      background-color: $background-modifier-hover-subtle;
+      &:hover {background-color: $background-modifier-hover-strong;}
+
+    }
+
     &:focus-within .table-col-btn,
     &:focus-within .table-row-btn {
       opacity: 1;
+      pointer-events: auto;
     }
 }
 
-.markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn,
-.markdown-source-view.mod-cm6 .cm-table-widget .table-col-btn {
-    height: 30px;
-    width: auto;
-    padding: 0 8px;
-    border-radius: 99px;
-    corner-shape: squircle;
-    border: unset;
-    cursor: default;
-    color: $text-muted;
-    font-size: $font-ui-small;
-    background-color: $background-modifier-hover-subtle;
-    &:hover {background-color: $background-modifier-hover-strong;}
 
-    
-}
+
+
+

@@ -62,9 +62,10 @@
 // 其他页面的titlebar 比如 filerecovery
 
 .modal-setting-titlebar {
-    min-height: $titlebar-height;
+    width: 100%;
+    padding: 8px 52px calc(8px + 12px) 8px;
+    border: unset;
     font-size: $font-ui-small;
-    padding-right: 52px;
     z-index: 1;
 
     .modal-setting-titlebar-actions {
@@ -76,7 +77,8 @@
         font-weight: 500;
     }
 
-    button {@include liquid-toolbar-text-button;}
+    &>button {@include liquid-toolbar-text-button;}
+    &>button.clickable-icon {@include liquid-toolbar-icon-button;}
 }
 
 

@@ -5,18 +5,26 @@
 
 @use '../abstracts' as *;
 
-body {
-  corner-shape: squircle;
-
+.mod-macos,
+.mod-windows,
+.mod-linux {
+  --input-corner-shape: squircle;
   --input-height: 28px;
-  --input-radius: 99px;
+  --input-radius: 24px;
 }
+
 
 .search-input-container {
-  // --input-height: 28px;
+  min-height: fit-content;
 }
 
 
+// ============================================================================================================================================================================================================
+// 基础样式 =============================================================================================================================================================================================================================
+// ============================================================================================================================================================================================================
+
+
+// 用阴影来代替边框
 textarea,
 .multi-select-container,
 input.metadata-input-text,
@@ -31,13 +39,15 @@ input[type='number'] {
   box-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border);
 }
 
-.bases-table-container input[type='text'],
-.bases-table-container input[type='date'],
-.bases-table-container input[type='datetime-local'],
-.bases-table-container input[type='number'],
-.bases-table-container .multi-select-container {
-  box-shadow: unset;
-}
+
+// 删掉多余的边框
+// .bases-table-container input[type='text'],
+// .bases-table-container input[type='date'],
+// .bases-table-container input[type='datetime-local'],
+// .bases-table-container input[type='number'],
+// .bases-table-container .multi-select-container {
+//   box-shadow: unset;
+// }
 
 
 // 在选中的时候，添加额外的阴影和动画 --------------------------------------------------------------------------------
@@ -87,10 +97,10 @@ input[type="number"]:focus-visible {
     box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
 }
 
-input[disabled] {
-  animation: unset !important;
-  box-shadow: unset !important;
-}
+// input[disabled] {
+//   animation: unset !important;
+//   box-shadow: unset !important;
+// }
 
 
 

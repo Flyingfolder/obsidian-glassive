@@ -7,10 +7,6 @@
 
 
 .mod-secondary-split .workspace-tab-header-container {
-    .workspace-tab-header-container-inner {
-        padding-right: 32px;
-    }
-
     .workspace-tab-header:has(.mod-pinned) {
         order: 1;
         margin-left: auto;

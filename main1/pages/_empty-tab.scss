@@ -1,0 +1,67 @@
+
+@use '../abstracts' as *;
+
+
+
+
+
+
+// empty page
+
+
+.empty-state-container {
+    .empty-state-title::before {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 12px;
+        background-color: $text-muted;
+        opacity: 0.6;
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z%27/%3E%3Cpath d=%27M14 2v5a1 1 0 0 0 1 1h5%27/%3E%3C/svg%3E");
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+    }
+}
+
+.empty-state-action-list {
+    display: flex;
+    width: 180px;
+    flex-direction: column;
+    gap: unset;
+    margin-top: 20px;
+
+
+
+    .empty-state-hotkey {
+        padding: unset;
+        background-color: unset;
+        padding-top: 1px;
+        font-size: $font-ui-smaller;
+    }
+
+    .empty-state-action {
+        border: unset;
+        position: relative;
+        color: $text-muted;
+        &:hover {color: $text-normal;}
+    }
+
+    .empty-state-action + .empty-state-action::before {
+        content: '';
+        display: block;
+        position: absolute;
+        inset: 0 0 auto 36px;
+        height: 0;
+        border-bottom: 1px solid $background-modifier-seperator;
+
+    }
+
+    .empty-state-action:hover {
+        &+.empty-state-action::before,
+        &::before {
+            display: none;
+        }
+    }
+}

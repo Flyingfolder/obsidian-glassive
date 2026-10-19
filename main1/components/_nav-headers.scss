@@ -1,0 +1,41 @@
+@use '../abstracts' as *;
+
+// // ── 查询容器 ────────────────────────────────────────────────
+// // .nav-header 作为 @container 的查询容器。
+// // inline-size：只测量宽度，不测量高度（比 size 更轻，也不会塌高）。
+// // 命名后查询用 @container nav-header (...)，避免与本主题/核心的匿名容器串味。
+// .workspace-tab-container {
+//     container-type: inline-size;
+//     container-name: workspace-tab-container;
+// }
+
+// // ── 窄容器下弱化导航按钮 ────────────────────────────────────
+// @container workspace-tab-container (width < 280px) {
+//     // .nav-buttons-container .nav-action-button {
+//     //     opacity: 0.2;
+//     // }
+
+
+//     .search-input-container {
+//       animation: 
+//           width-expand $anim-duration-slow ease none,
+//           fade-in $anim-duration-moderate ease-out none, 
+//           pop-in $anim-duration-moderate cubic-bezier(0.32, 0.1, 0.2, 0.99) forwards;
+//       margin-left: 12px !important;
+//     }
+// }
+
+.nav-header {
+  // display: flex;
+  // justify-content: center;
+  padding: 6px 0;
+  min-height: 40px;
+}
+
+// .nav-header .search-input-container {
+//   width: 50px;
+//   flex-grow: 1;
+//   margin: unset;
+// }
+
+

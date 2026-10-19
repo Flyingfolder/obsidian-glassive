@@ -1,11 +1,14 @@
 
 
-
-
 @use '../abstracts' as *;
 
+// body {
+//     --tab-outline-width: 0px;
+// }
+
+
+.workspace .mod-root .workspace-tab-header-inner::after, //纵向分割线
 .workspace-split.mod-root .workspace-tab-header-tab-list,
-.workspace .mod-root .workspace-tab-header-inner::after,
 .workspace-tab-header-container .workspace-tab-header::before,
 .workspace-tab-header-container .workspace-tab-header::after {
     display: none;
@@ -40,7 +43,7 @@
 
     // 设计 style ------------------------------------------------------------
     .workspace-tab-header-inner {
-        border-radius: 20px;
+        border-radius: 99px;
         corner-shape: squircle;
     }
 
@@ -58,21 +61,11 @@
     }
 
     // 其他的 style
-    .workspace-tab-header-inner-title {
-        text-overflow: clip;
-    }
+    .workspace-tab-header-inner-title {text-overflow: clip;}
 
-    .workspace-tab-header-new-tab {
-        margin-left: 0;
-    }
+    .workspace-tab-header-new-tab {margin-left: 0;}
 
     // 保证阴影能溢出
-
+    .workspace-tab-header-container-inner {overflow: visible;}
 }
 
-
-.mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container-inner {
-    // overflow: clip;
-    overflow: visible;
-    // overflow-clip-margin: 35px;
-}

@@ -40,7 +40,6 @@
             corner-shape: unset;
             height: 32px;   
             box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-            // background: var(--toolbar-controls-background);
         }
 
         &:last-child {
@@ -57,7 +56,8 @@
 .modal-header {
     display: flex;
     flex-direction: column;
-    margin: 0 calc( var(--modal-padding)  * -1) 20px;
+    margin: 0 calc( var(--modal-padding)  * -1) 0;
+    
     
 
     &:has(.modal-title:only-child:empty) {
@@ -67,14 +67,11 @@
     &:has(.modal-title:only-child:empty)+.modal-content>h2:first-child,
     .modal-title {
         justify-content: flex-start;
-        padding: 12px var(--modal-padding) 0;
         margin: unset;
-        min-height: 50px;
-
-        // font-size: var(--font-ui-small);
+        padding: 8px var(--modal-padding) calc(8px + 12px);
+        line-height: 32px;
         font-weight: 600;
         font-size: $font-ui-large;
-
         // border-bottom: 1px solid var(--background-modifier-border);
     }
 

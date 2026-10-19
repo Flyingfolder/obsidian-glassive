@@ -1,0 +1,32 @@
+
+
+
+
+@use '../abstracts' as *; 
+
+
+
+.modal.callout-editor-modal {
+    background: unset;
+    background-color: $background-secondary;
+
+    .titlebar-control-group {
+        @include liquid-toolbar-icon-group;
+        .clickable-icon {@include liquid-toolbar-icon-button($is-grouped: true);}
+    }
+
+    .mod-callout-type>button {
+        @include liquid-toolbar-text-button;
+    }
+}
+
+.modal.callout-editor-modal {
+    .modal-button-container {
+        bottom: -16px;
+
+        button:first-child {
+            background-color: color-mix(in oklch, $background-modifier-hover-subtle 20%, $background-primary);
+            &:hover {background-color: color-mix(in oklch, $background-modifier-hover-strong 30%, var(--color-base-35));}
+        }
+    }
+}

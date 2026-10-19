@@ -17,6 +17,7 @@
 @use 'main1/components/buttons';
 @use 'main1/components/menus';
 @use 'main1/components/modals';
+@use 'main1/components/nav-headers';
 @use 'main1/components/popovers';
 @use 'main1/components/prompt';
 @use 'main1/components/setting-items';
@@ -43,11 +44,13 @@
 @use 'main1/pages/corePlugin-canvas-UI';
 @use 'main1/pages/corePlugin-canvas';
 @use 'main1/pages/corePlugin-fileRecovery';
+@use 'main1/pages/plugin-callout-editor';
 @use 'main1/pages/plugin-iconic';
 @use 'main1/pages/plugin-commander';
 @use 'main1/pages/detailed-pages/commander-macros';
 @use 'main1/pages/plugin-style-settings';
 @use 'main1/pages/search-global';
+@use 'main1/pages/empty-tab';
 
 // @use 'main1/pages/plugin-modalForm-newform_datatype';    //有问题，容易导致css动画卡顿
 // @use 'main1/pages/plugin-modalForm-newform_header';      //有问题，容易导致css动画卡顿

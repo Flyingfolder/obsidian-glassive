@@ -60,12 +60,12 @@ body {
 // }
 
 button {
-    padding: var(--size-4-1) var(--size-4-3);
-
+    // padding: var(--size-4-1) var(--size-4-3);
     --input-height: 28px;
 
-    border-radius: 100px;
+    border-radius: 99px;
     corner-shape: squircle;
+    min-width: 72px;
 }
 
 button.mod-destructive {

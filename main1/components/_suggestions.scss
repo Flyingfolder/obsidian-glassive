@@ -23,10 +23,13 @@
     .suggestion {
         padding: 8px;
     }
+
     .suggestion-item {
         corner-shape: squircle;
         border-radius: 32px;
+        min-width: 160px;
     }
+
     .prompt-instructions {
         padding: unset;
         padding-left: 20px;
@@ -43,13 +46,10 @@
 
 
 .suggestion-container:has(.search-input-container) {
-
-
     background-color: unset;
     backdrop-filter: unset;
     border: unset;
     box-shadow: unset;
-    
     overflow: visible;
     
 
@@ -57,7 +57,7 @@
         // background-color: var(--suggestion-background);
         @include liquid-glass-bg-normal($with-shadow: false);
 
-        box-shadow: var(--shadow-s), var(--glass-shadow-inset-s);
+        box-shadow: var(--shadow-s), var(--shadow-glass-border), var(--glass-shadow-inset-s);
         
         input {
             box-shadow: none !important;
@@ -69,7 +69,6 @@
 
         border-radius: 16px;
         padding: 8px;
-
         box-shadow: var(--shadow-l), var(--glass-shadow-inset-l), var(--glass-shadow-inset-edge);
 
 
@@ -97,7 +96,6 @@
         height: 80px;
         background-color: transparent;
         backdrop-filter: blur(4px);
-
         mask-image:
             linear-gradient(to bottom, transparent 0%, #000 8px, #000 calc(100% - 36px), transparent 100%),
             linear-gradient(to right, transparent 0%, #000 12px, #000 calc(100% - 12px), transparent 100%);

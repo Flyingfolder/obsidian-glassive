@@ -38,7 +38,8 @@
   //   rgb(249, 249, 249);
 
   // --toolbar-items-background: linear-gradient(var(--background-primary), var(--background-primary));
-  --toolbar-controls-background: linear-gradient(#fff, #fff),  #fff;
+  --toolbar-controls-background: linear-gradient(rgb(255 255 255 / 30%), rgb(255 255 255 / 10%)),  rgb(255 255 255 / 10%);
+  --toolbar-controls-backdrop-filter: blur(2px) brightness(1.03);
   --liquid-modal-background-image: none;
 }
 
@@ -52,7 +53,8 @@
         linear-gradient(
             hsl(var(--interactive-accent-hsl), 5%), 
             hsl(var(--interactive-accent-hsl), 5%)), 
-        var(--color-base-35);
+        color-mix(in oklch, rgb(255 255 255) 10%, transparent);
+      --toolbar-controls-backdrop-filter: blur(2px) brightness(1.03);
   // --toolbar-items-background:
   //   linear-gradient(hsl(var(--color-accent-hsl), 3%), hsl(var(--color-accent-hsl), 5%)) padding-box,
   //   linear-gradient(rgb(33 33 33), rgb(33 33 33)) padding-box,
@@ -67,8 +69,8 @@
 body {
     --shadow-card: 
       0px 8px 20px  rgb(0 0 0 / 10%), 
-      0px 20px 42px rgb(0 0 0 / 6%), 
-      0px 25px 85px rgb(0 0 0 / 3.4%);
+      0px 14px 42px rgb(0 0 0 / 6%), 
+      0px 20px 85px rgb(0 0 0 / 3.4%);
 
       // 适用于极小的部件，比如 contol
     --shadow-card-mini: 
@@ -122,6 +124,7 @@ body {
     inset -10px 0 10px rgb(0 0 0 / 6%);  /* 右 */
 
 
+    // 这是最新版本的shadow
     // 用于小号control的内边框
   --shadow-glass-border: 
       inset 0 2px 2px rgb(255 255 255 / 55%),   /* 顶 */

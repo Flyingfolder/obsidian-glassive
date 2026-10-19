@@ -11,19 +11,18 @@
     animation:
         fade-in-partial $anim-duration-fast ease-in forwards,
         scale-up $anim-duration-moderate ease forwards;
-    box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+    box-shadow: var(--shadow-card-mini), var(--shadow-glass-border); //待定。阴影和边框暂时不确定
     box-shadow:  var(--shadow-glass-border);
-    // box-shadow: unset;
     border-width: 0.5px;
 
     // cursor
-
-
     .canvas-wrapper:not(.mod-readonly) .canvas-node:not(.is-editing) &:active {cursor: unset;}
     .canvas-wrapper:not(.mod-readonly) .canvas-node:not(.is-editing) & {cursor: unset;}
     .canvas-node.is-focused.is-dragging & {box-shadow: unset;}
 }
 
+
+// 待定：修改canvas 的resisze 圆点
 // .canvas-node-interaction-layer:hover .canvas-node-connection-point::after {
 //     body:not(.is-mobile) & {
 //         --resizer-size: 12px;

@@ -3,6 +3,12 @@
 
 @use 'variables-glassive' as *;
 
+// @keyframes width-expand {
+//     from {max-width: 0;}
+//     to {max-width: 100%;}
+// }
+
+
 @keyframes fade-in {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -59,10 +65,11 @@
 @mixin pop-in-anim($transform-origin: 50% -20%,
     $opacity-animation-duration: $anim-duration-moderate,
     $pop-up-animation-duration: $anim-duration-moderate) {
-
     transform-origin: $transform-origin;
     animation:
         fade-in $opacity-animation-duration ease-out backwards,
         pop-in $pop-up-animation-duration cubic-bezier(0.32, 0.10, 0.20, 0.99) backwards;
 
 }
+
+

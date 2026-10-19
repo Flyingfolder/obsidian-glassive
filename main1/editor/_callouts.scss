@@ -19,13 +19,13 @@
 
     .embed-action {
         padding: 6px;
-        border-radius: 100px;
+        border-radius: 99px;
         corner-shape: unset;
     }
 }
 
 
-// 容易带来性能开销
+// // 容易带来性能开销
 // .cm-embed-block.cm-callout {
 //     &:has(+.cm-line.cm-active) {
 //         z-index: 1;
@@ -37,11 +37,11 @@
 
 
 
-.cm-embed-block.cm-callout {
-    overflow: visible ;
-    z-index: 2;
-    position: relative;
-}
+// .cm-embed-block.cm-callout {
+//     overflow: visible ;
+//     z-index: 1;
+//     position: relative;
+// }
 
 
 .callout {
@@ -50,6 +50,7 @@
     corner-shape: squircle;
     box-shadow: var(--shadow-glass-border), var(--glass-shadow-inset-l);
     border: 1px solid $background-modifier-hover;
+    background-color: color-mix(in oklch, var(--callout-color) 6%, transparent);
 
     // 会引发性能崩溃
     // .callout-content {
@@ -58,5 +59,26 @@
     //         0 0 20px  rgb(var(--mono-rgb-100), 13%),
     //         0 0 45px  rgb(var(--mono-rgb-100), 25%),
     // }
+
+
 }
 
+
+.cm-embed-block.cm-callout section.footnotes {
+    ol {margin-top: unset;}
+    a.footnote-backref.footnote-link {display: none;}
+    hr {display: none;}
+    
+    li {
+        margin-inline: 5ch 2ch;
+        color: $text-muted;
+    }
+}
+
+
+
+
+
+
+
+// #待定 暂时先把 callout-editor-plugin 的style 放在这里

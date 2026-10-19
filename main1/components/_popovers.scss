@@ -8,7 +8,9 @@
 
 .popover.hover-popover {
     @include pop-in-anim;
-    border-radius: 20px;
+
+    border-radius: 40px;
+    corner-shape: squircle;
 
     /* Popovers - file previews */
     --popover-width: 450px;
@@ -26,28 +28,57 @@
     .markdown-preview-view .markdown-preview-view {--file-margins: 20px;}
 
 
-    .markdown-embed-link {border-radius: 20px; cursor: default;}
+    .markdown-embed-link {
+        border-radius: 99px; cursor: default;
+        inset: 8px 8px auto auto;
+        padding: 6px;
+    }
 
 
     // 增加一个背景板，用来区分 reading 和 editing 状态
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        height: 100%;
-        background-color: $background-secondary;
+    // &::before {
+    //     content: "";
+    //     position: absolute;
+    //     inset: 0;
+    //     height: 100%;
+    //     background-color: $background-secondary;
+    //     transition: height $anim-duration-slow ease;
+    // }
 
-        transition: height $anim-duration-slow ease;
-    }
-    &.is-editing::before {
-        inset: auto 0 0 0;
-        height: 0;
-    }
+    // &.is-editing::before {
+    //     inset: auto 0 0 0;
+    //     height: 0;
+    // }
 
-    // 增加切换状态时的动画
-    .markdown-embed-content.node-insert-event {
+    // // 增加切换状态时的动画
+    // .markdown-embed-content.node-insert-event {
+    //     animation: 
+    //         fade-in-partial $anim-duration-moderate ease-in;
+    // }
+
+
+    .markdown-source-view.is-live-preview {
         animation: 
-            fade-in-partial $anim-duration-moderate ease-in;
+            fade-in-partial $anim-duration-moderate linear none,
+            unblur $anim-duration-moderate ease none;
     }
-
 }
+
+
+
+.popover.hover-popover .markdown-embed[data-type="footnote"] {
+    --popover-width: 320px;
+
+    height: 80px;
+}
+
+
+// 淡化全局的背景 ===============================
+.app-container:has(~.popover) {
+    .horizontal-main-container {
+        opacity: 0.6;
+        transition: opacity $anim-duration-slow;
+    }
+}
+
+
