@@ -1,0 +1,108 @@
+
+
+@use '../../abstracts' as *;
+
+
+
+
+.workspace-split.mod-sidedock .workspace-tabs  {
+    .workspace-tab-header-container {
+        border: unset;
+        z-index: 1;
+        height: 35px;
+    }
+
+    .workspace-tab-header-container-inner {
+        corner-shape: unset;
+        border-radius: 99px;
+        background-color: $background-primary;
+        box-shadow: var(--shadow-s),  var(--shadow-glass-border);
+        z-index: 6; //让阴影露出来，避免被遮盖了
+        // 
+        padding: 3px;
+        gap: 3px;
+        width: 100%;
+    }
+
+    &.mod-top .workspace-tab-header-container-inner {
+        margin: 5px 6px 0 0;
+    }
+}
+
+
+
+
+// tab header ------------------------------------------------------------------------
+.workspace-split.mod-sidedock .workspace-tab-header-container {
+    .workspace-tab-header {
+        --icon-color-focused: #{$text-normal};
+        --tab-text-color-focused-active: #{$interactive-accent};
+
+        flex-grow: 1;
+
+        &:not(.is-active):hover {
+            box-shadow: unset;
+        }
+
+        &.is-active {
+            background-color: $background-modifier-hover;
+            border-radius: 99px;
+            corner-shape: unset;
+        }
+
+        &:active .workspace-tab-header-inner {background-color: $background-modifier-hover-strong;}
+    }
+
+    .workspace-tab-header-inner {
+        border-radius: 99px;
+        corner-shape: unset;
+
+        svg.svg-icon {color: $text-normal;}
+    }
+}
+
+
+
+
+
+
+// 当 sidebar tab header 行只有一个 header 的时候 ------------------------------------------
+.workspace-split.mod-sidedock .workspace-tabs+.workspace-tabs:has(>.workspace-tab-header-container>.workspace-tab-header-container-inner>.workspace-tab-header:only-child) {
+    .workspace-tab-header-container {
+        border-bottom: unset;
+        position: absolute;
+        background-color: unset;
+        z-index: 1;
+        width: auto;
+    }
+
+    .workspace-tab-header-inner {
+        --sidebar-tab-text-display: block;
+
+        gap: 6px;
+        color: $text-normal;
+    }
+
+    .nav-buttons-container {
+        justify-content: flex-end;
+    }
+
+    .workspace-tab-header.is-active {
+        background-color: unset;
+    }
+
+
+
+    // 其他补丁 -----------------
+    .workspace-leaf-content[data-type="markdown"] .cm-scroller,
+    .workspace-leaf-content[data-type="markdown"] .markdown-preview-view {
+        padding-top: calc( var(--header-height) + 8px);
+
+        .inline-title:not([data-level]) {display: none;}
+    }
+
+
+}
+
+
+

@@ -7,7 +7,8 @@ body {
   --font-smaller: #{$font-size-small};    //14
   --font-smallest: #{$font-size-smallest};    //12
   // 
-  --code-size: #{$code-size}
+  --code-size: #{$code-size};
+  --sidebar-markdown-font-size: #{$font-size-small};
 }
 
 
@@ -19,26 +20,3 @@ body {
 
 
 
-/* Links */
-body {
-
-//   --link-color: var(--text-accent);
-//   --link-color-hover: var(--text-accent-hover);
-  --link-decoration: none;
-
-//   --link-decoration-hover: underline;
-//   --link-decoration-thickness: auto;
-//   --link-weight: var(--font-weight);
-
-//   --link-external-color: var(--text-accent);
-//   --link-external-color-hover: var(--text-accent-hover);
-//   --link-external-decoration: underline;
-//   --link-external-decoration-hover: underline;
-//   --link-external-filter: none;
-
-//   --link-unresolved-color: var(--text-accent);
-//   --link-unresolved-opacity: 0.7;
-//   --link-unresolved-filter: none;
-//   --link-unresolved-decoration-style: solid;
-//   --link-unresolved-decoration-color: color-mix(in oklch, var(--interactive-accent) 30%, transparent);
-}

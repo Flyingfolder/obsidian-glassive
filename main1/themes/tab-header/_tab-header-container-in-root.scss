@@ -1,0 +1,83 @@
+
+
+@use '../../abstracts' as *;
+
+
+
+
+.workspace .mod-root .workspace-tab-header-inner::after, //纵向分割线
+.workspace-split.mod-root .workspace-tab-header-tab-list,
+.workspace-tab-header-container .workspace-tab-header::before,
+.workspace-tab-header-container .workspace-tab-header::after {
+    display: none;
+}
+
+
+
+
+
+.workspace-split.mod-root .workspace-tab-header-container {
+    --tab-background-active: transparent; //掌管tab-header（不是inner）的bg
+    --tab-inner-background-active: var(--card-background);
+    --tab-container-background: #{$background-primary};
+    --tab-outline-width: 0px;
+    
+    .workspace-tab-header {
+        corner-shape: unset;
+        box-shadow: unset;
+        padding: 0 4px 4px; //重新对齐icon
+        &:hover {box-shadow: unset;}
+    }
+
+
+    .workspace-tab-header-inner {
+        border-radius: 99px;
+        corner-shape: squircle;
+        transition: box-shadow $anim-duration-moderate;
+    }
+
+    // bg
+    .workspace-tab-header-inner {
+        background-color: $background-modifier-hover-exsubtle;
+        box-shadow: unset;
+    }
+
+    .workspace-tab-header.is-active .workspace-tab-header-inner {
+        background-color: var(--card-background);
+        box-shadow: var(--glass-shadow-inset-for-control), var(--shadow-card-mini);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// ==========================================================================================================================================================
+// basics 样式调整 ------------------------------------------------------------------------------------------------------------------------------------------------
+// ==========================================================================================================================================================
+
+.workspace-split.mod-root .workspace-tabs {
+    // 修改溢出的文字裁切方式
+    .workspace-tab-header-inner-title {text-overflow: clip;}
+
+    // 修改 add tab button
+    .workspace-tab-header-new-tab {margin-left: 0;}
+
+    // 保证阴影能溢出
+    .workspace-tab-header-container-inner {overflow: visible;}
+}
+
+
+// 补丁
+
+.mod-root .workspace-tabs.mod-top .view-header {
+    min-height: 35px;
+    display: flex;
+    flex-direction: row;
+}

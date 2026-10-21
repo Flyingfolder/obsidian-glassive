@@ -1,0 +1,14 @@
+
+
+@use '../../abstracts' as *;
+
+
+// bug 1
+.mod-macos.is-hidden-frameless:not(.is-popout-window, .is-mobile) .sidebar-toggle-button.mod-secondary {
+    --tab-container-background: #{$background-primary};
+}
+
+
+
+
+

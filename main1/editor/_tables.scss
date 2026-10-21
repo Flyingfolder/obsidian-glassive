@@ -60,19 +60,28 @@ body {
 .markdown-rendered th {
     border-left-width: 0;
     border-right-width: 0;
+    line-height: 20px;
 }
 
 .markdown-source-view.mod-cm6 .cm-table-widget {
+  --table-drag-handle-size: 16px;
+
+  padding-bottom: 8px;
     display: flex;
     justify-content: center;
     overflow: visible;
     z-index: 1;
     contain: unset !important;
 
+    .table-editor {
+      min-width: 320px;
+    }
+
 
     .table-cell-wrapper {
         padding: 8px;
     }
+
 }
 
 
@@ -110,7 +119,7 @@ body {
 
 .markdown-source-view.mod-cm6 .cm-table-widget {
     .table-wrapper {
-      padding-bottom: 40px;
+      padding-bottom: 32px;
     }
 
     .table-row-btn {

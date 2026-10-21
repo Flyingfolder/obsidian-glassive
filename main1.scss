@@ -32,6 +32,7 @@
 @use 'main1/editor/callouts';
 @use 'main1/editor/find-and-replace';
 @use 'main1/editor/tables';
+@use 'main1/editor/links';
 
 // // 5. Pages — 页面级样式
 @use 'main1/pages/base/base-menus';
@@ -74,8 +75,9 @@
 @use 'main1/themes/liquid-variables';
 @use 'main1/themes/accent-color';
 @use 'main1/themes/empty-search-result';
-@use 'main1/themes/tab-header-container-in-root';
-@use 'main1/themes/tab-header-container-in-sidebar';
+@use 'main1/themes/tab-header/tab-header-container-in-root';
+@use 'main1/themes/tab-header/tab-header-container-in-sidebar';
+@use 'main1/themes/tab-header/sidebar-toggle-button';
 
 // @use 'main1/themes/hide-properties-in-sidebar';
 // @use 'main1/themes/macos-close-button';
