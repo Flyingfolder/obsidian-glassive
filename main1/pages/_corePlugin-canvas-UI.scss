@@ -140,7 +140,7 @@
 
 
 // 中间的新增
-.canvas-card-menu {
+.canvas-wrapper .canvas-card-menu {
     inset: 8px auto auto auto;
     left: 50%;
     transform: translateX(-50%);
@@ -151,6 +151,7 @@
         @include liquid-toolbar-icon-button($is-grouped: true);
 
         cursor: default;
+        fill: unset !important;
 
         &:active {cursor: default;}
 
@@ -159,6 +160,11 @@
             filter: unset;
         }
 
+        svg {fill: transparent;}
+
     }
+
+
+
 }
 

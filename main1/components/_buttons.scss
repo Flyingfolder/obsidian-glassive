@@ -17,6 +17,10 @@ body {
 // select 选择项 ================================================================================================================
 
 
+.select, .combobox-button, .dropdown {
+    border-radius: 99px;
+    corner-shape: squircle;
+}
 
 // 有icon提示的选择项
 .setting-item-control select {
@@ -26,28 +30,16 @@ body {
 .dropdown {
     // width: auto;
     --dropdown-padding: 0 30px 0 var(--dropdown-padding-start);
-
-    field-sizing: content;
-    text-align: end;
-
     --input-height: 28px;
 
-    border-radius: 100px;
-    corner-shape: squircle;
-
+    // field-sizing: content;
+    text-align: end;
 
     // background-image: 
     //     url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23000%27 opacity=%270.9%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 %3E%3Cpath d=%27m7 15 5 5 5-5%27/%3E%3Cpath d=%27m7 9 5-5 5 5%27/%3E%3C/svg%3E"),
     //     radial-gradient(ellipse 12px 12px at calc(100% - 13px) center, var(--color-base-30) 10px, transparent 10px);
 
     // &:hover {background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%23000%27 opacity=%270.9%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 %3E%3Cpath d=%27m7 15 5 5 5-5%27/%3E%3Cpath d=%27m7 9 5-5 5 5%27/%3E%3C/svg%3E");}
-}
-
-
-
-.setting-item-control:has(>.dropdown:only-child) {
-    // width: 120px;
-    // min-width: max-content;
 }
 
 
@@ -60,7 +52,6 @@ body {
 // }
 
 button {
-    // padding: var(--size-4-1) var(--size-4-3);
     --input-height: 28px;
 
     border-radius: 99px;

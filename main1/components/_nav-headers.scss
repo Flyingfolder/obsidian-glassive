@@ -26,10 +26,21 @@
 // }
 
 .nav-header {
-  // display: flex;
-  // justify-content: center;
+  // 注意，当前是 display block
   padding: 6px 0;
   min-height: 40px;
+
+  // .nav-buttons-container:has(.nav-action-button[aria-label*="search" i])::before {
+  //   content: "";
+  //   display: block;
+  //   margin-right: auto;
+  //   width: 24px;
+  // }
+
+  .nav-action-button[aria-label*="search" i] {
+    order: 1;
+    // margin-left: auto;
+  }
 }
 
 // .nav-header .search-input-container {

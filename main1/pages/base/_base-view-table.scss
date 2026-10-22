@@ -50,7 +50,12 @@
         --bases-table-column-border-width: 1px;
 
         .bases-table-header {
-            align-items: center;
+            align-items: flex-start;
+        }
+
+        .bases-table-header-name {
+            text-transform: capitalize;
+            font-size: $font-ui-smaller;
         }
 
 
@@ -61,7 +66,7 @@
             &:not(:last-child)::after {
                 content: '';
                 position: absolute;
-                inset: 6px 0 6px auto;
+                inset: 0 0 6px auto;
                 width: 1px;
                 background-color: $background-modifier-seperator;
             }

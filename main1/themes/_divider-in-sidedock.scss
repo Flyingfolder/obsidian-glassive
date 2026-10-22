@@ -2,6 +2,9 @@
 @use '../abstracts' as *;
 
 
+body {
+    --tab-and-view-header--height: calc( var(--header-height) + 35px);
+}
 
 .workspace-split.mod-sidedock > * .workspace-leaf-resize-handle  {
     margin-left: 10px;
@@ -22,6 +25,8 @@
     border-bottom: 1px solid $background-modifier-seperator;
     min-height: var(--header-height);
     height: unset;
+
+    --file-header-font-size: #{$font-ui-smaller};
 }
 
 .workspace-ribbon.mod-primary {
@@ -49,7 +54,7 @@
     bottom: 0;
     // top: calc( var(--header-height) * 2);
     width: var(--divider-width-hover);
-    height: calc(var(--divider-vertical-height) - var(--header-height) * 2);
+    height: calc(var(--divider-vertical-height) - var(--tab-and-view-header--height));
 }
 
 
