@@ -1651,6 +1651,14 @@ body {
   padding-inline-start: 26px;
 }
 
+.bases-td[data-property="file.ext"],
+.bases-td[data-property="file.size"],
+.bases-td[data-property="file.path"],
+.bases-td[data-property="file.mtime"],
+.bases-td[data-property="file.ctime"] {
+  color: rgb(var(--mono-rgb-100), 55%);
+}
+
 .workspace-leaf-content[data-type="bases"] .bases-table .bases-tr {
   background-clip: padding-box;
   border-radius: 99px;
