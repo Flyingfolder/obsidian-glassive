@@ -3,75 +3,16 @@
 @use '../abstracts' as *; 
 
 
-// .canvas-controls {
-//     inset: unset;
-//     position: relative;
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     background-color: var(--background-primary);
-//     border-bottom: 1px solid $background-modifier-seperator;
-//     gap: unset;
-//     padding: 0 12px;
-//     height: var(--header-height);
-    
-
-
-//     .canvas-control-group {
-//         border-radius: unset;
-//         background-color: unset;
-//         border: unset;
-//         box-shadow: unset;
-//         display: flex;
-//         flex-direction: row;
-        
-//     }
-
-
-//     .canvas-control-item {        
-//         border: unset;
-//         color: var(--text-muted);
-//         padding: var(--size-2-2) var(--size-2-3);
-//         border-radius: $radius-s;
-
-//     }
-
-
-//     // 排序
-//     .canvas-control-group:has([aria-label="Canvas settings"]) {
-//         order: 1;
-//     }
-
-//     .canvas-control-group:has([aria-label="Undo"]) {
-//         order: -1;
-//     }
-
-//     .canvas-control-group:has([aria-label="Zoom in"]) {
-//         margin-left: auto;
-//         margin-right: auto;
-//     }
-// }
-
-
-
-
 
 .canvas-controls {
     // 这是整个容器，用来存放各个group
     inset: 0;
     position: absolute;
     display: flex;
-    align-items: center;
-    background-color: unset;
-    gap: unset;
 
     // 
-    // flex-direction: row; //?
     & {pointer-events: none;}
     &>* {pointer-events: auto;}
-
-    
-
 
     .canvas-control-group {
         border-radius: unset;
@@ -80,64 +21,28 @@
         box-shadow: unset;
         display: flex;
         flex-direction: row;
-        
-    }
-
-
-
-    // 排序
-    .canvas-control-group {
-        position: absolute;
-        box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-        overflow: visible;
-
-
-        &:has([aria-label="Canvas settings"]) {
-            inset: 8px 8px auto auto; //右上角
-        }
-
-        &:has([aria-label="Undo"]) {
-            inset: 8px auto auto 8px;
-        }
-
-        &:has([aria-label="Zoom in"]) {
-            inset: auto auto 8px 8px;
-        }
-
-        &:has([aria-label="Canvas help"]) {
-            inset: 8px 52px auto auto;
-        }
     }
 
 }
 
 
-.canvas-control-group:first-child,
-.canvas-control-group:last-child {
-    box-shadow: unset;
+
+// 排序
+.canvas-controls .canvas-control-group {
+    position: absolute;
+
+    &:has([aria-label="Canvas settings"]) {inset: 8px 8px auto auto;}
+
+    &:has([aria-label="Undo"]) {inset: 8px auto auto 8px;}
+
+    &:has([aria-label="Zoom in"]) {inset: auto auto 8px 8px;}
+
+    &:has([aria-label="Canvas help"]) {inset: 8px 52px auto auto;}
 }
 
-.canvas-control-group:nth-child(2),
-.canvas-control-group:nth-child(3) {
-    @include liquid-toolbar-icon-group;
+.canvas-controls .canvas-control-group {
+    @include liquid-toolbar-icon-group($auto-detect-only-child: true);
 }
-
-
-.canvas-control-item[aria-label="Zoom in"],
-.canvas-control-item[aria-label="Reset zoom"],
-.canvas-control-item[aria-label^="Zoom to fit"],
-.canvas-control-item[aria-label="Zoom out"],
-.canvas-control-item[aria-label="Undo"],
-.canvas-control-item[aria-label="Redo"] {
-    @include liquid-toolbar-icon-button($is-grouped: true);
-}
-
-.canvas-control-item[aria-label="Canvas help"],
-.canvas-control-item[aria-label="Canvas settings"] {
-    @include liquid-toolbar-icon-button();
-}
-
-
 
 // 中间的新增
 .canvas-wrapper .canvas-card-menu {
@@ -145,26 +50,26 @@
     left: 50%;
     transform: translateX(-50%);
 
-    @include liquid-toolbar-icon-group;
+    @include liquid-toolbar-icon-group($auto-detect-only-child: true);
 
     .canvas-card-menu-button.mod-draggable {
-        @include liquid-toolbar-icon-button($is-grouped: true);
-
-        cursor: default;
-        fill: unset !important;
-
-        &:active {cursor: default;}
+        & {cursor: default;}
+        &:hover {color: inherit;}
+        svg {fill: transparent;}
 
         &:hover svg {
             transform: unset;
             filter: unset;
         }
-
-        svg {fill: transparent;}
-
     }
-
-
-
 }
 
+
+
+
+
+// 点击某个卡片后弹出的 toolbar
+
+.canvas-menu-container .canvas-menu {
+    @include liquid-toolbar-icon-group($auto-detect-only-child: true);
+}

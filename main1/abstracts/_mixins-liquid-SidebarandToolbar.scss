@@ -156,9 +156,17 @@ $titlebar-height: 48px;
         .theme-light & {background: $background-modifier-hover-subtle;}
         .theme-dark  & {background-color: color-mix(in oklch, rgb(80 80 80) 80%, $interactive-accent) ;}
     }
+
+    svg.svg-icon {
+        --icon-size: 16px;
+        --icon-stroke: 1.75px;
+    }
 }
 
-@mixin liquid-toolbar-icon-group {
+
+
+
+@mixin liquid-toolbar-icon-group-old { //暂时废弃，不会自动检测子元素的数量
     // @include _liquid-toolbar-base();
     color: var(--mono-100);
     box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
@@ -183,6 +191,68 @@ $titlebar-height: 48px;
     corner-shape: unset;
     border-radius: 99px;
 }
+
+
+
+@mixin liquid-toolbar-icon-group($auto-detect-only-child: false) {
+    color: var(--mono-100);
+    box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+    border-radius: 99px;
+    corner-shape: unset;
+    background: var(--toolbar-controls-background);
+    backdrop-filter: var(--toolbar-controls-backdrop-filter);
+    // 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: $font-ui-small;
+    // 
+    border: unset;
+    padding: 4px;
+    margin: unset;
+    gap: 4px;
+    min-height: fit-content;
+    
+    svg.svg-icon {
+        --icon-size: 16px;
+        --icon-stroke: 1.75px;
+    }
+
+    @if $auto-detect-only-child {
+        &:has(>*:only-child) {padding: unset;}
+
+        &>* {
+            color: var(--mono-100);
+            border: unset;
+            padding: 4px;
+            margin: unset;
+            border-radius: 99px;
+            corner-shape: unset;
+            background: unset;
+            backdrop-filter: unset;
+            // 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            font-size: $font-ui-small;
+            line-height: 16px;
+            &:hover {background-color: $background-modifier-hover-subtle;}
+        }
+
+        &>*:only-child {
+            padding: 8px;
+        }
+    }
+
+    @else {
+        @content;
+    }
+
+}
+
 
 @mixin liquid-toolbar-icon-button($is-grouped: false) {
     @include _liquid-toolbar-base();

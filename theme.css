@@ -40,7 +40,7 @@
 
 @keyframes unblur {
   from {
-    filter: blur(8px);
+    filter: blur(6px);
   }
 
   to {
@@ -532,6 +532,11 @@ button.mod-destructive {
 
 .theme-dark .modal .modal-header-button:hover {
   background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
+}
+
+.modal .modal-header-button svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
 }
 
 .modal .modal-header-button .svg-icon {
@@ -1281,6 +1286,11 @@ body {
   background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
+.workspace-leaf-content[data-type="bases"] .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+}
+
 .workspace-leaf-content[data-type="bases"] .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button {
   padding: 0 12px;
   min-width: fit-content;
@@ -1851,9 +1861,6 @@ body {
   inset: 0;
   position: absolute;
   display: flex;
-  align-items: center;
-  background-color: unset;
-  gap: unset;
 }
 
 .canvas-controls {
@@ -1875,8 +1882,6 @@ body {
 
 .canvas-controls .canvas-control-group {
   position: absolute;
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-  overflow: visible;
 }
 
 .canvas-controls .canvas-control-group:has([aria-label="Canvas settings"]) {
@@ -1895,17 +1900,9 @@ body {
   inset: 8px 52px auto auto;
 }
 
-.canvas-control-group:first-child,
-.canvas-control-group:last-child {
-  box-shadow: unset;
-}
-
-.canvas-control-group:nth-child(2),
-.canvas-control-group:nth-child(3) {
+.canvas-controls .canvas-control-group {
   color: var(--mono-100);
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-  border: unset;
-  margin: unset;
   border-radius: 99px;
   corner-shape: unset;
   background: var(--toolbar-controls-background);
@@ -1915,96 +1912,35 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  overflow: hidden;
   font-size: 13px;
+  border: unset;
   padding: 4px;
   margin: unset;
-  border: unset;
-  gap: 3px;
+  gap: 4px;
   min-height: fit-content;
-  corner-shape: unset;
-  border-radius: 99px;
 }
 
-.canvas-control-item[aria-label="Zoom in"],
-.canvas-control-item[aria-label="Reset zoom"],
-.canvas-control-item[aria-label^="Zoom to fit"],
-.canvas-control-item[aria-label="Zoom out"],
-.canvas-control-item[aria-label="Undo"],
-.canvas-control-item[aria-label="Redo"] {
+.canvas-controls .canvas-control-group svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+}
+
+.canvas-controls .canvas-control-group:has(> *:only-child) {
+  padding: unset;
+}
+
+.canvas-controls .canvas-control-group > * {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
   border: unset;
+  padding: 4px;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  font-size: 13px;
-  line-height: 16px;
-}
-
-.theme-light .canvas-control-item[aria-label="Zoom in"]:hover,
-.theme-light .canvas-control-item[aria-label="Reset zoom"]:hover,
-.theme-light .canvas-control-item[aria-label^="Zoom to fit"]:hover,
-.theme-light .canvas-control-item[aria-label="Zoom out"]:hover,
-.theme-light .canvas-control-item[aria-label="Undo"]:hover,
-.theme-light .canvas-control-item[aria-label="Redo"]:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .canvas-control-item[aria-label="Zoom in"]:hover,
-.theme-dark .canvas-control-item[aria-label="Reset zoom"]:hover,
-.theme-dark .canvas-control-item[aria-label^="Zoom to fit"]:hover,
-.theme-dark .canvas-control-item[aria-label="Zoom out"]:hover,
-.theme-dark .canvas-control-item[aria-label="Undo"]:hover,
-.theme-dark .canvas-control-item[aria-label="Redo"]:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
-}
-
-.canvas-control-item[aria-label="Zoom in"] .svg-icon,
-.canvas-control-item[aria-label="Reset zoom"] .svg-icon,
-.canvas-control-item[aria-label^="Zoom to fit"] .svg-icon,
-.canvas-control-item[aria-label="Zoom out"] .svg-icon,
-.canvas-control-item[aria-label="Undo"] .svg-icon,
-.canvas-control-item[aria-label="Redo"] .svg-icon {
-  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
-
-  --icon-stroke: 1.8px;
-  --icon-size: 16px;
-}
-
-.canvas-control-item[aria-label="Zoom in"],
-.canvas-control-item[aria-label="Reset zoom"],
-.canvas-control-item[aria-label^="Zoom to fit"],
-.canvas-control-item[aria-label="Zoom out"],
-.canvas-control-item[aria-label="Undo"],
-.canvas-control-item[aria-label="Redo"] {
   background: unset;
   -webkit-backdrop-filter: unset;
           backdrop-filter: unset;
-  padding: 2px;
-  min-width: 24px;
-  min-height: 24px;
-  box-shadow: unset;
-}
-
-.canvas-control-item[aria-label="Canvas help"],
-.canvas-control-item[aria-label="Canvas settings"] {
-  color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-  border: unset;
-  margin: unset;
-  border-radius: 99px;
-  corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -2012,29 +1948,12 @@ body {
   line-height: 16px;
 }
 
-.theme-light .canvas-control-item[aria-label="Canvas help"]:hover,
-.theme-light .canvas-control-item[aria-label="Canvas settings"]:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
+.canvas-controls .canvas-control-group > *:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
 }
 
-.theme-dark .canvas-control-item[aria-label="Canvas help"]:hover,
-.theme-dark .canvas-control-item[aria-label="Canvas settings"]:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
-}
-
-.canvas-control-item[aria-label="Canvas help"] .svg-icon,
-.canvas-control-item[aria-label="Canvas settings"] .svg-icon {
-  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
-
-  --icon-stroke: 1.8px;
-  --icon-size: 16px;
-}
-
-.canvas-control-item[aria-label="Canvas help"],
-.canvas-control-item[aria-label="Canvas settings"] {
-  padding: 6px;
-  min-width: 32px;
-  min-height: 32px;
+.canvas-controls .canvas-control-group > *:only-child {
+  padding: 8px;
 }
 
 .canvas-wrapper .canvas-card-menu {
@@ -2043,8 +1962,6 @@ body {
   transform: translateX(-50%);
   color: var(--mono-100);
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-  border: unset;
-  margin: unset;
   border-radius: 99px;
   corner-shape: unset;
   background: var(--toolbar-controls-background);
@@ -2054,27 +1971,35 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  overflow: hidden;
   font-size: 13px;
+  border: unset;
   padding: 4px;
   margin: unset;
-  border: unset;
-  gap: 3px;
+  gap: 4px;
   min-height: fit-content;
-  corner-shape: unset;
-  border-radius: 99px;
 }
 
-.canvas-wrapper .canvas-card-menu .canvas-card-menu-button.mod-draggable {
+.canvas-wrapper .canvas-card-menu svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+}
+
+.canvas-wrapper .canvas-card-menu:has(> *:only-child) {
+  padding: unset;
+}
+
+.canvas-wrapper .canvas-card-menu > * {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
   border: unset;
+  padding: 4px;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: unset;
+  -webkit-backdrop-filter: unset;
+          backdrop-filter: unset;
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -2082,35 +2007,24 @@ body {
   line-height: 16px;
 }
 
-.theme-light .canvas-wrapper .canvas-card-menu .canvas-card-menu-button.mod-draggable:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
+.canvas-wrapper .canvas-card-menu > *:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
 }
 
-.theme-dark .canvas-wrapper .canvas-card-menu .canvas-card-menu-button.mod-draggable:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
-}
-
-.canvas-wrapper .canvas-card-menu .canvas-card-menu-button.mod-draggable .svg-icon {
-  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
-
-  --icon-stroke: 1.8px;
-  --icon-size: 16px;
+.canvas-wrapper .canvas-card-menu > *:only-child {
+  padding: 8px;
 }
 
 .canvas-wrapper .canvas-card-menu .canvas-card-menu-button.mod-draggable {
-  background: unset;
-  -webkit-backdrop-filter: unset;
-          backdrop-filter: unset;
-  padding: 2px;
-  min-width: 24px;
-  min-height: 24px;
-  box-shadow: unset;
   cursor: default;
-  fill: unset !important;
 }
 
-.canvas-wrapper .canvas-card-menu .canvas-card-menu-button.mod-draggable:active {
-  cursor: default;
+.canvas-wrapper .canvas-card-menu .canvas-card-menu-button.mod-draggable:hover {
+  color: inherit;
+}
+
+.canvas-wrapper .canvas-card-menu .canvas-card-menu-button.mod-draggable svg {
+  fill: transparent;
 }
 
 .canvas-wrapper .canvas-card-menu .canvas-card-menu-button.mod-draggable:hover svg {
@@ -2118,16 +2032,66 @@ body {
   filter: unset;
 }
 
-.canvas-wrapper .canvas-card-menu .canvas-card-menu-button.mod-draggable svg {
-  fill: transparent;
+.canvas-menu-container .canvas-menu {
+  color: var(--mono-100);
+  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--toolbar-controls-background);
+  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
+          backdrop-filter: var(--toolbar-controls-backdrop-filter);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 13px;
+  border: unset;
+  padding: 4px;
+  margin: unset;
+  gap: 4px;
+  min-height: fit-content;
+}
+
+.canvas-menu-container .canvas-menu svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+}
+
+.canvas-menu-container .canvas-menu:has(> *:only-child) {
+  padding: unset;
+}
+
+.canvas-menu-container .canvas-menu > * {
+  color: var(--mono-100);
+  border: unset;
+  padding: 4px;
+  margin: unset;
+  border-radius: 99px;
+  corner-shape: unset;
+  background: unset;
+  -webkit-backdrop-filter: unset;
+          backdrop-filter: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.canvas-menu-container .canvas-menu > *:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
+}
+
+.canvas-menu-container .canvas-menu > *:only-child {
+  padding: 8px;
 }
 
 .canvas-node-container {
   border-radius: 40px;
   corner-shape: squircle;
   animation: fade-in-partial var(--anim-duration-fast) ease-in forwards, scale-up var(--anim-duration-moderate) ease forwards;
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-  box-shadow: var(--shadow-glass-border);
   border-width: 0.5px;
 }
 
@@ -2139,8 +2103,9 @@ body {
   cursor: unset;
 }
 
-.canvas-node.is-focused.is-dragging .canvas-node-container {
-  box-shadow: unset;
+.canvas-wrapper:not(.mod-readonly) .canvas-node-container:active, .canvas-node.is-focused.is-dragging .canvas-node-container {
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-stationary), var(--shadow-border-accent);
 }
 
 .canvas-wrapper.is-dragging {
@@ -2270,6 +2235,11 @@ body {
   background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
+.sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+}
+
 .sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle {
   padding: 0 12px;
   height: 32px;
@@ -2315,8 +2285,6 @@ body {
 .modal.callout-editor-modal .titlebar-control-group {
   color: var(--mono-100);
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
-  border: unset;
-  margin: unset;
   border-radius: 99px;
   corner-shape: unset;
   background: var(--toolbar-controls-background);
@@ -2326,14 +2294,18 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  overflow: hidden;
   font-size: 13px;
+  border: unset;
   padding: 4px;
   margin: unset;
-  border: unset;
-  gap: 3px;
+  gap: 4px;
   min-height: fit-content;
-  corner-shape: unset;
-  border-radius: 99px;
+}
+
+.modal.callout-editor-modal .titlebar-control-group svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
 }
 
 .modal.callout-editor-modal .titlebar-control-group .clickable-icon {
@@ -2360,6 +2332,11 @@ body {
 
 .theme-dark .modal.callout-editor-modal .titlebar-control-group .clickable-icon:hover {
   background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
+}
+
+.modal.callout-editor-modal .titlebar-control-group .clickable-icon svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
 }
 
 .modal.callout-editor-modal .titlebar-control-group .clickable-icon .svg-icon {
@@ -2403,6 +2380,11 @@ body {
 
 .theme-dark .modal.callout-editor-modal .mod-callout-type > button:hover {
   background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
+}
+
+.modal.callout-editor-modal .mod-callout-type > button svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
 }
 
 .modal.callout-editor-modal .mod-callout-type > button {
@@ -2758,20 +2740,24 @@ hr:has(+ .cmdr-sep-con.callout) {
   flex-direction: row;
 }
 
-.markdown-preview-view.markdown-rendered {
+.workspace-leaf-content[data-type="markdown"] .markdown-preview-view.markdown-rendered {
   animation: move-up-far var(--anim-duration-slow) ease, fade-in var(--anim-duration-slow) ease-in;
 }
 
-.markdown-preview-view.markdown-rendered.is-readable-line-width {
+.workspace-leaf-content[data-type="markdown"] .markdown-preview-view.markdown-rendered.is-readable-line-width {
   padding-top: 80px;
 }
 
-.markdown-preview-view.markdown-rendered.is-readable-line-width .markdown-preview-sizer.markdown-preview-section {
+.workspace-leaf-content[data-type="markdown"] .markdown-preview-view.markdown-rendered.is-readable-line-width .markdown-preview-sizer.markdown-preview-section {
   box-shadow: var(--shadow-card-mini);
   padding: 60px;
   max-width: 860px;
   border-radius: 80px;
   corner-shape: squircle;
+}
+
+.markdown-preview-view.markdown-rendered {
+  animation: unblur var(--anim-duration-moderate), fade-in-partial var(--anim-duration-slow) ease-in;
 }
 
 .search-row {
@@ -3020,6 +3006,11 @@ hr:has(+ .cmdr-sep-con.callout) {
   background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
+.setting-page-titlebar .setting-page-back-button svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+}
+
 .setting-page-titlebar .setting-page-back-button .svg-icon {
   filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
 
@@ -3076,6 +3067,11 @@ hr:has(+ .cmdr-sep-con.callout) {
   background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
+.modal-setting-titlebar > button svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+}
+
 .modal-setting-titlebar > button {
   padding: 0 12px;
   min-width: fit-content;
@@ -3106,6 +3102,11 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .theme-dark .modal-setting-titlebar > button.clickable-icon:hover {
   background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
+}
+
+.modal-setting-titlebar > button.clickable-icon svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
 }
 
 .modal-setting-titlebar > button.clickable-icon .svg-icon {
@@ -3191,6 +3192,11 @@ hr:has(+ .cmdr-sep-con.callout) {
   background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
+.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+}
+
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container {
   --input-height: 32px;
   --input-border-width: 0;
@@ -3231,6 +3237,11 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .theme-dark .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon:hover {
   background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
+}
+
+.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
 }
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon .svg-icon {
@@ -3275,6 +3286,11 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .theme-dark .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle:hover {
   background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
+}
+
+.modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
 }
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle {

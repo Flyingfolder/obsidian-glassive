@@ -11,14 +11,19 @@
     animation:
         fade-in-partial $anim-duration-fast ease-in forwards,
         scale-up $anim-duration-moderate ease forwards;
-    box-shadow: var(--shadow-card-mini), var(--shadow-glass-border); //待定。阴影和边框暂时不确定
-    box-shadow:  var(--shadow-glass-border);
+    // box-shadow: var(--shadow-card-mini), var(--shadow-glass-border); //待定。阴影和边框暂时不确定
+    // box-shadow:  var(--shadow-glass-border);
     border-width: 0.5px;
 
     // cursor
     .canvas-wrapper:not(.mod-readonly) .canvas-node:not(.is-editing) &:active {cursor: unset;}
     .canvas-wrapper:not(.mod-readonly) .canvas-node:not(.is-editing) & {cursor: unset;}
-    .canvas-node.is-focused.is-dragging & {box-shadow: unset;}
+
+    .canvas-wrapper:not(.mod-readonly) &:active,
+    .canvas-node.is-focused.is-dragging & {
+        border-color: var(--color-accent);
+        box-shadow: var(--shadow-stationary), var(--shadow-border-accent);
+    }
 }
 
 

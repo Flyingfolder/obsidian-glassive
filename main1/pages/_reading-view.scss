@@ -4,7 +4,7 @@
 @use '../abstracts' as *;
 
 
-.markdown-preview-view.markdown-rendered {
+.workspace-leaf-content[data-type="markdown"] .markdown-preview-view.markdown-rendered {
     animation: 
         move-up-far $anim-duration-slow ease,
         fade-in $anim-duration-slow ease-in;
@@ -21,4 +21,11 @@
             corner-shape: squircle;
         }
     }
+}
+
+
+.markdown-preview-view.markdown-rendered {
+    animation: 
+        unblur $anim-duration-moderate,
+        fade-in-partial $anim-duration-slow ease-in;
 }
