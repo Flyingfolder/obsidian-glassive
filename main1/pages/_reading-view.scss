@@ -19,6 +19,10 @@
             max-width: 860px;
             border-radius: 80px;
             corner-shape: squircle;
+
+            .theme-dark & {
+                background-color: var(--color-base-30);
+            }
         }
     }
 }
@@ -26,6 +30,5 @@
 
 .markdown-preview-view.markdown-rendered {
     animation: 
-        unblur $anim-duration-moderate,
-        fade-in-partial $anim-duration-slow ease-in;
+        fade-in-partial $anim-duration-fast ease-in;
 }

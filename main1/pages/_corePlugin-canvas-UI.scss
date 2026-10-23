@@ -31,17 +31,17 @@
 .canvas-controls .canvas-control-group {
     position: absolute;
 
-    &:has([aria-label="Canvas settings"]) {inset: 8px 8px auto auto;}
+    &:has([aria-label="Canvas settings"]) {inset: 8px 52px auto auto;}
 
     &:has([aria-label="Undo"]) {inset: 8px auto auto 8px;}
 
     &:has([aria-label="Zoom in"]) {inset: auto auto 8px 8px;}
 
-    &:has([aria-label="Canvas help"]) {inset: 8px 52px auto auto;}
+    &:has([aria-label="Canvas help"]) {inset: 8px 8px auto auto;}
 }
 
 .canvas-controls .canvas-control-group {
-    @include liquid-toolbar-icon-group($auto-detect-only-child: true);
+    @include liquid-toolbar-icon-group($auto-detect-only-child: true, $button-type: div);
 }
 
 // 中间的新增
@@ -50,7 +50,7 @@
     left: 50%;
     transform: translateX(-50%);
 
-    @include liquid-toolbar-icon-group($auto-detect-only-child: true);
+    @include liquid-toolbar-icon-group($auto-detect-only-child: true, $button-type: div);
 
     .canvas-card-menu-button.mod-draggable {
         & {cursor: default;}
@@ -68,8 +68,22 @@
 
 
 
-// 点击某个卡片后弹出的 toolbar
+// 点击某个卡片后弹出的 toolbar --------------------------------------------------------------------------------
 
-.canvas-menu-container .canvas-menu {
-    @include liquid-toolbar-icon-group($auto-detect-only-child: true);
+.canvas-menu-container :is(.canvas-menu, .canvas-submenu) {
+    @include liquid-toolbar-icon-group($auto-detect-only-child: true, $button-type: button);
+    @include pop-in-anim;
 }
+
+
+
+// canvas help modal --------------------------------------------------------------------------------
+
+.modal.mod-canvas-help {
+    max-width: 420px;
+
+    .canvas-help {gap: 6px;}
+    .canvas-instruction {font-size: $font-ui-small;}
+}
+
+

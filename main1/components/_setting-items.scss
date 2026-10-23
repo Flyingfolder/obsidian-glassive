@@ -6,7 +6,6 @@
 
 
 .modal:not(.mod-settings) {
-
     .setting-item:not(.setting-item-heading) {
         border-color: $background-modifier-border-subtle;
 
@@ -45,16 +44,21 @@
         padding-bottom: 6px;
     }
 }
-.setting-group {
 
+.setting-group {
     .setting-item:not(.setting-item-heading) {
         --setting-items-padding-x: 16px;
         --setting-items-padding-y: 8px;
     }
 
     .setting-items {
-        padding: 4px 0;
         --setting-items-radius: 40px;
+
+        corner-shape: squircle;
+        padding: 4px 0;
+    }
+
+    .setting-item {
         corner-shape: squircle;
     }
 

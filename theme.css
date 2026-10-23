@@ -19,12 +19,16 @@
 
 /* Text */
 @keyframes fade-in {
-  from {
+  0% {
     opacity: 0;
   }
 
-  to {
+  99% {
     opacity: 1;
+  }
+
+  100% {
+    opacity: unset;
   }
 }
 
@@ -818,10 +822,13 @@ input.prompt-input:focus-visible {
 }
 
 .setting-group .setting-items {
-  padding: 4px 0;
-
   --setting-items-radius: 40px;
 
+  corner-shape: squircle;
+  padding: 4px 0;
+}
+
+.setting-group .setting-item {
   corner-shape: squircle;
 }
 
@@ -1885,7 +1892,7 @@ body {
 }
 
 .canvas-controls .canvas-control-group:has([aria-label="Canvas settings"]) {
-  inset: 8px 8px auto auto;
+  inset: 8px 52px auto auto;
 }
 
 .canvas-controls .canvas-control-group:has([aria-label="Undo"]) {
@@ -1897,7 +1904,7 @@ body {
 }
 
 .canvas-controls .canvas-control-group:has([aria-label="Canvas help"]) {
-  inset: 8px 52px auto auto;
+  inset: 8px 8px auto auto;
 }
 
 .canvas-controls .canvas-control-group {
@@ -1912,7 +1919,6 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  overflow: hidden;
   font-size: 13px;
   border: unset;
   padding: 4px;
@@ -1930,7 +1936,7 @@ body {
   padding: unset;
 }
 
-.canvas-controls .canvas-control-group > * {
+.canvas-controls .canvas-control-group > div {
   color: var(--mono-100);
   border: unset;
   padding: 4px;
@@ -1948,11 +1954,11 @@ body {
   line-height: 16px;
 }
 
-.canvas-controls .canvas-control-group > *:hover {
+.canvas-controls .canvas-control-group > div:hover {
   background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
 }
 
-.canvas-controls .canvas-control-group > *:only-child {
+.canvas-controls .canvas-control-group > div:only-child {
   padding: 8px;
 }
 
@@ -1971,7 +1977,6 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  overflow: hidden;
   font-size: 13px;
   border: unset;
   padding: 4px;
@@ -1989,7 +1994,7 @@ body {
   padding: unset;
 }
 
-.canvas-wrapper .canvas-card-menu > * {
+.canvas-wrapper .canvas-card-menu > div {
   color: var(--mono-100);
   border: unset;
   padding: 4px;
@@ -2007,11 +2012,11 @@ body {
   line-height: 16px;
 }
 
-.canvas-wrapper .canvas-card-menu > *:hover {
+.canvas-wrapper .canvas-card-menu > div:hover {
   background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
 }
 
-.canvas-wrapper .canvas-card-menu > *:only-child {
+.canvas-wrapper .canvas-card-menu > div:only-child {
   padding: 8px;
 }
 
@@ -2032,7 +2037,7 @@ body {
   filter: unset;
 }
 
-.canvas-menu-container .canvas-menu {
+.canvas-menu-container :is(.canvas-menu, .canvas-submenu) {
   color: var(--mono-100);
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
   border-radius: 99px;
@@ -2044,7 +2049,6 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  overflow: hidden;
   font-size: 13px;
   border: unset;
   padding: 4px;
@@ -2053,16 +2057,16 @@ body {
   min-height: fit-content;
 }
 
-.canvas-menu-container .canvas-menu svg.svg-icon {
+.canvas-menu-container :is(.canvas-menu, .canvas-submenu) svg.svg-icon {
   --icon-size: 16px;
   --icon-stroke: 1.75px;
 }
 
-.canvas-menu-container .canvas-menu:has(> *:only-child) {
+.canvas-menu-container :is(.canvas-menu, .canvas-submenu):has(> *:only-child) {
   padding: unset;
 }
 
-.canvas-menu-container .canvas-menu > * {
+.canvas-menu-container :is(.canvas-menu, .canvas-submenu) > button {
   color: var(--mono-100);
   border: unset;
   padding: 4px;
@@ -2080,12 +2084,29 @@ body {
   line-height: 16px;
 }
 
-.canvas-menu-container .canvas-menu > *:hover {
+.canvas-menu-container :is(.canvas-menu, .canvas-submenu) > button:hover {
   background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
 }
 
-.canvas-menu-container .canvas-menu > *:only-child {
+.canvas-menu-container :is(.canvas-menu, .canvas-submenu) > button:only-child {
   padding: 8px;
+}
+
+.canvas-menu-container :is(.canvas-menu, .canvas-submenu) {
+  transform-origin: 50% -20%;
+  animation: fade-in var(--anim-duration-moderate) ease-out backwards, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) backwards;
+}
+
+.modal.mod-canvas-help {
+  max-width: 420px;
+}
+
+.modal.mod-canvas-help .canvas-help {
+  gap: 6px;
+}
+
+.modal.mod-canvas-help .canvas-instruction {
+  font-size: 13px;
 }
 
 .canvas-node-container {
@@ -2294,7 +2315,6 @@ body {
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  overflow: hidden;
   font-size: 13px;
   border: unset;
   padding: 4px;
@@ -2756,8 +2776,12 @@ hr:has(+ .cmdr-sep-con.callout) {
   corner-shape: squircle;
 }
 
+.theme-dark .workspace-leaf-content[data-type="markdown"] .markdown-preview-view.markdown-rendered.is-readable-line-width .markdown-preview-sizer.markdown-preview-section {
+  background-color: var(--color-base-30);
+}
+
 .markdown-preview-view.markdown-rendered {
-  animation: unblur var(--anim-duration-moderate), fade-in-partial var(--anim-duration-slow) ease-in;
+  animation: fade-in-partial var(--anim-duration-fast) ease-in;
 }
 
 .search-row {
@@ -3502,8 +3526,8 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .is-focused.theme-light {
   --liquid-sidebar-border-color: transparent;
-  --toolbar-controls-background: linear-gradient(rgb(255 255 255 / 30%), rgb(255 255 255 / 10%)), rgb(255 255 255 / 10%);
-  --toolbar-controls-backdrop-filter: blur(2px) brightness(1.03);
+  --toolbar-controls-background: linear-gradient(rgb(255 255 255 / 50%), rgb(255 255 255 / 20%)), rgb(255 255 255 / 20%);
+  --toolbar-controls-backdrop-filter: blur(2px) brightness(1.08);
   --liquid-modal-background-image: none;
 }
 
@@ -3566,13 +3590,13 @@ body {
     inset -10px 0 10px rgb(0 0 0 / 6%); /* 右 */
 
   --shadow-glass-border:
-      inset 0 2px 2px rgb(255 255 255 / 55%), /* 顶 */
-      inset 0 -2px 2px rgb(255 255 255 / 55%), /* 底 */
+      inset 0 2px 2px rgb(255 255 255 / 80%), /* 顶 */
+      inset 0 -2px 2px rgb(255 255 255 / 80%), /* 底 */
 
       inset .5px 0 .5px rgb(0 0 0 / 25%), /* 左 */
       inset -.5px 0 .5px rgb(0 0 0 / 25%), /* 右 */
-      inset 1px 0 1px rgb(0 0 0 / 10%), /* 左 */
-      inset -1px 0 1px rgb(0 0 0 / 10%); /* 右 */
+      inset 1px 0 1px rgb(0 0 0 / 20%), /* 左 */
+      inset -1px 0 1px rgb(0 0 0 / 20%); /* 右 */
 
   --shadow-glass-border-tilted:
     inset .5px 0 .5px rgb(255 255 255 / 70%), /* 左 - 白 (提亮透明度，增强高光) */
@@ -3940,7 +3964,7 @@ body {
 .workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header-container-inner {
   corner-shape: unset;
   border-radius: 99px;
-  background-color: var(--background-primary);
+  background: var(--toolbar-controls-background);
   box-shadow: var(--shadow-s), var(--shadow-glass-border);
   z-index: 6;
   padding: 3px;

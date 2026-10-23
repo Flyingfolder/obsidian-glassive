@@ -194,7 +194,7 @@ $titlebar-height: 48px;
 
 
 
-@mixin liquid-toolbar-icon-group($auto-detect-only-child: false) {
+@mixin liquid-toolbar-icon-group($auto-detect-only-child: false, $button-type: div) {
     color: var(--mono-100);
     box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
     border-radius: 99px;
@@ -206,7 +206,6 @@ $titlebar-height: 48px;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    overflow: hidden;
     font-size: $font-ui-small;
     // 
     border: unset;
@@ -223,7 +222,7 @@ $titlebar-height: 48px;
     @if $auto-detect-only-child {
         &:has(>*:only-child) {padding: unset;}
 
-        &>* {
+        &>#{$button-type} {
             color: var(--mono-100);
             border: unset;
             padding: 4px;
@@ -242,7 +241,7 @@ $titlebar-height: 48px;
             &:hover {background-color: $background-modifier-hover-subtle;}
         }
 
-        &>*:only-child {
+        &>#{$button-type}:only-child {
             padding: 8px;
         }
     }
