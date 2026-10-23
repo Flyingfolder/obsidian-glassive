@@ -35,6 +35,7 @@
 @use 'main1/editor/links';
 
 // // 5. Pages — 页面级样式
+@use 'main1/pages/base/base-toolbar-buttons';
 @use 'main1/pages/base/base-menus';
 @use 'main1/pages/base/base-menu-actions';
 @use 'main1/pages/base/base-menus-layout';
@@ -50,6 +51,7 @@
 @use 'main1/pages/plugin-commander';
 @use 'main1/pages/detailed-pages/commander-macros';
 @use 'main1/pages/plugin-style-settings';
+@use 'main1/pages/reading-view';
 @use 'main1/pages/search-global';
 @use 'main1/pages/empty-tab';
 

@@ -19,6 +19,7 @@
         opacity: 1;
     }
 
+    &:has(.has-active-menu),
     &:hover {
         .bases-toolbar-item {opacity: 1;}
         .embed-action       {opacity: 1;}

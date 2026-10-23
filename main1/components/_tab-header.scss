@@ -3,6 +3,20 @@
 
 @use '../abstracts' as *; 
 
+.theme-light {
+    --top-header-bg: rgb(252 252 252);
+}
+
+.theme-dark {
+    --top-header-bg: var(--background-primary);
+}
+
+.is-focused .workspace-leaf.mod-active .view-header,
+.mod-macos.is-hidden-frameless:not(.is-popout-window, .is-mobile) .sidebar-toggle-button.mod-secondary,
+.workspace-tab-header-container {
+    background-color: var(--top-header-bg);
+}
+
 
 
 

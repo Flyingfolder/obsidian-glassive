@@ -1,0 +1,58 @@
+
+
+@use '../../abstracts' as *;
+
+
+
+
+
+.workspace-leaf-content[data-type="bases"]{
+    .bases-header {
+        z-index: 6;
+        padding: 8px;
+        height: auto;
+        min-height: fit-content;
+
+        .bases-toolbar {
+            gap: 8px;
+        }
+    }
+
+
+    .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button {
+        @include liquid-toolbar-text-button;
+
+        padding: 0 8px 0 4px;
+
+        --icon-color-hover: var(--text-normal);
+
+        &.has-active-menu {
+            background-color: $background-modifier-hover-subtle;
+        }
+
+        .text-button-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 99px;
+        }
+
+        &.is-active .text-button-icon{
+            background-color: $interactive-accent;
+            color: white;
+        }
+    }
+
+    .bases-toolbar .bases-toolbar-result-count,
+    .bases-toolbar .bases-toolbar-item.bases-toolbar-views-menu {
+        overflow: visible;
+    }
+
+}
+
+
+.bases-search-row {
+    border: unset;
+    padding-top: unset;
+}
+
+

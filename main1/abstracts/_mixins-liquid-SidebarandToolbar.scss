@@ -150,6 +150,7 @@ $titlebar-height: 48px;
     justify-content: center;
     box-sizing: border-box;
     font-size: $font-ui-small;
+    line-height: 16px;
 
     &:hover {
         .theme-light & {background: $background-modifier-hover-subtle;}

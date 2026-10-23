@@ -83,6 +83,18 @@
 
     
 
+    .filter-rhs-container.metadata-property-value {
+        --input-height: #{$control-height-m};
+        --input-border-width-focus: 2px;
+
+        box-shadow: 0 0 0 1px var(--background-modifier-border);
+        border-radius: 99px;
+        corner-shape: squircle;
+
+        &:focus-within {
+            animation: input-box-shadow-appear $anim-duration-moderate ease none;
+            box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);}
+    }
     .filter-rhs-container {@include input-search-s;}
 
 } 

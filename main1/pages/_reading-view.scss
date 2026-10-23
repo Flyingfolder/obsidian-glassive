@@ -1,0 +1,24 @@
+
+
+
+@use '../abstracts' as *;
+
+
+.markdown-preview-view.markdown-rendered {
+    animation: 
+        move-up-far $anim-duration-slow ease,
+        fade-in $anim-duration-slow ease-in;
+
+
+    &.is-readable-line-width {
+        padding-top: 80px;
+
+        .markdown-preview-sizer.markdown-preview-section {
+            box-shadow: var(--shadow-card-mini);
+            padding: 60px;
+            max-width: 860px;
+            border-radius: 80px;
+            corner-shape: squircle;
+        }
+    }
+}
