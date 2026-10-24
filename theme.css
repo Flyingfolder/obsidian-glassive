@@ -2825,6 +2825,37 @@ hr:has(+ .cmdr-sep-con.callout) {
   background-color: unset;
 }
 
+.search-result-container.mod-global-search .tree-item-self.search-result-file-title {
+  pointer-events: none;
+}
+
+.search-result-container.mod-global-search .tree-item-self.search-result-file-title > * {
+  pointer-events: all;
+}
+
+.search-result-container.mod-global-search .tree-item-self.search-result-file-title:hover {
+  background-color: unset;
+}
+
+.search-result-container.mod-global-search .tree-item-self.search-result-file-title .tree-item-inner {
+  color: var(--link-color);
+  cursor: pointer;
+}
+
+.search-result-container.mod-global-search .tree-item-self.search-result-file-title .tree-item-icon.collapse-icon:hover svg.svg-icon {
+  color: var(--color-base-100);
+}
+
+.search-result-container.mod-global-search .tree-item-self.search-result-file-title .tree-item-flair-outer .tree-item-flair {
+  color: rgb(var(--mono-rgb-100), 25%);
+}
+
+.search-result-file-matches {
+  border-radius: 24px;
+  corner-shape: squircle;
+  color: var(--color-base-100);
+}
+
 .empty-state-container .empty-state-title::before {
   content: "";
   display: block;
