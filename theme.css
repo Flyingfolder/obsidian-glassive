@@ -1315,9 +1315,10 @@ body {
   padding: 0 12px;
   min-width: fit-content;
   min-height: 32px;
-  padding: 0 8px 0 4px;
 
   --icon-color-hover: var(--text-normal);
+
+  padding: 0 4px;
 }
 
 .workspace-leaf-content[data-type="bases"] .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button.has-active-menu {
@@ -2825,12 +2826,12 @@ hr:has(+ .cmdr-sep-con.callout) {
   background-color: unset;
 }
 
-.search-result-container.mod-global-search .tree-item-self.search-result-file-title {
-  pointer-events: none;
-}
-
 .search-result-container.mod-global-search .tree-item-self.search-result-file-title > * {
   pointer-events: all;
+}
+
+.search-result-container.mod-global-search .tree-item-self.search-result-file-title {
+  pointer-events: none;
 }
 
 .search-result-container.mod-global-search .tree-item-self.search-result-file-title:hover {

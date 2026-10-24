@@ -22,9 +22,9 @@
     .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button {
         @include liquid-toolbar-text-button;
 
-        padding: 0 8px 0 4px;
-
         --icon-color-hover: var(--text-normal);
+
+        padding: 0 4px;
 
         &.has-active-menu {
             background-color: $background-modifier-hover-subtle;
