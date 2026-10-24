@@ -64,9 +64,9 @@ body {
 }
 
 .markdown-source-view.mod-cm6 .cm-table-widget {
-  --table-drag-handle-size: 16px;
+    --table-drag-handle-size: 16px;
 
-  padding-bottom: 8px;
+
     display: flex;
     justify-content: center;
     overflow: visible;
@@ -77,10 +77,6 @@ body {
       min-width: 320px;
     }
 
-
-    .table-cell-wrapper {
-        padding: 8px;
-    }
 
 }
 
@@ -104,8 +100,47 @@ body {
 
 .table-cell-wrapper {
     align-content: center;
+    padding: 8px;
 }
 
+// td:not(.is-selected):has(.is-live-preview)::after {
+//       background-color: red;
+//       background-color: var(--table-selection);
+//       border-radius: (--table-selection-border-radius);
+
+// }
+
+// td .table-cell-wrapper::after {
+//   display: block;
+//   width: 100%;
+//   height: 100%;
+//   background-color: red !important;
+// }
+
+.markdown-source-view.mod-cm6 .cm-table-widget:active :is(th, td):not(.is-selected):active::after,
+.markdown-source-view.mod-cm6 .cm-table-widget :is(th, td):has(.is-live-preview):not(.is-selected)::after {
+  pointer-events: none;
+  content: "";
+  display: block;
+  position: absolute;
+  inset: calc( var(--table-selection-border-width) * -1);
+  border: var(--table-selection-border-width) solid var(--table-selection-border-color);
+  border-radius: var(--table-selection-border-radius);
+  // background-color: var(--table-selection);
+  mix-blend-mode: var(--table-selection-blend-mode);
+  z-index: 1;
+}
+
+
+.markdown-source-view.mod-cm6 .cm-table-widget:active :is(th, td):has(.is-live-preview):not(.is-selected)::after {
+  display: none;
+}
+
+
+// .markdown-source-view.mod-cm6 .cm-table-widget th.is-selected.bottom.start::after,
+// .markdown-source-view.mod-cm6 .cm-table-widget td.is-selected.bottom.start::after {
+//   border-end-start-radius: var(--table-selection-border-radius);
+// }
 
 
 .callout-content table {
@@ -119,7 +154,7 @@ body {
 
 .markdown-source-view.mod-cm6 .cm-table-widget {
     .table-wrapper {
-      padding-bottom: 32px;
+      padding-bottom: 28px;
     }
 
     .table-row-btn {

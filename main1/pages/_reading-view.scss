@@ -11,7 +11,7 @@
 
 
     &.is-readable-line-width {
-        padding-top: 80px;
+        padding-top: 40px;
 
         .markdown-preview-sizer.markdown-preview-section {
             box-shadow: var(--shadow-card-mini);
@@ -20,9 +20,7 @@
             border-radius: 80px;
             corner-shape: squircle;
 
-            .theme-dark & {
-                background-color: var(--color-base-30);
-            }
+            .theme-dark & {background-color: var(--color-base-30);}
         }
     }
 }

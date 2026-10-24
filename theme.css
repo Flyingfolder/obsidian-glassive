@@ -1166,7 +1166,6 @@ body {
 .markdown-source-view.mod-cm6 .cm-table-widget {
   --table-drag-handle-size: 16px;
 
-  padding-bottom: 8px;
   display: flex;
   justify-content: center;
   overflow: visible;
@@ -1176,10 +1175,6 @@ body {
 
 .markdown-source-view.mod-cm6 .cm-table-widget .table-editor {
   min-width: 320px;
-}
-
-.markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper {
-  padding: 8px;
 }
 
 .markdown-source-view.mod-cm6 .cm-content > .cm-table-widget[contenteditable="false"] {
@@ -1194,6 +1189,24 @@ body {
 
 .table-cell-wrapper {
   align-content: center;
+  padding: 8px;
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget:active :is(th, td):not(.is-selected):active::after,
+.markdown-source-view.mod-cm6 .cm-table-widget :is(th, td):has(.is-live-preview):not(.is-selected)::after {
+  pointer-events: none;
+  content: "";
+  display: block;
+  position: absolute;
+  inset: calc(var(--table-selection-border-width) * -1);
+  border: var(--table-selection-border-width) solid var(--table-selection-border-color);
+  border-radius: var(--table-selection-border-radius);
+  mix-blend-mode: var(--table-selection-blend-mode);
+  z-index: 1;
+}
+
+.markdown-source-view.mod-cm6 .cm-table-widget:active :is(th, td):has(.is-live-preview):not(.is-selected)::after {
+  display: none;
 }
 
 .callout-content table {
@@ -1201,7 +1214,7 @@ body {
 }
 
 .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper {
-  padding-bottom: 32px;
+  padding-bottom: 28px;
 }
 
 .markdown-source-view.mod-cm6 .cm-table-widget .table-row-btn {
@@ -2765,7 +2778,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 .workspace-leaf-content[data-type="markdown"] .markdown-preview-view.markdown-rendered.is-readable-line-width {
-  padding-top: 80px;
+  padding-top: 40px;
 }
 
 .workspace-leaf-content[data-type="markdown"] .markdown-preview-view.markdown-rendered.is-readable-line-width .markdown-preview-sizer.markdown-preview-section {
