@@ -22,6 +22,8 @@
     .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button {
         @include liquid-toolbar-text-button;
 
+        // gap: 3px;
+
         --icon-color-hover: var(--text-normal);
 
         padding: 0 4px;
@@ -34,6 +36,10 @@
             width: 24px;
             height: 24px;
             border-radius: 99px;
+        }
+
+        .text-button-label {
+            padding-right: 4px;
         }
 
         &.is-active .text-button-icon{
@@ -56,3 +62,27 @@
 }
 
 
+
+
+
+
+.workspace-leaf-content[data-type="bases"] .bases-header:has(~[data-view-type="cards"]),
+.workspace-leaf-content[data-type="bases"] .bases-header:has(~[data-view-type="list"]) {
+    border: unset;
+    position: absolute;
+    align-items: flex-start;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(
+        color-mix(in oklch, $background-primary 80%, transparent) 0, 
+        color-mix(in oklch, $background-primary 50%, transparent) 70%, 
+        transparent);
+
+    &~.bases-view {
+        padding-top: 48px;
+    }
+}
+
+.workspace-leaf-content[data-type="bases"] .bases-header:has(~[data-view-type="kanban"]) {
+    border: unset;
+}
