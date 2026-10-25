@@ -12,17 +12,26 @@
     .embed-action,
     .bases-toolbar .bases-toolbar-item {
         opacity: 0;
-        transition: opacity 170ms;
+        max-width: 0;
+        transition: opacity $anim-duration-fast; //#bug 有抖动
     }
 
     .bases-toolbar .bases-toolbar-item:first-child {
         opacity: 1;
+        max-width: unset;
     }
 
     &:has(.has-active-menu),
     &:hover {
-        .bases-toolbar-item {opacity: 1;}
-        .embed-action       {opacity: 1;}
+        .bases-toolbar-item {
+            opacity: 1;
+            max-width: unset;
+        }
+
+        .embed-action       {
+            max-width: unset;
+            opacity: 1;
+        }
     }
 }
 

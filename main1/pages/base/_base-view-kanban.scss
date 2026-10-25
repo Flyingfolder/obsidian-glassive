@@ -14,7 +14,7 @@ body {
     --bases-kanban-card-radius: 24px;
     --bases-kanban-card-corner-shape: var(--corner-shape);
     --bases-kanban-card-shadow: var(--glass-shadow-inset-l);
-    --bases-kanban-card-shadow-hover: var(--shadow-card);
+    --bases-kanban-card-shadow-hover: var(--shadow-card-mini);
     --bases-kanban-card-shadow-focus: 0 0 0 2px var(--background-modifier-border-focus);
     --bases-kanban-cover-background: var(--background-secondary);
     --bases-kanban-line-height: 24px;
@@ -90,7 +90,7 @@ body {
     .bases-kanban-column-content {
         padding-top: 88px;
         padding-bottom: 40px;
-        overflow: visible;
+        overflow-x: visible;
     }
 
     .bases-kanban-column-footer {

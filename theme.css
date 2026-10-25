@@ -1877,7 +1877,7 @@ body {
   --bases-kanban-card-radius: 24px;
   --bases-kanban-card-corner-shape: var(--corner-shape);
   --bases-kanban-card-shadow: var(--glass-shadow-inset-l);
-  --bases-kanban-card-shadow-hover: var(--shadow-card);
+  --bases-kanban-card-shadow-hover: var(--shadow-card-mini);
   --bases-kanban-card-shadow-focus: 0 0 0 2px var(--background-modifier-border-focus);
   --bases-kanban-cover-background: var(--background-secondary);
   --bases-kanban-line-height: 24px;
@@ -1930,7 +1930,7 @@ body {
 .bases-kanban-column .bases-kanban-column-content {
   padding-top: 88px;
   padding-bottom: 40px;
-  overflow: visible;
+  overflow-x: visible;
 }
 
 .bases-kanban-column .bases-kanban-column-footer {
@@ -1952,23 +1952,27 @@ body {
 .workspace-leaf-content[data-type="markdown"] .bases-embed .embed-action,
 .workspace-leaf-content[data-type="markdown"] .bases-embed .bases-toolbar .bases-toolbar-item {
   opacity: 0;
-  transition: opacity 170ms;
+  max-width: 0;
+  transition: opacity var(--anim-duration-fast);
 }
 
 .workspace-leaf-content[data-type="markdown"] .block-language-base .bases-toolbar .bases-toolbar-item:first-child,
 .workspace-leaf-content[data-type="markdown"] .bases-embed .bases-toolbar .bases-toolbar-item:first-child {
   opacity: 1;
+  max-width: unset;
 }
 
 .workspace-leaf-content[data-type="markdown"] .block-language-base:has(.has-active-menu) .bases-toolbar-item, .workspace-leaf-content[data-type="markdown"] .block-language-base:hover .bases-toolbar-item,
 .workspace-leaf-content[data-type="markdown"] .bases-embed:has(.has-active-menu) .bases-toolbar-item,
 .workspace-leaf-content[data-type="markdown"] .bases-embed:hover .bases-toolbar-item {
   opacity: 1;
+  max-width: unset;
 }
 
 .workspace-leaf-content[data-type="markdown"] .block-language-base:has(.has-active-menu) .embed-action, .workspace-leaf-content[data-type="markdown"] .block-language-base:hover .embed-action,
 .workspace-leaf-content[data-type="markdown"] .bases-embed:has(.has-active-menu) .embed-action,
 .workspace-leaf-content[data-type="markdown"] .bases-embed:hover .embed-action {
+  max-width: unset;
   opacity: 1;
 }
 
