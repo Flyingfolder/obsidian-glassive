@@ -1868,6 +1868,85 @@ body {
   background-color: var(--color-base-10);
 }
 
+body {
+  --bases-kanban-container-gap: var(--size-4-2);
+  --bases-kanban-container-padding: var(--size-4-3);
+  --bases-kanban-column-background: transparent;
+  --bases-kanban-column-radius: none;
+  --bases-kanban-card-background: var(--background-secondary);
+  --bases-kanban-card-radius: 24px;
+  --bases-kanban-card-corner-shape: var(--corner-shape);
+  --bases-kanban-card-shadow: var(--glass-shadow-inset-l);
+  --bases-kanban-card-shadow-hover: var(--shadow-card);
+  --bases-kanban-card-shadow-focus: 0 0 0 2px var(--background-modifier-border-focus);
+  --bases-kanban-cover-background: var(--background-secondary);
+  --bases-kanban-line-height: 24px;
+}
+
+.bases-kanban-card {
+  border-radius: var(--bases-kanban-card-radius);
+  corner-shape: squircle;
+  transition: box-shadow var(--anim-duration-slow) ease;
+}
+
+.bases-kanban-card-property[data-property="file.name"] {
+  color: var(--text-accent);
+}
+
+.bases-kanban-column {
+  border: unset;
+}
+
+.bases-header:has(~ [data-view-type="kanban"]) {
+  position: absolute;
+  width: 100%;
+  background: color-mix(in oklch, var(--background-primary) 80%, transparent);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+}
+
+.bases-view[data-view-type="kanban"] {
+  z-index: 1;
+}
+
+.bases-kanban-container {
+  padding: 0 12px;
+}
+
+.bases-kanban-column {
+  overflow: visible;
+}
+
+.bases-kanban-column .bases-kanban-column-header {
+  position: absolute;
+  z-index: 10;
+  top: 48px;
+  height: 80px;
+  width: 100%;
+  align-items: flex-start;
+  background: linear-gradient(in oklch to bottom, color-mix(in oklch, var(--background-primary) 80%, transparent) 0, color-mix(in oklch, var(--background-primary) 50%, transparent) 36px, transparent);
+}
+
+.bases-kanban-column .bases-kanban-column-content {
+  padding-top: 88px;
+  padding-bottom: 40px;
+  overflow: visible;
+}
+
+.bases-kanban-column .bases-kanban-column-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(in oklch to bottom, transparent 0, color-mix(in oklch, var(--background-primary) 50%, transparent) 36px, color-mix(in oklch, var(--background-primary) 80%, transparent) 80px);
+}
+
+.bases-kanban-column .bases-kanban-column-footer .text-icon-button {
+  width: auto;
+}
+
 .workspace-leaf-content[data-type="markdown"] .block-language-base .embed-action,
 .workspace-leaf-content[data-type="markdown"] .block-language-base .bases-toolbar .bases-toolbar-item,
 .workspace-leaf-content[data-type="markdown"] .bases-embed .embed-action,
