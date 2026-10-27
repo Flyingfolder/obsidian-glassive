@@ -26,6 +26,7 @@
 @use 'main1/components/nav-items';
 @use 'main1/components/notice';
 @use 'main1/components/tab-header';
+@use 'main1/components/tooltips';
 @use 'main1/components/vault-profile';
 
 // 4. Editor — 编辑区（阅读/源码模式）样式
@@ -35,10 +36,12 @@
 @use 'main1/editor/links';
 
 // // 5. Pages — 页面级样式
+@use 'main1/pages/base/base-basic';
 @use 'main1/pages/base/base-toolbar-buttons';
 @use 'main1/pages/base/base-menus';
 @use 'main1/pages/base/base-menu-actions';
 @use 'main1/pages/base/base-menus-layout';
+@use 'main1/pages/base/base-menu-type-result';
 @use 'main1/pages/base/base-menus-filter-form-item';
 @use 'main1/pages/base/base-view-table';
 @use 'main1/pages/base/base-view-kanban';

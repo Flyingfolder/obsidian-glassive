@@ -117,6 +117,7 @@ input.prompt-input:focus-visible {
         border-radius: 40px;
         corner-shape: unset;
         box-shadow: var(--glass-shadow-inset-s), var(--shadow-s);
+        box-shadow: var(--glass-shadow-inset-l), var(--shadow-glass-border), var(--shadow-raised-xl);
         animation: 
             show-prompt-input   $anim-duration-moderate ease none,
             fade-in             $anim-duration-moderate ease none;
@@ -127,10 +128,14 @@ input.prompt-input:focus-visible {
         @include pop-in-anim;
 
         animation-delay: 50ms;
-        box-shadow: var(--shadow-l), var(--glass-shadow-inset-l), var(--glass-shadow-inset-edge);
+        box-shadow: var(--glass-shadow-inset-l), var(--glass-shadow-inset-edge), var(--shadow-raised-xl);
         order: 1;
         border-radius: 40px;
         corner-shape: squircle;
+
+        &:last-child {
+            margin-top: 20px;
+        }
     }
 
     &:has(.prompt-instructions)::before {
@@ -154,3 +159,13 @@ input.prompt-input:focus-visible {
 }
 
 
+
+// ---------------------
+
+// .cm-formatting-link {
+//     display: none;
+// }
+
+// .cm-hmd-internal-link.cm-link-has-alias 这是path: 比如"Test Folder/test log"
+// .cm-hmd-internal-link.cm-link-alias-pipe 这是｜符号 隐藏掉。
+// .cm-hmd-internal-link.cm-link-alias 这是要展示的

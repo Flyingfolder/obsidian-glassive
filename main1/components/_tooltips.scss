@@ -1,0 +1,20 @@
+
+
+@use '../abstracts' as *; 
+
+
+.tooltip {
+    --background-modifier-message:  rgb(255,255,255 / 20%);
+    // box-shadow: var(--tooltip-shadow);
+    background: var(--toolbar-controls-background);
+    backdrop-filter: blur(4px) brightness(1.1);
+    // color: var(--tooltip-color);
+    color: var(--mono-100);
+    font-size: $font-ui-smaller;
+    line-height: $line-height-ui-small;
+    // padding: var(--tooltip-padding);
+    padding: 4px 8px;
+    corner-shape: squircle;
+    border-radius: 24px;
+    text-align: start;
+}

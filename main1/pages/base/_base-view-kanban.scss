@@ -83,28 +83,34 @@ body {
             color-mix(in oklch, $background-primary 80%, transparent) 0, 
             color-mix(in oklch, $background-primary 50%, transparent) 36px, 
             transparent);
+
+        & {pointer-events: none;}
+        &>*{pointer-events: all; min-height: 30px; align-content: center;}
+        
+        .bases-kanban-column-create {opacity: 1;}
     }
 
 
 
     .bases-kanban-column-content {
-        padding-top: 88px;
+        padding-top: 100px;
         padding-bottom: 40px;
         overflow-x: visible;
     }
 
     .bases-kanban-column-footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 80px;
-        display: flex;
-        align-items: flex-end;
-        background: linear-gradient(in oklch to bottom,
-            transparent 0,
-            color-mix(in oklch, $background-primary 50%, transparent) 36px, 
-            color-mix(in oklch, $background-primary 80%, transparent) 80px);
+        // position: absolute;
+        // bottom: 0;
+        // width: 100%;
+        // height: 80px;
+        // display: flex;
+        // align-items: flex-end;
+        // background: linear-gradient(in oklch to bottom,
+        //     transparent 0,
+        //     color-mix(in oklch, $background-primary 50%, transparent) 36px, 
+        //     color-mix(in oklch, $background-primary 80%, transparent) 80px);
 
-        .text-icon-button {width: auto;}
+        // .text-icon-button {width: auto;}
+        display: none;
     }
 }

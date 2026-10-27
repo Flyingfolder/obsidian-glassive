@@ -606,7 +606,7 @@ button.mod-destructive {
   order: 1;
 }
 
-.popover.hover-popover {
+.popover {
   transform-origin: 50% -20%;
   animation: fade-in var(--anim-duration-moderate) ease-out backwards, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) backwards;
   border-radius: 40px;
@@ -622,22 +622,22 @@ button.mod-destructive {
   box-shadow: var(--shadow-l);
 }
 
-.popover.hover-popover .markdown-rendered blockquote {
+.popover .markdown-rendered blockquote {
   padding-inline-start: 20px;
 }
 
-.popover.hover-popover .markdown-preview-view .markdown-preview-view {
+.popover .markdown-preview-view .markdown-preview-view {
   --file-margins: 20px;
 }
 
-.popover.hover-popover .markdown-embed-link {
+.popover .markdown-embed-link {
   border-radius: 99px;
   cursor: default;
   inset: 8px 8px auto auto;
   padding: 6px;
 }
 
-.popover.hover-popover .markdown-source-view.is-live-preview {
+.popover .markdown-source-view.is-live-preview {
   animation: fade-in-partial var(--anim-duration-moderate) linear none, unblur var(--anim-duration-moderate) ease none;
 }
 
@@ -647,8 +647,9 @@ button.mod-destructive {
   height: 80px;
 }
 
-.app-container:has(~ .popover) .horizontal-main-container {
+.app-container:has(~ .popover.is-editing) .horizontal-main-container {
   opacity: 0.6;
+  scale: 0.95;
   transition: opacity var(--anim-duration-slow);
 }
 
@@ -754,6 +755,7 @@ input.prompt-input:focus-visible {
   border-radius: 40px;
   corner-shape: unset;
   box-shadow: var(--glass-shadow-inset-s), var(--shadow-s);
+  box-shadow: var(--glass-shadow-inset-l), var(--shadow-glass-border), var(--shadow-raised-xl);
   animation: show-prompt-input var(--anim-duration-moderate) ease none, fade-in var(--anim-duration-moderate) ease none;
 }
 
@@ -766,10 +768,14 @@ input.prompt-input:focus-visible {
   transform-origin: 50% -20%;
   animation: fade-in var(--anim-duration-moderate) ease-out backwards, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) backwards;
   animation-delay: 50ms;
-  box-shadow: var(--shadow-l), var(--glass-shadow-inset-l), var(--glass-shadow-inset-edge);
+  box-shadow: var(--glass-shadow-inset-l), var(--glass-shadow-inset-edge), var(--shadow-raised-xl);
   order: 1;
   border-radius: 40px;
   corner-shape: squircle;
+}
+
+.prompt .prompt-results:last-child {
+  margin-top: 20px;
 }
 
 .prompt:has(.prompt-instructions)::before {
@@ -1030,6 +1036,21 @@ body {
   pointer-events: none;
 }
 
+.tooltip {
+  --background-modifier-message: rgb(255,255,255 / 20%);
+
+  background: var(--toolbar-controls-background);
+  -webkit-backdrop-filter: blur(4px) brightness(1.1);
+          backdrop-filter: blur(4px) brightness(1.1);
+  color: var(--mono-100);
+  font-size: 12px;
+  line-height: 16px;
+  padding: 4px 8px;
+  corner-shape: squircle;
+  border-radius: 24px;
+  text-align: start;
+}
+
 body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vault-profile {
   border: unset;
   position: absolute;
@@ -1267,6 +1288,14 @@ body {
   background-position: right 0 top 0.15em;
   background-size: 0.7em;
   padding-inline-end: 0.8em;
+}
+
+body {
+  --bases-group-heading-property-size: var(--font-ui-smaller);
+  --bases-group-heading-property-color: var(--text-muted);
+  --bases-group-heading-value-size: 13px;
+  --bases-group-heading-value-weight: var(--font-semibold);
+  --bases-group-heading-property-display: block;
 }
 
 .workspace-leaf-content[data-type="bases"] .bases-header {
@@ -1563,6 +1592,10 @@ body {
 
 .bases-query-container > .filter-group > .filter-group-statements {
   margin: 6px 0;
+}
+
+.menu.bases-toolbar-menu .bases-results-page .bases-toolbar-menu-form {
+  padding: 0 16px;
 }
 
 .bases-query-container {
@@ -1927,24 +1960,28 @@ body {
   background: linear-gradient(in oklch to bottom, color-mix(in oklch, var(--background-primary) 80%, transparent) 0, color-mix(in oklch, var(--background-primary) 50%, transparent) 36px, transparent);
 }
 
+.bases-kanban-column .bases-kanban-column-header {
+  pointer-events: none;
+}
+
+.bases-kanban-column .bases-kanban-column-header > * {
+  pointer-events: all;
+  min-height: 30px;
+  align-content: center;
+}
+
+.bases-kanban-column .bases-kanban-column-header .bases-kanban-column-create {
+  opacity: 1;
+}
+
 .bases-kanban-column .bases-kanban-column-content {
-  padding-top: 88px;
+  padding-top: 100px;
   padding-bottom: 40px;
   overflow-x: visible;
 }
 
 .bases-kanban-column .bases-kanban-column-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  align-items: flex-end;
-  background: linear-gradient(in oklch to bottom, transparent 0, color-mix(in oklch, var(--background-primary) 50%, transparent) 36px, color-mix(in oklch, var(--background-primary) 80%, transparent) 80px);
-}
-
-.bases-kanban-column .bases-kanban-column-footer .text-icon-button {
-  width: auto;
+  display: none;
 }
 
 .workspace-leaf-content[data-type="markdown"] .block-language-base .embed-action,
@@ -3677,7 +3714,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .is-focused.theme-light {
   --liquid-sidebar-border-color: transparent;
-  --toolbar-controls-background: linear-gradient(rgb(255 255 255 / 50%), rgb(255 255 255 / 20%)), rgb(255 255 255 / 20%);
+  --toolbar-controls-background: linear-gradient(rgb(255 255 255 / 40%), rgb(255 255 255 / 20%)), rgb(255 255 255 / 20%);
   --toolbar-controls-backdrop-filter: blur(2px) brightness(1.08);
   --liquid-modal-background-image: none;
 }
@@ -3697,6 +3734,10 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 body {
+  --shadow-raised-xl:
+    0px 1.8px 7.3px rgb(0 0 0 / 7.1%),
+    0px 13px 27.7px rgb(0 0 0 / 18.2%),
+    0px 30px 40px rgb(0 0 0 / 28%);
   --shadow-card:
     0px 8px 20px rgb(0 0 0 / 10%),
     0px 14px 42px rgb(0 0 0 / 6%),
@@ -3741,8 +3782,9 @@ body {
     inset -10px 0 10px rgb(0 0 0 / 6%); /* 右 */
 
   --shadow-glass-border:
-      inset 0 2px 2px rgb(255 255 255 / 80%), /* 顶 */
-      inset 0 -2px 2px rgb(255 255 255 / 80%), /* 底 */
+      inset 0 1px 1px rgb(255 255 255 / 80%), /* 顶 */
+      inset 0 2px 2px rgb(255 255 255 / 60%), /* 顶 */
+      inset 0 -2px 2px rgb(255 255 255 / 50%), /* 底 */
 
       inset .5px 0 .5px rgb(0 0 0 / 25%), /* 左 */
       inset -.5px 0 .5px rgb(0 0 0 / 25%), /* 右 */
@@ -3766,7 +3808,7 @@ body {
   --liquid-sidebar-border-color: transparent;
   --toolbar-background: rgb(30 30 30 / 40%);
   --background-modifier-border: rgb( 220 220 240 / 15%);
-  --background-glass-subtle: rgb(40 40 40 / 50%);
+  --background-glass-subtle: rgb(60 60 60 / 40%);
   --backdrop-filter-glass-subtle: blur(6px) saturate(190%) brightness(1.4);
   --background-glass: rgb(40 40 40 / 60%);
   --backdrop-filter-glass: blur(10px) saturate(180%) brightness(1.8);

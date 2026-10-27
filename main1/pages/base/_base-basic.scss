@@ -1,0 +1,11 @@
+
+@use '../../abstracts' as *;
+
+body {
+    --bases-group-heading-property-size: var(--font-ui-smaller);
+    // --bases-group-heading-property-weight: var(--font-normal);
+    --bases-group-heading-property-color: var(--text-muted);
+    --bases-group-heading-value-size: #{$font-ui-small}; //var(--font-smaller);
+    --bases-group-heading-value-weight: var(--font-semibold);
+    --bases-group-heading-property-display: block;
+}

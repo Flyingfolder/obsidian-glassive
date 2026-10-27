@@ -6,7 +6,7 @@
 
 
 
-.popover.hover-popover {
+.popover {
     @include pop-in-anim;
 
     border-radius: 40px;
@@ -75,10 +75,13 @@
 
 
 // 淡化全局的背景 ===============================
-.app-container:has(~.popover) {
+.app-container:has(~.popover.is-editing) {
     .horizontal-main-container {
         opacity: 0.6;
-        transition: opacity $anim-duration-slow;
+        scale: 0.95;
+        transition: 
+            
+            opacity $anim-duration-slow;
     }
 }
 
