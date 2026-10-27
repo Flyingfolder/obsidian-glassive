@@ -64,7 +64,17 @@ button:not(.clickable-icon) {
 }
 
 button.mod-destructive {
-    background-color: color-mix(in oklch, var(--background-modifier-error) 25%, transparent);
+    background: color-mix(in oklch, var(--background-modifier-error) 25%, transparent);
+}
+
+button.mod-destructive.mod-cta {
+    background: 
+        linear-gradient(
+            color-mix(in oklch, var(--background-modifier-error) 90%, transparent), 
+            color-mix(in oklch, var(--background-modifier-error) 90%, transparent)), 
+        var(--mono-0);
+
+    &:hover {background-color: var(--color-base-70);}
 }
 
 .text-icon-button {

@@ -72,7 +72,7 @@
 
 .canvas-menu-container :is(.canvas-menu, .canvas-submenu) {
     @include liquid-toolbar-icon-group($auto-detect-only-child: true, $button-type: button);
-    @include pop-in-anim;
+    // @include pop-in-anim;
 }
 
 

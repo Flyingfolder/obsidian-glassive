@@ -39,7 +39,8 @@
             border-radius: 20px;
             corner-shape: unset;
             height: 32px;   
-            box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+            box-shadow: var(--shadow-card-mini), var(--shadow-glass-border), 0 0 1px $background-modifier-seperator;
+            &:hover {background-color: var(--color-base-35);}
         }
 
         &:last-child {

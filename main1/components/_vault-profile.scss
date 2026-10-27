@@ -37,3 +37,8 @@ body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vaul
 .workspace-leaf-content[data-type="bookmarks"] .view-content {
     padding-bottom: 60px;
 }
+
+
+.workspace-leaf-content>.node-insert-event {
+    padding-bottom: 64px;
+}
