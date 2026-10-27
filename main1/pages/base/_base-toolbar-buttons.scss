@@ -8,7 +8,7 @@
 
 .workspace-leaf-content[data-type="bases"]{
     .bases-header {
-        z-index: 6;
+        z-index: 9;
         padding: 8px;
         height: auto;
         min-height: fit-content;
@@ -56,10 +56,42 @@
 }
 
 
-.bases-search-row {
-    border: unset;
+
+
+
+
+
+
+
+
+
+.bases-search-row:has(~[data-view-type="table"]) {
     padding-top: unset;
+    border: unset;
 }
+
+.bases-search-row:has(~[data-view-type="list"]),
+.bases-search-row:has(~[data-view-type="card"]) {
+    @include liquid-toolbar-search-input($control-max-width: 280px);
+    @include pop-in-anim;
+
+    border: unset;
+    position: absolute;
+    inset: 80px 8px auto auto;
+    z-index: 6;
+}
+
+
+.bases-search-row:has(~[data-view-type="kanban"]) {
+    border: unset;
+    position: absolute;
+    inset: 80px 0 auto 0;
+    z-index: 6;
+    animation: 
+        scale-up $anim-duration-moderate ease,
+        fade-in $anim-duration-moderate ease-in;
+}
+
 
 
 
@@ -85,4 +117,8 @@
 
 .workspace-leaf-content[data-type="bases"] .bases-header:has(~[data-view-type="kanban"]) {
     border: unset;
+    position: absolute;
+    width: 100%;
+    background: color-mix(in oklch, $background-primary 70%, transparent);
+    backdrop-filter: blur(2px);
 }

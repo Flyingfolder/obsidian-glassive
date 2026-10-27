@@ -23,33 +23,6 @@ body {
 
 
 
-.bases-kanban-column {
-    border: unset;
-}
-
-
-
-
-
-// // 
-// .bases-kanban-column-content {
-//     overflow: visible;
-// }
-
-// .bases-kanban-column {
-//     overflow: scroll;
-// }
-
-
-
-
-
-.bases-header:has(~[data-view-type="kanban"]) {
-    position: absolute;
-    width: 100%;
-    background: color-mix(in oklch, $background-primary 70%, transparent);
-    backdrop-filter: blur(2px);
-}
 
 .bases-view[data-view-type="kanban"] {
     z-index: 1;
@@ -61,14 +34,31 @@ body {
 }
 
 
+
+
+
+.bases-view[data-view-type="kanban"] .bases-kanban-column-header {
+    // 默认（存在搜索栏时）
+    .bases-search-row ~ & {
+        padding-top: 32px;
+    }
+
+    // 搜索栏隐藏时
+    .bases-search-row[style*="display: none"] ~ & {
+        padding-top: 0;
+    }
+}
+
+
+
 .bases-kanban-column {
-    overflow: visible;
+    border: unset;
 
     .bases-kanban-column-header {
         position: absolute;
         z-index: 10;
         top: 48px;
-        height: 80px;
+        height: auto;
         width: 100%;
         align-items: flex-start;
         background: linear-gradient(in oklch to bottom,
@@ -77,7 +67,11 @@ body {
             transparent);
 
         & {pointer-events: none;}
-        &>*{pointer-events: all; min-height: 30px; align-content: center;}
+
+        &>*{pointer-events: all; 
+            min-height: 24px; 
+            line-height: 24px;
+            align-content: center;}
         
         .bases-kanban-column-create {opacity: 1;}
 
@@ -85,14 +79,17 @@ body {
         // 测试
         background: color-mix(in oklch, $background-primary 70%, transparent);
         backdrop-filter: blur(2px);
-        height: 40px;
         border-bottom: 1px solid $background-modifier-seperator;
+        padding: 0 8px 8px 20px;
+        transition: padding $anim-duration-moderate ease;
+
+
     }
 
 
 
     .bases-kanban-column-content {
-        padding-top: 92px;
+        padding-top: 100px;
         padding-bottom: 40px;
         overflow-x: visible;
     }
@@ -123,7 +120,7 @@ body {
         content: '';
         display: block;
         position: absolute;
-        inset: 88px 0 0 auto;
+        inset: 80px 0 0 auto;
         border-right: 1px solid $background-modifier-seperator;
     }
     
