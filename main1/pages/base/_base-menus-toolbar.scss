@@ -40,10 +40,19 @@
 
         // “更多”按钮右箭头
         .bases-toolbar-menu-item-icon {
-            display: none;
-            cursor: pointer;
+            opacity: 0;
+            cursor: default;
         }
-        &:hover .bases-toolbar-menu-item-icon {display: flex;}
+        &:hover .bases-toolbar-menu-item-icon {opacity: 1;}
+
+        &.mod-active {
+            color: $interactive-accent;
+
+            --icon-color: #{$interactive-accent};
+
+            background-color: $background-modifier-hover;
+            .bases-toolbar-menu-item-icon {opacity: 1;}
+        }
     }
 
 
@@ -51,13 +60,13 @@
     .suggestion-group[data-group="actions"] {
         padding: 4px;
 
-        .suggestion-item.bases-toolbar-menu-item {
+        .bases-toolbar-menu-item {
             min-height: unset;
             height: 20px;
             padding: 0 8px 0 4px;
             margin: 4px;
             width: fit-content;
-            border-radius: 20px;
+            border-radius: 99px;
             corner-shape: squircle;
 
             
@@ -154,6 +163,22 @@
 
 }
 
+// ==================================================================================================================================
+// gropu menu ----------------------------------------------------------------------------------------------------------------------
+
+.base-toolbar-sort-item, .base-toolbar-groupby-item {
+    --metadata-property-background: transparent;
+
+    background-color: unset;
+}
+
+.bases-toolbar-items {
+    .metadata-property {
+        corner-shape: squircle;
+        border-radius: 99px;
+
+    }
+}
 
 
 // ==================================================================================================================================
@@ -164,3 +189,4 @@
         padding: 0 16px;
     }
 }
+

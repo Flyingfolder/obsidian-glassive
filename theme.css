@@ -1454,25 +1454,37 @@ body {
 }
 
 .menu.bases-toolbar-menu .bases-toolbar-menu-item .bases-toolbar-menu-item-icon {
-  display: none;
-  cursor: pointer;
+  opacity: 0;
+  cursor: default;
 }
 
 .menu.bases-toolbar-menu .bases-toolbar-menu-item:hover .bases-toolbar-menu-item-icon {
-  display: flex;
+  opacity: 1;
+}
+
+.menu.bases-toolbar-menu .bases-toolbar-menu-item.mod-active {
+  color: var(--color-accent-1);
+
+  --icon-color: var(--color-accent-1);
+
+  background-color: color-mix(in oklch, var(--mono-100) 7.5%, transparent);
+}
+
+.menu.bases-toolbar-menu .bases-toolbar-menu-item.mod-active .bases-toolbar-menu-item-icon {
+  opacity: 1;
 }
 
 .menu.bases-toolbar-menu .suggestion-group[data-group="actions"] {
   padding: 4px;
 }
 
-.menu.bases-toolbar-menu .suggestion-group[data-group="actions"] .suggestion-item.bases-toolbar-menu-item {
+.menu.bases-toolbar-menu .suggestion-group[data-group="actions"] .bases-toolbar-menu-item {
   min-height: unset;
   height: 20px;
   padding: 0 8px 0 4px;
   margin: 4px;
   width: fit-content;
-  border-radius: 20px;
+  border-radius: 99px;
   corner-shape: squircle;
 
   --icon-color: var(--color-accent-1);
@@ -1482,11 +1494,11 @@ body {
   background-color: hsl(var(--interactive-accent-hsl), 10%);
 }
 
-.menu.bases-toolbar-menu .suggestion-group[data-group="actions"] .suggestion-item.bases-toolbar-menu-item:active {
+.menu.bases-toolbar-menu .suggestion-group[data-group="actions"] .bases-toolbar-menu-item:active {
   opacity: 0.7;
 }
 
-.menu.bases-toolbar-menu .suggestion-group[data-group="actions"] .suggestion-item.bases-toolbar-menu-item .bases-toolbar-menu-item-info {
+.menu.bases-toolbar-menu .suggestion-group[data-group="actions"] .bases-toolbar-menu-item .bases-toolbar-menu-item-info {
   gap: 4px;
 }
 
@@ -1538,6 +1550,17 @@ body {
 .menu.bases-toolbar-menu.bases-toolbar-views-menu:not(:has(input:placeholder-shown)) .suggestion-item.bases-toolbar-menu-item.is-selected,
 .menu.bases-toolbar-menu.bases-toolbar-properties-menu:not(:has(input:placeholder-shown)) .suggestion-item.bases-toolbar-menu-item.is-selected {
   box-shadow: 0 0 0 var(--input-border-width-focus) var(--color-base-40);
+}
+
+.base-toolbar-sort-item, .base-toolbar-groupby-item {
+  --metadata-property-background: transparent;
+
+  background-color: unset;
+}
+
+.bases-toolbar-items .metadata-property {
+  corner-shape: squircle;
+  border-radius: 99px;
 }
 
 .menu.bases-toolbar-menu .bases-results-page .bases-toolbar-menu-form {
@@ -2109,12 +2132,12 @@ body {
 }
 
 .bases-kanban-column .bases-kanban-column-header {
-  padding: 0 12px 4px;
+  padding: 0 12px 4px 20px;
 }
 
 .bases-kanban-column .bases-kanban-column-header > * {
   min-height: 20px;
-  line-height: 24px;
+  line-height: 20px;
   align-content: center;
 }
 
@@ -2148,6 +2171,12 @@ body {
   cursor: unset;
   border-radius: unset;
   transition: unset;
+  corner-shape: squircle;
+  gap: 0;
+}
+
+.bases-kanban-card > * {
+  padding-left: 12px;
 }
 
 .bases-kanban-card + .bases-kanban-card::before {
@@ -2166,16 +2195,7 @@ body {
   z-index: 1;
   border-radius: 24px;
   box-shadow: var(--embed-block-shadow-hover);
-}
-
-.bases-kanban-card {
-  border-radius: var(--bases-kanban-card-radius);
-  corner-shape: squircle;
-  gap: 0;
-}
-
-.bases-kanban-card > * {
-  padding-left: 12px;
+  background-color: color-mix(in oklch, var(--mono-100) 5%, transparent);
 }
 
 .bases-kanban-card-property.mod-title .bases-kanban-card-line {
@@ -2187,6 +2207,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  line-height: 20px;
 }
 
 .bases-kanban-card-property .bases-kanban-card-label {
@@ -4086,21 +4107,15 @@ hr:has(+ .cmdr-sep-con.callout) {
   --liquid-sidebar-shadow:
     0px 0px 8px rgb(0 0 0 / 4%), /* 第一层：靠近元素的、稍微清晰的轮廓 */
     0px 0px 40px rgb(0 0 0 / 12%); /* 第二层：范围更大、更模糊、更透明的光晕 */
-
-  --toolbar-items-shadow:
-    0px 0px 8px rgb(0 0 0 / 5%), /* 第一层：靠近元素的、稍微清晰的轮廓 */
-    0px 0px 40px rgb(0 0 0 / 9%); /* 第二层：范围更大、更模糊、更透明的光晕 */
 }
 
 .is-focused.theme-light {
-  --liquid-sidebar-border-color: transparent;
   --toolbar-controls-background: linear-gradient(rgb(255 255 255 / 40%), rgb(255 255 255 / 20%)), rgb(255 255 255 / 20%);
   --toolbar-controls-backdrop-filter: blur(2px) brightness(1.08);
   --liquid-modal-background-image: none;
 }
 
 .is-focused.theme-dark {
-  --liquid-sidebar-border-color: rgb( 255 255 255 / 12%);
   --toolbar-controls-background:
       linear-gradient(
           hsl(var(--interactive-accent-hsl), 5%),
@@ -4130,15 +4145,11 @@ body {
 
 .theme-light {
   --card-background: var(--background-primary);
-  --liquid-sidebar-border-width: 1px;
-  --liquid-sidebar-border-color: transparent;
-  --toolbar-background: rgb(252 252 252 / 40%);
   --background-modifier-border: rgb( 200 200 200 / 30%);
   --background-glass: rgb(246 246 246 / 50%);
   --backdrop-filter-glass: blur(10px) saturate(140%) brightness(1.06);
   --background-glass-subtle: rgb(255 255 255 / 60%);
   --backdrop-filter-glass-subtle: blur(4px) saturate(190%) brightness(1.03);
-  --background-frosted-edge-fade: rgb(235 235 235 / 75%);
   --glass-shadow-inset-for-control:
     inset 0 1px 1px rgb(200 200 200 / 25%), /* 顶，没有底部 */
     inset 1px 0 1px rgb(200 200 200 / 15%), /* 左 */
@@ -4185,15 +4196,11 @@ body {
 
 .theme-dark {
   --card-background: var(--color-base-35);
-  --liquid-sidebar-border-width: 1px;
-  --liquid-sidebar-border-color: transparent;
-  --toolbar-background: rgb(30 30 30 / 40%);
   --background-modifier-border: rgb( 220 220 240 / 15%);
   --background-glass-subtle: rgb(60 60 60 / 40%);
   --backdrop-filter-glass-subtle: blur(6px) saturate(190%) brightness(1.4);
   --background-glass: rgb(40 40 40 / 60%);
   --backdrop-filter-glass: blur(10px) saturate(180%) brightness(1.8);
-  --background-frosted-edge-fade: rgb(20 20 20 / 80%);
   --glass-shadow-inset-for-control:
     inset 0 1px 1px rgb(120 120 120 / 25%), /* 顶 */
     inset 0 -1px 1px rgb(120 120 120 / 50%), /* 底 */
@@ -4241,8 +4248,6 @@ body {
 
 body {
   --background-modifier-border-focus: hsl(var(--interactive-accent-hsl), 60%);
-  --backdrop-filter-frosted-edge: blur(2px);
-  --background-glass-content: rgb(0 0 0 / 15%);
 }
 
 .theme-glassive-accent-red.theme-light {

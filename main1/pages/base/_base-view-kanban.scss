@@ -43,11 +43,11 @@ body {
     border: unset;
 
     .bases-kanban-column-header {
-        padding: 0 12px 4px;
+        padding: 0 12px 4px 20px;
 
         &>*{
             min-height: 20px; 
-            line-height: 24px;
+            line-height: 20px;
             align-content: center;
         }
         
@@ -83,7 +83,9 @@ body {
     cursor: unset;
     border-radius: unset;
     transition: unset;
-
+    corner-shape: squircle;
+    gap: 0;
+    &>* {padding-left: 12px;}
 
     &+.bases-kanban-card::before {
         content: '';
@@ -99,17 +101,11 @@ body {
         z-index: 1;
         border-radius: 24px;
         box-shadow: var(--embed-block-shadow-hover);
+        background-color: $background-modifier-hover-subtle;
     }
 }
 
 
-
-.bases-kanban-card {
-    border-radius: var(--bases-kanban-card-radius);
-    corner-shape: squircle;
-    gap: 0;
-    &>* {padding-left: 12px;}
-}
 
 .bases-kanban-card-property.mod-title .bases-kanban-card-line {
     font-size: $font-ui-small;
@@ -120,6 +116,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    line-height: 20px;
 
     .bases-kanban-card-label {
         order: 1;
@@ -140,9 +137,10 @@ body {
 
 
 
+
+// 默认的初始化
 .bases-kanban-container:has(>.bases-kanban-placeholder) {
     width: 100% !important;
-    
 }
 
 
