@@ -3,7 +3,7 @@
 
 @use 'variables-glassive' as *; 
 @use 'mixins-forms' as *;
-
+@use 'variables-theme' as *;
 
 $titlebar-height: 48px;
 
@@ -144,15 +144,15 @@ $titlebar-height: 48px;
 
 @mixin _liquid-toolbar-base() {
     color: var(--mono-100);
-    box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+    box-shadow: $shadow-raised-control-item, var(--shadow-glass-border);
     border: unset;
     margin: unset;
     border-radius: 99px;
     corner-shape: unset;
-    background: var(--toolbar-controls-background);
-    backdrop-filter: var(--toolbar-controls-backdrop-filter);
+    background: $glassive-control-background;
+    backdrop-filter: $glassive-control-backdrop-filter;
     // 
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
@@ -181,8 +181,8 @@ $titlebar-height: 48px;
     margin: unset;
     border-radius: 99px;
     corner-shape: unset;
-    background: var(--toolbar-controls-background);
-    backdrop-filter: var(--toolbar-controls-backdrop-filter);
+    background: $glassive-control-background;
+    backdrop-filter: $glassive-control-backdrop-filter;
     // 
     display: inline-flex;
     align-items: center;
@@ -206,8 +206,8 @@ $titlebar-height: 48px;
     box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
     border-radius: 99px;
     corner-shape: unset;
-    background: var(--toolbar-controls-background);
-    backdrop-filter: var(--toolbar-controls-backdrop-filter);
+    background: $glassive-control-background;
+    backdrop-filter: $glassive-control-backdrop-filter;
     // 
     display: inline-flex;
     align-items: center;
@@ -313,7 +313,7 @@ $titlebar-height: 48px;
     flex-grow: 1;
 
     :is(.theme-light, .theme-dark) &:hover {
-        background: var(--toolbar-controls-background);
+        background: $glassive-control-background;
     }
 }
 

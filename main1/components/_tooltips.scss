@@ -6,7 +6,7 @@
 .tooltip {
     --background-modifier-message:  rgb(255,255,255 / 20%);
     // box-shadow: var(--tooltip-shadow);
-    background: var(--toolbar-controls-background);
+    background: $glassive-control-background;
     backdrop-filter: blur(4px) brightness(1.1);
     // color: var(--tooltip-color);
     color: var(--mono-100);

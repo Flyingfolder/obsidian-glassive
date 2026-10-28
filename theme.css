@@ -400,7 +400,7 @@ button.mod-destructive.mod-cta:hover {
   corner-shape: squircle;
   opacity: 0.9;
   background-color: var(--background-primary);
-  box-shadow: var(--shadow-raised-xl);
+  box-shadow: 0 1.8px 7.3px rgb(0 0 0 / 5.1%), 0 8px 35.7px rgb(0 0 0 / 14.2%), 0 20px 60px rgb(0 0 0 / 20%);
 }
 
 .menu {
@@ -530,15 +530,15 @@ button.mod-destructive.mod-cta:hover {
 .modal .modal-header-button {
   inset: 8px 8px auto auto;
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -775,7 +775,7 @@ input.prompt-input:focus-visible {
   border-radius: 40px;
   corner-shape: unset;
   box-shadow: var(--glass-shadow-inset-s), var(--shadow-s);
-  box-shadow: var(--glass-shadow-inset-l), var(--shadow-glass-border), var(--shadow-raised-xl);
+  box-shadow: var(--glass-shadow-inset-l), var(--shadow-glass-border), 0 1.8px 7.3px rgb(0 0 0 / 5.1%), 0 8px 35.7px rgb(0 0 0 / 14.2%), 0 20px 60px rgb(0 0 0 / 20%);
   animation: show-prompt-input var(--anim-duration-moderate) ease none, fade-in var(--anim-duration-moderate) ease none;
 }
 
@@ -788,7 +788,7 @@ input.prompt-input:focus-visible {
   transform-origin: 50% -20%;
   animation: fade-in var(--anim-duration-moderate) ease-out backwards, pop-in var(--anim-duration-moderate) cubic-bezier(0.32, 0.1, 0.2, 0.99) backwards;
   animation-delay: 50ms;
-  box-shadow: var(--glass-shadow-inset-l), var(--glass-shadow-inset-edge), var(--shadow-raised-xl);
+  box-shadow: var(--glass-shadow-inset-l), var(--glass-shadow-inset-edge), 0 1.8px 7.3px rgb(0 0 0 / 5.1%), 0 8px 35.7px rgb(0 0 0 / 14.2%), 0 20px 60px rgb(0 0 0 / 20%);
   order: 1;
   border-radius: 40px;
   corner-shape: squircle;
@@ -1081,7 +1081,7 @@ body {
 .tooltip {
   --background-modifier-message: rgb(255,255,255 / 20%);
 
-  background: var(--toolbar-controls-background);
+  background: var(--glassive-control-background);
   -webkit-backdrop-filter: blur(4px) brightness(1.1);
           backdrop-filter: blur(4px) brightness(1.1);
   color: var(--mono-100);
@@ -1731,15 +1731,15 @@ body {
 
 .workspace-leaf-content[data-type="bases"] .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -1832,15 +1832,15 @@ body {
 .bases-search-row:has(~ [data-view-type="list"]),
 .bases-search-row:has(~ [data-view-type="cards"]) {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -1879,7 +1879,7 @@ body {
 
 :is(.theme-light, .theme-dark) .bases-search-row:has(~ [data-view-type="list"]):hover,
 :is(.theme-light, .theme-dark) .bases-search-row:has(~ [data-view-type="cards"]):hover {
-  background: var(--toolbar-controls-background);
+  background: var(--glassive-control-background);
 }
 
 .bases-search-row:has(~ [data-view-type="list"]),
@@ -1913,7 +1913,7 @@ body {
   position: absolute;
   z-index: 2;
   inset: 0 0 auto;
-  height: calc(var(--toolbar-height) + var(--bases-table-header-row-height) + var(--additional-search-row-height));
+  height: calc(48px + var(--bases-table-header-row-height) + var(--additional-search-row-height));
   background: color-mix(in oklch, var(--background-primary) 70%, transparent);
   -webkit-backdrop-filter: blur(2px) saturate(160%);
           backdrop-filter: blur(2px) saturate(160%);
@@ -2242,15 +2242,15 @@ body {
 
 .bases-kanban-placeholder .text-icon-button.mod-pill {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -2378,9 +2378,9 @@ body {
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2436,9 +2436,9 @@ body {
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2508,9 +2508,9 @@ body {
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2693,15 +2693,15 @@ body {
 
 .sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -2769,9 +2769,9 @@ body {
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2791,15 +2791,15 @@ body {
 
 .modal.callout-editor-modal .titlebar-control-group .clickable-icon {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -2839,15 +2839,15 @@ body {
 
 .modal.callout-editor-modal .mod-callout-type > button {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -3221,15 +3221,15 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 [data-type="style-settings"] .view-content > .setting-item:first-child .search-input-container {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -3263,20 +3263,20 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 :is(.theme-light, .theme-dark) [data-type="style-settings"] .view-content > .setting-item:first-child .search-input-container:hover {
-  background: var(--toolbar-controls-background);
+  background: var(--glassive-control-background);
 }
 
 [data-type="style-settings"] .view-content > .setting-item:first-child a {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -3595,15 +3595,15 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .setting-page-titlebar .setting-page-back-button {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -3656,15 +3656,15 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal-setting-titlebar > button {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -3693,15 +3693,15 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal-setting-titlebar > button.clickable-icon {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -3781,15 +3781,15 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -3823,20 +3823,20 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 :is(.theme-light, .theme-dark) .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container:hover {
-  background: var(--toolbar-controls-background);
+  background: var(--glassive-control-background);
 }
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon {
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -3877,15 +3877,15 @@ hr:has(+ .cmdr-sep-con.callout) {
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle {
   margin-left: 12px;
   color: var(--mono-100);
-  box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   margin: unset;
   border-radius: 99px;
   corner-shape: unset;
-  background: var(--toolbar-controls-background);
-  -webkit-backdrop-filter: var(--toolbar-controls-backdrop-filter);
-          backdrop-filter: var(--toolbar-controls-backdrop-filter);
-  display: inline-flex;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -3975,7 +3975,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 .community-modal-search-results-wrapper .community-modal-search-results .community-item.is-selected {
-  background: var(--toolbar-controls-background);
+  background: var(--glassive-control-background);
   box-shadow: var(--shadow-card-mini), var(--glass-shadow-inset-for-control);
   z-index: 1;
   animation: pop-in-strong var(--anim-duration-moderate) ease;
@@ -3986,7 +3986,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 .community-modal-search-results-wrapper .community-modal-search-results .community-item.is-selected:hover {
-  background: var(--toolbar-controls-background);
+  background: var(--glassive-control-background);
 }
 
 .mod-community-theme .community-item {
@@ -4110,18 +4110,18 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 .is-focused.theme-light {
-  --toolbar-controls-background: linear-gradient(rgb(255 255 255 / 40%), rgb(255 255 255 / 20%)), rgb(255 255 255 / 20%);
-  --toolbar-controls-backdrop-filter: blur(2px) brightness(1.08);
+  --glassive-control-background: linear-gradient(rgb(255 255 255 / 40%), rgb(255 255 255 / 20%)), rgb(255 255 255 / 20%);
+  --glassive-control-backdrop-filter: blur(2px) brightness(1.08);
   --liquid-modal-background-image: none;
 }
 
 .is-focused.theme-dark {
-  --toolbar-controls-background:
+  --glassive-control-background:
       linear-gradient(
           hsl(var(--interactive-accent-hsl), 5%),
           hsl(var(--interactive-accent-hsl), 5%)),
       color-mix(in oklch, rgb(255 255 255) 10%, transparent);
-  --toolbar-controls-backdrop-filter: blur(2px) brightness(1.03);
+  --glassive-control-backdrop-filter: blur(2px) brightness(1.03);
   --liquid-modal-background-image:
     radial-gradient(ellipse 260% 200% at -400px -200px,
     hsl(var(--color-accent-hsl), 10%),
@@ -4129,10 +4129,6 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 body {
-  --shadow-raised-xl:
-    0px 1.8px 7.3px rgb(0 0 0 / 5.1%),
-    0px 8px 35.7px rgb(0 0 0 / 14.2%),
-    0px 20px 60px rgb(0 0 0 / 20%);
   --shadow-card:
     0px 8px 20px rgb(0 0 0 / 10%),
     0px 14px 42px rgb(0 0 0 / 6%),
@@ -4140,7 +4136,6 @@ body {
   --shadow-card-mini:
     0px 2px 22px rgb(0 0 0 / 8.5%),
     0px 6px 45px rgb(0 0 0 / 3.4%);
-  --toolbar-height: 48px;
 }
 
 .theme-light {
@@ -4543,7 +4538,7 @@ body {
 .workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header-container-inner {
   corner-shape: unset;
   border-radius: 99px;
-  background: var(--toolbar-controls-background);
+  background: var(--glassive-control-background);
   box-shadow: var(--shadow-s), var(--shadow-glass-border);
   z-index: 6;
   padding: 3px;

@@ -19,7 +19,7 @@
         // .theme-dark & {background-color: var(--mono-100);}
         // .theme-dark & {background-color: var(--color-base-25);}
 
-        background: var(--toolbar-controls-background);
+        background: $glassive-control-background;
         box-shadow: var(--shadow-s),  var(--shadow-glass-border);
         z-index: 6; //让阴影露出来，避免被遮盖了
         // 

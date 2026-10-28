@@ -33,8 +33,8 @@
   //   rgb(249, 249, 249);
 
   // --toolbar-items-background: linear-gradient(var(--background-primary), var(--background-primary));
-  --toolbar-controls-background: linear-gradient(rgb(255 255 255 / 40%), rgb(255 255 255 / 20%)),  rgb(255 255 255 / 20%);
-  --toolbar-controls-backdrop-filter: blur(2px) brightness(1.08);
+  --glassive-control-background: linear-gradient(rgb(255 255 255 / 40%), rgb(255 255 255 / 20%)),  rgb(255 255 255 / 20%);
+  --glassive-control-backdrop-filter: blur(2px) brightness(1.08);
   --liquid-modal-background-image: none;
 }
 
@@ -43,12 +43,12 @@
 .is-focused.theme-dark {
   // -------
 
-    --toolbar-controls-background: 
+    --glassive-control-background:
         linear-gradient(
             hsl(var(--interactive-accent-hsl), 5%), 
             hsl(var(--interactive-accent-hsl), 5%)), 
         color-mix(in oklch, rgb(255 255 255) 10%, transparent);
-      --toolbar-controls-backdrop-filter: blur(2px) brightness(1.03);
+      --glassive-control-backdrop-filter: blur(2px) brightness(1.03);
   // --toolbar-items-background:
   //   linear-gradient(hsl(var(--color-accent-hsl), 3%), hsl(var(--color-accent-hsl), 5%)) padding-box,
   //   linear-gradient(rgb(33 33 33), rgb(33 33 33)) padding-box,
@@ -61,12 +61,6 @@
 
 
 body {
-    --shadow-raised-xl: 
-      0px 1.8px 7.3px rgb(0 0 0 / 5.1%), 
-      0px 8px 35.7px rgb(0 0 0 / 14.2%), 
-      0px 20px 60px   rgb(0 0 0 / 20%);
-    
-    
       // 卡片
     --shadow-card: 
       0px 8px 20px  rgb(0 0 0 / 10%), 
@@ -77,8 +71,9 @@ body {
     --shadow-card-mini: 
       0px 2px 22px rgb(0 0 0 / 8.5%), 
       0px 6px 45px rgb(0 0 0 / 3.4%);
-    --toolbar-height: 48px;
 }
+
+
 
 
 

@@ -104,12 +104,12 @@
 
 
     &.is-selected {
-        background: var(--toolbar-controls-background);
+        background: $glassive-control-background;
         box-shadow: var(--shadow-card-mini), var(--glass-shadow-inset-for-control);
         z-index: 1;
         animation: pop-in-strong $anim-duration-moderate ease;
         .community-item-name {color: var(--text-accent);}
-        &:hover {background: var(--toolbar-controls-background);}
+        &:hover {background: $glassive-control-background;}
     }
 }
 
