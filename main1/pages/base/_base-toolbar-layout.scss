@@ -87,7 +87,7 @@
 // cards, list view ------------------------------------------------------------------------------------------------
 
 
-.workspace-leaf-content[data-type="bases"] .bases-header:has(~[data-view-type="cards"]),
+
 .workspace-leaf-content[data-type="bases"] .bases-header:has(~[data-view-type="list"]) {
     position: absolute;
     align-items: flex-start;
@@ -100,6 +100,22 @@
 
     &~.bases-view {
         padding-top: 48px;
+    }
+}
+
+
+.workspace-leaf-content[data-type="bases"] .bases-header:has(~[data-view-type="cards"]) {
+    position: absolute;
+    align-items: flex-start;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(
+        color-mix(in oklch, $background-secondary 80%, transparent) 0, 
+        color-mix(in oklch, $background-secondary 50%, transparent) 70%, 
+        transparent);
+
+    &~.bases-view {
+        padding-top: 56px;
     }
 }
 
@@ -147,7 +163,7 @@
 }
 
 .bases-search-row~.bases-view[data-view-type="table"] {
-    padding-top: calc( var(--additional-search-row-height) );
+    padding-top: calc( var(--additional-search-row-height) - 8px);
 }
 
 
@@ -158,7 +174,7 @@
     position: absolute;
     z-index: 2;
     inset: 0 0 auto;
-    height: calc($toolbar-height + var(--bases-table-header-row-height) + var(--additional-search-row-height));
+    height: calc($toolbar-height + var(--bases-table-header-row-height) + var(--additional-search-row-height) - 8px);
 
     @include toolbar-glass-bg;
 }
@@ -186,7 +202,7 @@
 
 .workspace-leaf-content[data-type="bases"] .bases-kanban-column-header {
     transition: padding $anim-duration-fast ease;
-    padding-top: calc(48px + var(--additional-search-row-height)) !important;
+    padding-top: calc(44px + var(--additional-search-row-height)) !important;
     position: absolute;
     z-index: 5;
     top: 0;

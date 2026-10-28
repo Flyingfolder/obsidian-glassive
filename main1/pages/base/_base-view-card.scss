@@ -4,4 +4,16 @@
 
 .workspace-leaf-content[data-type="bases"] .bases-view[data-view-type="cards"] {
     background-color: $background-secondary;
+
+}
+
+
+.bases-cards-item{
+    cursor: default;
+    border-radius: 24px;
+    corner-shape: squircle;
+
+    &:hover {
+        background: var(--color-base-30);
+    }
 }
