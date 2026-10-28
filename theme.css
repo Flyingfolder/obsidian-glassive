@@ -383,10 +383,6 @@ button {
   corner-shape: squircle;
 }
 
-button:not(.clickable-icon) {
-  min-width: 72px;
-}
-
 button.mod-destructive {
   background: color-mix(in oklch, var(--background-modifier-error) 25%, transparent);
 }
@@ -622,11 +618,19 @@ button.mod-destructive.mod-cta:hover {
   display: none;
 }
 
-.modal-header:has(.modal-title:only-child:empty) + .modal-content > h2:first-child,
 .modal-header .modal-title {
   justify-content: flex-start;
   margin: unset;
   padding: 8px var(--modal-padding) 20px;
+  line-height: 32px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.modal-header:has(.modal-title:only-child:empty) + .modal-content > h1:first-child, .modal-header:has(.modal-title:only-child:empty) + .modal-content > h2:first-child {
+  justify-content: flex-start;
+  margin: unset;
+  padding: 8px 0 20px;
   line-height: 32px;
   font-weight: 600;
   font-size: 20px;

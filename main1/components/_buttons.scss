@@ -60,7 +60,8 @@ button {
 
 
 button:not(.clickable-icon) {
-    min-width: 72px;
+    // min-width: 72px;
+    // bug 会导致各个地方都崩溃
 }
 
 button.mod-destructive {

@@ -65,7 +65,7 @@
         display: none;
     }
 
-    &:has(.modal-title:only-child:empty)+.modal-content>h2:first-child,
+
     .modal-title {
         justify-content: flex-start;
         margin: unset;
@@ -76,8 +76,18 @@
         // border-bottom: 1px solid var(--background-modifier-border);
     }
 
-
+    &:has(.modal-title:only-child:empty)+.modal-content>h1:first-child,
+    &:has(.modal-title:only-child:empty)+.modal-content>h2:first-child {
+        justify-content: flex-start;
+        margin: unset;
+        padding: 8px 0 calc(8px + 12px);
+        line-height: 32px;
+        font-weight: 600;
+        font-size: $font-ui-large;
+    }
 }
+
+
 
 
 
