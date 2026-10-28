@@ -38,12 +38,36 @@
         
         [type="checkbox"] {display: none;}
 
-        // “更多”按钮右箭头
+        // “更多”按钮右箭头 → 改为 lucide: ellipsis
         .bases-toolbar-menu-item-icon {
             opacity: 0;
+
+            .svg-icon.lucide-chevron-right {
+                
+
+                // lucide/ellipsis：三个半径 1 的圆点，圆心 cx 5 / 12 / 19，cy 12
+                // mask 只取 alpha 通道，所以 stroke 写 black 即可，颜色交给 background-color
+                background-color: var(--icon-color, currentColor);
+                mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Ccircle cx=%2712%27 cy=%2712%27 r=%271%27/%3E%3Ccircle cx=%2719%27 cy=%2712%27 r=%271%27/%3E%3Ccircle cx=%275%27 cy=%2712%27 r=%271%27/%3E%3C/svg%3E");
+                mask-repeat: no-repeat;
+                mask-position: center center;
+                mask-size: contain;
+
+                // 隐藏原 chevron 的描边，只保留遮罩出来的图标
+                .svg-icon.lucide-chevron-right{
+                    path,
+                    polyline,
+                    line {display: none;}
+                }
+            }
+            
             cursor: default;
         }
-        &:hover .bases-toolbar-menu-item-icon {opacity: 1;}
+
+        &:hover .bases-toolbar-menu-item-icon {
+            opacity: 1;
+            &:hover {background-color: unset;}
+        }
 
         &.mod-active {
             color: $interactive-accent;

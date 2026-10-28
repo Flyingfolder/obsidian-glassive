@@ -1474,11 +1474,36 @@ body {
 
 .menu.bases-toolbar-menu .bases-toolbar-menu-item .bases-toolbar-menu-item-icon {
   opacity: 0;
+}
+
+.menu.bases-toolbar-menu .bases-toolbar-menu-item .bases-toolbar-menu-item-icon .svg-icon.lucide-chevron-right {
+  background-color: var(--icon-color, currentColor);
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Ccircle cx=%2712%27 cy=%2712%27 r=%271%27/%3E%3Ccircle cx=%2719%27 cy=%2712%27 r=%271%27/%3E%3Ccircle cx=%275%27 cy=%2712%27 r=%271%27/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Ccircle cx=%2712%27 cy=%2712%27 r=%271%27/%3E%3Ccircle cx=%2719%27 cy=%2712%27 r=%271%27/%3E%3Ccircle cx=%275%27 cy=%2712%27 r=%271%27/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.menu.bases-toolbar-menu .bases-toolbar-menu-item .bases-toolbar-menu-item-icon .svg-icon.lucide-chevron-right .svg-icon.lucide-chevron-right path,
+.menu.bases-toolbar-menu .bases-toolbar-menu-item .bases-toolbar-menu-item-icon .svg-icon.lucide-chevron-right .svg-icon.lucide-chevron-right polyline,
+.menu.bases-toolbar-menu .bases-toolbar-menu-item .bases-toolbar-menu-item-icon .svg-icon.lucide-chevron-right .svg-icon.lucide-chevron-right line {
+  display: none;
+}
+
+.menu.bases-toolbar-menu .bases-toolbar-menu-item .bases-toolbar-menu-item-icon {
   cursor: default;
 }
 
 .menu.bases-toolbar-menu .bases-toolbar-menu-item:hover .bases-toolbar-menu-item-icon {
   opacity: 1;
+}
+
+.menu.bases-toolbar-menu .bases-toolbar-menu-item:hover .bases-toolbar-menu-item-icon:hover {
+  background-color: unset;
 }
 
 .menu.bases-toolbar-menu .bases-toolbar-menu-item.mod-active {
