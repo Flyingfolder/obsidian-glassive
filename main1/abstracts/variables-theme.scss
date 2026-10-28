@@ -9,8 +9,6 @@ $toolbar-progressive-blur-area: 12px;
 $shadow-s: var(--shadow-s);
 $shadow-l: var(--shadow-l);
 
-
-
 $shadow-raised-control-item: 
       0 2px 12px rgb(0 0 0 / 5.5%), 
       0 6px 23px rgb(0 0 0 / 3.4%);
@@ -25,3 +23,22 @@ $shadow-raised-xl:
 
 $glassive-control-background: var(--glassive-control-background);
 $glassive-control-backdrop-filter: var(--glassive-control-backdrop-filter);
+
+
+
+
+
+
+body {
+      // 卡片
+    --shadow-card: 
+      0px 8px 20px  rgb(0 0 0 / 10%), 
+      0px 14px 42px rgb(0 0 0 / 6%), 
+      0px 20px 85px rgb(0 0 0 / 3.4%);
+
+      // 适用于极小的部件，比如 contol
+    --shadow-card-mini: 
+      0px 2px 22px rgb(0 0 0 / 8.5%), 
+      0px 6px 45px rgb(0 0 0 / 3.4%);
+}
+

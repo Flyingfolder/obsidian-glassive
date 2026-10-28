@@ -1,0 +1,217 @@
+// ==============================================================================
+// Glassive Controls
+// 控件（按钮 / 输入框 / 开关等）共用的 mixins。
+// ==============================================================================
+
+@use 'variables-glassive' as *;
+@use 'variables-theme' as *;
+
+
+
+
+
+
+
+@mixin _liquid-toolbar-base() {
+    color: var(--mono-100);
+    box-shadow: $shadow-raised-control-item, var(--shadow-glass-border);
+    border: unset;
+    margin: unset;
+    border-radius: 99px;
+    corner-shape: unset;
+    background: $glassive-control-background;
+    backdrop-filter: $glassive-control-backdrop-filter;
+    // 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-size: $font-ui-small;
+    line-height: 16px;
+
+
+
+    svg.svg-icon {
+        --icon-size: 16px;
+        --icon-stroke: 1.75px;
+    }
+}
+
+
+
+// 交互状态层：hover / 按下 / 选中 三态的背景反馈。
+// $selected-modifier 传选中态的选择器片段（如 '.is-active'、':has(.is-enabled)'），
+// 不传则不生成选中态。
+@mixin liquid-toolbar-states($selected-modifier: null) {
+    &:hover {
+        .theme-light & {background-color: var(--color-base-30);}
+        .theme-dark  & {background-color: color-mix(in oklch, rgb(80 80 80) 95%, $interactive-accent) ;}
+    }
+
+    &:active {
+        .theme-light & {background-color: var(--color-base-40);}
+        .theme-dark  & {background-color: color-mix(in oklch, rgb(80 80 80) 95%, $interactive-accent) ;}
+    }
+
+    @if $selected-modifier {
+        &#{$selected-modifier} {
+            .theme-light & {background-color: var(--color-base-30);}
+            .theme-dark  & {background-color: color-mix(in oklch, rgb(80 80 80) 95%, $interactive-accent) ;}
+        }
+    }
+
+}
+
+
+
+
+
+@mixin liquid-toolbar-icon-group($auto-detect-only-child: false, $button-type: div) {
+    color: var(--mono-100);
+    box-shadow: var(--shadow-card-mini), var(--shadow-glass-border);
+    border-radius: 99px;
+    corner-shape: unset;
+    background: $glassive-control-background;
+    backdrop-filter: $glassive-control-backdrop-filter;
+    // 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-size: $font-ui-small;
+    // 
+    border: unset;
+    padding: 4px;
+    margin: unset;
+    gap: 4px;
+    min-height: fit-content;
+    
+    svg.svg-icon {
+        --icon-size: 16px;
+        --icon-stroke: 1.75px;
+    }
+
+    @if $auto-detect-only-child {
+        &:has(>*:only-child) {padding: unset;}
+
+        &>#{$button-type} {
+            color: var(--mono-100);
+            border: unset;
+            padding: 4px;
+            margin: unset;
+            border-radius: 99px;
+            corner-shape: unset;
+            background: unset;
+            backdrop-filter: unset;
+            // 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            font-size: $font-ui-small;
+            line-height: 16px;
+            &:hover {background-color: $background-modifier-hover-subtle;}
+        }
+
+        &>#{$button-type}:only-child {
+            padding: 8px;
+        }
+    }
+
+    @else {
+        @content;
+    }
+
+}
+
+
+@mixin liquid-toolbar-icon-button($is-grouped: false) {
+    @include _liquid-toolbar-base();
+
+    .svg-icon {
+        filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100) / 100%));
+
+        --icon-stroke: 1.8px;
+        --icon-size: 16px;
+    }
+
+    @if $is-grouped {
+        // Grouped: 多个 icon 构成一个 group
+        background: unset;
+        backdrop-filter: unset;
+        padding: 2px;
+        min-width: 24px;
+        min-height: 24px;
+        box-shadow: unset;
+    }
+
+ /* stylelint-disable-next-line plugin/no-unsupported-browser-features */
+ @else {
+        // Standalone: 单独显示 (默认)
+        padding: 6px;
+        min-width: 32px;
+        min-height: 32px;
+    }
+}
+
+@mixin liquid-toolbar-text-button {
+    @include _liquid-toolbar-base();
+
+    padding: 0 12px;
+    min-width: fit-content;
+    min-height: 32px;
+}
+
+
+
+@mixin liquid-toolbar-search-input($control-max-width: 320px) {
+    @include _liquid-toolbar-base();
+
+    --input-height: 32px;
+    --input-border-width: 0;
+    --background-modifier-form-field: transparent;
+    --background-modifier-form-field-hover: transparent;
+
+    height: 32px;
+    width: 100%;
+    max-width: $control-max-width;
+    flex-grow: 1;
+
+    :is(.theme-light, .theme-dark) &:hover {
+        background: $glassive-control-background;
+    }
+}
+
+
+
+@mixin liquid-toolbar-text-button-changing-from-toggles($label) {
+    @include _liquid-toolbar-base();
+
+    padding: 0 12px;
+    height: 32px;
+    width: fit-content;
+    gap: unset;
+    position: relative;
+
+    &::before {
+        content: $label; //在这里输入toggle 的标签
+    }
+
+    // 隐藏toggle，并扩大点击区域
+    .checkbox-container {
+        position: absolute;
+        inset: 0;
+        width: auto;
+        height: auto;
+        opacity: 0;
+    }
+
+    &:has(.is-enabled) {
+        color: #fff;
+        .theme-light & {background: $interactive-accent;}
+        .theme-dark  & {background: $interactive-accent;}
+    }
+
+    .setting-item-control {gap: unset;}
+}
+

@@ -24,16 +24,17 @@
 
 
 
+body {
+  --glassive-control-background: #{$background-secondary};
+  --liquid-modal-background-image: #{$background-secondary};
+}
+
 
 
 .is-focused.theme-light {
-  // --toolbar-items-background:
-  //   linear-gradient(rgb(253, 253, 253), rgb(253, 253, 253)) padding-box,
-  //   linear-gradient(45deg, rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255)) border-box,
-  //   rgb(249, 249, 249);
-
-  // --toolbar-items-background: linear-gradient(var(--background-primary), var(--background-primary));
-  --glassive-control-background: linear-gradient(rgb(255 255 255 / 40%), rgb(255 255 255 / 20%)),  rgb(255 255 255 / 20%);
+  --glassive-control-background: 
+      linear-gradient(rgb(255 255 255 / 40%), rgb(255 255 255 / 20%)),  
+    rgb(255 255 255 / 20%);
   --glassive-control-backdrop-filter: blur(2px) brightness(1.08);
   --liquid-modal-background-image: none;
 }
@@ -41,37 +42,18 @@
 
 
 .is-focused.theme-dark {
-  // -------
-
-    --glassive-control-background:
+  --glassive-control-background:
         linear-gradient(
             hsl(var(--interactive-accent-hsl), 5%), 
             hsl(var(--interactive-accent-hsl), 5%)), 
         color-mix(in oklch, rgb(255 255 255) 10%, transparent);
-      --glassive-control-backdrop-filter: blur(2px) brightness(1.03);
-  // --toolbar-items-background:
-  //   linear-gradient(hsl(var(--color-accent-hsl), 3%), hsl(var(--color-accent-hsl), 5%)) padding-box,
-  //   linear-gradient(rgb(33 33 33), rgb(33 33 33)) padding-box,
-  //   linear-gradient(to right bottom, rgb(70 70 70 / 70%),  rgb(50 50 50 / 70%), rgb(70 70 74 / 70%)) border-box;
+  --glassive-control-backdrop-filter: blur(2px) brightness(1.03);
   --liquid-modal-background-image: 
     radial-gradient(ellipse 260% 200% at -400px -200px,
     hsl(var(--color-accent-hsl), 10%),
     rgb(var(--mono-rgb-0), 6%));
 }
 
-
-body {
-      // 卡片
-    --shadow-card: 
-      0px 8px 20px  rgb(0 0 0 / 10%), 
-      0px 14px 42px rgb(0 0 0 / 6%), 
-      0px 20px 85px rgb(0 0 0 / 3.4%);
-
-      // 适用于极小的部件，比如 contol
-    --shadow-card-mini: 
-      0px 2px 22px rgb(0 0 0 / 8.5%), 
-      0px 6px 45px rgb(0 0 0 / 3.4%);
-}
 
 
 

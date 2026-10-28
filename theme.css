@@ -18,6 +18,16 @@
 /* Text */
 
 /* Text */
+body {
+  --shadow-card:
+    0px 8px 20px rgb(0 0 0 / 10%),
+    0px 14px 42px rgb(0 0 0 / 6%),
+    0px 20px 85px rgb(0 0 0 / 3.4%);
+  --shadow-card-mini:
+    0px 2px 22px rgb(0 0 0 / 8.5%),
+    0px 6px 45px rgb(0 0 0 / 3.4%);
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -544,14 +554,6 @@ button.mod-destructive.mod-cta:hover {
   box-sizing: border-box;
   font-size: 13px;
   line-height: 16px;
-}
-
-.theme-light .modal .modal-header-button:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .modal .modal-header-button:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
 .modal .modal-header-button svg.svg-icon {
@@ -1747,14 +1749,6 @@ body {
   line-height: 16px;
 }
 
-.theme-light .workspace-leaf-content[data-type="bases"] .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .workspace-leaf-content[data-type="bases"] .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
-}
-
 .workspace-leaf-content[data-type="bases"] .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button svg.svg-icon {
   --icon-size: 16px;
   --icon-stroke: 1.75px;
@@ -1846,16 +1840,6 @@ body {
   box-sizing: border-box;
   font-size: 13px;
   line-height: 16px;
-}
-
-.theme-light .bases-search-row:has(~ [data-view-type="list"]):hover,
-.theme-light .bases-search-row:has(~ [data-view-type="cards"]):hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .bases-search-row:has(~ [data-view-type="list"]):hover,
-.theme-dark .bases-search-row:has(~ [data-view-type="cards"]):hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
 .bases-search-row:has(~ [data-view-type="list"]) svg.svg-icon,
@@ -2256,14 +2240,6 @@ body {
   box-sizing: border-box;
   font-size: 13px;
   line-height: 16px;
-}
-
-.theme-light .bases-kanban-placeholder .text-icon-button.mod-pill:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .bases-kanban-placeholder .text-icon-button.mod-pill:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
 .bases-kanban-placeholder .text-icon-button.mod-pill svg.svg-icon {
@@ -2709,14 +2685,6 @@ body {
   line-height: 16px;
 }
 
-.theme-light .sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
-}
-
 .sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle svg.svg-icon {
   --icon-size: 16px;
   --icon-stroke: 1.75px;
@@ -2807,14 +2775,6 @@ body {
   line-height: 16px;
 }
 
-.theme-light .modal.callout-editor-modal .titlebar-control-group .clickable-icon:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .modal.callout-editor-modal .titlebar-control-group .clickable-icon:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
-}
-
 .modal.callout-editor-modal .titlebar-control-group .clickable-icon svg.svg-icon {
   --icon-size: 16px;
   --icon-stroke: 1.75px;
@@ -2853,14 +2813,6 @@ body {
   box-sizing: border-box;
   font-size: 13px;
   line-height: 16px;
-}
-
-.theme-light .modal.callout-editor-modal .mod-callout-type > button:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .modal.callout-editor-modal .mod-callout-type > button:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
 .modal.callout-editor-modal .mod-callout-type > button svg.svg-icon {
@@ -3237,14 +3189,6 @@ hr:has(+ .cmdr-sep-con.callout) {
   line-height: 16px;
 }
 
-.theme-light [data-type="style-settings"] .view-content > .setting-item:first-child .search-input-container:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark [data-type="style-settings"] .view-content > .setting-item:first-child .search-input-container:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
-}
-
 [data-type="style-settings"] .view-content > .setting-item:first-child .search-input-container svg.svg-icon {
   --icon-size: 16px;
   --icon-stroke: 1.75px;
@@ -3282,14 +3226,6 @@ hr:has(+ .cmdr-sep-con.callout) {
   box-sizing: border-box;
   font-size: 13px;
   line-height: 16px;
-}
-
-.theme-light [data-type="style-settings"] .view-content > .setting-item:first-child a:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark [data-type="style-settings"] .view-content > .setting-item:first-child a:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
 [data-type="style-settings"] .view-content > .setting-item:first-child a svg.svg-icon {
@@ -3611,14 +3547,6 @@ hr:has(+ .cmdr-sep-con.callout) {
   line-height: 16px;
 }
 
-.theme-light .setting-page-titlebar .setting-page-back-button:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .setting-page-titlebar .setting-page-back-button:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
-}
-
 .setting-page-titlebar .setting-page-back-button svg.svg-icon {
   --icon-size: 16px;
   --icon-stroke: 1.75px;
@@ -3672,14 +3600,6 @@ hr:has(+ .cmdr-sep-con.callout) {
   line-height: 16px;
 }
 
-.theme-light .modal-setting-titlebar > button:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .modal-setting-titlebar > button:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
-}
-
 .modal-setting-titlebar > button svg.svg-icon {
   --icon-size: 16px;
   --icon-stroke: 1.75px;
@@ -3707,14 +3627,6 @@ hr:has(+ .cmdr-sep-con.callout) {
   box-sizing: border-box;
   font-size: 13px;
   line-height: 16px;
-}
-
-.theme-light .modal-setting-titlebar > button.clickable-icon:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .modal-setting-titlebar > button.clickable-icon:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
 .modal-setting-titlebar > button.clickable-icon svg.svg-icon {
@@ -3797,14 +3709,6 @@ hr:has(+ .cmdr-sep-con.callout) {
   line-height: 16px;
 }
 
-.theme-light .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
-}
-
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container svg.svg-icon {
   --icon-size: 16px;
   --icon-stroke: 1.75px;
@@ -3842,14 +3746,6 @@ hr:has(+ .cmdr-sep-con.callout) {
   box-sizing: border-box;
   font-size: 13px;
   line-height: 16px;
-}
-
-.theme-light .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon svg.svg-icon {
@@ -3891,14 +3787,6 @@ hr:has(+ .cmdr-sep-con.callout) {
   box-sizing: border-box;
   font-size: 13px;
   line-height: 16px;
-}
-
-.theme-light .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle:hover {
-  background: color-mix(in oklch, var(--mono-100) 5%, transparent);
-}
-
-.theme-dark .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 80%, var(--color-accent-1));
 }
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle svg.svg-icon {
@@ -4109,33 +3997,30 @@ hr:has(+ .cmdr-sep-con.callout) {
     0px 0px 40px rgb(0 0 0 / 12%); /* 第二层：范围更大、更模糊、更透明的光晕 */
 }
 
+body {
+  --glassive-control-background: var(--background-secondary);
+  --liquid-modal-background-image: var(--background-secondary);
+}
+
 .is-focused.theme-light {
-  --glassive-control-background: linear-gradient(rgb(255 255 255 / 40%), rgb(255 255 255 / 20%)), rgb(255 255 255 / 20%);
+  --glassive-control-background:
+      linear-gradient(rgb(255 255 255 / 40%), rgb(255 255 255 / 20%)),
+    rgb(255 255 255 / 20%);
   --glassive-control-backdrop-filter: blur(2px) brightness(1.08);
   --liquid-modal-background-image: none;
 }
 
 .is-focused.theme-dark {
   --glassive-control-background:
-      linear-gradient(
-          hsl(var(--interactive-accent-hsl), 5%),
-          hsl(var(--interactive-accent-hsl), 5%)),
-      color-mix(in oklch, rgb(255 255 255) 10%, transparent);
+        linear-gradient(
+            hsl(var(--interactive-accent-hsl), 5%),
+            hsl(var(--interactive-accent-hsl), 5%)),
+        color-mix(in oklch, rgb(255 255 255) 10%, transparent);
   --glassive-control-backdrop-filter: blur(2px) brightness(1.03);
   --liquid-modal-background-image:
     radial-gradient(ellipse 260% 200% at -400px -200px,
     hsl(var(--color-accent-hsl), 10%),
     rgb(var(--mono-rgb-0), 6%));
-}
-
-body {
-  --shadow-card:
-    0px 8px 20px rgb(0 0 0 / 10%),
-    0px 14px 42px rgb(0 0 0 / 6%),
-    0px 20px 85px rgb(0 0 0 / 3.4%);
-  --shadow-card-mini:
-    0px 2px 22px rgb(0 0 0 / 8.5%),
-    0px 6px 45px rgb(0 0 0 / 3.4%);
 }
 
 .theme-light {
