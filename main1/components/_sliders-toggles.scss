@@ -1,0 +1,39 @@
+
+
+@use '../abstracts' as *; 
+
+
+.mod-macos {
+    --slider-thumb-border-width: 0;
+    --slider-thumb-height: 16px;
+    --slider-thumb-width: 20px;
+    --slider-thumb-y: -5px;
+    --slider-track-height: 6px;
+    --slider-thumb-opacity-active: .6;
+    --slider-thumb-height-active: calc(var(--slider-thumb-height) + 4px);
+    --slider-thumb-width-active: calc(var(--slider-thumb-width) + 4px);
+    --slider-thumb-y-active: calc(var(--slider-thumb-y) - 2px);
+    // 
+    // --toggle-width: 44px;
+    // --toggle-radius: 24px;
+    // --toggle-thumb-radius: 24px;
+    // --toggle-thumb-height: 16px;
+    // --toggle-thumb-width: 26px;
+    // --toggle-thumb-opacity-active: .6;
+    // --toggle-s-width: 36px;
+    // --toggle-s-thumb-height: 12px;
+    // --toggle-s-thumb-width: 20px;
+}
+
+
+
+body.mod-macos div [type="range"]:active::-webkit-slider-thumb {
+  box-shadow: 
+    inset 0 -2px 4px rgb(0 0 0 / 35%), var(--shadow-card-mini), var(--shadow-glass-border); 
+    background-color: rgb(var(--mono-rgb-0), .1);
+}
+
+.slider-value {
+    font-size: $font-ui-smaller;
+    color: $text-muted;
+}

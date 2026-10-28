@@ -1,0 +1,13 @@
+
+
+
+@use '../abstracts' as *; 
+
+
+.drag-reorder-ghost {
+    border-radius: 40px;
+    corner-shape: squircle;
+    opacity: 0.9;
+    background-color: $background-primary;
+    box-shadow: var(--shadow-raised-xl);
+}

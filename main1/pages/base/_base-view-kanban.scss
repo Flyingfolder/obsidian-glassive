@@ -11,7 +11,7 @@ body {
     // --bases-kanban-column-box-shadow: none;
     // --bases-kanban-column-header-background: transparent;
     --bases-kanban-card-background: var(--background-secondary);
-    --bases-kanban-card-radius: 24px;
+    --bases-kanban-card-radius: 0; //24px;
     --bases-kanban-card-corner-shape: var(--corner-shape);
     --bases-kanban-card-shadow: var(--glass-shadow-inset-l);
     // --bases-kanban-card-shadow-hover: var(--shadow-card-mini);
@@ -37,90 +37,39 @@ body {
 
 
 
-.bases-view[data-view-type="kanban"] .bases-kanban-column-header {
-    // 默认（存在搜索栏时）
-    .bases-search-row ~ & {
-        padding-top: 32px;
-    }
-
-    // 搜索栏隐藏时
-    .bases-search-row[style*="display: none"] ~ & {
-        padding-top: 0;
-    }
-}
-
 
 
 .bases-kanban-column {
     border: unset;
 
     .bases-kanban-column-header {
-        position: absolute;
-        z-index: 10;
-        top: 48px;
-        height: auto;
-        width: 100%;
-        align-items: flex-start;
-        background: linear-gradient(in oklch to bottom,
-            color-mix(in oklch, $background-primary 80%, transparent) 0, 
-            color-mix(in oklch, $background-primary 50%, transparent) 36px, 
-            transparent);
+        padding: 0 12px 4px;
 
-        & {pointer-events: none;}
-
-        &>*{pointer-events: all; 
-            min-height: 24px; 
+        &>*{
+            min-height: 20px; 
             line-height: 24px;
-            align-content: center;}
+            align-content: center;
+        }
         
         .bases-kanban-column-create {opacity: 1;}
 
-
-        // 测试
-        background: color-mix(in oklch, $background-primary 70%, transparent);
-        backdrop-filter: blur(2px);
         border-bottom: 1px solid $background-modifier-seperator;
-        padding: 0 8px 8px 20px;
-        transition: padding $anim-duration-moderate ease;
-
-
     }
 
-
-
-    .bases-kanban-column-content {
-        padding-top: 100px;
-        padding-bottom: 40px;
-        overflow-x: visible;
-    }
 
     .bases-kanban-column-footer {
-        // position: absolute;
-        // bottom: 0;
-        // width: 100%;
-        // height: 80px;
-        // display: flex;
-        // align-items: flex-end;
-        // background: linear-gradient(in oklch to bottom,
-        //     transparent 0,
-        //     color-mix(in oklch, $background-primary 50%, transparent) 36px, 
-        //     color-mix(in oklch, $background-primary 80%, transparent) 80px);
-
-        // .text-icon-button {width: auto;}
-        display: none;
+        display: none; // 待定
     }
 }
 
 
 
 .bases-kanban-column+.bases-kanban-column {
-    // border-right: 1px solid $background-modifier-seperator;
-
     &::before {
         content: '';
         display: block;
         position: absolute;
-        inset: 80px 0 0 auto;
+        inset: 76px 0 0 auto;
         border-right: 1px solid $background-modifier-seperator;
     }
     
@@ -133,8 +82,6 @@ body {
     box-shadow: unset;
     cursor: unset;
     border-radius: unset;
-
-    // 
     transition: unset;
 
 
@@ -142,7 +89,7 @@ body {
         content: '';
         display: block;
         position: absolute;
-        inset: 0 20px auto 8px;
+        inset: 0 8px auto 8px;
         border-top: 1px solid $background-modifier-seperator;
     }
 
@@ -189,4 +136,43 @@ body {
 
 .bases-kanban-card-property[data-property="file.name"] {
     color: var(--text-accent);
+}
+
+
+
+.bases-kanban-container:has(>.bases-kanban-placeholder) {
+    width: 100% !important;
+    
+}
+
+
+
+
+.bases-kanban-placeholder {
+    width: 100% !important;
+    border: unset;
+    .bases-kanban-placeholder-title {font-size: $font-ui-large;}
+
+    .text-icon-button.mod-pill {
+        @include liquid-toolbar-text-button;
+
+        background: $interactive-accent;
+        color: white;
+
+        :is(.theme-light, .theme-dark) &:hover {
+            background: $interactive-accent-hover ;
+
+            --icon-color-hover: $interactive-accent-hover;
+        }
+
+
+        .theme-light &:active {
+            filter: brightness(0.90);
+            
+        }
+
+        .theme-dark &:active {
+            filter: brightness(1.1);
+        }
+    }
 }

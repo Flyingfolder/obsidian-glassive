@@ -68,9 +68,9 @@
 
 body {
     --shadow-raised-xl: 
-      0px 1.8px 7.3px rgb(0 0 0 / 7.1%), 
-      0px 8px 35.7px rgb(0 0 0 / 18.2%), 
-      0px 20px 60px   rgb(0 0 0 / 28%);
+      0px 1.8px 7.3px rgb(0 0 0 / 5.1%), 
+      0px 8px 35.7px rgb(0 0 0 / 14.2%), 
+      0px 20px 60px   rgb(0 0 0 / 20%);
     
     
       // 卡片
@@ -83,6 +83,7 @@ body {
     --shadow-card-mini: 
       0px 2px 22px rgb(0 0 0 / 8.5%), 
       0px 6px 45px rgb(0 0 0 / 3.4%);
+    --toolbar-height: 48px;
 }
 
 
@@ -95,7 +96,7 @@ body {
   --toolbar-background: rgb(252 252 252 / 40%);
   --background-modifier-border: rgb( 200 200 200 / 30%);
   --background-glass: rgb(246 246 246 / 50%);
-  --backdrop-filter-glass: blur(10px) saturate(140%) brightness(1.1);
+  --backdrop-filter-glass: blur(10px) saturate(140%) brightness(1.06);
   --background-glass-subtle: rgb(255 255 255 / 60%);
   --backdrop-filter-glass-subtle: blur(4px) saturate(190%) brightness(1.03);
   --background-frosted-edge-fade: rgb(235 235 235 / 75%);

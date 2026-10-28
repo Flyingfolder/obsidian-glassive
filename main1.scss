@@ -15,6 +15,7 @@
 // 3. Components — 可复用组件
 @use 'main1/components/input';
 @use 'main1/components/buttons';
+@use 'main1/components/ghost';
 @use 'main1/components/menus';
 @use 'main1/components/modals';
 @use 'main1/components/nav-headers';
@@ -22,6 +23,7 @@
 @use 'main1/components/prompt';
 @use 'main1/components/setting-items';
 @use 'main1/components/suggestion-items';
+@use 'main1/components/sliders-toggles';
 @use 'main1/components/suggestions';
 @use 'main1/components/nav-items';
 @use 'main1/components/notice';
@@ -37,16 +39,16 @@
 
 // // 5. Pages — 页面级样式
 @use 'main1/pages/base/base-basic';
-@use 'main1/pages/base/base-toolbar-buttons';
 @use 'main1/pages/base/base-menus';
-@use 'main1/pages/base/base-menu-actions';
-@use 'main1/pages/base/base-menus-layout';
-@use 'main1/pages/base/base-menu-type-result';
+@use 'main1/pages/base/base-menus-toolbar';
 @use 'main1/pages/base/base-menus-filter-form-item';
+// 
+@use 'main1/pages/base/base-toolbar-layout';
 @use 'main1/pages/base/base-view-table';
 @use 'main1/pages/base/base-view-kanban';
 @use 'main1/pages/base/base-embed';
 @use 'main1/pages/base/base-view-card';
+// 
 @use 'main1/pages/corePlugin-canvas-UI';
 @use 'main1/pages/corePlugin-canvas';
 @use 'main1/pages/corePlugin-fileRecovery';

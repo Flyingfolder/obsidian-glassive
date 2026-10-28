@@ -1,0 +1,201 @@
+
+
+@use '../../abstracts' as *;
+
+
+
+
+
+.workspace-leaf-content[data-type="bases"]{
+    .bases-header {
+        z-index: 7;
+        padding: 8px;
+        height: auto;
+        min-height: fit-content;
+
+        .bases-toolbar {gap: 8px;}
+    }
+
+
+    .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button {
+        @include liquid-toolbar-text-button;
+
+        --icon-color-hover: var(--text-normal);
+
+        padding: 0 4px;
+
+        .text-button-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 99px;
+        }
+
+        .text-button-label {padding-right: 4px;}
+
+        
+        &.has-active-menu {background-color: $background-modifier-hover-subtle;}
+
+        &.is-active .text-button-icon{
+            background-color: $interactive-accent;
+            color: white;
+        }
+    }
+
+    .bases-toolbar .bases-toolbar-result-count,
+    .bases-toolbar .bases-toolbar-item.bases-toolbar-views-menu {
+        // 保证阴影不会丢失
+        overflow: visible;
+    }
+
+}
+
+
+
+.bases-header {
+    border: unset;
+}
+
+.bases-search-row {
+    border: unset;
+    padding: 2px 4px;
+}
+
+
+
+.workspace-leaf-content[data-type="bases"] {
+    --additional-search-row-height: 32px;
+
+    &:has(.bases-search-row[style="display: none;"]) {
+        --additional-search-row-height: 0px;
+    }
+
+    .view-content {position: relative;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// ================================================================================================================================================
+// cards, list view ------------------------------------------------------------------------------------------------
+
+
+.workspace-leaf-content[data-type="bases"] .bases-header:has(~[data-view-type="cards"]),
+.workspace-leaf-content[data-type="bases"] .bases-header:has(~[data-view-type="list"]) {
+    position: absolute;
+    align-items: flex-start;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(
+        color-mix(in oklch, $background-primary 80%, transparent) 0, 
+        color-mix(in oklch, $background-primary 50%, transparent) 70%, 
+        transparent);
+
+    &~.bases-view {
+        padding-top: 48px;
+    }
+}
+
+
+
+.bases-search-row:has(~[data-view-type="list"]),
+.bases-search-row:has(~[data-view-type="cards"]) {
+    @include liquid-toolbar-search-input($control-max-width: 280px);
+    @include pop-in-anim;
+
+    position: absolute;
+    inset: 44px 8px auto auto;
+    z-index: 8;
+}
+
+
+
+
+// ================================================================================================================================================
+// search row 的位置与动画 --------------------------------------------------------------------------------
+
+
+.bases-search-row:has(~[data-view-type="table"]),
+.bases-search-row:has(~[data-view-type="kanban"]) {
+    position: absolute;
+    inset: 40px 0 auto 0;
+    z-index: 7;
+    animation: 
+        scale-up $anim-duration-fast ease,
+        fade-in $anim-duration-fast ease-in;
+}
+
+
+
+
+
+
+
+// ========================================================================================
+// table --------------------------------------------------------------------------------
+
+
+.bases-view[data-view-type="table"] {
+    transition: padding $anim-duration-fast ease;
+}
+
+.bases-search-row~.bases-view[data-view-type="table"] {
+    padding-top: calc( var(--additional-search-row-height) );
+}
+
+
+
+.workspace-leaf-content[data-type="bases"] .view-content:has(>[data-view-type="table"])::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 2;
+    inset: 0 0 auto;
+    height: calc(var(--toolbar-height) + var(--bases-table-header-row-height) + var(--additional-search-row-height));
+
+    @include toolbar-glass-bg;
+}
+
+
+.bases-thead {
+    min-width: 100%;
+}
+
+
+
+// ========================================================================================
+// kanban --------------------------------------------------------------------------------
+.workspace-leaf-content[data-type="bases"]:has(>.view-content>[data-view-type="kanban"]) {
+    .bases-header {
+        position: absolute;
+        width: 100%;
+    }
+
+    .bases-kanban-column-header {
+        @include toolbar-glass-bg;
+    }
+}
+
+
+.workspace-leaf-content[data-type="bases"] .bases-kanban-column-header {
+    transition: padding $anim-duration-fast ease;
+    padding-top: calc(48px + var(--additional-search-row-height)) !important;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+    align-items: flex-end;
+}
+
+.bases-kanban-column-content {
+    padding-top: calc(80px + var(--additional-search-row-height)); //#待定
+}
+
+

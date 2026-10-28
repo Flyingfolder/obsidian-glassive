@@ -1,6 +1,9 @@
 
 
 
+@use '../abstracts' as *; 
+
+
 
 
 
@@ -10,6 +13,28 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .view-content>.setting-item:first-child {
+        max-width: unset;
+        background-color: unset;
+        padding: unset;
+        margin-bottom: 20px;
+
+        .setting-item-name {
+            overflow: visible
+        }
+
+        .search-input-container {
+            @include liquid-toolbar-search-input;
+        }
+
+        a {
+            @include liquid-toolbar-text-button;
+
+            cursor: default;
+            text-decoration: none !important;
+        }
     }
 
     .view-content>* {

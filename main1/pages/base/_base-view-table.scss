@@ -2,7 +2,7 @@
 
 
 
-.bases-view[data-view-type="table"] {
+.workspace-leaf-content[data-type="bases"] {
 
 
 //   --bases-table-container-border-width: var(--border-width);
@@ -11,7 +11,7 @@
   --bases-table-header-weight: var(--font-weight);
   --bases-table-header-color: var(--text-muted);
   --bases-table-header-icon-display: flex;
-  --bases-table-header-background: var(--background-primary);
+  --bases-table-header-background: transparent; //var(--background-primary);
   --bases-table-header-background-hover: var(--background-modifier-hover);
   --bases-table-header-sort-mask: linear-gradient(to left, transparent var(--size-4-6), #000 var(--size-4-6));
   --bases-table-summary-background: var(--background-primary);
@@ -22,6 +22,7 @@
   --bases-table-row-border-width: 0px;
   --bases-table-row-background-hover: var(--table-row-background-hover);
 //   --bases-table-row-height: #{$control-height-m}; //* 
+--bases-table-header-row-height: 28px;
   --bases-table-row-height: #{$control-height-s};
   --bases-table-font-size: #{$font-ui-small};
   --bases-table-column-max-width: 300;
@@ -38,6 +39,9 @@
 
 }
 
+.bases-tr {
+    box-shadow: none;
+}
 
 .bases-header:has(~ [data-view-type="table"]) {
     border: unset;
@@ -48,8 +52,7 @@
     .bases-thead {
         --bases-table-row-border-width: 1.5px;
         --bases-table-column-border-width: 1px;
-
-        height: 28px;
+        --bases-table-row-height: 28px;
 
         .bases-table-header {
             align-items: center;
