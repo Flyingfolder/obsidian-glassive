@@ -35,10 +35,16 @@
 // ======================================================
 
 .pane-empty, //outline core plugin "no headings found"
-.suggestion-empty,
+
 .search-result-container.mod-global-search .search-empty-state {
     @include search-empty();
 
+}
+
+.prompt .suggestion-empty {
+    @include search-empty();
+
+    min-height: 280px;
 }
 
 

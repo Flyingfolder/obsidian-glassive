@@ -17,6 +17,12 @@
 
     @include liquid-glass-bg-normal($with-shadow: true);
 
+    &.mod-search-suggestion {
+        @include liquid-glass-bg-normal($with-shadow: true);
+
+        .suggestion {background-color: unset;}
+    }
+
     corner-shape: squircle;
     border-radius: 32px;
 

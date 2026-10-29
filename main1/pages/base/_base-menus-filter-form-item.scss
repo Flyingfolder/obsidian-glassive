@@ -155,6 +155,33 @@
 
     .filter-group .conjunction.dropdown {
         background-color: unset;
+        background-image: unset;
     }
 }
 
+
+
+
+
+
+
+
+// grip handle  --------------------------
+
+.filter-row {
+    position: relative;
+
+}
+
+
+    
+.grip-handle {
+    position: absolute;
+    inset: 0 auto 0 -20px;
+    z-index: 10;
+
+    .filter-row.mod-group>& {
+        inset: 18px auto auto -18px;
+    }
+
+}

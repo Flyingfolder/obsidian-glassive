@@ -156,14 +156,17 @@
 
 // ========================================================================================
 // table --------------------------------------------------------------------------------
-
+.bases-header:has(~[data-view-type="table"]) {
+    position: absolute;
+    width: 100%;
+} 
 
 .bases-view[data-view-type="table"] {
     transition: padding $anim-duration-fast ease;
 }
 
 .bases-search-row~.bases-view[data-view-type="table"] {
-    padding-top: calc( var(--additional-search-row-height) - 8px);
+    padding-top: calc($toolbar-height  + var(--additional-search-row-height) - 8px);
 }
 
 
@@ -188,17 +191,16 @@
 
 // ========================================================================================
 // kanban --------------------------------------------------------------------------------
-.workspace-leaf-content[data-type="bases"]:has(>.view-content>[data-view-type="kanban"]) {
-    .bases-header {
-        position: absolute;
-        width: 100%;
-    }
 
-    .bases-kanban-column-header {
-        @include toolbar-glass-bg;
-    }
+
+.bases-header:has(~[data-view-type="kanban"]) {
+    position: absolute;
+    width: 100%;
+} 
+
+.bases-kanban-column-header {
+    @include toolbar-glass-bg;
 }
-
 
 .workspace-leaf-content[data-type="bases"] .bases-kanban-column-header {
     transition: padding $anim-duration-fast ease;
