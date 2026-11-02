@@ -64,14 +64,13 @@ body {
 
 
 
-.bases-kanban-column+.bases-kanban-column {
-    &::before {
+.bases-kanban-column+.bases-kanban-column::before {
         content: '';
         display: block;
         position: absolute;
-        inset: 76px 0 0 auto;
+        inset: 72px 0 0 auto;
         border-right: 1px solid $background-modifier-seperator;
-    }
+
     
 }
 

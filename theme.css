@@ -1017,14 +1017,16 @@ input.prompt-input:focus-visible {
   padding-bottom: 6px;
 }
 
+.setting-group {
+  --setting-items-radius: 40px;
+}
+
 .setting-group .setting-item:not(.setting-item-heading) {
   --setting-items-padding-x: 16px;
   --setting-items-padding-y: 8px;
 }
 
 .setting-group .setting-items {
-  --setting-items-radius: 40px;
-
   corner-shape: squircle;
   padding: 4px 0;
 }
@@ -2434,7 +2436,7 @@ body {
   content: "";
   display: block;
   position: absolute;
-  inset: 76px 0 0 auto;
+  inset: 72px 0 0 auto;
   border-right: 1px solid rgb(var(--mono-rgb-100), 12%);
 }
 
