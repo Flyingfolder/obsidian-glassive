@@ -56,6 +56,11 @@ button {
 
     border-radius: 99px;
     corner-shape: squircle;
+    background-color: var(--interactive-normal);
+
+    &:hover {
+        background-color: color-mix(in oklch, var(--interactive-normal) 60%, transparent);
+    }
 }
 
 
@@ -64,9 +69,45 @@ button:not(.clickable-icon) {
     // bug 会导致各个地方都崩溃
 }
 
+
+
+button.mod-cta {
+    background-color: var(--interactive-accent);
+
+    --text-color: var(--text-on-accent)
+}
+
+button.mod-cta.mobile-tap {
+    background-color: var(--interactive-accent-hover)
+}
+
+@media(hover:hover) {
+    button.mod-cta:hover {
+        background-color: color-mix(in oklch, var(--interactive-accent-hover) 97%, transparent);
+    }
+}
+
+button.mod-cta:focus-visible {
+    box-shadow: 0 0 0 3px var(--background-modifier-border-focus)
+}
+
+button.mod-warning {
+    background-color: var(--background-modifier-error);
+
+    --text-color: var(--text-on-accent);
+}
+
+@media(hover:hover) {
+    button.mod-warning:hover {
+        background-color: var(--background-modifier-error-hover)
+    }
+}
+
+
 button.mod-destructive {
     background: color-mix(in oklch, var(--background-modifier-error) 25%, transparent);
 }
+
 
 button.mod-destructive.mod-cta {
     background: 
@@ -77,6 +118,19 @@ button.mod-destructive.mod-cta {
 
     &:hover {background-color: var(--color-base-70);}
 }
+
+button.mod-destructive.mod-cta.mobile-tap {
+    background-color: var(--background-modifier-error-hover)
+}
+
+@media(hover:hover) {
+    button.mod-destructive.mod-cta:hover {
+        background-color: var(--background-modifier-error-hover)
+    }
+}
+
+
+
 
 .text-icon-button {
     color: var(--text-normal);

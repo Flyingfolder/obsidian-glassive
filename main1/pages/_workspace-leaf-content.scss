@@ -1,0 +1,10 @@
+
+
+@use '../abstracts' as *; 
+
+
+
+
+.workspace-leaf-content[data-type="html-file-view"] {
+    .view-content {padding: unset;}
+}

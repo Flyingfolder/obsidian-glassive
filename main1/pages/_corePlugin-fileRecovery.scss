@@ -44,20 +44,26 @@
 
     .modal-setting-titlebar {
         position: absolute;
-        background: linear-gradient(to bottom,
-            color-mix(in oklch, $background-primary 90%, transparent) 0,
-            color-mix(in oklch, $background-primary 60%, transparent) 80%,
-            color-mix(in oklch, $background-primary 20%, transparent) 100%);
+        // background: linear-gradient(to bottom,
+        //     color-mix(in oklch, $background-primary 90%, transparent) 0,
+        //     color-mix(in oklch, $background-primary 60%, transparent) 80%,
+        //     color-mix(in oklch, $background-primary 20%, transparent) 100%);
 
         .modal-setting-titlebar-actions>.modal-setting-titlebar-toggle {
             @include liquid-toolbar-text-button-changing-from-toggles($label: null);
         }
     }
 
-    textarea {
+    .modal-setting-titlebar~* {
         animation: none;
         padding-top: 60px;
+        mask-image: linear-gradient(to bottom,
+            rgb(0 0 0 /20%) 0,
+            rgb(0 0 0 /50%) 36px,
+            black 60px)
     }
+
+    
 }
 
 

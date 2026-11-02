@@ -59,34 +59,6 @@
 }
 
 
-// 其他页面的titlebar 比如 filerecovery
-
-.modal-setting-titlebar {
-    width: 100%;
-    padding: 8px 52px calc(8px + 12px) 8px;
-    border: unset;
-    font-size: $font-ui-small;
-    z-index: 1;
-
-    .modal-setting-titlebar-actions {
-        gap: 12px;
-    }
-
-    .modal-setting-title {
-        font-size: inherit;
-        font-weight: 500;
-    }
-
-    &>button {@include liquid-toolbar-text-button;}
-    &>button.clickable-icon {@include liquid-toolbar-icon-button;}
-}
-
-
-.community-modal-info {
-    overflow: visible;
-}
-
-
 
 
 

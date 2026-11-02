@@ -381,6 +381,43 @@ button {
 
   border-radius: 99px;
   corner-shape: squircle;
+  background-color: var(--interactive-normal);
+}
+
+button:hover {
+  background-color: color-mix(in oklch, var(--interactive-normal) 60%, transparent);
+}
+
+button.mod-cta {
+  background-color: var(--interactive-accent);
+
+  --text-color: var(--text-on-accent) ;
+}
+
+button.mod-cta.mobile-tap {
+  background-color: var(--interactive-accent-hover);
+}
+
+@media (hover: hover) {
+  button.mod-cta:hover {
+    background-color: color-mix(in oklch, var(--interactive-accent-hover) 97%, transparent);
+  }
+}
+
+button.mod-cta:focus-visible {
+  box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+}
+
+button.mod-warning {
+  background-color: var(--background-modifier-error);
+
+  --text-color: var(--text-on-accent);
+}
+
+@media (hover: hover) {
+  button.mod-warning:hover {
+    background-color: var(--background-modifier-error-hover);
+  }
 }
 
 button.mod-destructive {
@@ -393,6 +430,16 @@ button.mod-destructive.mod-cta {
 
 button.mod-destructive.mod-cta:hover {
   background-color: var(--color-base-70);
+}
+
+button.mod-destructive.mod-cta.mobile-tap {
+  background-color: var(--background-modifier-error-hover);
+}
+
+@media (hover: hover) {
+  button.mod-destructive.mod-cta:hover {
+    background-color: var(--background-modifier-error-hover);
+  }
 }
 
 .text-icon-button {
@@ -588,6 +635,11 @@ button.mod-destructive.mod-cta:hover {
   gap: 20px;
 }
 
+.modal .modal-button-container:last-child {
+  border-top: 1px solid rgb(var(--mono-rgb-100), 12%);
+  margin: 24px -16px -16px;
+}
+
 .modal .modal-button-container .mod-cta {
   order: 1;
 }
@@ -597,15 +649,6 @@ button.mod-destructive.mod-cta:hover {
   corner-shape: unset;
   height: 32px;
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border), 0 0 1px rgb(var(--mono-rgb-100), 12%);
-}
-
-.modal .modal-button-container button:hover {
-  background-color: var(--color-base-35);
-}
-
-.modal .modal-button-container:last-child {
-  border-top: 1px solid rgb(var(--mono-rgb-100), 12%);
-  margin: 24px -16px -16px;
 }
 
 .modal-header {
@@ -636,6 +679,119 @@ button.mod-destructive.mod-cta:hover {
   font-size: 20px;
 }
 
+.modal-setting-titlebar {
+  width: 100%;
+  padding: 8px 52px 20px 8px;
+  border: unset;
+  font-size: 13px;
+  z-index: 1;
+}
+
+.modal-setting-titlebar .modal-setting-titlebar-actions {
+  gap: 12px;
+}
+
+.modal-setting-titlebar .modal-setting-title {
+  font-size: inherit;
+  font-weight: 500;
+}
+
+.modal-setting-titlebar button {
+  color: var(--mono-100);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  border: unset;
+  padding: 4px;
+  margin: unset;
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.modal-setting-titlebar button svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+
+  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
+}
+
+.theme-light .modal-setting-titlebar button:hover {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal-setting-titlebar button:hover {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.theme-light .modal-setting-titlebar button:active {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal-setting-titlebar button:active {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.modal-setting-titlebar button {
+  padding: 0 12px;
+  min-width: fit-content;
+  min-height: 32px;
+}
+
+.modal-setting-titlebar button.clickable-icon {
+  color: var(--mono-100);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  border: unset;
+  padding: 4px;
+  margin: unset;
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.modal-setting-titlebar button.clickable-icon svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+
+  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
+}
+
+.theme-light .modal-setting-titlebar button.clickable-icon:hover {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal-setting-titlebar button.clickable-icon:hover {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.theme-light .modal-setting-titlebar button.clickable-icon:active {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal-setting-titlebar button.clickable-icon:active {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.modal-setting-titlebar button.clickable-icon {
+  padding: 4px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
 .nav-header {
   padding: 6px 0;
   min-height: 40px;
@@ -643,10 +799,6 @@ button.mod-destructive.mod-cta:hover {
 
 .nav-header .nav-action-button[aria-label*="search" i] {
   order: 1;
-}
-
-.node-insert-event {
-  padding-bottom: 64px;
 }
 
 .popover {
@@ -2906,7 +3058,6 @@ body {
 
 .sync-history-content .modal-setting-titlebar {
   position: absolute;
-  background: linear-gradient(to bottom, color-mix(in oklch, var(--background-primary) 90%, transparent) 0, color-mix(in oklch, var(--background-primary) 60%, transparent) 80%, color-mix(in oklch, var(--background-primary) 20%, transparent) 100%);
 }
 
 .sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle {
@@ -2983,9 +3134,11 @@ body {
   gap: unset;
 }
 
-.sync-history-content textarea {
+.sync-history-content .modal-setting-titlebar ~ * {
   animation: none;
   padding-top: 60px;
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0 0 0 / 20%) 0, rgb(0 0 0 / 50%) 36px, black 60px);
+          mask-image: linear-gradient(to bottom, rgb(0 0 0 / 20%) 0, rgb(0 0 0 / 50%) 36px, black 60px);
 }
 
 .modal.callout-editor-modal {
@@ -3714,6 +3867,10 @@ hr:has(+ .cmdr-sep-con.callout) {
   display: none;
 }
 
+.workspace-leaf-content[data-type="html-file-view"] .view-content {
+  padding: unset;
+}
+
 /* stylelint-disable selector-class-pattern */
 .vertical-tab-content .setting-group:first-child:has(.choiceFilterBar) {
   margin-bottom: 80px;
@@ -3898,126 +4055,13 @@ hr:has(+ .cmdr-sep-con.callout) {
   min-height: 32px;
 }
 
-.modal-setting-titlebar {
-  width: 100%;
-  padding: 8px 52px 20px 8px;
-  border: unset;
-  font-size: 13px;
-  z-index: 1;
-}
-
-.modal-setting-titlebar .modal-setting-titlebar-actions {
-  gap: 12px;
-}
-
-.modal-setting-titlebar .modal-setting-title {
-  font-size: inherit;
-  font-weight: 500;
-}
-
-.modal-setting-titlebar > button {
-  color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
-  border: unset;
-  padding: 4px;
-  margin: unset;
-  border-radius: 99px;
-  corner-shape: unset;
-  background: var(--glassive-control-background);
-  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
-          backdrop-filter: var(--glassive-control-backdrop-filter);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  font-size: 13px;
-  line-height: 16px;
-}
-
-.modal-setting-titlebar > button svg.svg-icon {
-  --icon-size: 16px;
-  --icon-stroke: 1.75px;
-
-  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
-}
-
-.theme-light .modal-setting-titlebar > button:hover {
-  background-color: var(--color-base-30);
-}
-
-.theme-dark .modal-setting-titlebar > button:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
-}
-
-.theme-light .modal-setting-titlebar > button:active {
-  background-color: var(--color-base-30);
-}
-
-.theme-dark .modal-setting-titlebar > button:active {
-  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
-}
-
-.modal-setting-titlebar > button {
-  padding: 0 12px;
-  min-width: fit-content;
-  min-height: 32px;
-}
-
-.modal-setting-titlebar > button.clickable-icon {
-  color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
-  border: unset;
-  padding: 4px;
-  margin: unset;
-  border-radius: 99px;
-  corner-shape: unset;
-  background: var(--glassive-control-background);
-  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
-          backdrop-filter: var(--glassive-control-backdrop-filter);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  font-size: 13px;
-  line-height: 16px;
-}
-
-.modal-setting-titlebar > button.clickable-icon svg.svg-icon {
-  --icon-size: 16px;
-  --icon-stroke: 1.75px;
-
-  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
-}
-
-.theme-light .modal-setting-titlebar > button.clickable-icon:hover {
-  background-color: var(--color-base-30);
-}
-
-.theme-dark .modal-setting-titlebar > button.clickable-icon:hover {
-  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
-}
-
-.theme-light .modal-setting-titlebar > button.clickable-icon:active {
-  background-color: var(--color-base-30);
-}
-
-.theme-dark .modal-setting-titlebar > button.clickable-icon:active {
-  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
-}
-
-.modal-setting-titlebar > button.clickable-icon {
-  padding: 4px;
-  min-width: 32px;
-  min-height: 32px;
+.modal.mod-community-modal {
+  background-color: var(--background-primary);
+  background-image: unset;
 }
 
 .community-modal-info {
   overflow: visible;
-}
-
-.modal.mod-community-modal {
-  background-color: var(--background-primary);
-  background-image: unset;
 }
 
 .modal.mod-community-modal .modal-sidebar {
