@@ -30,3 +30,29 @@
         pointer-events: none;
     }
 }
+
+
+
+
+// .workspace .mod-root .workspace-tab-header .workspace-tab-header-status-container, 
+.workspace .mod-root .workspace-tab-header.mod-active .workspace-tab-header-inner-close-button {
+    position: absolute;
+    z-index: 2;
+    inset: auto 6px auto auto;
+    background: linear-gradient(to right, rgb(var(--mono-rgb-0), .6), rgb(var(--mono-rgb-0), .8));
+    &:hover {background-color: var(--color-base-30);}
+}
+
+.status-bar {
+    border-radius: 99px;
+    corner-shape: squircle;
+    inset: auto 4px 4px auto;
+    padding: 0 2px;
+    box-shadow: $shadow-raised-control-item;
+
+    .status-bar-item .svg-icon {--icon-size: var(--icon-xs);}
+
+    &:hover {
+        .status-bar-item .svg-icon {--icon-size: var(--icon-s);}
+    }
+}

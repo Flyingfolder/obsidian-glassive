@@ -37,10 +37,7 @@ $titlebar-height: 48px;
 }
 
 
-@mixin toolbar-glass-bg {
-    background: color-mix(in oklch, $background-primary 70%, transparent);
-    backdrop-filter: blur(2px) saturate(160%);
-}
+
 
 
 
@@ -137,3 +134,11 @@ $titlebar-height: 48px;
 
 
 
+$toolbar-height: 48px;
+$toolbar-progressive-blur-area: 12px;
+$toolbar-padding: 8px 8px 8px;
+
+@mixin toolbar-glass-bg {
+    background: color-mix(in oklch, $background-primary 70%, transparent);
+    backdrop-filter: blur(2px) saturate(160%);
+}

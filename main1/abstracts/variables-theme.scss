@@ -1,17 +1,11 @@
 
 
 
-$toolbar-height: 48px;
-$toolbar-progressive-blur-area: 12px;
 
 
-
-$shadow-s: var(--shadow-s);
-$shadow-l: var(--shadow-l);
-
-$shadow-raised-control-item: 
-      0 2px 12px rgb(0 0 0 / 5.5%), 
-      0 6px 23px rgb(0 0 0 / 3.4%);
+$shadow-raised-xs: 
+      0 1px 12px rgb(0 0 0 / 7.5%), 
+      0 4px 23px rgb(0 0 0 / 4.4%);
 
 $shadow-raised-xl:
       0 1.8px 7.3px rgb(0 0 0 / 5.1%), 
@@ -19,6 +13,10 @@ $shadow-raised-xl:
       0 20px 60px   rgb(0 0 0 / 20%);
 
 
+
+$shadow-s: var(--shadow-s);
+$shadow-l: var(--shadow-l);
+$shadow-raised-control-item: $shadow-raised-xs;
 
 
 $glassive-control-background: var(--glassive-control-background);

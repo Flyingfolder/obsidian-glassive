@@ -584,7 +584,7 @@ button.mod-destructive.mod-cta.mobile-tap {
 .modal .modal-header-button {
   inset: 8px 8px auto auto;
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -698,7 +698,7 @@ button.mod-destructive.mod-cta.mobile-tap {
 
 .modal-setting-titlebar button {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -746,7 +746,7 @@ button.mod-destructive.mod-cta.mobile-tap {
 
 .modal-setting-titlebar button.clickable-icon {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -1266,6 +1266,33 @@ body {
 
 .mod-secondary-split .workspace-tab-header-container .workspace-tab-header-status-icon.mod-pinned {
   pointer-events: none;
+}
+
+.workspace .mod-root .workspace-tab-header.mod-active .workspace-tab-header-inner-close-button {
+  position: absolute;
+  z-index: 2;
+  inset: auto 6px auto auto;
+  background: linear-gradient(to right, rgb(var(--mono-rgb-0), 0.6), rgb(var(--mono-rgb-0), 0.8));
+}
+
+.workspace .mod-root .workspace-tab-header.mod-active .workspace-tab-header-inner-close-button:hover {
+  background-color: var(--color-base-30);
+}
+
+.status-bar {
+  border-radius: 99px;
+  corner-shape: squircle;
+  inset: auto 4px 4px auto;
+  padding: 0 2px;
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%);
+}
+
+.status-bar .status-bar-item .svg-icon {
+  --icon-size: var(--icon-xs);
+}
+
+.status-bar:hover .status-bar-item .svg-icon {
+  --icon-size: var(--icon-s);
 }
 
 .tooltip {
@@ -1961,7 +1988,7 @@ body {
 
 .workspace-leaf-content[data-type="bases"] .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2083,7 +2110,7 @@ body {
 .bases-search-row:has(~ [data-view-type="list"]),
 .bases-search-row:has(~ [data-view-type="cards"]) {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2492,7 +2519,7 @@ body {
 
 .bases-kanban-placeholder .text-icon-button.mod-pill {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2646,7 +2673,7 @@ body {
 
 .canvas-controls .canvas-control-group {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2681,7 +2708,7 @@ body {
 
 .canvas-controls .canvas-control-group > div {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2737,7 +2764,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2772,7 +2799,7 @@ body {
 
 .canvas-wrapper .canvas-card-menu > div {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2842,7 +2869,7 @@ body {
 
 .canvas-menu-container :is(.canvas-menu, .canvas-submenu) {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2877,7 +2904,7 @@ body {
 
 .canvas-menu-container :is(.canvas-menu, .canvas-submenu) > button {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3062,7 +3089,7 @@ body {
 
 .sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3148,7 +3175,7 @@ body {
 
 .modal.callout-editor-modal .titlebar-control-group {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3179,7 +3206,7 @@ body {
 
 .modal.callout-editor-modal .titlebar-control-group .clickable-icon {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3231,7 +3258,7 @@ body {
 
 .modal.callout-editor-modal .mod-callout-type > button {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3624,7 +3651,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 [data-type="style-settings"] .view-content > .setting-item:first-child .search-input-container {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3667,7 +3694,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 [data-type="style-settings"] .view-content > .setting-item:first-child a {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -4009,7 +4036,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .setting-page-titlebar .setting-page-back-button {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -4101,7 +4128,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -4144,7 +4171,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon {
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -4197,7 +4224,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle {
   margin-left: 12px;
   color: var(--mono-100);
-  box-shadow: 0 2px 12px rgb(0 0 0 / 5.5%), 0 6px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
