@@ -37,7 +37,7 @@
 
 
 .bases-toolbar .bases-toolbar-item.bases-toolbar-views-menu {
-    &:first-child {
-        .text-button-icon.mod-aux {display: none;}
+    .text-button-icon.mod-aux {
+        display: none;
     }
 }

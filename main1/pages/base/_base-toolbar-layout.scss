@@ -23,14 +23,15 @@
         --icon-color-hover: var(--text-normal);
 
         padding: 0 4px;
+        gap: 0;
 
-        .text-button-icon {
+        .text-button-icon:first-child {
             width: 24px;
             height: 24px;
             border-radius: 99px;
         }
 
-        .text-button-label {padding-right: 4px;}
+        .text-button-label {padding: 0 3px;}
 
         
         &.has-active-menu {background-color: var(--color-base-30);}
