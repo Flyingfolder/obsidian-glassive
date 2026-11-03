@@ -197,7 +197,7 @@ $shadow-raised-xl:
 $shadow-s: var(--shadow-s);
 $shadow-l: var(--shadow-l);
 $shadow-focus-border: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
-$shadow-input-border: 0 0 0 1.5px $background-modifier-border;
+$shadow-input-border: 0 0 0 1.5px var(--background-modifier-border);
 $shadow-raised-control-item: $shadow-raised-xs;
 
 $glassive-control-background: var(--glassive-control-background);
