@@ -134,3 +134,90 @@ $interactive-accent-hover: var(--color-accent-2);
 $line-height-ui-smaller: 14px;  //适配 $font-ui-smaller 12px
 $line-height-ui-small: 16px;    // 适配 $font-ui-small: 13px
 $line-height-control: $line-height-ui-small;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$input-border-width-focus: 2px;
+$input-border-width: 1.5px;
+
+$toolbar-height: 48px;
+$toolbar-progressive-blur-area: 12px;
+$toolbar-padding: 8px 8px 8px;
+
+
+
+
+
+
+
+
+
+$shadow-raised-xs: 
+      0 1px 12px rgb(0 0 0 / 7.5%), 
+      0 4px 23px rgb(0 0 0 / 4.4%);
+      //很淡，用来放在 control 上
+
+$shadow-raised-s: 
+      0 1px 15px rgb(0 0 0 / 10.5%), 
+      0 4px 27px rgb(0 0 0 / 8.4%);
+
+$shadow-raised-xl:
+      0 1.8px 7.3px rgb(0 0 0 / 5.1%), 
+      0 8px 35.7px rgb(0 0 0 / 14.2%), 
+      0 20px 60px   rgb(0 0 0 / 20%);
+
+$shadow-s: var(--shadow-s);
+$shadow-l: var(--shadow-l);
+$shadow-focus-border: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
+$shadow-input-border: 0 0 0 1.5px $background-modifier-border;
+$shadow-raised-control-item: $shadow-raised-xs;
+
+$glassive-control-background: var(--glassive-control-background);
+$glassive-control-backdrop-filter: var(--glassive-control-backdrop-filter);
+
+
+
+
+
+
+body {
+      // 卡片
+    --shadow-card: 
+      0px 8px 20px  rgb(0 0 0 / 10%), 
+      0px 14px 42px rgb(0 0 0 / 6%), 
+      0px 20px 85px rgb(0 0 0 / 3.4%);
+
+      // 适用于极小的部件，比如 contol
+    --shadow-card-mini: 
+      0px 2px 22px rgb(0 0 0 / 8.5%), 
+      0px 6px 45px rgb(0 0 0 / 3.4%);
+}
+

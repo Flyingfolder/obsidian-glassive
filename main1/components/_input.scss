@@ -11,12 +11,20 @@
   --input-corner-shape: squircle;
   --input-height: 28px;
   --input-radius: 24px;
-
+  --input-border-width: 1.5px;
 }
 
 
 .search-input-container {
   min-height: fit-content;
+}
+
+.formula-editor {
+  corner-shape: squircle;
+  border-radius: 24px;
+  corner-shape: squircle;
+
+  @include input-focus;
 }
 
 
@@ -55,18 +63,19 @@ input[type='number'] {
 
 @keyframes input-box-shadow-appear {
   from {
-    box-shadow: 0 0 calc( var(--input-border-width-focus) * 2) calc( var(--input-border-width-focus) * 5) hsl(var(--interactive-accent-hsl), 10%);
+    // box-shadow: 0 0 calc( var(--input-border-width-focus) * 2) calc( var(--input-border-width-focus) * 5) hsl(var(--interactive-accent-hsl), 10%);
+    box-shadow: 0 0 calc( $input-border-width-focus * 2) calc( $input-border-width-focus * 5) hsl(var(--interactive-accent-hsl), 10%);
   }
 
   to {
-    box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
+    box-shadow: 0 0 0 $input-border-width-focus var(--background-modifier-border-focus);
   }
 }
 
 
 textarea:active,
 .multi-select-container:active,
-input.metadata-input-text:active,
+// input.metadata-input-text:active,
 input[type="date"]:active,
 input[type="datetime-local"]:active,
 input[type="text"]:active,
@@ -76,7 +85,7 @@ input[type="password"]:active,
 input[type="number"]:active,
 textarea:focus,
 .multi-select-container:focus,
-input.metadata-input-text:focus,
+// input.metadata-input-text:focus,
 input[type="date"]:focus,
 input[type="datetime-local"]:focus,
 input[type="text"]:focus,
@@ -86,7 +95,7 @@ input[type="password"]:focus,
 input[type="number"]:focus,
 textarea:focus-visible,
 .multi-select-container:focus-visible,
-input.metadata-input-text:focus-visible,
+// input.metadata-input-text:focus-visible,
 input[type="date"]:focus-visible,
 input[type="datetime-local"]:focus-visible,
 input[type="text"]:focus-visible,

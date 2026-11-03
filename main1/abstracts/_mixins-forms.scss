@@ -10,7 +10,6 @@
     padding: 0 8px;
     background-color: var(--color-base-25);
     border-radius: $radius-s;
-
     box-shadow: unset;
 
     &:hover {background-color: var(--color-base-35);}
@@ -24,7 +23,6 @@
     --toggle-s-width: 36px;
     --toggle-s-thumb-height: 13px;
     --toggle-s-thumb-width: 21px;
-
     --toggle-border-width: var(--toggle-s-border-width);
     --toggle-width: var(--toggle-s-width);
     --toggle-thumb-height: var(--toggle-s-thumb-height);
@@ -48,9 +46,11 @@
         opacity: 1;
         pointer-events: none;
     }
+
     &:hover::after {
         background-color: $background-modifier-hover-subtle;
     }
+
     &:active::after {
         background-color: $background-modifier-hover-strong;
     }
@@ -86,21 +86,16 @@
 
 // 专门为添加按钮设计的样式，适用于各种场景下的添加操作（如添加标签、添加属性等）。
 @mixin add-button {
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    
     padding: 4px;
-
     font-size: $font-ui-small;
     font-weight: 400;
     text-transform: none;
     color: var(--text-muted);
-
     border-radius: $radius-s;
     background-color: unset;
-
     transition: none;
     cursor: default;
 
@@ -113,23 +108,28 @@
 
 
 
+// 过时
+// $form-group-padding: 6px; //过时
+// $form-row-padding: 7px; //过时
+$form-row-height: 42px; //过时
 
-$form-group-padding: 6px;
-$form-row-padding: 7px;
-$form-row-height: 42px;
 
-
+// 过时
 @mixin form-row {
-
-
     padding: $form-row-padding 0;
     min-height: $form-row-height;
     display: flex;
     align-items: center;
 }
 
+
+// 过时
 @mixin form-group {
-
-
     padding: $form-group-padding;
 }
+
+
+// 新的
+    $form-group-padding: 5px;
+    $form-row-padding: 6px;
+    $toolbar-control-s: 24px;

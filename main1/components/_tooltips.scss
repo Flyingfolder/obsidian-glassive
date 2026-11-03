@@ -2,10 +2,12 @@
 
 @use '../abstracts' as *; 
 
-
+.cm-tooltip.cm-tooltip-docstring,
 .tooltip {
     --background-modifier-message:  rgb(255,255,255 / 20%);
     // box-shadow: var(--tooltip-shadow);
+    box-shadow: $shadow-raised-s;
+    box-shadow: var(shadow-s);
     background: $glassive-control-background;
     backdrop-filter: blur(4px) brightness(1.1);
     // color: var(--tooltip-color);
@@ -17,4 +19,12 @@
     corner-shape: squircle;
     border-radius: 24px;
     text-align: start;
+}
+
+
+
+.flair {
+    padding: 0 3px;
+    line-height: 14px;
+    align-self: flex-start;
 }

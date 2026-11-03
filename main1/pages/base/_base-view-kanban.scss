@@ -43,7 +43,7 @@ body {
     border: unset;
 
     .bases-kanban-column-header {
-        padding: 0 12px 4px 20px;
+        padding: 0 4px 4px 20px;
 
         &>*{
             min-height: 20px; 
@@ -115,13 +115,17 @@ body {
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    line-height: 20px;
+
+    &>*{
+        font-size: $font-ui-smaller;
+        line-height: 20px;
+    }
 
     .bases-kanban-card-label {
         order: 1;
         margin-left: auto;
     }
-    * {font-size: $font-ui-smaller;}
+
 
     .bases-rendered-value {
         padding: unset;

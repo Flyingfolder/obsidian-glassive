@@ -44,7 +44,7 @@
 
     .workspace-tab-header.is-active .workspace-tab-header-inner {
         background-color: var(--card-background);
-        box-shadow: var(--glass-shadow-inset-for-control), var(--shadow-card-mini);
+        box-shadow: var(--glass-shadow-inset-for-control), $shadow-raised-control-item;
     }
 }
 

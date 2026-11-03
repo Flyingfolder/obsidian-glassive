@@ -4,62 +4,65 @@
 
 
 
-.bases-query-container {
-    --metadata-input-background-active: transparent;
-    --row-height: 42px;
-    --container-edge-addto-row: 6px;
-}
-
-
-
 
 // 0 删除 ========================================================================
+.filter-row {
+    span.conjunction {display: none;}
+    .combobox-button-chevron {display: none;}
+}
 
-
-.bases-query-container .filter-group {
+.filter-group {
     gap: unset;
     position: relative;
 
-    span.conjunction {display: none;}
-    .combobox-button-chevron {display: none;}
-
+    
     .filter-group {
         background-color: unset;
         border-radius: unset;
         padding: unset;
         border: unset;
-
-        .text-icon-button:nth-child(2) {display: none;} // 补丁: 删掉group中的添加group按钮
     }
 
-    .filter-group-statements {
-        gap: unset;
-    }
+
+    // 补丁: 删掉group中的 "add group" button
+    .filter-group .text-icon-button:nth-child(2) {display: none;} 
+
+    .filter-group-statements {gap: unset;}
 }
 
+.filter-group-header {
+    padding: unset;
+}
 
+.filter-group-header-actions, 
+.filter-row-actions {
+    padding: 0;
+}
 
 .bases-toolbar-menu .bases-toolbar-section {
     padding: 4px;
+}
 
-    &:not(:last-child) .bases-toolbar-section:not(:last-child) {
-        padding-bottom: 12px;
-    }
-
-
-
-    .bases-query-container {
-        // padding-top: 0;
-        padding-left: 24px;
-        padding-right: 24px;
-        padding-bottom: 16px;
-    }
+.bases-query-container {
+    padding: 8px 24px 20px;
 }
 
 
 
 
-.bases-query-container .filter-expression {
+
+
+
+.filter-expression {
+    --metadata-input-background-active: transparent;
+    --input-border-width: #{$input-border-width};
+    --input-border-width-focus: 2px;
+    --metadata-divider-color: transparent;
+    --metadata-property-background-hover: transparent;
+    --metadata-property-box-shadow-hover: none;
+    --metadata-divider-color-focus: transparent;
+    --metadata-property-box-shadow-focus: none;
+
     background-color: unset;
     box-shadow: none;
     border-radius: unset;
@@ -67,97 +70,96 @@
     gap: 4px;
 
 
+    // button ------------------------------------------------------
     .combobox-button {
-        --input-border-width-focus: 2px;
-
         padding: 0 6px;
         border-radius: 99px;
         corner-shape: squircle;
         background-color: transparent;
+        border: unset;
+
+        // align-self: auto;
+        // border: unset;
+        // height: $control-height-m;
+        // border-radius: 99px;
+        // corner-shape: squircle;
+
         &:hover {background-color: $background-modifier-hover-subtle;}
-
-        &.has-focus {
-            box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
-        }
+        &.has-focus {box-shadow: $shadow-focus-border;}
     }
 
-    
 
-    .filter-rhs-container.metadata-property-value {
-        --input-height: #{$control-height-m};
-        --input-border-width-focus: 2px;
-
-        box-shadow: 0 0 0 1px var(--background-modifier-border);
-        border-radius: 99px;
-        corner-shape: squircle;
-
-        &:focus-within {
-            animation: input-box-shadow-appear $anim-duration-moderate ease none;
-            box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);}
+    // input ------------------------------------------------------
+    .metadata-property-value {
+        overflow: visible;
     }
-    .filter-rhs-container {@include input-search-s;}
 
+    .multi-select-container,
+    .metadata-input-longtext,
+    input.metadata-input {
+        @include input-s;
+    }
+
+
+
+    .formula-editor {
+        background-color: unset;
+    }
 } 
 
 
 
-
-
+// conjunction.dropdown ----------------------------------
 .bases-query-container>.filter-group {
-    .filter-group-actions {
-        padding: unset;
-        min-height: var(--row-height);
-        align-items: center;
-        gap: 10px;
-    }
-
-    .filter-group .filter-group-actions {
-        position: absolute;
-        right: 28px;
-
-        .text-icon-button {
-            background-color: unset;
-            color: $text-muted;
-            &:hover {background-color: $background-modifier-hover;}
-        }
-    }
-
-    .filter-group-header .conjunction.dropdown,
-    .text-icon-button {
-        height: $control-height-m;
+    .conjunction.dropdown {
+        field-sizing: content;
         background-color: $background-modifier-hover;
-        color: $text-normal;
-        border-radius: 40px;
-        corner-shape: squircle;
-    }
-
-
-
-    .filter-operator,
-    .filter-property-select {
-        align-self: auto;
-        border: unset;
-        height: $control-height-m;
-        border-radius: 99px;
-        corner-shape: squircle;
-    }
-}
-
-
-
-
-
-
-.bases-query-container>.filter-group {
-    .filter-group-header {
-        padding-right: 2px;
     }
 
     .filter-group .conjunction.dropdown {
         background-color: unset;
-        background-image: unset;
+        height: $toolbar-control-s;
+        &:not(:hover) {background-image: none;}
     }
 }
+
+
+
+
+.bases-query-container>.filter-group {
+
+    // 外围的toolbar
+    .filter-group-actions {
+        padding: unset;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+    .filter-group .filter-group-actions {
+        position: absolute;
+        right: 30px;
+        top: 4px;
+    }
+
+    .text-icon-button {
+        background-color: $background-modifier-hover;
+        color: $text-normal;
+        border-radius: 40px;
+        corner-shape: squircle;
+        height: $control-height-m;
+    }
+
+    .filter-group .text-icon-button {
+        height: $control-height-s;
+        background-color: unset;
+        color: $text-muted;
+        &:hover {background-color: $background-modifier-hover;}
+    }
+
+
+}
+
 
 
 
@@ -170,18 +172,67 @@
 
 .filter-row {
     position: relative;
-
 }
 
 
-    
-.grip-handle {
-    position: absolute;
-    inset: 0 auto 0 -20px;
-    z-index: 10;
 
-    .filter-row.mod-group>& {
-        inset: 18px auto auto -18px;
+
+
+
+
+
+
+
+
+// ==================================================================================================================================
+// Filter menu form ----------------------------------------------------------------------------------------------------------------------
+
+
+
+.drag-reorder-ghost,
+:where(.bases-query-container,.drag-reorder-ghost)>.filter-group {
+
+
+    // 常规行
+    >.filter-group-statements>.filter-row {
+        // padding: 7px 0;
+    }
+
+    // 构成一个组的行
+    >.filter-group-statements>.filter-row {
+        padding: 9px 0;
+    }
+
+    // toolbar inner
+    .filter-group .filter-group-header {
+        padding: 4px 0 6px;
+    }
+
+    // 最小行
+    .filter-statement {
+        padding: 6px 0;
+    }
+
+    // 上方和下方多余的链接顶部 toolbar 和 底部toolbar 
+
+    >.filter-group-statements {
+        margin: 16px 0;
+    }
+    
+
+    // bug
+    .filter-statement {
+        justify-content: center; //我也不知道为什么默认设置 flex-direction: column；总之不能改。
+    }
+
+
+    // separator ---------------------------------------------------------------------------------
+    >.filter-group-statements {
+        border-top: 1px solid $background-modifier-seperator;
+    }
+
+    >.filter-group-statements>.filter-row {
+        border-bottom: 1px solid $background-modifier-seperator;
     }
 
 }

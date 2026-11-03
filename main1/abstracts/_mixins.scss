@@ -2,7 +2,7 @@
 
 
 @use 'variables-glassive' as *; 
-
+@use 'variables-theme' as *;
 
 
 
@@ -24,7 +24,39 @@
 
 
 
-@mixin input-s($field-sizing, $min-width: 8ch) {
+
+@mixin input-focus {
+    &:focus-within,
+    &:focus,
+    &:focus-visible,
+    &:active {
+        box-shadow: 0 0 0 $input-border-width-focus var(--background-modifier-border-focus);
+        animation: input-box-shadow-appear $anim-duration-moderate ease none;;
+    }
+}
+
+@mixin input-s {
+    --input-height: 24px;
+
+    height: var(--input-height);
+    // width: auto;
+    box-shadow: $shadow-input-border;
+    border-radius: 99px;
+    corner-shape: squircle;
+    padding: 4px 6px;
+
+    @include input-focus();
+
+    // e.g.
+    // input {
+    //     @include input-s();
+    // }
+    // 注意，search-input-container mod-raised 他本身没有任何css属性
+
+
+}
+ 
+@mixin input-s-adjust-width($field-sizing, $min-width: 8ch) {
     height: $control-height-s;
     field-sizing: $field-sizing;
     min-width: $min-width;
@@ -38,16 +70,15 @@
 @mixin input-search-s {
     --input-height: #{$control-height-m};
     --input-border-width-focus: 2px;
+    --input-border-width: 1px;
 
     overflow: visible;
 
     input {
-        box-shadow: 0 0 0 1px var(--background-modifier-border);
+        box-shadow: $shadow-input-border;
         border-radius: 99px;
         corner-shape: squircle;
 
-        &:focus-within {
-            box-shadow: 0 0 0 var(--input-border-width-focus) var(--background-modifier-border-focus);
-        }
+        &:focus-within {box-shadow: $shadow-focus-border;}
     }
 }

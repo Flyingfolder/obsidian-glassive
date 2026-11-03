@@ -40,6 +40,12 @@
     to {scale: 1;}
 }
 
+@keyframes scale-down {
+    from {scale: 1;}
+    to   {scale: 0.95;}
+    
+}
+
 @keyframes scale-up-small-items {
     from {scale: 0.8;}
     to {scale: 1;}
