@@ -4,7 +4,6 @@
 
 .workspace-leaf-content[data-type="bases"] .bases-view[data-view-type="cards"] {
     background-color: $background-secondary;
-
 }
 
 
@@ -17,3 +16,29 @@
         background: var(--color-base-30);
     }
 }
+
+
+
+.is-grouped .bases-cards-container {
+    .bases-cards-group {
+        padding-bottom: 40px;
+    }
+
+    .bases-group-heading {
+        padding: 0 0 20px;
+    }
+
+    .bases-group-value {
+        font-size: 17px;
+        color: $text-muted;
+        order: -1;
+    }
+}
+
+
+
+
+
+
+
+

@@ -111,10 +111,12 @@ body {
     font-weight: 500;
 }
 
+
 .bases-kanban-card-property {
     display: flex;
     flex-direction: row;
     align-items: baseline;
+
 
     &>*{
         font-size: $font-ui-smaller;

@@ -1586,6 +1586,10 @@ body {
   --bases-group-heading-property-display: block;
 }
 
+.bases-group-heading .bases-group-property {
+  text-transform: capitalize;
+}
+
 .menu.bases-toolbar-menu .bases-toolbar-menu-container:has(.bases-toolbar-menu-form) {
   animation: fade-in var(--anim-duration-moderate) ease-out none, pop-in-subtle var(--anim-duration-moderate) ease-out none;
 }
@@ -2702,6 +2706,20 @@ body {
 
 .bases-cards-item:hover {
   background: var(--color-base-30);
+}
+
+.is-grouped .bases-cards-container .bases-cards-group {
+  padding-bottom: 40px;
+}
+
+.is-grouped .bases-cards-container .bases-group-heading {
+  padding: 0 0 20px;
+}
+
+.is-grouped .bases-cards-container .bases-group-value {
+  font-size: 17px;
+  color: rgb(var(--mono-rgb-100), 55%);
+  order: -1;
 }
 
 .canvas-controls {
