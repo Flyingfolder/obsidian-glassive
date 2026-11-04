@@ -3628,12 +3628,24 @@ body {
   overflow: auto;
 }
 
+.cmdr-setting-content hr {
+  display: none;
+}
+
 .cmdr-add-new-wrapper {
   justify-content: flex-start;
+  margin-bottom: 60px;
 }
 
 .cmdr-add-new-wrapper button {
   margin: unset;
+}
+
+.cmdr-sep-con:has(+ .cmdr-add-new-wrapper) {
+  background-color: var(--background-primary-alt);
+  border: unset;
+  border-radius: 40px;
+  corner-shape: squircle;
 }
 
 hr:has(+ .cmdr-sep-con.callout) {

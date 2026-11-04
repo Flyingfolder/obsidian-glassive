@@ -50,7 +50,7 @@
         //     color-mix(in oklch, $background-primary 20%, transparent) 100%);
 
         .modal-setting-titlebar-actions>.modal-setting-titlebar-toggle {
-            @include liquid-toolbar-text-button-changing-from-toggles($label: null);
+            @include glassive-control-text-changingfromtoggles($label: null);
         }
     }
 

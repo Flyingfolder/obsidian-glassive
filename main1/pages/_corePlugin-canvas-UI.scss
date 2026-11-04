@@ -41,7 +41,7 @@
 }
 
 .canvas-controls .canvas-control-group {
-    @include liquid-toolbar-icon-group($auto-detect-only-child: true, $button-type: div);
+    @include glassive-control-group-with-icons($auto-detect-only-child: true, $button-type: div);
 }
 
 // 中间的新增
@@ -50,7 +50,7 @@
     left: 50%;
     transform: translateX(-50%);
 
-    @include liquid-toolbar-icon-group($auto-detect-only-child: true, $button-type: div);
+    @include glassive-control-group-with-icons($auto-detect-only-child: true, $button-type: div);
 
     .canvas-card-menu-button.mod-draggable {
         & {cursor: default;}
@@ -71,7 +71,7 @@
 // 点击某个卡片后弹出的 toolbar --------------------------------------------------------------------------------
 
 .canvas-menu-container :is(.canvas-menu, .canvas-submenu) {
-    @include liquid-toolbar-icon-group($auto-detect-only-child: true, $button-type: button);
+    @include glassive-control-group-with-icons($auto-detect-only-child: true, $button-type: button);
     // @include pop-in-anim;
 }
 

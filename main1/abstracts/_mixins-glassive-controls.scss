@@ -13,7 +13,7 @@
 
 
 
-@mixin _liquid-toolbar-base() {
+@mixin _glassive-controls-base() {
     color: var(--mono-100);
     box-shadow: $shadow-raised-control-item, var(--shadow-glass-border);
     border: unset;
@@ -46,7 +46,7 @@
 // 交互状态层：hover / 按下 / 选中 三态的背景反馈。
 // $selected-modifier 传选中态的选择器片段（如 '.is-active'、':has(.is-enabled)'），
 // 不传则不生成选中态。
-@mixin liquid-toolbar-states($selected-modifier: null) {
+@mixin glassive-controls-states($selected-modifier: null) {
     &:hover {
         .theme-light & {background-color: var(--color-base-30);}
         .theme-dark  & {background-color: color-mix(in oklch, rgb(80 80 80) 95%, $interactive-accent) ;}
@@ -70,8 +70,8 @@
 
 
 
-@mixin liquid-toolbar-icon-group($auto-detect-only-child: false, $button-type: div) {
-    @include _liquid-toolbar-base();
+@mixin glassive-control-group-with-icons($auto-detect-only-child: false, $button-type: div) {
+    @include _glassive-controls-base();
 
 
     gap: 4px;
@@ -81,8 +81,8 @@
         &:has(>*:only-child) {padding: unset;}
 
         &>#{$button-type} {
-            @include _liquid-toolbar-base();
-            @include liquid-toolbar-states;
+            @include _glassive-controls-base();
+            @include glassive-controls-states;
 
             background: unset;
             backdrop-filter: unset;
@@ -101,9 +101,9 @@
 }
 
 
-@mixin liquid-toolbar-icon-button($is-grouped: false) {
-    @include _liquid-toolbar-base();
-    @include liquid-toolbar-states;
+@mixin glassive-control-icon($is-grouped: false) {
+    @include _glassive-controls-base();
+    @include glassive-controls-states;
 
 
     @if $is-grouped {
@@ -125,9 +125,9 @@
     }
 }
 
-@mixin liquid-toolbar-text-button {
-    @include _liquid-toolbar-base();
-    @include liquid-toolbar-states;
+@mixin glassive-control-text {
+    @include _glassive-controls-base();
+    @include glassive-controls-states;
 
     padding: 0 12px;
     min-width: fit-content;
@@ -136,8 +136,8 @@
 
 
 
-@mixin liquid-toolbar-search-input($control-max-width: 320px) {
-    @include _liquid-toolbar-base();
+@mixin glassive-control-search($control-max-width: 320px) {
+    @include _glassive-controls-base();
     
     --input-height: 32px;
     --input-border-width: 0;
@@ -157,9 +157,9 @@
 
 
 
-@mixin liquid-toolbar-text-button-changing-from-toggles($label) {
-    @include _liquid-toolbar-base();
-    @include liquid-toolbar-states;
+@mixin glassive-control-text-changingfromtoggles($label) {
+    @include _glassive-controls-base();
+    @include glassive-controls-states;
 
     padding: 0 12px;
     height: 32px;

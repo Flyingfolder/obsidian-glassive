@@ -23,7 +23,7 @@
     .modal-header-button {
         inset: 8px 8px auto auto;
 
-        @include liquid-toolbar-icon-button;
+        @include glassive-control-icon;
     }
 
     .modal-button-container {
@@ -107,8 +107,8 @@
         font-weight: 500;
     }
 
-    & button {@include liquid-toolbar-text-button;}
-    & button.clickable-icon {@include liquid-toolbar-icon-button();}
+    & button {@include glassive-control-text;}
+    & button.clickable-icon {@include glassive-control-icon();}
 }
 
 

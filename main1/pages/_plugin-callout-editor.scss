@@ -11,12 +11,12 @@
     background-color: $background-secondary;
 
     .titlebar-control-group {
-        @include liquid-toolbar-icon-group;
-        .clickable-icon {@include liquid-toolbar-icon-button($is-grouped: true);}
+        @include glassive-control-group-with-icons;
+        .clickable-icon {@include glassive-control-icon($is-grouped: true);}
     }
 
     .mod-callout-type>button {
-        @include liquid-toolbar-text-button;
+        @include glassive-control-text;
     }
 }
 

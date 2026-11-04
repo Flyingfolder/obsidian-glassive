@@ -157,7 +157,7 @@ body {
     .bases-kanban-placeholder-title {font-size: $font-ui-large;}
 
     .text-icon-button.mod-pill {
-        @include liquid-toolbar-text-button;
+        @include glassive-control-text;
 
         background: $interactive-accent;
         color: white;

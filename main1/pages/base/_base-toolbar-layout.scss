@@ -18,7 +18,7 @@
 
 
     .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button {
-        @include liquid-toolbar-text-button;
+        @include glassive-control-text;
 
         --icon-color-hover: var(--text-normal);
 
@@ -129,7 +129,7 @@
 
 .bases-search-row:has(~[data-view-type="list"]),
 .bases-search-row:has(~[data-view-type="cards"]) {
-    @include liquid-toolbar-search-input($control-max-width: 280px);
+    @include glassive-control-search($control-max-width: 280px);
     @include pop-in-anim;
 
     position: absolute;

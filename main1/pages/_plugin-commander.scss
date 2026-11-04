@@ -1,8 +1,6 @@
 
 
 @use '../abstracts' as *; 
-
-
 @use 'detailed-pages/commander-macros';
 
 
@@ -16,6 +14,7 @@
     padding: 0;
 
 }
+
 .cmdr-setting-title {
     display: none;
 }
@@ -23,7 +22,6 @@
 
 
 .modal-container.cmdr-setting-modal {
-
     .cmdr-setting-header {
         margin: unset;
 
@@ -56,16 +54,14 @@
 }
 
 .modal-container.cmdr-setting-modal {
-        
         display: flex;
         flex-direction: row;
 
     .modal {
         @include modal-with-sidebar($sidebar-wrapper: cmdr-setting-header, $sidebar-scroller: cmdr-setting-tab-group);
     }
-    .modal-content .cmdr-setting-header {
 
-        
+    .modal-content .cmdr-setting-header {
         width: 200px;
 
         .cmdr-tab {@include liquid-sidebar-item($is-selected-status-name: ".cmdr-tab-active");}
@@ -121,11 +117,10 @@
 
 .modal-content {
     height: 100%;
+
     .cmdr-setting-content {
         flex: 1;
-        
         padding: 50px 32px;
-
         height: auto;
         overflow: auto;
     }
@@ -140,13 +135,24 @@
 
 
 // 组件 - Add new button
+.cmdr-setting-content  {
+    hr{display: none;}
+}
 
 .cmdr-add-new-wrapper {
     justify-content: flex-start;
+    margin-bottom: 60px;
     button {margin: unset;}
     
 }
 
+
+.cmdr-sep-con:has(+.cmdr-add-new-wrapper) {
+    background-color: var(--background-primary-alt);
+    border: unset;
+    border-radius: 40px;
+    corner-shape: squircle;
+}
 
 
 
@@ -203,11 +209,13 @@ hr:has(+.cmdr-sep-con.callout) {
 
     // font 
     * {font-size: 17px;}
+
     h3 {
         padding: initial;
         margin: initial;
         font-weight: 600;
     }
+
     span {
         font-weight: 400;
         color: var(--text-muted);
@@ -224,7 +232,6 @@ hr:has(+.cmdr-sep-con.callout) {
 // 页面 - Settings
 
 .cmdr-setting-content:has(.cmdr-about) {
-    
     &::before {
         content: "Settings";
         display: block;

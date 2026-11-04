@@ -5,13 +5,11 @@
 
 
 @use 'variables-glassive' as *; 
-@use 'mixins-liquid-SidebarandToolbar' as *;
 
 
 
 @mixin tab-views {
 
-    // @include liquid-toolbar-item($toolbar-item-width: fit-content);
     align-items: center;
     display: flex;
     flex-wrap: wrap;

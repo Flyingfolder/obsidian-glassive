@@ -26,11 +26,11 @@
         }
 
         .search-input-container {
-            @include liquid-toolbar-search-input;
+            @include glassive-control-search;
         }
 
         a {
-            @include liquid-toolbar-text-button;
+            @include glassive-control-text;
 
             cursor: default;
             text-decoration: none !important;
@@ -103,7 +103,7 @@
         }
 
         a {
-            @include liquid-toolbar-text-button;
+            @include glassive-control-text;
 
             cursor: default;
 
@@ -112,7 +112,7 @@
     } 
 
     textarea~button {
-        @include liquid-toolbar-text-button;
+        @include glassive-control-text;
 
         margin-top: 24px;
         align-self:  flex-end;
@@ -136,7 +136,7 @@
             }
         }
 
-        @include liquid-toolbar-text-button;
+        @include glassive-control-text;
 
     }
 }
