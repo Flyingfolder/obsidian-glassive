@@ -25,3 +25,24 @@
 
 
 
+
+// 拖拽的时候 ----------------
+
+// 目的地文件夹
+.nav-folder.is-being-dragged-over {
+    border-radius: var(--radius-s);
+    background: unset;
+
+    &>.tree-item-self.nav-folder-title {
+        background-color: $interactive-accent;
+        color: var(--text-on-accent);
+        svg.svg-icon {color: $text-muted; }
+
+    }
+}
+
+
+// 被拖走的文件
+.tree-item-self.is-being-dragged {
+    background-color: $background-modifier-hover-strong;
+}

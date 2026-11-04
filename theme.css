@@ -4068,6 +4068,11 @@ hr:has(+ .cmdr-sep-con.callout) {
   min-height: 32px;
 }
 
+.obsidian-vertical-tabs-container .tree-item.is-tab.is-highlighted .tree-item-self {
+  font-weight: 400;
+  background-color: color-mix(in oklch, var(--mono-100) 12%, transparent);
+}
+
 .workspace-leaf-content[data-type="markdown"] .markdown-preview-view.markdown-rendered {
   animation: move-up-far var(--anim-duration-slow) ease, fade-in var(--anim-duration-slow) ease-in;
 }
@@ -4888,10 +4893,10 @@ body {
     inset -1px 0 1px rgb(255 255 255 / 0%); /* 右 */
 
   --shadow-glass-border:
-    inset 0 .5px .5px rgb(255 255 255 / 30%), /* 顶 */
-    inset 0 3px 3px rgb(255 255 255 / 15%), /* 顶 */
+    inset 0 .5px .5px rgb(255 255 255 / 25%), /* 顶 */
+    inset 0 4px 4px rgb(255 255 255 / 8%), /* 顶 */
     inset 0 -.5px .5px rgb(255 255 255 / 20%), /* 底 */
-    inset 0 -1.5px 1.5px rgb(255 255 255 / 15%), /* 底 */
+    inset 0 -1.5px 1.5px rgb(255 255 255 / 10%), /* 底 */
     inset .5px 0 .5px rgb(0 0 0 / 35%), /* 左 */
     inset -.5px 0 .5px rgb(0 0 0 / 35%), /* 右 */
     inset 1px 0 1px rgb(0 0 0 / 20%), /* 左 */
@@ -5542,4 +5547,22 @@ body {
 
 .workspace-leaf-content[data-type="file-explorer"] .nav-action-button[aria-label="New folder"] {
   margin-right: auto;
+}
+
+.nav-folder.is-being-dragged-over {
+  border-radius: var(--radius-s);
+  background: unset;
+}
+
+.nav-folder.is-being-dragged-over > .tree-item-self.nav-folder-title {
+  background-color: var(--color-accent-1);
+  color: var(--text-on-accent);
+}
+
+.nav-folder.is-being-dragged-over > .tree-item-self.nav-folder-title svg.svg-icon {
+  color: rgb(var(--mono-rgb-100), 55%);
+}
+
+.tree-item-self.is-being-dragged {
+  background-color: color-mix(in oklch, var(--mono-100) 12%, transparent);
 }

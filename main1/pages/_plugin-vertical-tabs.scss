@@ -1,0 +1,8 @@
+
+@use '../abstracts' as *;
+
+
+.obsidian-vertical-tabs-container .tree-item.is-tab.is-highlighted .tree-item-self {
+    font-weight: 400;
+    background-color: $background-modifier-hover-strong;
+}
