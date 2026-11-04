@@ -361,7 +361,7 @@ button.mod-warning {
 }
 
 button.mod-destructive {
-  background: color-mix(in oklch, var(--background-modifier-error) 25%, transparent);
+  background: color-mix(in oklch, var(--background-modifier-error) 20%, transparent);
 }
 
 button.mod-destructive.mod-cta {
@@ -1008,8 +1008,18 @@ input.prompt-input:focus-visible {
   font-size: 17px;
 }
 
+.setting-group-search {
+  corner-shape: squircle;
+}
+
 .setting-item-control {
   min-height: 28px;
+}
+
+.setting-item-control .clickable-icon {
+  border-radius: 99px;
+  corner-shape: unset;
+  padding: 6px;
 }
 
 .setting-item-info .setting-item-name {
@@ -1327,7 +1337,7 @@ body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vaul
   position: absolute;
   bottom: 0;
   z-index: 1;
-  padding-top: 40px;
+  padding-top: 30px;
   transition: opacity var(--anim-duration-moderate);
   background: linear-gradient(to bottom, transparent 0, color-mix(in oklch, var(--background-secondary) 60%, transparent) 20px, color-mix(in oklch, var(--background-secondary) 90%, transparent) 60px);
 }
@@ -3839,6 +3849,213 @@ hr:has(+ .cmdr-sep-con.callout) {
   flex-direction: row;
 }
 
+.view-content .setting-item-heading.style-settings-heading {
+  margin-top: 8px;
+}
+
+.view-content .style-settings-heading[data-level="0"] {
+  margin-bottom: unset;
+}
+
+.view-content .style-settings-container .setting-item {
+  padding: 8px 16px;
+  margin: unset;
+  border-radius: 0;
+}
+
+.view-content .style-settings-container .setting-item:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.view-content .style-settings-container .setting-item:last-child {
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.modal.modal-style-settings .modal-content > .setting-item:first-child {
+  margin-bottom: 12px;
+}
+
+.modal.modal-style-settings .modal-content > .setting-item:first-child .setting-item-name {
+  line-height: 32px;
+  padding: 8px 0 8px;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.modal.modal-style-settings .modal-content > .setting-item:first-child .setting-item-control {
+  min-height: unset;
+  padding-right: 32px;
+}
+
+.modal.modal-style-settings .modal-content > .setting-item:first-child a {
+  color: var(--mono-100);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  border: unset;
+  padding: 4px;
+  margin: unset;
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.modal.modal-style-settings .modal-content > .setting-item:first-child a svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+
+  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
+}
+
+.theme-light .modal.modal-style-settings .modal-content > .setting-item:first-child a:hover {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal.modal-style-settings .modal-content > .setting-item:first-child a:hover {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.theme-light .modal.modal-style-settings .modal-content > .setting-item:first-child a:active {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal.modal-style-settings .modal-content > .setting-item:first-child a:active {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.modal.modal-style-settings .modal-content > .setting-item:first-child a {
+  padding: 0 12px;
+  min-width: fit-content;
+  min-height: 32px;
+  cursor: default;
+
+  --link-decoration-hover: none;
+}
+
+.modal.modal-style-settings textarea ~ button {
+  color: var(--mono-100);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  border: unset;
+  padding: 4px;
+  margin: unset;
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.modal.modal-style-settings textarea ~ button svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+
+  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
+}
+
+.theme-light .modal.modal-style-settings textarea ~ button:hover {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal.modal-style-settings textarea ~ button:hover {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.theme-light .modal.modal-style-settings textarea ~ button:active {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal.modal-style-settings textarea ~ button:active {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.modal.modal-style-settings textarea ~ button {
+  padding: 0 12px;
+  min-width: fit-content;
+  min-height: 32px;
+  margin-top: 24px;
+  align-self: flex-end;
+}
+
+.modal.modal-style-settings .setting-item:has(#style-settings-import-input) {
+  position: absolute;
+  inset: 8px 48px auto auto;
+}
+
+.modal.modal-style-settings .setting-item:has(#style-settings-import-input) .setting-item-info {
+  display: none;
+}
+
+.modal.modal-style-settings .setting-item:has(#style-settings-import-input) .setting-item-control {
+  min-height: unset;
+}
+
+.modal.modal-style-settings .setting-item:has(#style-settings-import-input) .setting-item-control label {
+  text-decoration: none;
+  color: var(--color-base-100);
+}
+
+.modal.modal-style-settings .setting-item:has(#style-settings-import-input) {
+  color: var(--mono-100);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  border: unset;
+  padding: 4px;
+  margin: unset;
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.modal.modal-style-settings .setting-item:has(#style-settings-import-input) svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+
+  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
+}
+
+.theme-light .modal.modal-style-settings .setting-item:has(#style-settings-import-input):hover {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal.modal-style-settings .setting-item:has(#style-settings-import-input):hover {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.theme-light .modal.modal-style-settings .setting-item:has(#style-settings-import-input):active {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal.modal-style-settings .setting-item:has(#style-settings-import-input):active {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.modal.modal-style-settings .setting-item:has(#style-settings-import-input) {
+  padding: 0 12px;
+  min-width: fit-content;
+  min-height: 32px;
+}
+
 .workspace-leaf-content[data-type="markdown"] .markdown-preview-view.markdown-rendered {
   animation: move-up-far var(--anim-duration-slow) ease, fade-in var(--anim-duration-slow) ease-in;
 }
@@ -4803,6 +5020,7 @@ body {
   --color-accent-hsl: 27deg, 36%, 56%;
 }
 
+.setting-search-results > .setting-search-empty,
 .pane-empty,
 .search-result-container.mod-global-search .search-empty-state {
   font-size: 20px;
@@ -4813,8 +5031,36 @@ body {
   place-content: center center;
 }
 
+.setting-search-results > .setting-search-empty::before,
 .pane-empty::before,
 .search-result-container.mod-global-search .search-empty-state::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 12px;
+  background-color: rgb(var(--mono-rgb-100), 55%);
+  opacity: 0.6;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27m21 21-4.34-4.34%27/%3E%3Ccircle cx=%2711%27 cy=%2711%27 r=%278%27/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2724%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27black%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3E%3Cpath d=%27m21 21-4.34-4.34%27/%3E%3Ccircle cx=%2711%27 cy=%2711%27 r=%278%27/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+}
+
+.community-modal-search-results > .community-item:not(.tappable) {
+  font-size: 20px;
+  color: rgb(var(--mono-rgb-100), 55%);
+  font-weight: 600;
+  height: max(200px, 100%);
+  text-align: center;
+  place-content: center center;
+}
+
+.community-modal-search-results > .community-item:not(.tappable)::before {
   content: "";
   display: block;
   width: 60px;
@@ -5156,12 +5402,13 @@ body {
 
 .workspace-ribbon.mod-primary::before {
   height: calc(var(--header-height) + 35px);
+  border-color: rgb(var(--mono-rgb-100), 12%);
 }
 
 .workspace-ribbon.mod-primary.is-collapsed::before {
   transition: background-color 250ms 95ms ease-in-out;
   background-color: var(--ribbon-background-collapsed);
-  border-inline-end-color: var(--divider-color);
+  border-inline-end-color: rgb(var(--mono-rgb-100), 12%);
 }
 
 .workspace-split.mod-vertical > * > .workspace-leaf-resize-handle {

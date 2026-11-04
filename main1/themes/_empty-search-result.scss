@@ -34,11 +34,16 @@
 // SCSS ======================================================
 // ======================================================
 
-.pane-empty, //outline core plugin "no headings found"
 
+.setting-search-results>.setting-search-empty,
+.pane-empty, //outline core plugin "no headings found"
 .search-result-container.mod-global-search .search-empty-state {
     @include search-empty();
+}
 
+
+.community-modal-search-results>.community-item:not(.tappable) {
+    @include search-empty();
 }
 
 .prompt .suggestion-empty {

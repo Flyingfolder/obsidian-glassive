@@ -35,6 +35,7 @@ body {
 
     &::before {
         height: calc( var(--header-height) + 35px);
+        border-color: $background-modifier-seperator;
     }
 }
 
@@ -42,7 +43,8 @@ body {
 .workspace-ribbon.mod-primary.is-collapsed::before {
     transition: background-color 250ms 95ms ease-in-out;
     background-color: var(--ribbon-background-collapsed);
-    border-inline-end-color: var(--divider-color);
+    border-inline-end-color: $background-modifier-seperator;
+    // border-color: red;
 }
 
 

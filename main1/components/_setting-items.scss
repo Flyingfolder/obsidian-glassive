@@ -23,11 +23,18 @@
 }
 
 
-
+.setting-group-search {
+    corner-shape: squircle;
+}
 
 .setting-item-control {
     min-height: 28px;
 
+    .clickable-icon {
+        border-radius: 99px;
+        corner-shape: unset;
+        padding: 6px;
+    }
 }
 
 .setting-item-info {

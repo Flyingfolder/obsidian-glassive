@@ -53,3 +53,90 @@
 [data-type="style-settings"] .style-settings-container .setting-item:not(.setting-item-heading) {
     flex-direction: row;
 }
+
+
+.view-content {
+    .setting-item-heading.style-settings-heading {
+        margin-top: 8px;
+    }
+
+    .style-settings-heading[data-level="0"] {
+        margin-bottom: unset;
+    }
+
+    
+
+    .style-settings-container .setting-item {
+        padding: 8px 16px;
+        margin: unset;
+        border-radius: 0;
+
+        &:first-child {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        &:last-child {
+            border-bottom-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+        }
+    }
+
+}
+// ================================================================================================================================================================================================================================
+// modal ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.modal.modal-style-settings {
+    .modal-content>.setting-item:first-child {
+        margin-bottom: 12px;
+
+        .setting-item-name {
+            line-height: 32px;
+            padding: 8px 0 8px;
+            font-weight: 600;
+            font-size: 17px;
+        }
+
+        .setting-item-control {
+            min-height: unset;
+            padding-right: 32px;
+        }
+
+        a {
+            @include liquid-toolbar-text-button;
+
+            cursor: default;
+
+            --link-decoration-hover: none;
+        }
+    } 
+
+    textarea~button {
+        @include liquid-toolbar-text-button;
+
+        margin-top: 24px;
+        align-self:  flex-end;
+    }
+
+
+    .setting-item:has(#style-settings-import-input) {
+        position: absolute;
+        inset: 8px 48px auto auto;
+
+        .setting-item-info {
+            display: none;
+        }
+
+        .setting-item-control {
+            min-height: unset;
+
+            label {
+                text-decoration: none;
+                color: $text-normal;
+            }
+        }
+
+        @include liquid-toolbar-text-button;
+
+    }
+}
