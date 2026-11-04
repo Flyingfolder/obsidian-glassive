@@ -425,22 +425,9 @@ button.mod-destructive.mod-cta.mobile-tap {
 }
 
 .formula-editor:focus-within, .formula-editor:focus, .formula-editor:focus-visible, .formula-editor:active {
+  border-color: var(--background-modifier-border-focus);
   box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
   animation: input-box-shadow-appear var(--anim-duration-moderate) ease none;
-}
-
-textarea,
-.multi-select-container,
-input.metadata-input-text,
-input[type="date"],
-input[type="datetime-local"],
-input[type="text"],
-input[type="search"],
-input[type="email"],
-input[type="password"],
-input[type="number"] {
-  border: unset;
-  box-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border);
 }
 
 @keyframes input-box-shadow-appear {
@@ -1842,16 +1829,15 @@ body {
 }
 
 .menu.bases-toolbar-menu .bases-results-page input {
-  --input-height: 26px;
-
   height: var(--input-height);
-  box-shadow: 0 0 0 1.5px var(--background-modifier-border);
+  border: var(--input-border-width) solid var(--background-modifier-border);
   border-radius: 99px;
   corner-shape: squircle;
   padding: 4px 6px;
 }
 
 .menu.bases-toolbar-menu .bases-results-page input:focus-within, .menu.bases-toolbar-menu .bases-results-page input:focus, .menu.bases-toolbar-menu .bases-results-page input:focus-visible, .menu.bases-toolbar-menu .bases-results-page input:active {
+  border-color: var(--background-modifier-border-focus);
   box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
   animation: input-box-shadow-appear var(--anim-duration-moderate) ease none;
 }
@@ -1945,10 +1931,8 @@ body {
 .filter-expression .multi-select-container,
 .filter-expression .metadata-input-longtext,
 .filter-expression input.metadata-input {
-  --input-height: 26px;
-
   height: var(--input-height);
-  box-shadow: 0 0 0 1.5px var(--background-modifier-border);
+  border: var(--input-border-width) solid var(--background-modifier-border);
   border-radius: 99px;
   corner-shape: squircle;
   padding: 4px 6px;
@@ -1963,6 +1947,7 @@ body {
 .filter-expression input.metadata-input:focus,
 .filter-expression input.metadata-input:focus-visible,
 .filter-expression input.metadata-input:active {
+  border-color: var(--background-modifier-border-focus);
   box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
   animation: input-box-shadow-appear var(--anim-duration-moderate) ease none;
 }
@@ -2021,6 +2006,11 @@ body {
 
 .drag-reorder-ghost > .filter-group-statements > .filter-row,
 :where(.bases-query-container, .drag-reorder-ghost) > .filter-group > .filter-group-statements > .filter-row {
+  padding: 7px 0;
+}
+
+.drag-reorder-ghost > .filter-group-statements > .filter-row.mod-group,
+:where(.bases-query-container, .drag-reorder-ghost) > .filter-group > .filter-group-statements > .filter-row.mod-group {
   padding: 9px 0;
 }
 
@@ -4669,10 +4659,10 @@ body {
     inset -1px 0 1px rgb(255 255 255 / 0%); /* 右 */
 
   --shadow-glass-border:
-    inset 0 .5px .5px rgb(255 255 255 / 25%), /* 顶 */
-    inset 0 3px 3px rgb(255 255 255 / 10%), /* 顶 */
-    inset 0 -.5px .5px rgb(255 255 255 / 15%), /* 底 */
-    inset 0 -1px 1px rgb(255 255 255 / 15%), /* 底 */
+    inset 0 .5px .5px rgb(255 255 255 / 30%), /* 顶 */
+    inset 0 3px 3px rgb(255 255 255 / 15%), /* 顶 */
+    inset 0 -.5px .5px rgb(255 255 255 / 20%), /* 底 */
+    inset 0 -1.5px 1.5px rgb(255 255 255 / 15%), /* 底 */
     inset .5px 0 .5px rgb(0 0 0 / 35%), /* 左 */
     inset -.5px 0 .5px rgb(0 0 0 / 35%), /* 右 */
     inset 1px 0 1px rgb(0 0 0 / 20%), /* 左 */

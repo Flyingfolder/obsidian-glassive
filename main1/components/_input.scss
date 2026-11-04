@@ -34,19 +34,19 @@
 
 
 // 用阴影来代替边框
-textarea,
-.multi-select-container,
-input.metadata-input-text,
-input[type='date'],
-input[type='datetime-local'],
-input[type='text'],
-input[type='search'],
-input[type='email'],
-input[type='password'],
-input[type='number'] {
-  border: unset;
-  box-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border);
-}
+// textarea,
+// .multi-select-container,
+// input.metadata-input-text,
+// input[type='date'],
+// input[type='datetime-local'],
+// input[type='text'],
+// input[type='search'],
+// input[type='email'],
+// input[type='password'],
+// input[type='number'] {
+//   border: unset;
+//   box-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border);
+// }
 
 
 // 删掉多余的边框

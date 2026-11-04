@@ -30,17 +30,19 @@
     &:focus,
     &:focus-visible,
     &:active {
+        border-color: var(--background-modifier-border-focus);
         box-shadow: 0 0 0 $input-border-width-focus var(--background-modifier-border-focus);
-        animation: input-box-shadow-appear $anim-duration-moderate ease none;;
+        animation: input-box-shadow-appear $anim-duration-moderate ease none;
     }
 }
 
-@mixin input-s {
-    --input-height: 26px;
+@mixin input {
+    // --input-height: 26px;
 
     height: var(--input-height);
     // width: auto;
-    box-shadow: $shadow-input-border;
+    // box-shadow: $shadow-input-border;
+    border: var(--input-border-width) solid var(--background-modifier-border);
     border-radius: 99px;
     corner-shape: squircle;
     padding: 4px 6px;

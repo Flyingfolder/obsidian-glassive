@@ -97,7 +97,7 @@
     .multi-select-container,
     .metadata-input-longtext,
     input.metadata-input {
-        @include input-s;
+        @include input;
     }
 
 
@@ -195,11 +195,11 @@
 
     // 常规行
     >.filter-group-statements>.filter-row {
-        // padding: 7px 0;
+        padding: 7px 0;
     }
 
     // 构成一个组的行
-    >.filter-group-statements>.filter-row {
+    >.filter-group-statements>.filter-row.mod-group {
         padding: 9px 0;
     }
 
