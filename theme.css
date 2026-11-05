@@ -312,8 +312,6 @@ body {
 .dropdown {
   --dropdown-padding: 0 30px 0 var(--dropdown-padding-start);
   --input-height: 28px;
-
-  text-align: end;
 }
 
 button {
@@ -576,14 +574,14 @@ input[type="number"]:focus-visible {
   --modal-padding: 16px;
   --modal-radius: 40px;
 
+  background-color: var(--background-secondary);
+  background-image: var(--liquid-modal-background-image);
   corner-shape: squircle;
   animation: fade-in var(--anim-duration-moderate) ease-out none, pop-in-subtle var(--anim-duration-moderate) ease-out none;
 }
 
 .modal {
-  background-color: var(--background-secondary);
-  background-image: var(--liquid-modal-background-image);
-  padding: 0 var(--modal-padding) var(--modal-padding);
+  padding: 0 var(--modal-padding) 0;
 }
 
 .modal .modal-header-button {
@@ -636,13 +634,20 @@ input[type="number"]:focus-visible {
 }
 
 .modal .modal-button-container {
-  padding: 16px;
+  padding: 16px 0;
   gap: 20px;
 }
 
 .modal .modal-button-container:last-child {
+  margin: 24px 0 0;
+  position: relative;
+}
+
+.modal .modal-button-container:last-child::before {
+  content: "";
+  position: absolute;
+  inset: 0 -16px auto -16px;
   border-top: 1px solid rgb(var(--mono-rgb-100), 12%);
-  margin: 24px -16px -16px;
 }
 
 .modal .modal-button-container .mod-cta {
@@ -659,7 +664,6 @@ input[type="number"]:focus-visible {
 .modal-header {
   display: flex;
   flex-direction: column;
-  margin: 0 calc(var(--modal-padding) * -1) 0;
 }
 
 .modal-header:has(.modal-title:only-child:empty) {
@@ -669,7 +673,8 @@ input[type="number"]:focus-visible {
 .modal-header .modal-title {
   justify-content: flex-start;
   margin: unset;
-  padding: 8px var(--modal-padding) 20px;
+  padding-top: 8px;
+  padding-bottom: 20px;
   line-height: 32px;
   font-weight: 600;
   font-size: 20px;
@@ -682,6 +687,10 @@ input[type="number"]:focus-visible {
   line-height: 32px;
   font-weight: 600;
   font-size: 20px;
+}
+
+.modal.mod-scrollable-content .modal-title {
+  padding-top: 8px;
 }
 
 .modal-setting-titlebar {
@@ -3419,11 +3428,178 @@ body {
   padding: 6px 0 !important;
 }
 
+.modal.iconic-rule-picker {
+  min-height: 380px;
+}
+
+.modal.iconic-rule-picker .modal-content {
+  flex-grow: 0;
+}
+
+.modal.iconic-rule-picker .modal-content > .setting-item:first-child {
+  padding: unset;
+  position: absolute;
+  top: 8px;
+  left: 120px;
+}
+
+.modal.iconic-rule-picker .modal-content > .setting-item:first-child .setting-item-info {
+  display: none;
+}
+
+.modal.iconic-rule-picker .modal-content > .setting-item:first-child .setting-item-control {
+  min-height: unset !important;
+}
+
+.modal.iconic-rule-picker .modal-content > .setting-item:first-child .setting-item-control {
+  color: var(--mono-100);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  border: unset;
+  padding: 4px;
+  margin: unset;
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.modal.iconic-rule-picker .modal-content > .setting-item:first-child .setting-item-control svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+
+  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
+}
+
+.theme-light .modal.iconic-rule-picker .modal-content > .setting-item:first-child .setting-item-control:hover {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal.iconic-rule-picker .modal-content > .setting-item:first-child .setting-item-control:hover {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.theme-light .modal.iconic-rule-picker .modal-content > .setting-item:first-child .setting-item-control:active {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal.iconic-rule-picker .modal-content > .setting-item:first-child .setting-item-control:active {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.modal.iconic-rule-picker .modal-content > .setting-item:first-child .setting-item-control {
+  padding: unset;
+  min-height: 32px;
+}
+
+.modal.iconic-rule-picker .modal-content > .setting-item:first-child .setting-item-control select {
+  background-color: unset;
+  height: 32px;
+  border-radius: 99px;
+  corner-shape: unset;
+  width: auto;
+  min-width: fit-content;
+  padding-left: 14px;
+  text-transform: capitalize;
+}
+
+.modal.iconic-rule-picker .modal-content > .setting-item:first-child + .setting-item.setting-item-heading .setting-item-info {
+  display: none;
+}
+
+.modal.iconic-rule-picker .modal-content > .setting-item:first-child + .setting-item.setting-item-heading {
+  margin: unset;
+  position: absolute;
+  inset: 8px 48px auto auto;
+}
+
+.modal.iconic-rule-picker .modal-content > .setting-item:first-child + .setting-item.setting-item-heading .setting-item-control .clickable-icon {
+  color: var(--mono-100);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  border: unset;
+  padding: 4px;
+  margin: unset;
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.modal.iconic-rule-picker .modal-content > .setting-item:first-child + .setting-item.setting-item-heading .setting-item-control .clickable-icon svg.svg-icon {
+  --icon-size: 16px;
+  --icon-stroke: 1.75px;
+
+  filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100)/100%));
+}
+
+.theme-light .modal.iconic-rule-picker .modal-content > .setting-item:first-child + .setting-item.setting-item-heading .setting-item-control .clickable-icon:hover {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal.iconic-rule-picker .modal-content > .setting-item:first-child + .setting-item.setting-item-heading .setting-item-control .clickable-icon:hover {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.theme-light .modal.iconic-rule-picker .modal-content > .setting-item:first-child + .setting-item.setting-item-heading .setting-item-control .clickable-icon:active {
+  background-color: var(--color-base-30);
+}
+
+.theme-dark .modal.iconic-rule-picker .modal-content > .setting-item:first-child + .setting-item.setting-item-heading .setting-item-control .clickable-icon:active {
+  background-color: color-mix(in oklch, rgb(80 80 80) 95%, var(--color-accent-1));
+}
+
+.modal.iconic-rule-picker .modal-content > .setting-item:first-child + .setting-item.setting-item-heading .setting-item-control .clickable-icon {
+  padding: 4px;
+  min-width: 32px;
+  min-height: 32px;
+}
+
 .modal-container > .modal.iconic-rule-editor .iconic-scroller .dropdown {
   flex-grow: unset;
 }
 
-.modal-container > .modal.iconic-rule-editor .modal-content > .setting-item > .setting-item-control .checkbox-container {
+.modal-container > .modal.iconic-rule-editor .modal-content > .setting-item:first-child > .setting-item-control {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 32px;
+  gap: 12px;
+}
+
+.modal-container > .modal.iconic-rule-editor .modal-content > .setting-item:first-child > .setting-item-control .clickable-icon,
+.modal-container > .modal.iconic-rule-editor .modal-content > .setting-item:first-child > .setting-item-control svg.svg-icon {
+  --icon-size: 64px;
+  --icon-color: var(--color-base-100);
+  --icon-color-hover: var(--color-base-100);
+
+  border-radius: 24px;
+  corner-shape: squircle;
+}
+
+.modal-container > .modal.iconic-rule-editor .modal-content > .setting-item:first-child > .setting-item-control input {
+  font-size: 17px;
+  font-weight: 500;
+  border: unset;
+  background-color: unset;
+  text-align: center;
+  min-width: 160px;
+  field-sizing: content;
+  width: auto;
+}
+
+.modal-container > .modal.iconic-rule-editor .modal-content > .setting-item:first-child > .setting-item-control .checkbox-container {
   display: none;
 }
 
@@ -4225,6 +4401,10 @@ hr:has(+ .cmdr-sep-con.callout) {
   position: relative;
 }
 
+.vertical-tab-content .setting-group:first-child .setting-item.setting-item-heading:first-child {
+  margin-top: unset;
+}
+
 .setting-item-control .choiceList .multiChoiceListItem .qaChoiceRowIcon,
 .setting-item-control .choiceList .choiceListItem .qaChoiceRowIcon {
   --icon-size: 16px;
@@ -4743,6 +4923,82 @@ hr:has(+ .cmdr-sep-con.callout) {
   padding: 4px 0;
 }
 
+.modal.mod-file-browser .modal-view-options-toolbar {
+  color: var(--mono-100);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  border: unset;
+  padding: 4px;
+  margin: unset;
+  border-radius: 99px;
+  corner-shape: unset;
+  background: var(--glassive-control-background);
+  -webkit-backdrop-filter: var(--glassive-control-backdrop-filter);
+          backdrop-filter: var(--glassive-control-backdrop-filter);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 16px;
+  width: fit-content;
+  align-self: center;
+  position: absolute;
+  top: 8px;
+  right: 80px;
+}
+
+.modal.mod-file-browser .modal-view-option {
+  font-size: 13px;
+  gap: 4px;
+  color: var(--mono-100);
+  min-width: 92px;
+  border-radius: 99px;
+  corner-shape: unset;
+}
+
+.modal.mod-file-browser .modal-view-option.is-active {
+  background-color: color-mix(in oklch, var(--mono-100) 12%, transparent);
+}
+
+.modal.mod-file-browser .modal-view-option[aria-label="File tree"]::after {
+  content: "File tree";
+  display: block;
+}
+
+.modal.mod-file-browser .modal-view-option[aria-label="Gallery"]::after {
+  content: "Gallery";
+  display: block;
+}
+
+.modal.mod-file-browser .file-browser-description {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0 16px;
+  margin: unset;
+}
+
+.modal.mod-file-browser .file-browser-views {
+  min-height: 420px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, black 80px);
+          mask-image: linear-gradient(to bottom, transparent 0, black 80px);
+}
+
+.modal.mod-file-browser .file-browser-views > * {
+  padding-top: 64px;
+  padding-bottom: 80px;
+}
+
+.modal.mod-file-browser .modal-button-container {
+  position: absolute;
+  inset: auto 0 0;
+  margin: unset;
+  background-color: var(--background-glass-subtle);
+  -webkit-backdrop-filter: var(--backdrop-filter-glass-subtle);
+          backdrop-filter: var(--backdrop-filter-glass-subtle);
+  border: none;
+}
+
 .callout-suggestions-container .suggestion-item.callout-suggestions-item .callout {
   padding-left: 16px;
   border-radius: 30px;
@@ -4799,15 +5055,15 @@ body {
 
 .is-focused.theme-dark {
   --glassive-control-background:
-        linear-gradient(
-            hsl(var(--interactive-accent-hsl), 5%),
-            hsl(var(--interactive-accent-hsl), 5%)),
-        color-mix(in oklch, rgb(255 255 255) 10%, transparent);
+      linear-gradient(
+          hsl(var(--interactive-accent-hsl), 4%),
+          hsl(var(--interactive-accent-hsl), 4%)),
+      color-mix(in oklch, rgb(255 255 255) 7%, transparent);
   --glassive-control-backdrop-filter: blur(2px) brightness(1.03);
   --liquid-modal-background-image:
-    radial-gradient(ellipse 260% 200% at -400px -200px,
-    hsl(var(--color-accent-hsl), 10%),
-    rgb(var(--mono-rgb-0), 6%));
+      radial-gradient(ellipse 260% 200% at -400px -200px,
+      hsl(var(--color-accent-hsl), 10%),
+      rgb(var(--mono-rgb-0), 6%));
 }
 
 .theme-light {
@@ -4842,7 +5098,7 @@ body {
 
   --shadow-glass-border:
       inset 0 1px 1px rgb(255 255 255 / 80%), /* 顶 */
-      inset 0 2px 2px rgb(255 255 255 / 60%), /* 顶 */
+      inset 0 4px 4px rgb(255 255 255 / 40%), /* 顶 */
       inset 0 -2px 2px rgb(255 255 255 / 50%), /* 底 */
 
       inset .5px 0 .5px rgb(0 0 0 / 25%), /* 左 */
@@ -4865,7 +5121,7 @@ body {
   --card-background: var(--color-base-35);
   --background-modifier-border: rgb( 220 220 240 / 15%);
   --background-glass-subtle: rgb(60 60 60 / 40%);
-  --backdrop-filter-glass-subtle: blur(6px) saturate(190%) brightness(1.4);
+  --backdrop-filter-glass-subtle: blur(6px) saturate(190%) brightness(1.28);
   --background-glass: rgb(40 40 40 / 60%);
   --backdrop-filter-glass: blur(10px) saturate(180%) brightness(1.8);
   --glass-shadow-inset-for-control:
@@ -5257,6 +5513,7 @@ body {
   min-height: 35px;
   display: flex;
   flex-direction: row;
+  background-color: var(--top-header-bg);
 }
 
 .workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header-container {

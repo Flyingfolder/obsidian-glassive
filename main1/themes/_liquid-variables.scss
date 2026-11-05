@@ -35,6 +35,10 @@ body {
   --glassive-control-background: 
       linear-gradient(rgb(255 255 255 / 40%), rgb(255 255 255 / 20%)),  
     rgb(255 255 255 / 20%);
+  // --glassive-control-dropdown-background: 
+  //     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23000' opacity='0.9' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='m7 15 5 5 5-5'/%3E%3Cpath d='m7 9 5-5 5 5'/%3E%3C/svg%3E"),
+  //     radial-gradient(ellipse,var(--dropdown-icon-background) 48%,transparent 50%), 
+  //     var(--glassive-control-background);
   --glassive-control-backdrop-filter: blur(2px) brightness(1.08);
   --liquid-modal-background-image: none;
 }
@@ -43,15 +47,19 @@ body {
 
 .is-focused.theme-dark {
   --glassive-control-background:
-        linear-gradient(
-            hsl(var(--interactive-accent-hsl), 5%), 
-            hsl(var(--interactive-accent-hsl), 5%)), 
-        color-mix(in oklch, rgb(255 255 255) 10%, transparent);
+      linear-gradient(
+          hsl(var(--interactive-accent-hsl), 4%), 
+          hsl(var(--interactive-accent-hsl), 4%)), 
+      color-mix(in oklch, rgb(255 255 255) 7%, transparent);
+  // --glassive-control-dropdown-background:
+  //     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' opacity='0.6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' %3E%3Cpath d='m7 15 5 5 5-5'/%3E%3Cpath d='m7 9 5-5 5 5'/%3E%3C/svg%3E"),
+  //     radial-gradient(ellipse,var(--dropdown-icon-background) 48%,transparent 50%),
+  //     var(--glassive-control-background);
   --glassive-control-backdrop-filter: blur(2px) brightness(1.03);
   --liquid-modal-background-image: 
-    radial-gradient(ellipse 260% 200% at -400px -200px,
-    hsl(var(--color-accent-hsl), 10%),
-    rgb(var(--mono-rgb-0), 6%));
+      radial-gradient(ellipse 260% 200% at -400px -200px,
+      hsl(var(--color-accent-hsl), 10%),
+      rgb(var(--mono-rgb-0), 6%));
 }
 
 
@@ -103,7 +111,7 @@ body {
     // 用于小号control的内边框
   --shadow-glass-border: 
       inset 0 1px 1px rgb(255 255 255 / 80%),   /* 顶 */
-      inset 0 2px 2px rgb(255 255 255 / 60%),   /* 顶 */
+      inset 0 4px 4px rgb(255 255 255 / 40%),   /* 顶 */
       inset 0 -2px 2px rgb(255 255 255 / 50%),  /* 底 */
       
       inset .5px 0 .5px rgb(0 0 0 / 25%),   /* 左 */
@@ -134,7 +142,7 @@ body {
   --card-background: var(--color-base-35);
   --background-modifier-border: rgb( 220 220 240 / 15%);
   --background-glass-subtle: rgb(60 60 60 / 40%);
-  --backdrop-filter-glass-subtle: blur(6px) saturate(190%) brightness(1.4);
+  --backdrop-filter-glass-subtle: blur(6px) saturate(190%) brightness(1.28);
   --background-glass: rgb(40 40 40 / 60%);
   --backdrop-filter-glass: blur(10px) saturate(180%) brightness(1.8);
   --glass-shadow-inset-for-control:

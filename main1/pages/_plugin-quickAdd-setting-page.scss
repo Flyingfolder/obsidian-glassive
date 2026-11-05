@@ -14,21 +14,14 @@
         .setting-items {
             position: relative;
         }
-        
-        // &>.setting-items>.setting-item:last-child {
-        //     position: absolute;
-        //     inset: 3px 20px auto auto;
-        //     border: unset;
-        //     .setting-item-info {display: none;}
-        // }
 
-        // .choiceFilterBar {
-        //     padding-right: 290px;
-        // }
     }
 
-
-
+    .setting-group:first-child {
+        .setting-item.setting-item-heading:first-child {
+            margin-top: unset;
+        }
+    }
 }
 
 

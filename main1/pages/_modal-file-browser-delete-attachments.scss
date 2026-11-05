@@ -1,0 +1,105 @@
+
+
+
+@use '../abstracts' as *; 
+
+
+
+
+
+// 通过删除文件时发现附件也可以一起删除来触发
+.modal.mod-file-browser {
+    .modal-view-options-toolbar {
+
+        // 
+    color: var(--mono-100);
+    box-shadow: $shadow-raised-control-item, var(--shadow-glass-border);
+    border: unset;
+    padding: 4px;
+    margin: unset;
+    border-radius: 99px;
+    corner-shape: unset;
+    background: $glassive-control-background;
+    backdrop-filter: $glassive-control-backdrop-filter;
+    // 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    font-size: $font-ui-small;
+    line-height: 16px;
+
+    // --------
+        width: fit-content;
+        align-self: center;
+        position: absolute;
+        top:  8px;
+        right: 80px;
+
+    }
+
+    .modal-view-option {
+        font-size: 13px;
+        gap: 4px;
+        color: var(--mono-100);
+        min-width: 92px;
+        border-radius: 99px;
+        corner-shape: unset;
+        &.is-active {background-color: $background-modifier-hover-strong;}
+    }
+
+    .modal-view-option[aria-label="File tree"] {
+        &::after {
+            content: "File tree";
+            display: block;
+        }
+    }
+
+    .modal-view-option[aria-label="Gallery"] {
+        &::after {
+            content: "Gallery";
+            display: block;
+        }
+    }
+
+}
+
+.modal.mod-file-browser {
+    .file-browser-description {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: 0 16px;
+        margin: unset;
+
+
+
+    }
+
+
+    .file-browser-views {
+        min-height: 420px; //保证两行内容不抖动
+        mask-image: linear-gradient(to bottom,
+                transparent 0,
+                black 80px,
+            );
+
+        >* {
+            padding-top: 64px;
+            padding-bottom: 80px;
+        }
+    }
+
+
+
+
+    .modal-button-container {
+        position: absolute;
+        inset: auto 0 0;
+        margin: unset;
+
+        @include liquid-glass-bg-subtle;
+
+        border: none;
+    }
+}

@@ -97,8 +97,14 @@
     @else {
         @content;
     }
-
 }
+
+
+@mixin glassive-control-group-with-text($auto-detect-only-child: false, $button-type: div) {
+    // #待定 用来制作 iconic app 有多少个 match files
+}
+
+
 
 
 @mixin glassive-control-icon($is-grouped: false) {
@@ -188,4 +194,32 @@
 
     .setting-item-control {gap: unset;}
 }
+
+
+
+
+
+
+
+@mixin glassive-control-dropdown() {
+    // 使用方法：需要一个包含着dropdown的 wrapper 
+
+    @include _glassive-controls-base();
+    @include glassive-controls-states();
+    padding: unset;
+    min-height: 32px;
+
+    select {
+        background-color: unset;
+        height: 32px;
+        border-radius: 99px;
+        corner-shape: unset;
+        width: auto;
+        min-width: fit-content;
+        padding-left: 14px;
+        text-transform: capitalize;
+    }
+}
+
+
 

@@ -13,6 +13,7 @@
 
 .iconic-scroller {
     border-bottom: unset;
+
     .setting-item.iconic-condition,
     .setting-item.iconic-rule {
         padding: $form-row-padding 0 !important;
@@ -20,44 +21,99 @@
 }
 
 
-// // 制作 悬浮的 toolbar -----------------------------------
-// .modal.iconic-rule-picker {
-//     .modal-content>.setting-item:nth-child(1) {
-//         position: absolute;
-//         top: 11px;
-//         right: 52px;
+// 制作 悬浮的 toolbar -----------------------------------
+.modal.iconic-rule-picker {
+    min-height: 380px;
+
+    .modal-content {
+        flex-grow: 0;
+    }
+
+    .modal-content>.setting-item:first-child {
+        padding: unset;
+        position: absolute;
+        top: 8px;
+        left: 120px;
         
-//         .setting-item-info {
-//             display: none;
-//         }
+        .setting-item-info {display: none;}
 
-//         .setting-item-control {
-//             min-height: unset !important;
-//         }
-//     }
-// }
+        .setting-item-control {min-height: unset !important;}
 
 
+        .setting-item-control {
+            @include glassive-control-dropdown;
+
+        }
+    }
 
 
 
-// editor ================================================================================
+    .modal-content>.setting-item:first-child+.setting-item.setting-item-heading {
+        .setting-item-info {display: none;}
+
+        margin: unset;
+        position: absolute;
+        inset: 8px 48px auto auto;
+
+        .setting-item-control .clickable-icon {
+            @include glassive-control-icon;
+        }
+    }
+}
+
+
+
+
+
+// 编辑某一个选择的icon /editor ================================================================================
 .modal-container > .modal.iconic-rule-editor {
 
     // 中间部分的 conditions
-
     .iconic-scroller {
         .dropdown {
             flex-grow: unset;
         }
     }
 
-    .modal-content>.setting-item>.setting-item-control {
+
+    
+    .modal-content>.setting-item:first-child>.setting-item-control {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 32px;
+        gap: 12px;
+
+        .clickable-icon,
+        svg.svg-icon {
+            --icon-size: 64px;
+            --icon-color: #{$text-normal};
+            --icon-color-hover: #{$text-normal};
+
+            border-radius: 24px;
+            corner-shape: squircle;
+        }
+
+        input {
+            font-size: 17px;
+            font-weight: 500;
+            border: unset;
+            background-color: unset;
+            text-align: center;
+            min-width: 160px;
+            field-sizing: content;
+            width: auto;
+            // box-shadow: unset !important;
+        }
+
+        // 删掉一个 toggle
         .checkbox-container {display: none;}
     }
-
-
 }
+
+
+
+
+
 
 
 
