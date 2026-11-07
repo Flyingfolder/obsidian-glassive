@@ -84,6 +84,39 @@
 
     .canvas-help {gap: 6px;}
     .canvas-instruction {font-size: $font-ui-small;}
+
+    .canvas-instruction + .canvas-instruction {
+        // border-top: 1px solid red;
+    }
+}
+
+
+// canvas-placeholder-message "Drag from below or double click"
+
+.canvas-placeholder-message {
+    border-radius: 40px;
+    corner-shape: squircle;
+    padding: 24px;
+    text-align: start;
+    font-size: 13px;
+    color: $text-muted;
+
+
+    &::before{
+        content: '';
+        display: block;
+        position: relative;
+        width: 60px;
+        height: 60px;
+        margin: 0 0 12px;
+        background-color: $text-muted;
+        justify-self: center;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: contain;
+        mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='7' height='9' x='3' y='3' rx='1'/%3E%3Crect width='7' height='5' x='14' y='3' rx='1'/%3E%3Crect width='7' height='9' x='14' y='12' rx='1'/%3E%3Crect width='7' height='5' x='3' y='16' rx='1'/%3E%3C/svg%3E");    
+
+    }
 }
 
 

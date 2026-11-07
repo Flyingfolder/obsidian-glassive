@@ -76,10 +76,13 @@
 
 .modal:not(.mod-settings) .setting-item:not(.setting-item-heading):where(:not(.setting-group *)) {
     padding: 6px 0;
-    align-items: center;
+    align-items: safe center;
 
     .setting-item-control {
         min-height: 42px;
     }
 }
 
+// .modal:not(.mod-settings) .setting-item {
+//     align-items: center;
+// }

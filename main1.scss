@@ -35,6 +35,7 @@
 @use 'main1/components/vault-profile';
 
 // 4. Editor — 编辑区（阅读/源码模式）样式
+@use 'main1/editor/basic';
 @use 'main1/editor/callouts';
 @use 'main1/editor/find-and-replace';
 @use 'main1/editor/tables';

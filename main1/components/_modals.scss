@@ -26,12 +26,14 @@
         @include glassive-control-icon;
     }
 
+
     .modal-button-container {
         padding: 16px 0;
         gap: 20px;
 
         &:last-child {
-            margin: 24px 0 0;
+            margin: unset; //不可以删
+
             // 需要定位，否则 ::before 会相对 .modal（position: relative）定位，跑到弹窗顶部
             position: relative;
 
@@ -43,17 +45,21 @@
             }
         }
 
-        .mod-cta {order: 1;}
-
+    
         button {
             border-radius: 20px;
             corner-shape: unset;
             height: 32px;   
             box-shadow: var(--shadow-card-mini), var(--shadow-glass-border), 0 0 1px $background-modifier-seperator;
-            // &:hover {background-color: var(--color-base-35);}
+            &:has(svg.svg-icon:only-child) {padding: 8px;}
+            &.mod-cta {order: 1;}
         }
+    }
 
-
+    .modal-content {
+        &:last-child {
+            padding-bottom: 16px;
+        }
     }
 }
 

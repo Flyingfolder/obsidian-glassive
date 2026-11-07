@@ -46,11 +46,11 @@
         height: 60px;
 
         // 效果：压暗
+        // background: linear-gradient(to bottom,
+        //     color-mix(in oklch, $background-primary 90%, transparent) 0,
+        //     color-mix(in oklch, $background-primary 60%, transparent) 80%,
+        //     color-mix(in oklch, $background-primary 20%, transparent) 100%);
 
-        background: linear-gradient(to bottom,
-            color-mix(in oklch, $background-primary 90%, transparent) 0,
-            color-mix(in oklch, $background-primary 60%, transparent) 80%,
-            color-mix(in oklch, $background-primary 20%, transparent) 100%);
 
         // search input
         .community-modal-search {
@@ -88,9 +88,14 @@
 
 .community-modal-search-results-wrapper {
     border: unset;
+        mask-image: linear-gradient(to bottom,
+            rgb(0 0 0 /20%) 0,
+            rgb(0 0 0 /50%) 56px,
+            black 80px);
 
     .community-modal-search-results {
         gap: 32px 20px;
+
     }
 }
 
@@ -235,12 +240,13 @@
     &.mod-destructive+.mod-destructive+.mod-destructive {
         --text-color: var(--text-error);
 
-        background-color: color-mix(in oklch, var(--background-modifier-error) 25%, transparent);
+        background-color: color-mix(in oklch, var(--background-modifier-error) 20%, transparent);
+        cursor: default;
         text-decoration: none;
         padding: var(--size-4-1) var(--size-4-3);
     }
 
-    &.mod-cta~.mod-cta {}
+    // &.mod-cta~.mod-cta {}
 
     &.mod-cta~button:not(.mod-destructive, .mod-cta),
     &.mod-destructive ~ button {

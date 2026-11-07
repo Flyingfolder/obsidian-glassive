@@ -587,7 +587,7 @@ input[type="number"]:focus-visible {
 .modal .modal-header-button {
   inset: 8px 8px auto auto;
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -639,7 +639,7 @@ input[type="number"]:focus-visible {
 }
 
 .modal .modal-button-container:last-child {
-  margin: 24px 0 0;
+  margin: unset;
   position: relative;
 }
 
@@ -650,15 +650,23 @@ input[type="number"]:focus-visible {
   border-top: 1px solid rgb(var(--mono-rgb-100), 12%);
 }
 
-.modal .modal-button-container .mod-cta {
-  order: 1;
-}
-
 .modal .modal-button-container button {
   border-radius: 20px;
   corner-shape: unset;
   height: 32px;
   box-shadow: var(--shadow-card-mini), var(--shadow-glass-border), 0 0 1px rgb(var(--mono-rgb-100), 12%);
+}
+
+.modal .modal-button-container button:has(svg.svg-icon:only-child) {
+  padding: 8px;
+}
+
+.modal .modal-button-container button.mod-cta {
+  order: 1;
+}
+
+.modal .modal-content:last-child {
+  padding-bottom: 16px;
 }
 
 .modal-header {
@@ -712,7 +720,7 @@ input[type="number"]:focus-visible {
 
 .modal-setting-titlebar button {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -760,7 +768,7 @@ input[type="number"]:focus-visible {
 
 .modal-setting-titlebar button.clickable-icon {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -1065,7 +1073,7 @@ input.prompt-input:focus-visible {
 
 .modal:not(.mod-settings) .setting-item:not(.setting-item-heading):where(:not(.setting-group *)) {
   padding: 6px 0;
-  align-items: center;
+  align-items: safe center;
 }
 
 .modal:not(.mod-settings) .setting-item:not(.setting-item-heading):where(:not(.setting-group *)) .setting-item-control {
@@ -1310,7 +1318,7 @@ body {
   corner-shape: squircle;
   inset: auto 4px 4px auto;
   padding: 0 2px;
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%);
 }
 
 .status-bar .status-bar-item .svg-icon {
@@ -1375,6 +1383,24 @@ body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vaul
 
 .workspace-leaf-content > .node-insert-event {
   padding-bottom: 64px;
+}
+
+.cm-line.HyperMD-codeblock-end,
+.cm-line.HyperMD-codeblock-begin {
+  --code-radius: 24px;
+
+  corner-shape: squircle;
+}
+
+@keyframes grow-font {
+  from {
+    font-size: 0;
+  }
+}
+
+.cm-formatting-link.cm-formatting-link-start,
+.cm-formatting-link.cm-formatting-link-end {
+  animation: grow-font var(--anim-duration-fast) ease;
 }
 
 @media (hover: hover) {
@@ -2109,7 +2135,7 @@ body {
 
 .workspace-leaf-content[data-type="bases"] .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2232,7 +2258,7 @@ body {
 .bases-search-row:has(~ [data-view-type="list"]),
 .bases-search-row:has(~ [data-view-type="cards"]) {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2641,7 +2667,7 @@ body {
 
 .bases-kanban-placeholder .text-icon-button.mod-pill {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2776,7 +2802,7 @@ body {
 
 .canvas-controls .canvas-control-group {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2811,7 +2837,7 @@ body {
 
 .canvas-controls .canvas-control-group > div {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2867,7 +2893,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2902,7 +2928,7 @@ body {
 
 .canvas-wrapper .canvas-card-menu > div {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -2972,7 +2998,7 @@ body {
 
 .canvas-menu-container :is(.canvas-menu, .canvas-submenu) {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3007,7 +3033,7 @@ body {
 
 .canvas-menu-container :is(.canvas-menu, .canvas-submenu) > button {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3068,6 +3094,34 @@ body {
 
 .modal.mod-canvas-help .canvas-instruction {
   font-size: 13px;
+}
+
+.canvas-placeholder-message {
+  border-radius: 40px;
+  corner-shape: squircle;
+  padding: 24px;
+  text-align: start;
+  font-size: 13px;
+  color: rgb(var(--mono-rgb-100), 55%);
+}
+
+.canvas-placeholder-message::before {
+  content: "";
+  display: block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin: 0 0 12px;
+  background-color: rgb(var(--mono-rgb-100), 55%);
+  justify-self: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='7' height='9' x='3' y='3' rx='1'/%3E%3Crect width='7' height='5' x='14' y='3' rx='1'/%3E%3Crect width='7' height='9' x='14' y='12' rx='1'/%3E%3Crect width='7' height='5' x='3' y='16' rx='1'/%3E%3C/svg%3E");
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='7' height='9' x='3' y='3' rx='1'/%3E%3Crect width='7' height='5' x='14' y='3' rx='1'/%3E%3Crect width='7' height='9' x='14' y='12' rx='1'/%3E%3Crect width='7' height='5' x='3' y='16' rx='1'/%3E%3C/svg%3E");
 }
 
 .canvas-node-container {
@@ -3192,7 +3246,7 @@ body {
 
 .sync-history-content .modal-setting-titlebar .modal-setting-titlebar-actions > .modal-setting-titlebar-toggle {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3278,7 +3332,7 @@ body {
 
 .modal.callout-editor-modal .titlebar-control-group {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3309,7 +3363,7 @@ body {
 
 .modal.callout-editor-modal .titlebar-control-group .clickable-icon {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3361,7 +3415,7 @@ body {
 
 .modal.callout-editor-modal .mod-callout-type > button {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3453,7 +3507,7 @@ body {
 
 .modal.iconic-rule-picker .modal-content > .setting-item:first-child .setting-item-control {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3521,7 +3575,7 @@ body {
 
 .modal.iconic-rule-picker .modal-content > .setting-item:first-child + .setting-item.setting-item-heading .setting-item-control .clickable-icon {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3933,7 +3987,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 [data-type="style-settings"] .view-content > .setting-item:first-child .search-input-container {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -3976,7 +4030,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 [data-type="style-settings"] .view-content > .setting-item:first-child a {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -4079,7 +4133,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.modal-style-settings .modal-content > .setting-item:first-child a {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -4130,7 +4184,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.modal-style-settings textarea ~ button {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -4198,7 +4252,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.modal-style-settings .setting-item:has(#style-settings-import-input) {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -4534,7 +4588,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .setting-page-titlebar .setting-page-back-button {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -4615,7 +4669,6 @@ hr:has(+ .cmdr-sep-con.callout) {
           backdrop-filter: unset;
   padding: 8px 8px 20px;
   height: 60px;
-  background: linear-gradient(to bottom, color-mix(in oklch, var(--background-primary) 90%, transparent) 0, color-mix(in oklch, var(--background-primary) 60%, transparent) 80%, color-mix(in oklch, var(--background-primary) 20%, transparent) 100%);
 }
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search {
@@ -4626,7 +4679,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .search-input-container {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -4669,7 +4722,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search .clickable-icon {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -4722,7 +4775,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 .modal.mod-community-modal .modal-sidebar .community-modal-controls .community-modal-search + .setting-item.mod-toggle {
   margin-left: 12px;
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -4812,6 +4865,8 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .community-modal-search-results-wrapper {
   border: unset;
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0 0 0 / 20%) 0, rgb(0 0 0 / 50%) 56px, black 80px);
+          mask-image: linear-gradient(to bottom, rgb(0 0 0 / 20%) 0, rgb(0 0 0 / 50%) 56px, black 80px);
 }
 
 .community-modal-search-results-wrapper .community-modal-search-results {
@@ -4908,7 +4963,8 @@ hr:has(+ .cmdr-sep-con.callout) {
 .community-modal-button-container button.mod-destructive + .mod-destructive, .community-modal-button-container button.mod-destructive + .mod-destructive + .mod-destructive {
   --text-color: var(--text-error);
 
-  background-color: color-mix(in oklch, var(--background-modifier-error) 25%, transparent);
+  background-color: color-mix(in oklch, var(--background-modifier-error) 20%, transparent);
+  cursor: default;
   text-decoration: none;
   padding: var(--size-4-1) var(--size-4-3);
 }
@@ -4925,7 +4981,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 .modal.mod-file-browser .modal-view-options-toolbar {
   color: var(--mono-100);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   border: unset;
   padding: 4px;
   margin: unset;
@@ -5494,7 +5550,7 @@ body {
 
 .workspace-split.mod-root .workspace-tab-header-container .workspace-tab-header.is-active .workspace-tab-header-inner {
   background-color: var(--card-background);
-  box-shadow: var(--glass-shadow-inset-for-control), 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%);
+  box-shadow: var(--glass-shadow-inset-for-control), 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%);
 }
 
 .workspace-split.mod-root .workspace-tabs .workspace-tab-header-inner-title {
@@ -5526,7 +5582,7 @@ body {
   corner-shape: unset;
   border-radius: 99px;
   background: var(--glassive-control-background);
-  box-shadow: 0 1px 12px rgb(0 0 0 / 7.5%), 0 4px 23px rgb(0 0 0 / 4.4%), var(--shadow-glass-border);
+  box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   z-index: 6;
   padding: 3px;
   gap: 3px;

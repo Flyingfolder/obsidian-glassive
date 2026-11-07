@@ -1,0 +1,75 @@
+
+
+
+
+@use '../abstracts' as *; 
+
+.cm-line.HyperMD-codeblock-end,
+.cm-line.HyperMD-codeblock-begin {
+    --code-radius: 24px;
+
+    corner-shape: squircle;
+}
+
+
+
+// .cm-header {
+//     transition: font-size $anim-duration-fast ease;
+
+// }
+
+
+@keyframes grow-font {
+    from {font-size: 0;}
+}
+
+.cm-formatting-link.cm-formatting-link-start,
+.cm-formatting-link.cm-formatting-link-end {
+    // visibility: hidden;
+    animation: grow-font $anim-duration-fast ease;
+}
+
+
+// math
+
+
+// @keyframes darken-background {
+//     from {background-color: transparent;}
+//     to {background-color: $background-primary-alt;}
+// }
+
+// .cm-line:not(.HyperMD-math) + .HyperMD-math {
+//     border-top-left-radius: 40px;
+//     border-top-right-radius: 40px;
+//     corner-shape: squircle;
+// }
+
+// .markdown-source-view.mod-cm6 .cm-line.HyperMD-math {
+//     padding-inline-start: 20px;
+//     background-color: $background-primary-alt;
+//     animation: darken-background $anim-duration-fast ease;
+// }
+
+// .cm-line.HyperMD-math:has(.cm-formatting-math-begin) {
+//     padding-top: 8px;
+// }
+
+// .cm-line.HyperMD-math:has(.cm-formatting-math-end) {
+//     padding-bottom: 12px;
+// }
+
+// .cm-line.HyperMD-math:has(.cm-formatting-math-end) + .math.math-block.cm-embed-block {
+//     background-color: $background-primary-alt;
+//     // animation: darken-background $anim-duration-fast ease;
+//     border-radius: 0 0 40px 40px;
+//     corner-shape: squircle;
+
+//     --embed-block-shadow-hover: none;
+
+//     &::before {
+//         content: '';
+//         position: absolute;
+//         border-top: 1px solid $background-modifier-seperator;
+//         inset: auto 20px;
+//     }
+// }
