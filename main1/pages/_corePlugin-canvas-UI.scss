@@ -44,6 +44,10 @@
     @include glassive-control-group-with-icons($auto-detect-only-child: true, $button-type: div);
 }
 
+
+
+
+
 // 中间的新增
 .canvas-wrapper .canvas-card-menu {
     inset: 8px auto auto auto;
@@ -73,6 +77,7 @@
 .canvas-menu-container :is(.canvas-menu, .canvas-submenu) {
     @include glassive-control-group-with-icons($auto-detect-only-child: true, $button-type: button);
     // @include pop-in-anim;
+    
 }
 
 

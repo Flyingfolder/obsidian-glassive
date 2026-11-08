@@ -1,0 +1,78 @@
+
+
+
+@use '../abstracts' as *; 
+
+.excalidraw {
+    --ui-font: system-ui, assistant, blinkmacsystemfont,-apple-system,segoe ui,roboto,helvetica,arial,sans-serif;
+    --viewport-status-frame-border-width: 0px;
+}
+
+
+.excalidraw .context-menu-popover,
+.excalidraw .context-menu-popover .context-menu,
+.excalidraw .dropdown-menu .dropdown-menu-container{
+    // @include liquid-glass-bg-normal($with-shadow: false);
+        // background-color: var(--background-glass);
+    // backdrop-filter: var(--backdrop-filter-glass);
+    
+    padding: 6px;
+    border-radius: 24px;
+    corner-shape: squircle;
+
+    hr,
+    div[style*="height: 1px"] {
+        --default-border-color: #{$background-modifier-seperator};
+
+        border-color: $background-modifier-seperator;
+        margin: 4px 8px !important;
+    }
+}
+
+
+
+.excalidraw .context-menu li .context-menu-item,
+.excalidraw .dropdown-menu .dropdown-menu-item {
+    // --button-hover: #{$background-modifier-hover-strong};
+
+    font-size: $font-ui-small;
+    cursor: default;
+    border-radius: 99px;
+    corner-shape: squircle;
+
+    &:hover {
+        background-color: $background-modifier-hover !important;
+    }
+
+    // &:hover { //icon 的颜色无法进行切换。估计是嵌入了图片。
+    //     background-color: $interactive-accent !important;
+    //     color: #fff;
+
+    //     --icon-fill-color: fff;
+    // }
+}
+
+.excalidraw .context-menu li .context-menu-item {
+    height: $control-height-s;
+}
+
+
+.context-menu {
+    @include liquid-glass-bg-normal($with-shadow: false);
+
+}
+
+
+.popover.context-menu-popover {
+    animation: none;
+}
+
+.excalidraw .dropdown-menu .dropdown-menu-item {
+    height: $control-height-m;
+}
+
+.excalidraw .dropdown-menu {
+    [data-testid="canvas-background-label"] {
+        font-size: $font-ui-small !important;
+    }
+}

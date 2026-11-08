@@ -85,6 +85,7 @@
 // 6. Plugins — 插件专属样式
 @use 'main1/plugins/another-callout-suggestions';
 @use 'main1/plugins/better-export-pdf';
+@use 'main1/plugins/excalidraw';
 
 // 7. Themes — 主题级覆盖
 @use 'main1/themes/liquid-variables';

@@ -5086,6 +5086,67 @@ hr:has(+ .cmdr-sep-con.callout) {
   width: 100%;
 }
 
+.excalidraw {
+  --ui-font: system-ui, assistant, blinkmacsystemfont,-apple-system,segoe ui,roboto,helvetica,arial,sans-serif;
+  --viewport-status-frame-border-width: 0px;
+}
+
+.excalidraw .context-menu-popover,
+.excalidraw .context-menu-popover .context-menu,
+.excalidraw .dropdown-menu .dropdown-menu-container {
+  padding: 6px;
+  border-radius: 24px;
+  corner-shape: squircle;
+}
+
+.excalidraw .context-menu-popover hr,
+.excalidraw .context-menu-popover div[style*="height: 1px"],
+.excalidraw .context-menu-popover .context-menu hr,
+.excalidraw .context-menu-popover .context-menu div[style*="height: 1px"],
+.excalidraw .dropdown-menu .dropdown-menu-container hr,
+.excalidraw .dropdown-menu .dropdown-menu-container div[style*="height: 1px"] {
+  --default-border-color: rgb(var(--mono-rgb-100), 12%);
+
+  border-color: rgb(var(--mono-rgb-100), 12%);
+  margin: 4px 8px !important;
+}
+
+.excalidraw .context-menu li .context-menu-item,
+.excalidraw .dropdown-menu .dropdown-menu-item {
+  font-size: 13px;
+  cursor: default;
+  border-radius: 99px;
+  corner-shape: squircle;
+}
+
+.excalidraw .context-menu li .context-menu-item:hover,
+.excalidraw .dropdown-menu .dropdown-menu-item:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 7.5%, transparent) !important;
+}
+
+.excalidraw .context-menu li .context-menu-item {
+  height: 24px;
+}
+
+.context-menu {
+  background-color: var(--background-glass);
+  -webkit-backdrop-filter: var(--backdrop-filter-glass);
+          backdrop-filter: var(--backdrop-filter-glass);
+  border: 1px solid color-mix(in oklch, var(--mono-100) 12%, transparent);
+}
+
+.popover.context-menu-popover {
+  animation: none;
+}
+
+.excalidraw .dropdown-menu .dropdown-menu-item {
+  height: 28px;
+}
+
+.excalidraw .dropdown-menu [data-testid="canvas-background-label"] {
+  font-size: 13px !important;
+}
+
 .is-focused {
   --liquid-sidebar-background-image:
     radial-gradient(ellipse 400% 160% at -500px -20px,
