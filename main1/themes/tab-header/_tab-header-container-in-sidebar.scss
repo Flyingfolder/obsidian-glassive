@@ -6,6 +6,10 @@
 
 
 .workspace-split.mod-sidedock .workspace-tabs  {
+    .workspace-tab-header-spacer {
+        display: none;
+    }
+
     .workspace-tab-header-container {
         border: unset;
         z-index: 1;
@@ -19,13 +23,35 @@
         box-shadow: $shadow-raised-control-item,  var(--shadow-glass-border);
         z-index: 6; //让阴影露出来，避免被遮盖了
         // 
-        padding: 3px;
-        gap: 3px;
-        width: 100%;
+        padding: 4px;
+        gap: 4px;
+        // width: 100%;
+        width: fit-content;
+
+
+        .workspace-tab-header {
+            max-width: 92px;
+            width: 92px;
+            flex-grow: 1;
+        }
     }
 
     &.mod-top .workspace-tab-header-container-inner {
         margin: 5px 6px 0 0;
+        margin-left: auto;
+        margin-right: auto;
+
+        // &:has(.workspace-tab-header:nth-child(2):last-child) {
+        //     width: fit-content;
+        //     margin-left: auto;
+        //     margin-right: auto;
+        //     height: 32px;
+
+        //     .workspace-tab-header-inner {
+        //         padding: 4px;
+        //     }
+        // }
+
     }
 }
 

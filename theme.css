@@ -5633,6 +5633,10 @@ body {
   background-color: var(--top-header-bg);
 }
 
+.workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header-spacer {
+  display: none;
+}
+
 .workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header-container {
   border: unset;
   z-index: 1;
@@ -5645,13 +5649,21 @@ body {
   background: var(--glassive-control-background);
   box-shadow: 0 1px 12px rgb(0 0 0 / 6.5%), 0 4px 23px rgb(0 0 0 / 3.4%), var(--shadow-glass-border);
   z-index: 6;
-  padding: 3px;
-  gap: 3px;
-  width: 100%;
+  padding: 4px;
+  gap: 4px;
+  width: fit-content;
+}
+
+.workspace-split.mod-sidedock .workspace-tabs .workspace-tab-header-container-inner .workspace-tab-header {
+  max-width: 92px;
+  width: 92px;
+  flex-grow: 1;
 }
 
 .workspace-split.mod-sidedock .workspace-tabs.mod-top .workspace-tab-header-container-inner {
   margin: 5px 6px 0 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .workspace-split.mod-sidedock .workspace-tab-header-container .workspace-tab-header {
