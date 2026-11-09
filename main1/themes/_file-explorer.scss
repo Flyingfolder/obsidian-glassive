@@ -36,7 +36,7 @@
     &>.tree-item-self.nav-folder-title {
         background-color: $interactive-accent;
         color: var(--text-on-accent);
-        svg.svg-icon {color: $text-muted; }
+        svg.svg-icon {color: var(--text-on-accent); }
 
     }
 }

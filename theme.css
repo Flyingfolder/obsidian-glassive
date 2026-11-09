@@ -329,7 +329,9 @@ button:hover {
 button.mod-cta {
   background-color: var(--interactive-accent);
 
-  --text-color: var(--text-on-accent) ;
+  --text-color: var(--text-on-accent);
+
+  min-width: 72px;
 }
 
 button.mod-cta.mobile-tap {
@@ -667,6 +669,10 @@ input[type="number"]:focus-visible {
 
 .modal .modal-content:last-child {
   padding-bottom: 16px;
+}
+
+.modal .modal-content:last-child .modal-button-container:last-child {
+  padding-bottom: 0;
 }
 
 .modal-header {
@@ -5946,7 +5952,7 @@ body {
 }
 
 .nav-folder.is-being-dragged-over > .tree-item-self.nav-folder-title svg.svg-icon {
-  color: rgb(var(--mono-rgb-100), 55%);
+  color: var(--text-on-accent);
 }
 
 .tree-item-self.is-being-dragged {

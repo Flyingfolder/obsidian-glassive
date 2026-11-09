@@ -59,6 +59,7 @@
     .modal-content {
         &:last-child {
             padding-bottom: 16px;
+            .modal-button-container:last-child {padding-bottom: 0;}
         }
     }
 }

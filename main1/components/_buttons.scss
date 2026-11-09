@@ -74,7 +74,9 @@ button:not(.clickable-icon) {
 button.mod-cta {
     background-color: var(--interactive-accent);
 
-    --text-color: var(--text-on-accent)
+    --text-color: var(--text-on-accent);
+
+    min-width: 72px;
 }
 
 button.mod-cta.mobile-tap {
