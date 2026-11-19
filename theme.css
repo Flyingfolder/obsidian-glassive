@@ -580,7 +580,7 @@ input[type="number"]:focus-visible {
 
 .modal-container .modal {
   --modal-padding: 16px;
-  --modal-radius: 40px;
+  --modal-radius: 48px;
 
   background-color: var(--background-secondary);
   background-image: var(--liquid-modal-background-image);
@@ -673,11 +673,11 @@ input[type="number"]:focus-visible {
   order: 1;
 }
 
-.modal .modal-content:last-child {
+.modal:not(.mod-settings, .mod-community-modal, .mod-sidebar-layout) .modal-content:last-child {
   padding-bottom: 16px;
 }
 
-.modal .modal-content:last-child .modal-button-container:last-child {
+.modal:not(.mod-settings, .mod-community-modal, .mod-sidebar-layout) .modal-content:last-child .modal-button-container:last-child {
   padding-bottom: 0;
 }
 
@@ -3161,7 +3161,7 @@ body {
 }
 
 .modal.mod-sync-history.mod-sidebar-layout {
-  border-radius: 40px;
+  border-radius: var(--modal-radius);
   corner-shape: squircle;
   background-color: var(--background-primary);
 
@@ -3181,7 +3181,7 @@ body {
   box-shadow: var(--liquid-sidebar-shadow), var(--shadow-glass-border-tilted);
   corner-shape: squircle;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 36px;
   z-index: 10;
   background-color: var(--background-secondary);
   background-image: var(--liquid-sidebar-background-image);
@@ -3789,7 +3789,7 @@ body {
 }
 
 .modal-container.cmdr-setting-modal .modal {
-  border-radius: 40px;
+  border-radius: var(--modal-radius);
   corner-shape: squircle;
   background-color: var(--background-primary);
 
@@ -3809,7 +3809,7 @@ body {
   box-shadow: var(--liquid-sidebar-shadow), var(--shadow-glass-border-tilted);
   corner-shape: squircle;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 36px;
   z-index: 10;
   background-color: var(--background-secondary);
   background-image: var(--liquid-sidebar-background-image);
@@ -4495,7 +4495,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 .modal.mod-settings.mod-sidebar-layout {
-  border-radius: 40px;
+  border-radius: var(--modal-radius);
   corner-shape: squircle;
   background-color: var(--background-primary);
 
@@ -4515,7 +4515,7 @@ hr:has(+ .cmdr-sep-con.callout) {
   box-shadow: var(--liquid-sidebar-shadow), var(--shadow-glass-border-tilted);
   corner-shape: squircle;
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 36px;
   z-index: 10;
   background-color: var(--background-secondary);
   background-image: var(--liquid-sidebar-background-image);

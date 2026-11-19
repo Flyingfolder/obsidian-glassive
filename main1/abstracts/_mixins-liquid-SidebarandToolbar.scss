@@ -58,7 +58,7 @@ $titlebar-height: 48px;
 
 
 @mixin modal-with-sidebar($sidebar-wrapper, $sidebar-scroller) {
-    border-radius: 40px;
+    border-radius: var(--modal-radius);
     corner-shape: squircle;
     background-color: $background-primary;
 
@@ -80,7 +80,7 @@ $titlebar-height: 48px;
         box-shadow: var(--liquid-sidebar-shadow), var(--shadow-glass-border-tilted);
         corner-shape: squircle;
         overflow: hidden;
-        border-radius: 30px;
+        border-radius: 36px;
         z-index: 10;
         background-color: var(--background-secondary);
         background-image: var(--liquid-sidebar-background-image);

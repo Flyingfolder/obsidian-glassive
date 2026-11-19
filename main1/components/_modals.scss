@@ -7,7 +7,7 @@
 .modal-container .modal  {
     //出现时的动画
     --modal-padding: 16px;
-    --modal-radius: 40px;
+    --modal-radius: 48px;
 
     background-color: var(--background-secondary);
     background-image: var(--liquid-modal-background-image);
@@ -56,7 +56,7 @@
         }
     }
 
-    .modal-content {
+    &:not(.mod-settings, .mod-community-modal, .mod-sidebar-layout) .modal-content {
         &:last-child {
             padding-bottom: 16px;
             .modal-button-container:last-child {padding-bottom: 0;}
