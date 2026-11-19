@@ -75,4 +75,10 @@ settings:
         description: 更小的 导航（比如文件浏览器、大纲）中的按钮的大小
         type: class-toggle
         default: false
+    -   
+        id: glassive-left-sidebar-background
+        title: left sidebar background color
+        description: 给左侧边栏（left sidebar）增加背景颜色
+        type: class-toggle
+        default: true
  */     

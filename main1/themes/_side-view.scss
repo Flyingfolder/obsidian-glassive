@@ -1,0 +1,31 @@
+
+
+@use '../abstracts' as *; 
+
+
+
+
+body.show-ribbon.glassive-left-sidebar-background {
+// body.show-ribbon {
+.workspace {
+    background: var(--liquid-sidebar-background-image);
+
+    .workspace-split.mod-left-split,
+    .workspace-tab-header-container,
+    .workspace-leaf {
+        background-color: unset;
+    }
+}
+
+
+.workspace-ribbon  {
+    background-color: unset;
+
+    &::before {
+        background-color: unset;
+    }
+}
+
+
+
+}

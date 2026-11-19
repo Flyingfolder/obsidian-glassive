@@ -88,6 +88,7 @@
 @use 'main1/plugins/excalidraw';
 
 // 7. Themes — 主题级覆盖
+@use 'main1/themes/side-view';
 @use 'main1/themes/liquid-variables';
 @use 'main1/themes/accent-color';
 @use 'main1/themes/empty-search-result';
