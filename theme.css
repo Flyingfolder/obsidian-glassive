@@ -5161,6 +5161,7 @@ hr:has(+ .cmdr-sep-con.callout) {
 
 body.show-ribbon.glassive-left-sidebar-background .workspace {
   background: var(--liquid-sidebar-background-image);
+  background-color: var(--tab-container-background);
 }
 
 body.show-ribbon.glassive-left-sidebar-background .workspace .workspace-split.mod-left-split,
@@ -5179,8 +5180,8 @@ body.show-ribbon.glassive-left-sidebar-background .workspace-ribbon::before {
 
 .is-focused {
   --liquid-sidebar-background-image:
-    radial-gradient(ellipse 400% 160% at -500px -20px,
-    hsl(from var(--color-accent) h s l / 10%),
+    radial-gradient(ellipse 400% 160% at -800px -240px,
+    hsl(from var(--color-accent) h s l / 5%),
     rgb(var(--mono-rgb-0), 40%));
   --liquid-sidebar-shadow:
     0px 0px 8px rgb(0 0 0 / 4%), /* 第一层：靠近元素的、稍微清晰的轮廓 */
@@ -5198,6 +5199,10 @@ body {
     rgb(255 255 255 / 20%);
   --glassive-control-backdrop-filter: blur(2px) brightness(1.08);
   --liquid-modal-background-image: none;
+  --liquid-sidebar-background-image:
+  radial-gradient(ellipse 400% 160% at -800px -240px,
+  hsl(from var(--color-accent) h s l / 5%),
+  rgb(var(--mono-rgb-0), 40%));
 }
 
 .is-focused.theme-dark {

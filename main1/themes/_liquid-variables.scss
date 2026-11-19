@@ -8,8 +8,8 @@
 
 .is-focused {
   --liquid-sidebar-background-image: 
-    radial-gradient(ellipse 400% 160% at -500px -20px,
-    hsl(from var(--color-accent) h s l / 10%),
+    radial-gradient(ellipse 400% 160% at -800px -240px,
+    hsl(from var(--color-accent) h s l / 5%),
     rgb(var(--mono-rgb-0), 40%));
   --liquid-sidebar-shadow:
     0px 0px 8px rgb(0 0 0 / 4%),    /* 第一层：靠近元素的、稍微清晰的轮廓 */
@@ -41,6 +41,10 @@ body {
   //     var(--glassive-control-background);
   --glassive-control-backdrop-filter: blur(2px) brightness(1.08);
   --liquid-modal-background-image: none;
+    --liquid-sidebar-background-image: 
+    radial-gradient(ellipse 400% 160% at -800px -240px,
+    hsl(from var(--color-accent) h s l / 5%),
+    rgb(var(--mono-rgb-0), 40%));
 }
 
 

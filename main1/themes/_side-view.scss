@@ -9,6 +9,7 @@ body.show-ribbon.glassive-left-sidebar-background {
 // body.show-ribbon {
 .workspace {
     background: var(--liquid-sidebar-background-image);
+    background-color: var(--tab-container-background);
 
     .workspace-split.mod-left-split,
     .workspace-tab-header-container,
