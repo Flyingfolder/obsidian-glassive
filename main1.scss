@@ -66,7 +66,8 @@
 @use 'main1/pages/search-global';
 @use 'main1/pages/empty-tab';
 @use 'main1/pages/workspace-leaf-content';
-
+@use 'main1/pages/file-explorer';
+@use 'main1/pages/empty-search-result';
 // @use 'main1/pages/plugin-modalForm-newform_datatype';    //有问题，容易导致css动画卡顿
 // @use 'main1/pages/plugin-modalForm-newform_header';      //有问题，容易导致css动画卡顿
 // @use 'main1/pages/plugin-modalForm-newform_static';      //有问题，容易导致css动画卡顿
@@ -88,13 +89,14 @@
 @use 'main1/plugins/excalidraw';
 
 // 7. Themes — 主题级覆盖
-@use 'main1/themes/side-view';
+@use 'main1/themes/sidebar-bg';
 @use 'main1/themes/liquid-variables';
 @use 'main1/themes/accent-color';
-@use 'main1/themes/empty-search-result';
 @use 'main1/themes/tab-header/tab-header-container-in-root';
 @use 'main1/themes/tab-header/tab-header-container-in-sidebar';
 @use 'main1/themes/tab-header/sidebar-toggle-button';
+@use 'main1/themes/tab-header/glassive-view-header';
+@use 'main1/themes/tab-header/view-header';
 
 // @use 'main1/themes/hide-properties-in-sidebar';
 // @use 'main1/themes/macos-close-button';
@@ -104,7 +106,7 @@
 @use 'main1/themes/root-autocollapse-tab-header';
 @use 'main1/themes/tab-animations-dropzone';
 @use 'main1/themes/tab-animations-root';
-@use 'main1/themes/file-explorer';
+
 
 
 

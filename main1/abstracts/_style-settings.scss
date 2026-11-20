@@ -6,16 +6,19 @@ settings:
     - 
         id: color
         title: color
+        title.zh: 颜色
         type: heading
         level: 1
-        collapsed: true
+        collapsed: false
 
 
 
     - 
         id: accent
         title: Accent Color
-        description: 
+        title.zh: 强调色
+        description: The accent color used throughout the theme.
+        description.zh: 主题中使用的强调色。
         type: class-select
         allowEmpty: false
         default: theme-glassive-accent-indigo
@@ -66,19 +69,32 @@ settings:
     - 
         id: interface
         title: Interface
+        title.zh: 界面
         type: heading
         level: 1
-        collapsed: true
+        collapsed: false
     -   
         id: nav-item-size-smaller
         title: small nav item size
-        description: 更小的 导航（比如文件浏览器、大纲）中的按钮的大小
+        title.zh: 更小的导航项尺寸
+        description: Use smaller button sizes in navigation areas such as the file explorer and outline.
+        description.zh: 使用更小的导航按钮尺寸，例如文件浏览器和大纲中的按钮。
         type: class-toggle
         default: false
     -   
         id: glassive-left-sidebar-background
-        title: left sidebar background color
-        description: 给左侧边栏（left sidebar）增加背景颜色
+        title: Left sidebar background color
+        title.zh: 左侧边栏背景色
+        description: Add a background color to the left sidebar.
+        description.zh: 给左侧边栏增加背景颜色。
+        type: class-toggle
+        default: true
+    -
+        id: glassive-view-header
+        title: Glassive view header(experimental)
+        title.zh: Glassive 顶部标题栏（实验性）
+        description: Frosted-glass view header that blurs content scrolling behind it.
+        description.zh: 顶部标题栏使用毛玻璃效果；向上滚动内容时，内容会从标题栏后方模糊穿过。
         type: class-toggle
         default: true
  */     

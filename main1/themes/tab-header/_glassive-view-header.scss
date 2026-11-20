@@ -1,0 +1,75 @@
+
+
+@use '../../abstracts' as *; 
+
+
+@mixin header-cover {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: calc(40px + 35px);
+    z-index: 1;
+    background-color: color-mix(in oklab, $background-primary 60%, transparent);
+    background: linear-gradient(to bottom,
+        color-mix(in oklab, $background-primary 70%, transparent),
+        color-mix(in oklab, $background-primary 10%, transparent),
+    );
+    backdrop-filter: blur(6px);
+}
+
+@mixin floating-view-header {
+    position: absolute;
+    top: 40px;
+    width: 100%;
+
+    --top-header-bg: transparent;
+}
+
+body.glassive-view-header {
+.workspace-split.mod-root .workspace-tabs.mod-top {
+    .workspace-tab-container:has(.workspace-leaf:not([style*="display: none"])>[data-type="markdown"]) {
+        margin-top: -40px;
+
+        .workspace-leaf-content[data-type="markdown"] {
+            &::before {
+                @include header-cover();
+            }
+
+            .view-header {
+                @include floating-view-header();
+            }
+
+            .cm-scroller {
+                padding-top: calc(40px + 35px + 32px);
+            }
+        }
+    }
+
+
+    .workspace-tab-container:has(.workspace-leaf:not([style*="display: none"])>[data-type="canvas"]) {
+        margin-top: -40px;
+
+        .workspace-leaf-content[data-type="canvas"] {
+            &::before {
+                @include header-cover()
+            }
+
+            .view-header {
+                @include floating-view-header();
+            }
+            
+            .canvas-card-menu {top: calc(40px + 35px + 8px);}
+            .canvas-controls {margin-top: calc(40px + 35px);}
+        }
+    
+    }
+}
+
+
+
+
+
+
+}

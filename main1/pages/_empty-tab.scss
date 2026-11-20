@@ -72,3 +72,16 @@
 
 
 
+// 给空页面中，点击 search 时设置一个消失动画
+
+.workspace-split.mod-root .workspace-leaf.mod-active [data-type="empty"] .empty-state-container {
+    transition: 
+        scale $anim-duration-moderate ease,
+        opacity $anim-duration-moderate;
+
+
+    .app-container:has(~.modal-container .prompt)  & {
+        opacity: 0;
+        scale: 0.8;
+    }
+}

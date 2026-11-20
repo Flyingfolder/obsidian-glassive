@@ -31,14 +31,16 @@
 .canvas-controls .canvas-control-group {
     position: absolute;
 
-    &:has([aria-label="Canvas settings"]) {inset: 8px 52px auto auto;}
+    &:has([aria-label="Canvas settings"]), &:first-child {inset: 8px 52px auto auto;}
 
-    &:has([aria-label="Undo"]) {inset: 8px auto auto 8px;}
+    &:has([aria-label="Zoom in"]), &:nth-child(2) {inset: auto auto 8px 8px;}
 
-    &:has([aria-label="Zoom in"]) {inset: auto auto 8px 8px;}
+    &:has([aria-label="Undo"]), &:nth-child(3) {inset: 8px auto auto 8px;}
 
-    &:has([aria-label="Canvas help"]) {inset: 8px 8px auto auto;}
+    &:has([aria-label="Canvas help"]), &:nth-child(4) {inset: 8px 8px auto auto;}
 }
+
+
 
 .canvas-controls .canvas-control-group {
     @include glassive-control-group-with-icons($auto-detect-only-child: true, $button-type: div);

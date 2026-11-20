@@ -7,10 +7,12 @@
 
 .wrapper.modal-form>.body>.template {
     font-size: $font-ui-small;
+
     .options-container {
         label.field-group {
             gap: 4px;
         }
+
         input[type="checkbox"] {
         order: -1;
         margin: unset;
@@ -31,3 +33,6 @@
 
 
 }
+
+
+

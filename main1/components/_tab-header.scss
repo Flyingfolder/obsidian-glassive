@@ -12,12 +12,13 @@
 }
 
 .is-focused .workspace-leaf.mod-active .view-header,
-.mod-macos.is-hidden-frameless:not(.is-popout-window, .is-mobile) .sidebar-toggle-button.mod-secondary,
 .workspace-tab-header-container {
     background-color: var(--top-header-bg);
 }
 
-
+.mod-macos.is-hidden-frameless:not(.is-popout-window, .is-mobile) .sidebar-toggle-button.mod-secondary {
+    background-color: transparent;
+}
 
 
 .mod-secondary-split .workspace-tab-header-container {

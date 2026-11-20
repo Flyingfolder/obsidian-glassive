@@ -23,7 +23,15 @@ body.show-ribbon.glassive-left-sidebar-background {
     background-color: unset;
 
     &::before {
-        background-color: unset;
+        background-color: transparent;
+    }
+
+    &.is-collapsed {
+        background-color: $background-primary;
+
+        &::before {
+            background-color: $background-primary;
+        }
     }
 }
 
