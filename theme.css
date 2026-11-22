@@ -596,7 +596,7 @@ input[type="number"]:focus-visible {
 
 .modal-container .modal {
   --modal-padding: 16px;
-  --modal-radius: 48px;
+  --modal-radius: 44px;
 
   background-color: var(--background-secondary);
   background-image: var(--liquid-modal-background-image);
@@ -899,7 +899,10 @@ input[type="number"]:focus-visible {
 }
 
 .modal-bg:has(+ .prompt) {
-  opacity: 0 !important;
+  background-color: transparent;
+  animation: fade-in var(--anim-duration-moderate) ease-out forwards;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
 
 input.prompt-input:hover,
@@ -1396,6 +1399,15 @@ body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vaul
 
 body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vault-profile > * {
   pointer-events: auto;
+}
+
+body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vault-profile .clickable-icon {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin-left: 2px;
+  border-radius: 99px;
+  corner-shape: unset;
 }
 
 body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
@@ -5388,6 +5400,14 @@ hr:has(+ .cmdr-sep-con.callout) {
   font-size: 13px !important;
 }
 
+.oh-my-claudian-root .claudian-input-footer {
+  padding: unset;
+}
+
+.workspace-leaf-content > .view-content.claudian-container {
+  padding: 8px 8px 28px;
+}
+
 body.show-ribbon.glassive-left-sidebar-background .workspace {
   background: var(--liquid-sidebar-background-image);
   background-color: var(--tab-container-background);
@@ -5462,6 +5482,7 @@ body {
   --backdrop-filter-glass: blur(10px) saturate(140%) brightness(1.06);
   --background-glass-subtle: rgb(255 255 255 / 60%);
   --backdrop-filter-glass-subtle: blur(4px) saturate(190%) brightness(1.03);
+  --backgrop-filter-brightness-tab-header: brightness(1.08);
   --glass-shadow-inset-for-control:
     inset 0 1px 1px rgb(200 200 200 / 25%), /* 顶，没有底部 */
     inset 1px 0 1px rgb(200 200 200 / 15%), /* 左 */
@@ -5513,6 +5534,7 @@ body {
   --backdrop-filter-glass-subtle: blur(6px) saturate(190%) brightness(1.28);
   --background-glass: rgb(40 40 40 / 60%);
   --backdrop-filter-glass: blur(10px) saturate(180%) brightness(1.8);
+  --backgrop-filter-brightness-tab-header: brightness(0.9);
   --glass-shadow-inset-for-control:
     inset 0 1px 1px rgb(120 120 120 / 25%), /* 顶 */
     inset 0 -1px 1px rgb(120 120 120 / 50%), /* 底 */
@@ -5854,9 +5876,9 @@ body.glassive-view-header .workspace-split.mod-root .workspace-tabs.mod-top .wor
   min-height: 75px;
   z-index: 1;
   background-color: color-mix(in oklab, var(--background-primary) 60%, transparent);
-  background: linear-gradient(to bottom, color-mix(in oklab, var(--background-primary) 70%, transparent), color-mix(in oklab, var(--background-primary) 10%, transparent));
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
+  background: linear-gradient(to bottom, color-mix(in oklab, var(--background-primary) 80%, transparent), color-mix(in oklab, var(--background-primary) 20%, transparent));
+  -webkit-backdrop-filter: blur(6px) var(--backgrop-filter-brightness-tab-header);
+          backdrop-filter: blur(6px) var(--backgrop-filter-brightness-tab-header);
 }
 
 body.glassive-view-header .workspace-split.mod-root .workspace-tabs.mod-top .workspace-tab-container:has(.workspace-leaf:not([style*="display: none"]) > [data-type="markdown"]) .workspace-leaf-content[data-type="markdown"] .view-header {
@@ -5884,9 +5906,9 @@ body.glassive-view-header .workspace-split.mod-root .workspace-tabs.mod-top .wor
   min-height: 75px;
   z-index: 1;
   background-color: color-mix(in oklab, var(--background-primary) 60%, transparent);
-  background: linear-gradient(to bottom, color-mix(in oklab, var(--background-primary) 70%, transparent), color-mix(in oklab, var(--background-primary) 10%, transparent));
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
+  background: linear-gradient(to bottom, color-mix(in oklab, var(--background-primary) 80%, transparent), color-mix(in oklab, var(--background-primary) 20%, transparent));
+  -webkit-backdrop-filter: blur(6px) var(--backgrop-filter-brightness-tab-header);
+          backdrop-filter: blur(6px) var(--backgrop-filter-brightness-tab-header);
 }
 
 body.glassive-view-header .workspace-split.mod-root .workspace-tabs.mod-top .workspace-tab-container:has(.workspace-leaf:not([style*="display: none"]) > [data-type="canvas"]) .workspace-leaf-content[data-type="canvas"] .view-header {

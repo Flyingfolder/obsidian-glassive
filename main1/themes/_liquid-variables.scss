@@ -79,6 +79,7 @@ body {
   --backdrop-filter-glass: blur(10px) saturate(140%) brightness(1.06);
   --background-glass-subtle: rgb(255 255 255 / 60%);
   --backdrop-filter-glass-subtle: blur(4px) saturate(190%) brightness(1.03);
+  --backgrop-filter-brightness-tab-header: brightness(1.08); 
   --glass-shadow-inset-for-control:
     inset 0 1px 1px rgb(200 200 200 / 25%),   /* 顶，没有底部 */
     inset 1px 0 1px rgb(200 200 200 / 15%),   /* 左 */
@@ -149,6 +150,7 @@ body {
   --backdrop-filter-glass-subtle: blur(6px) saturate(190%) brightness(1.28);
   --background-glass: rgb(40 40 40 / 60%);
   --backdrop-filter-glass: blur(10px) saturate(180%) brightness(1.8);
+  --backgrop-filter-brightness-tab-header: brightness(0.9);
   --glass-shadow-inset-for-control:
     inset 0 1px 1px rgb(120 120 120 / 25%),   /* 顶 */
     inset 0 -1px 1px rgb(120 120 120 / 50%),  /* 底 */

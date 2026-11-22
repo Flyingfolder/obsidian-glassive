@@ -13,10 +13,11 @@
     z-index: 1;
     background-color: color-mix(in oklab, $background-primary 60%, transparent);
     background: linear-gradient(to bottom,
-        color-mix(in oklab, $background-primary 70%, transparent),
-        color-mix(in oklab, $background-primary 10%, transparent),
+        color-mix(in oklab, $background-primary 80%, transparent),
+        color-mix(in oklab, $background-primary 20%, transparent),
     );
-    backdrop-filter: blur(6px);
+    // backdrop-filter: blur(4px) brightness(0.9);
+    backdrop-filter: blur(6px) var(--backgrop-filter-brightness-tab-header);
 }
 
 @mixin floating-view-header {

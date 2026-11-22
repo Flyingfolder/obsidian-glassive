@@ -4,10 +4,17 @@
 @use '../abstracts' as *; 
 
 
+// @keyframes blur-grow {
+//     from {backdrop-filter: blur(0);}
+//     to {backdrop-filter: blur(2px);}
+// }
 
 // 
 .modal-bg:has(+.prompt) {
-    opacity: 0 !important;
+    // opacity: 0 !important;
+    background-color: transparent;
+    animation: fade-in $anim-duration-moderate ease-out forwards;
+    backdrop-filter: blur(2px);
 }
 
 input.prompt-input:hover,
