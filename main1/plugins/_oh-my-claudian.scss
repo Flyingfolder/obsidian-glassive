@@ -6,7 +6,7 @@
 
 
 .workspace-leaf-content>.view-content.claudian-container {
-    padding: 0 0 28px;
+    padding: unset;
     -webkit-font-smoothing: antialiased;
 
     .claudian-messages-wrapper .claudian-messages {
@@ -14,12 +14,15 @@
     }
 
      .claudian-input-footer {
-        padding: 0 8px 0;
+        padding: 0 8px 28px;
 
 
         .claudian-input-wrapper {
             border: unset;
-            box-shadow: var(--shadow-glass-border);
+            box-shadow: var(--shadow-glass-border), $shadow-raised-control-item;
+            border-radius: 40px;
+            corner-shape: squircle;
+
         }
         
     }
@@ -63,7 +66,7 @@
         }
 
         .claudian-conversation-header-actions {
-            @include glassive-control-group-with-icons($button-type: "div, button", $auto-detect-only-child: true);
+            @include glassive-control-group-with-icons($button-type: "button", $auto-detect-only-child: true);
 
             position: static;
 
@@ -71,7 +74,6 @@
             
             // order
             .claudian-conversation-menu-anchor {order: 1;}
-            &>*:last-child {order: -1;}
         }
 
         // .claudian-conversation-menu-anchor {
@@ -86,4 +88,15 @@
 
 
 
-// claudian-context-chip claudian-context-chip--note claudian-context-chip--removable
+.claudian-input-footer .claudian-context-chip {
+    background-color: var(--color-base-25);
+    border: unset;
+    padding: 0 8px;
+
+
+    .claudian-context-chip-main {
+        font-size: $font-ui-small;
+        line-height: $line-height-control;
+        height: auto;
+    }
+}

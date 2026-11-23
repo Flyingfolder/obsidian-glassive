@@ -71,7 +71,7 @@ body.glassive-view-header {
 
             @include floating-search();
 
-            .cm-scroller {
+            .view-content>.node-insert-event>div>.cm-scroller {
                 padding-top: calc(40px + 35px + 32px);
             }
         }

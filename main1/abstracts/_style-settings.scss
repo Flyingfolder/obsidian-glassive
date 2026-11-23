@@ -97,4 +97,22 @@ settings:
         description.zh: 顶部标题栏使用毛玻璃效果；向上滚动内容时，内容会从标题栏后方模糊穿过。
         type: class-toggle
         default: true
+
+    -
+        id: animation
+        title: Animation
+        title.zh: 动画
+        description: Excessive animations can add extra performance overhead and cause stuttering.
+        description.zh: 过多的动画容易导致额外的性能开销并引发卡顿。
+        type: heading
+        level: 1
+        collapsed: false
+    -
+        id: glassive-anim-popover-over-expand
+        title: Popover transition while editing
+        title.zh: 编辑 popover 时的过渡动画
+        description: Show the expand transition when a popover switches into editing mode.
+        description.zh: 当 popover 进入编辑状态时，展示展开过渡动画。
+        type: class-toggle
+        default: false
  */     

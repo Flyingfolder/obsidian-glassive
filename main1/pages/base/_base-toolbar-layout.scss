@@ -18,16 +18,15 @@
 
 
     .bases-toolbar .bases-toolbar-item:not(.bases-toolbar-result-count) .text-icon-button {
+        // @include glassive-control-text($selected-modifier: '.is-active');
         @include glassive-control-text;
 
         --icon-color-hover: var(--text-normal);
 
-        padding: 0 4px;
+        padding: 0 3px;
         gap: 0;
 
         .text-button-icon:first-child {
-            // width: 24px;
-            // height: 24px;
             padding: 4px;
             border-radius: 99px;
         }
@@ -39,7 +38,8 @@
 
         &.is-active .text-button-icon{
             background-color: $interactive-accent;
-            color: white;
+            color: #fff;
+            *  {color: #fff;}
         }
     }
 

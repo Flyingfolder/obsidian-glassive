@@ -1,0 +1,61 @@
+
+
+
+@use '../abstracts' as *;
+
+body.glassive-anim-popover-over-expand {
+
+
+
+// 淡化全局的背景 ===============================
+.app-container:has(~.popover.is-editing) {
+    .horizontal-main-container {
+        // opacity: 0.9;
+        // transform-origin: 50% -20%;
+        // scale: 0.85;
+        // transition: 
+        //     scale $anim-duration-moderate ease,
+        //     opacity $anim-duration-slow;
+        filter: blur(1px) brightness(1.02);
+        opacity: 0.8;
+        transition: opacity $anim-duration-moderate;
+    }
+}
+
+// 拓展popover
+
+
+
+.popover.is-editing {
+    --popover-width: 650px;
+    --popover-font-size: 17px;
+
+        @include pop-in-anim;
+
+    .inline-title {
+        display: block;
+        position: sticky;
+        top: 0;
+    }
+
+    // .cm-scroller {
+    //     mask-image: linear-gradient(
+    //         to bottom,
+    //         rgb(0 0 0/ 20%) 0,
+    //         black 180px
+    //     );
+    // }
+
+    // animation: 
+    //     fade-in $anim-duration-moderate,
+    //     width-add-add $anim-duration-moderate ease;
+    
+}
+
+
+
+
+
+
+
+}

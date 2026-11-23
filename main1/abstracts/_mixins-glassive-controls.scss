@@ -17,7 +17,7 @@
     
     box-shadow: $shadow-raised-control-item, var(--shadow-glass-border);
     border: unset;
-    padding: 4px;
+    padding: 3px;
     margin: unset;
     border-radius: 99px;
     corner-shape: unset;
@@ -29,15 +29,19 @@
     justify-content: center;
     box-sizing: border-box;
     font-size: $font-ui-small;
-    line-height: 16px;
+    line-height: 18px;
     // 
     &,* {color: var(--mono-100);}
 
+    // 
+    width: 32px;
+    height: 100%;
+    max-height: 32px;
 
 
     svg.svg-icon {
-        --icon-size: 16px;
-        --icon-stroke: 1.75px;
+        --icon-size: 18px;
+        --icon-stroke: 1.7px;
 
         filter: drop-shadow(0 0 10px rgb(var(--mono-rgb-100) / 100%));
     }
@@ -50,7 +54,7 @@
 // 不传则不生成选中态。
 @mixin glassive-controls-states($selected-modifier: null) {
     &:hover {
-        .theme-light & {background-color: var(--color-base-30);}
+        .theme-light & {background-color: var(--color-base-25);}
         .theme-dark  & {background-color: color-mix(in oklch, rgb(80 80 80) 95%, $interactive-accent) ;}
     }
 
@@ -76,26 +80,37 @@
     @include _glassive-controls-base();
 
 
-    gap: 4px;
-    min-height: fit-content;
+    gap: 3px;
+    min-width: fit-content;
+    height: 32px;
+
+
 
     @if $auto-detect-only-child {
-        &:has(>*:only-child) {padding: unset;}
-
+        
         & > :is(#{$button-type}) {
             @include _glassive-controls-base();
             @include glassive-controls-states;
-
+            
             background: unset;
             backdrop-filter: unset;
             box-shadow: unset;
-            height: auto;
-            width: auto;
         }
+        
+        //只有一个icon：让按钮直接填充整个大小
+        &:has(>*:only-child) {
+            padding: unset;
 
-        &>#{$button-type}:only-child {
-            padding: 8px;
-        }
+            &>* {
+                width: 32px;
+                height: 32px;
+            }
+        } 
+
+        // &>#{$button-type}:only-child {
+            // padding: 8px;
+            // width: 24px;
+        // }
     }
 
     @else {
@@ -135,9 +150,9 @@
     }
 }
 
-@mixin glassive-control-text {
+@mixin glassive-control-text($selected-modifier: null) {
     @include _glassive-controls-base();
-    @include glassive-controls-states;
+    @include glassive-controls-states($selected-modifier); 
 
     padding: 0 12px;
     min-width: fit-content;
