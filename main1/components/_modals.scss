@@ -8,9 +8,11 @@
     //出现时的动画
     --modal-padding: 16px;
     --modal-radius: 44px;
+    --liquid-sidebar-accent-opacity: 80%;
+
 
     background-color: var(--background-secondary);
-    background-image: var(--liquid-modal-background-image);
+    background-image: var(--liquid-sidebar-background-image);
     corner-shape: squircle;
     animation: 
         fade-in $anim-duration-moderate ease-out none,

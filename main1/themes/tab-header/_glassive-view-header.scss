@@ -3,21 +3,22 @@
 @use '../../abstracts' as *; 
 
 
+
 @mixin header-cover {
     content: '';
     display: block;
     position: absolute;
     top: 0;
     width: 100%;
-    min-height: calc(40px + 35px);
+    min-height: var(--height-tab-header-cover);
     z-index: 1;
     background-color: color-mix(in oklab, $background-primary 60%, transparent);
-    background: linear-gradient(to bottom,
-        color-mix(in oklab, $background-primary 80%, transparent),
-        color-mix(in oklab, $background-primary 20%, transparent),
+    background: linear-gradient(to top,
+        color-mix(in oklab, $background-primary 60%, transparent) 0,
+        color-mix(in oklab, $background-primary 40%, transparent) 8px,
+        color-mix(in oklab, $background-primary 60%, transparent) 100%,
     );
-    // backdrop-filter: blur(4px) brightness(0.9);
-    backdrop-filter: blur(6px) var(--backgrop-filter-brightness-tab-header);
+    backdrop-filter: blur(4px) var(--backgrop-filter-brightness-tab-header);
 }
 
 @mixin floating-view-header {
@@ -28,9 +29,33 @@
     --top-header-bg: transparent;
 }
 
+@mixin floating-search {
+    // --height-tab-header-cover: calc(var(--header-height) + 35px);
+
+    .document-search-container {
+        position: relative;
+        top: 75px;
+        background-color: transparent;
+        // background-color: color-mix(in oklab, $background-primary 60%, transparent);
+        // background: linear-gradient(to bottom,
+        //     color-mix(in oklab, $background-primary 20%, transparent),
+        //     color-mix(in oklab, $background-primary 20%, transparent),
+        // );
+        // backdrop-filter: blur(6px) var(--backgrop-filter-brightness-tab-header);
+    }
+}
+
 body.glassive-view-header {
 .workspace-split.mod-root .workspace-tabs.mod-top {
+    --height-tab-header-cover: calc(var(--header-height) + 35px);
+
     .workspace-tab-container:has(.workspace-leaf:not([style*="display: none"])>[data-type="markdown"]) {
+        --height-document-search-container: 45px;
+        --height-document-search-container-mod-replace: 81px;
+
+        &:has(.document-search-container) {--height-tab-header-cover: calc(var(--header-height) + 35px + var(--height-document-search-container));}
+        &:has(.document-search-container.mod-replace-mode) {--height-tab-header-cover: calc(var(--header-height) + 35px + var(--height-document-search-container-mod-replace));}
+
         margin-top: -40px;
 
         .workspace-leaf-content[data-type="markdown"] {
@@ -41,6 +66,10 @@ body.glassive-view-header {
             .view-header {
                 @include floating-view-header();
             }
+
+            
+
+            @include floating-search();
 
             .cm-scroller {
                 padding-top: calc(40px + 35px + 32px);

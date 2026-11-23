@@ -75,6 +75,11 @@ $titlebar-height: 48px;
 
 
     .#{$sidebar-wrapper} {
+        --liquid-sidebar-accent-opacity: 12%;
+              --liquid-sidebar-background-image: radial-gradient(ellipse 360% 200% at -400px -200px,
+      hsl(var(--color-accent-hsl), var(--liquid-sidebar-accent-opacity)),
+      rgb(var(--mono-rgb-0), 6%));
+
         margin: 7px 0; //toolbar padding
         // border: 1px solid var(--liquid-sidebar-border-color);
         box-shadow: var(--liquid-sidebar-shadow), var(--shadow-glass-border-tilted);

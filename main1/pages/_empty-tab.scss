@@ -76,12 +76,14 @@
 
 .workspace-split.mod-root .workspace-leaf.mod-active [data-type="empty"] .empty-state-container {
     transition: 
+        translate $anim-duration-moderate ease,
         scale $anim-duration-moderate ease,
         opacity $anim-duration-moderate;
 
 
     .app-container:has(~.modal-container .prompt)  & {
         opacity: 0;
-        scale: 0.8;
+        scale: 0.9;
+        translate: 0 20px;
     }
 }

@@ -8,5 +8,8 @@
 
 
 .mod-root .workspace-leaf-content[data-type="empty"] .view-header {
-    display: none;
+    // display: none;
+    &>* {
+        visibility: hidden;
+    }
 }

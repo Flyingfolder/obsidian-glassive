@@ -14,7 +14,7 @@
     // opacity: 0 !important;
     background-color: transparent;
     animation: fade-in $anim-duration-moderate ease-out forwards;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px) var(--backgrop-filter-brightness-tab-header);
 }
 
 input.prompt-input:hover,

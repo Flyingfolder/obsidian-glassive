@@ -14,7 +14,7 @@
 
 
 @mixin _glassive-controls-base() {
-    color: var(--mono-100);
+    
     box-shadow: $shadow-raised-control-item, var(--shadow-glass-border);
     border: unset;
     padding: 4px;
@@ -30,6 +30,8 @@
     box-sizing: border-box;
     font-size: $font-ui-small;
     line-height: 16px;
+    // 
+    &,* {color: var(--mono-100);}
 
 
 
@@ -80,13 +82,15 @@
     @if $auto-detect-only-child {
         &:has(>*:only-child) {padding: unset;}
 
-        &>#{$button-type} {
+        & > :is(#{$button-type}) {
             @include _glassive-controls-base();
             @include glassive-controls-states;
 
             background: unset;
             backdrop-filter: unset;
             box-shadow: unset;
+            height: auto;
+            width: auto;
         }
 
         &>#{$button-type}:only-child {

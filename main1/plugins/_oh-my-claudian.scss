@@ -1,15 +1,89 @@
 
 
 
-.claudian-conversation-header-host {
-    // position: absolute;
-}
+@use '../abstracts' as *; 
 
-.oh-my-claudian-root .claudian-input-footer {
-    padding: unset;
-}
 
 
 .workspace-leaf-content>.view-content.claudian-container {
-    padding: 8px 8px 28px;
+    padding: 0 0 28px;
+    -webkit-font-smoothing: antialiased;
+
+    .claudian-messages-wrapper .claudian-messages {
+        padding: 60px 12px 24px;
+    }
+
+     .claudian-input-footer {
+        padding: 0 8px 0;
+
+
+        .claudian-input-wrapper {
+            border: unset;
+            box-shadow: var(--shadow-glass-border);
+        }
+        
+    }
 }
+
+
+
+
+
+
+.claudian-conversation-header-host {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    header.claudian-conversation-header {
+        .claudian-conversation-menu-anchor {
+            padding: unset !important;
+        }
+
+        .claudian-conversation-header {
+            padding: unset;
+            min-height: unset;
+            padding: 8px calc(48px + 8px) 20px 8px;
+        }
+
+        button {
+            border-radius: 99px;
+            corner-shape: unset;
+            height: unset;
+            cursor: default;
+        }
+
+        .claudian-conversation-header-title {
+            font-weight: 500;
+            font-size: $font-ui-small;
+        }
+
+        .claudian-conversation-header-leading button {
+            @include glassive-control-icon;
+        }
+
+        .claudian-conversation-header-actions {
+            @include glassive-control-group-with-icons($button-type: "div, button", $auto-detect-only-child: true);
+
+            position: static;
+
+            .claudian-conversation-menu-anchor button:hover {background-color: transparent;}
+            
+            // order
+            .claudian-conversation-menu-anchor {order: 1;}
+            &>*:last-child {order: -1;}
+        }
+
+        // .claudian-conversation-menu-anchor {
+        //     position: absolute; #bug 会丢失，无法实现
+        // }
+
+    }
+}
+
+
+
+
+
+
+// claudian-context-chip claudian-context-chip--note claudian-context-chip--removable
