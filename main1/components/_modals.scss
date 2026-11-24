@@ -75,6 +75,7 @@
 .modal-header {
     display: flex;
     flex-direction: column;
+    margin-bottom: unset;
     // margin: 0 calc( var(--modal-padding)  * -1) 0;
 
     &:has(.modal-title:only-child:empty) {

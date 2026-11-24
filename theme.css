@@ -729,6 +729,7 @@ input[type="number"]:focus-visible {
 .modal-header {
   display: flex;
   flex-direction: column;
+  margin-bottom: unset;
 }
 
 .modal-header:has(.modal-title:only-child:empty) {
@@ -4946,12 +4947,30 @@ hr:has(+ .cmdr-sep-con.callout) {
 }
 
 /* stylelint-disable selector-class-pattern */
+.vertical-tab-content.quickAddModal select {
+  field-sizing: content;
+}
+
+.vertical-tab-content.quickAddModal .quickAddCommandLabel {
+  font-size: 13px;
+}
+
+.vertical-tab-content.quickAddModal .quickAddCommandListItem {
+  min-height: 24px;
+}
+
+.vertical-tab-content .qa-setting-full-width + .setting-item .setting-item-control {
+  flex-direction: column;
+}
+
 .vertical-tab-content .setting-group:first-child:has(.choiceFilterBar) {
   margin-bottom: 80px;
 }
 
-.vertical-tab-content .setting-group:first-child:has(.choiceFilterBar) .setting-items {
-  position: relative;
+.vertical-tab-content .setting-group:first-child:has(.choiceFilterBar) .choiceListItem {
+  padding: 0 8px;
+  border-radius: 99px;
+  corner-shape: squircle;
 }
 
 .vertical-tab-content .setting-group:first-child .setting-item.setting-item-heading:first-child {

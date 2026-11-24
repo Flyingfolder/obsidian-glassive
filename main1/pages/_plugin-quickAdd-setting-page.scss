@@ -5,16 +5,34 @@
 
 
 
+.vertical-tab-content.quickAddModal {
+    select {
+        field-sizing: content;
+    }
 
+    .quickAddCommandLabel {
+        font-size: $font-ui-small;
+    }
+
+    .quickAddCommandListItem {
+        min-height: $control-height-s;
+    }
+
+}
 
 .vertical-tab-content {
+    .qa-setting-full-width+.setting-item .setting-item-control {
+        flex-direction: column;
+    }
+
     .setting-group:first-child:has(.choiceFilterBar) {
         margin-bottom: 80px;
 
-        .setting-items {
-            position: relative;
+        .choiceListItem {
+            padding: 0 8px;
+            border-radius: 99px;
+            corner-shape: squircle;
         }
-
     }
 
     .setting-group:first-child {
@@ -52,3 +70,5 @@
         .qaNewChoiceBtn {order: -1;}
     }
 }
+
+
