@@ -4,10 +4,6 @@
 @use '../abstracts' as *; 
 
 
-
-
-
-
 [data-type="style-settings"] {
     .view-content {
         display: flex;
@@ -15,39 +11,14 @@
         align-items: center;
     }
 
-    .view-content>.setting-item:first-child {
-        max-width: unset;
-        background-color: unset;
-        padding: unset;
-        margin-bottom: 20px;
-
-        .setting-item-name {
-            overflow: visible
-        }
-
-        .search-input-container {
-            @include glassive-control-search;
-        }
-
-        a {
-            @include glassive-control-text;
-
-            cursor: default;
-            text-decoration: none !important;
-        }
-    }
 
     .view-content>* {
         max-width: 600px;
         width: 100%;
     }
-
-    .style-settings-heading {
-        border: unset;
-    }
-
     
 }
+
 
 
 [data-type="style-settings"] .style-settings-container .setting-item:not(.setting-item-heading) {
@@ -55,9 +26,43 @@
 }
 
 
-.view-content {
+
+
+// =================================================================================
+// toolbar ------------------------------------------------------------------------
+*:has(>div>div>.style-settings-import)>.setting-item:first-child {
+    max-width: unset;
+    background-color: unset;
+    padding: unset;
+    margin-bottom: 20px;
+
+    .setting-item-name {
+        overflow: visible
+    }
+
+    .search-input-container {
+        @include glassive-control-search;
+    }
+
+    a {
+        @include glassive-control-text;
+
+        cursor: default;
+        text-decoration: none !important;
+    }
+}
+
+
+*:has(>div>div>.style-settings-import) {
     .setting-item-heading.style-settings-heading {
         margin-top: 8px;
+        border: unset;
+
+        &[data-level="0"]:not(.is-collapsed) {
+            border-bottom: 1px solid $background-modifier-seperator;
+            border-radius: unset;
+            padding-bottom: 8px;
+        }
     }
 
     .style-settings-heading[data-level="0"] {
@@ -69,22 +74,39 @@
     .style-settings-container .setting-item {
         padding: 8px 16px;
         margin: unset;
-        border-radius: 0;
+        border-radius: unset;
 
         &:first-child {
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            corner-shape: squircle;
         }
 
         &:last-child {
-            border-bottom-right-radius: 12px;
-            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 40px;
+            border-bottom-left-radius: 40px;
+            corner-shape: squircle;
         }
+
+        & + .setting-item::before {
+            content: '';
+            position: absolute;
+            inset: 0 16px auto;
+            border-top: 1px solid $background-modifier-seperator;
+        }
+
     }
 
 }
+
+
+
+
+
+
+
 // ================================================================================================================================================================================================================================
-// modal ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// 点击按钮后弹出的 modal ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 .modal.modal-style-settings {
     .modal-content>.setting-item:first-child {

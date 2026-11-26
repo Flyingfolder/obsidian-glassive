@@ -90,9 +90,17 @@ settings:
         type: class-toggle
         default: true
     -
+        id: vault-switcher-no-grow-narrow
+        title: Auto-switch vault name style
+        title.zh: 自动切换仓库名的样式
+        description: The vault name in the bottom-left corner adapts its style automatically as the left sidebar width changes.
+        description.zh: 左下角仓库名的样式会随着左侧栏的宽度变化自动调整。
+        type: class-toggle
+        default: true
+    -
         id: glassive-view-header
         title: Glassive view header(experimental)
-        title.zh: Glassive 顶部标题栏（实验性）
+        title.zh: Glassive 顶部标题栏（测试版）
         description: Frosted-glass view header that blurs content scrolling behind it.
         description.zh: 顶部标题栏使用毛玻璃效果；向上滚动内容时，内容会从标题栏后方模糊穿过。
         type: class-toggle

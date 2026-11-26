@@ -31,12 +31,10 @@ body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vaul
         corner-shape: unset;
     }
 
-    .workspace-drawer-vault-switcher {
-        width: 160px;
-        flex-grow: 0;
-        min-width: fit-content;
-    }
 }
+
+
+
 
 
 body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-tabs:last-child {
@@ -55,4 +53,26 @@ body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-tabs:last-chi
 
 .workspace-leaf-content>.node-insert-event {
     padding-bottom: 64px;
+}
+
+
+
+
+
+
+
+
+.workspace-split.mod-left-split {
+  container-type: inline-size;
+  container-name: left-split;
+}
+
+@container left-split (width > 280px) {
+  body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
+    @include glassive-control-text;
+
+    flex-grow: 0;
+    transition: 
+        all $anim-duration-fast;
+  }
 }

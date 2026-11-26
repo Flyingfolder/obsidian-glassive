@@ -1,0 +1,19 @@
+
+
+@use '../../abstracts' as *;
+
+
+.view-header {
+    padding: 0 8px;
+}
+
+.nav-header,
+.view-header .view-actions  {
+    .clickable-icon {
+        border-radius: 99px;
+        corner-shape: unset;
+        // padding: 4px 8px;
+    }
+}
+
+

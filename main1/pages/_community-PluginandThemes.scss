@@ -99,6 +99,24 @@
     }
 }
 
+.community-modal-search-results-status {
+    z-index: 1;
+    position: sticky;
+    inset: calc(100% - 80px) auto auto;
+
+    .community-modal-search-results-status-content {
+        background: $glassive-control-background;
+        backdrop-filter: $glassive-control-backdrop-filter;
+        border-radius: 99px;
+        corner-shape: unset;
+        box-shadow: $shadow-raised-control-item;
+    }
+
+    .community-modal-search-results-cta {
+        cursor: pointer;
+    }
+}
+
 
 
 

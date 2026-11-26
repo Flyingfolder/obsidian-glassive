@@ -53,8 +53,13 @@ body.glassive-view-header {
         --height-document-search-container: 45px;
         --height-document-search-container-mod-replace: 81px;
 
-        &:has(.document-search-container) {--height-tab-header-cover: calc(var(--header-height) + 35px + var(--height-document-search-container));}
-        &:has(.document-search-container.mod-replace-mode) {--height-tab-header-cover: calc(var(--header-height) + 35px + var(--height-document-search-container-mod-replace));}
+        &:has(.document-search-container) {
+            --height-tab-header-cover: calc(var(--header-height) + 35px + var(--height-document-search-container));
+        }
+
+        &:has(.document-search-container.mod-replace-mode) {
+            --height-tab-header-cover: calc(var(--header-height) + 35px + var(--height-document-search-container-mod-replace));
+        }
 
         margin-top: -40px;
 
@@ -67,10 +72,9 @@ body.glassive-view-header {
                 @include floating-view-header();
             }
 
-            
-
             @include floating-search();
 
+            .view-content>.markdown-reading-view .markdown-preview-view,
             .view-content>.node-insert-event>div>.cm-scroller {
                 padding-top: calc(40px + 35px + 32px);
             }
