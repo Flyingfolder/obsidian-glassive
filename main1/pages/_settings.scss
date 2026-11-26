@@ -15,7 +15,25 @@
 
     // 左侧 ------------------------------------------
     .setting-search-results {
-        gap: 16px;
+        gap: 4px;
+
+        // &>.setting-search-result-group {
+        //     margin-bottom: 20px;
+        // }
+
+        .vertical-tab-nav-item {
+            padding: 0 8px;
+            min-height: 32px;
+
+
+            .setting-search-result-tab-label {
+                font-size: $font-ui-small;
+            }
+        }
+
+        .vertical-tab-nav-item:hover {
+            background-color: $background-modifier-hover;
+        }
     }
 
     // .setting-search-container input {

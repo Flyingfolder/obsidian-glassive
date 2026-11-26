@@ -4904,7 +4904,20 @@ body {
 }
 
 .modal.mod-settings.mod-sidebar-layout .setting-search-results {
-  gap: 16px;
+  gap: 4px;
+}
+
+.modal.mod-settings.mod-sidebar-layout .setting-search-results .vertical-tab-nav-item {
+  padding: 0 8px;
+  min-height: 32px;
+}
+
+.modal.mod-settings.mod-sidebar-layout .setting-search-results .vertical-tab-nav-item .setting-search-result-tab-label {
+  font-size: 13px;
+}
+
+.modal.mod-settings.mod-sidebar-layout .setting-search-results .vertical-tab-nav-item:hover {
+  background-color: color-mix(in oklch, var(--mono-100) 7.5%, transparent);
 }
 
 .modal.mod-settings.mod-sidebar-layout .vertical-tab-nav-item {
@@ -5846,30 +5859,30 @@ body {
   max-height: 24px;
 }
 
-body.show-ribbon.glassive-left-sidebar-background .workspace {
+body.glassive-left-sidebar-background .workspace {
   background: var(--liquid-sidebar-background-image);
   background-color: var(--tab-container-background);
 }
 
-body.show-ribbon.glassive-left-sidebar-background .workspace .workspace-split.mod-left-split,
-body.show-ribbon.glassive-left-sidebar-background .workspace .workspace-tab-header-container,
-body.show-ribbon.glassive-left-sidebar-background .workspace .workspace-leaf {
+body.glassive-left-sidebar-background .workspace .workspace-split.mod-left-split,
+body.glassive-left-sidebar-background .workspace .workspace-tab-header-container,
+body.glassive-left-sidebar-background .workspace .workspace-leaf {
   background-color: unset;
 }
 
-body.show-ribbon.glassive-left-sidebar-background .workspace-ribbon {
+body.glassive-left-sidebar-background .workspace-ribbon {
   background-color: unset;
 }
 
-body.show-ribbon.glassive-left-sidebar-background .workspace-ribbon::before {
+body.glassive-left-sidebar-background .workspace-ribbon::before {
   background-color: transparent;
 }
 
-body.show-ribbon.glassive-left-sidebar-background .workspace-ribbon.is-collapsed {
+body.glassive-left-sidebar-background .workspace-ribbon.is-collapsed {
   background-color: var(--background-primary);
 }
 
-body.show-ribbon.glassive-left-sidebar-background .workspace-ribbon.is-collapsed::before {
+body.glassive-left-sidebar-background .workspace-ribbon.is-collapsed::before {
   background-color: var(--background-primary);
 }
 
