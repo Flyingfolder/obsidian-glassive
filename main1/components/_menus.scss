@@ -5,6 +5,10 @@
 
 @use '../abstracts' as *;
 
+body {
+    --menu-radius: 20px;
+}
+
 .menu {
     @include liquid-glass-bg-normal($with-shadow: false);
 
@@ -23,7 +27,7 @@
 
 
 
-    border-radius: 20px;
+    border-radius: var(--menu-radius);
     corner-shape: squircle;
     border: var(--menu-border-width) solid var(--menu-border-color);
 

@@ -43,7 +43,7 @@ body {
   --glassive-control-backdrop-filter: blur(2px) brightness(1.08);
   --liquid-sidebar-accent-opacity: 5%;
   --liquid-sidebar-background-image: 
-    radial-gradient(ellipse 400% 160% at -500px 140px,
+    radial-gradient(ellipse 400% 160% at -1200px 140px,
     hsl(from var(--color-accent) h s l / var(--liquid-sidebar-accent-opacity)),
     rgb(var(--mono-rgb-0), 40%));
 }
@@ -61,13 +61,11 @@ body {
   //     radial-gradient(ellipse,var(--dropdown-icon-background) 48%,transparent 50%),
   //     var(--glassive-control-background);
   --glassive-control-backdrop-filter: blur(2px) brightness(1.03);
-  --liquid-sidebar-accent-opacity: 5%;
+  --liquid-sidebar-accent-opacity: 8%;
   --liquid-sidebar-background-image: 
-      radial-gradient(ellipse 360% 200% at -600px -200px,
+      radial-gradient(ellipse 360% 200% at -800px -200px,
       hsl(var(--color-accent-hsl), var(--liquid-sidebar-accent-opacity)),
       rgb(var(--mono-rgb-0), 6%));
-
-
 }
 
 

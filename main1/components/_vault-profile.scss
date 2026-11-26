@@ -71,6 +71,9 @@ body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-tabs:last-chi
   body:not(.is-mobile) .workspace-split.mod-primary-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
     @include glassive-control-text;
 
+    svg.svg-icon {--icon-size: 16px;}
+
+    gap: 2px;
     flex-grow: 0;
     transition: 
         all $anim-duration-fast;

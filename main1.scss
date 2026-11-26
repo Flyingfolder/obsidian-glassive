@@ -58,7 +58,7 @@
 @use 'main1/pages/corePlugin-fileRecovery';
 @use 'main1/pages/plugin-callout-editor';
 @use 'main1/pages/plugin-iconic';
-@use 'main1/pages/plugin-commander';
+// @use 'main1/pages/plugin-commander';
 @use 'main1/pages/detailed-pages/commander-macros';
 @use 'main1/pages/plugin-style-settings';
 @use 'main1/pages/plugin-vertical-tabs';
@@ -81,6 +81,7 @@
 @use 'main1/pages/settings';
 @use 'main1/pages/community-PluginandThemes';
 @use 'main1/pages/modal-file-browser-delete-attachments';
+@use 'main1/pages/modal-rename-file';
 
 
 // 6. Plugins — 插件专属样式
@@ -88,6 +89,7 @@
 @use 'main1/plugins/better-export-pdf';
 @use 'main1/plugins/excalidraw';
 @use 'main1/plugins/oh-my-claudian';
+@use 'main1/plugins/menu-hider';
 
 // 7. Themes — 主题级覆盖
 @use 'main1/themes/sidebar-bg';

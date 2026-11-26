@@ -1,0 +1,26 @@
+
+
+
+
+@use '../abstracts' as *; 
+
+
+
+.menu-hider-menu-list {
+    max-width: 360px;
+    border-radius: var(--menu-radius);
+    corner-shape: squircle;
+    margin: 0 auto 60px;
+    box-shadow: $shadow-raised-control-item;
+
+
+    .menu-hider-row {
+        max-height: 28px;
+        border-radius: 99px;
+        corner-shape: squircle;
+    }
+
+    .menu-hider-row.menu-hider-separator-row {
+        max-height: 24px;
+    }
+}

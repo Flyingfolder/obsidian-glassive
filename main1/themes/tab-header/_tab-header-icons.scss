@@ -3,9 +3,22 @@
 @use '../../abstracts' as *;
 
 
+
+
 .view-header {
     padding: 0 8px;
 }
+
+
+.nav-header {
+    padding: 10px 0 6px;
+    margin: 0 10px;
+    border-bottom: 1px solid $background-modifier-seperator;
+}
+
+
+
+// icons -------------------------
 
 .nav-header,
 .view-header .view-actions  {
