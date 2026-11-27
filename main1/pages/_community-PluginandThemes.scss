@@ -11,10 +11,20 @@
     background-image: unset;
 }
 
+.community-modal-details {
+    .setting-page-titlebar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
 
-.community-modal-info {
-    overflow: visible;
+
+    .community-modal-info {
+        padding-top: 80px;
+    }
+
 }
+
 
 
 
@@ -209,10 +219,11 @@
 
 // 右侧的界面 ----------------------------------------------
 
-
 .community-modal-details {
     position: relative;
     border: unset;
+
+
 
     .community-modal-meta {
         background-color: var(--card-background);

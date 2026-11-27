@@ -20,12 +20,15 @@
 
 // icons -------------------------
 
-.nav-header,
+.nav-header .nav-buttons-container,
 .view-header .view-actions  {
+        gap: 2px;
+
     .clickable-icon {
         border-radius: 99px;
         corner-shape: unset;
-        // padding: 4px 8px;
+        padding: 3px 7px;
+        margin: 0;
     }
 }
 

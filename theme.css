@@ -5046,8 +5046,14 @@ body {
   background-image: unset;
 }
 
-.community-modal-info {
-  overflow: visible;
+.community-modal-details .setting-page-titlebar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.community-modal-details .community-modal-info {
+  padding-top: 80px;
 }
 
 .modal.mod-community-modal .modal-sidebar {
@@ -6419,10 +6425,17 @@ body.glassive-view-header .workspace-split.mod-root .workspace-tabs.mod-top .wor
   border-bottom: 1px solid rgb(var(--mono-rgb-100), 12%);
 }
 
-.nav-header .clickable-icon,
+.nav-header .nav-buttons-container,
+.view-header .view-actions {
+  gap: 2px;
+}
+
+.nav-header .nav-buttons-container .clickable-icon,
 .view-header .view-actions .clickable-icon {
   border-radius: 99px;
   corner-shape: unset;
+  padding: 3px 7px;
+  margin: 0;
 }
 
 .mod-root .workspace-tabs:not(.mod-top) {
