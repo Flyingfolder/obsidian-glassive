@@ -8,6 +8,12 @@
 
 // empty page
 
+.mod-root .workspace-leaf-content[data-type="empty"] .view-header {
+    // display: none;
+    &>* {
+        visibility: hidden;
+    }
+}
 
 .empty-state-container {
     .empty-state-title::before {

@@ -42,9 +42,11 @@
 }
 
 
+
 .community-modal-search-results>.community-item:not(.tappable) {
     @include search-empty();
 }
+
 
 .prompt .suggestion-empty {
     @include search-empty();
@@ -52,6 +54,12 @@
     min-height: 280px;
 }
 
+
+// .backlink-pane .search-empty-state {
+//         @include search-empty();
+
+//     min-height: 140px;
+// }
 
 .style-settings-empty {
     @include search-empty();

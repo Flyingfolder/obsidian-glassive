@@ -29,7 +29,27 @@
         corner-shape: unset;
         padding: 3px 7px;
         margin: 0;
+
+        &.is-active {
+            color: $interactive-accent;
+        }
     }
 }
+
+
+
+
+// sidebar-toggle icon:  bug 1 --------------------------------
+.mod-macos.is-hidden-frameless:not(.is-popout-window, .is-mobile) .sidebar-toggle-button.mod-secondary {
+    --tab-container-background: #{$background-primary};
+}
+
+
+.sidebar-toggle-button .clickable-icon {
+    border-radius: 99px;
+    padding: 4px 8px;
+    corner-shape: unset;
+}
+
 
 
